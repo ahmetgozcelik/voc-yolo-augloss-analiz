@@ -1,0 +1,121 @@
+{
+ "goruntu": 7481,
+ "eslemesiz": [],
+ "ultralytics_bolme": {
+  "train": 5985,
+  "val": 1496,
+  "ortak_drive": 106,
+  "drive_toplam": 141
+ },
+ "etiket": {
+  "yolo": {
+   "car": 28742,
+   "van": 2914,
+   "truck": 1094,
+   "pedestrian": 4487,
+   "person_sitting": 222,
+   "cyclist": 1627,
+   "tram": 511,
+   "misc": 973
+  },
+  "resmi": {
+   "car": 28742,
+   "van": 2914,
+   "truck": 1094,
+   "pedestrian": 4487,
+   "person_sitting": 222,
+   "cyclist": 1627,
+   "tram": 511,
+   "misc": 973
+  },
+  "uyusmayan_goruntu": 0,
+  "uyusmayan_ornek": [],
+  "dontcare_goruntu": 5365,
+  "dontcare_kutu": 11295
+ },
+ "sahne_gruplari": {
+  "drive": 141,
+  "grup": 59,
+  "birlestirme": 82,
+  "en_buyuk_grup_drive": 80,
+  "en_buyuk_grup_goruntu": 577
+ },
+ "bolme": {
+  "alt_seed": 363,
+  "grup_sayisi": {
+   "val": 10,
+   "test": 13,
+   "train": 36
+  },
+  "goruntu": {
+   "train": 4990,
+   "val": 987,
+   "test": 1504
+  },
+  "sinif_payi": {
+   "train": {
+    "car": 0.691,
+    "van": 0.659,
+    "truck": 0.8,
+    "pedestrian": 0.699,
+    "person_sitting": 0.671,
+    "cyclist": 0.693,
+    "tram": 0.464,
+    "misc": 0.734
+   },
+   "val": {
+    "car": 0.154,
+    "van": 0.182,
+    "truck": 0.091,
+    "pedestrian": 0.173,
+    "person_sitting": 0.077,
+    "cyclist": 0.165,
+    "tram": 0.29,
+    "misc": 0.077
+   },
+   "test": {
+    "car": 0.155,
+    "van": 0.159,
+    "truck": 0.109,
+    "pedestrian": 0.128,
+    "person_sitting": 0.252,
+    "cyclist": 0.143,
+    "tram": 0.247,
+    "misc": 0.189
+   }
+  }
+ },
+ "sizinti_ncc_ge095": {
+  "test-train": 0,
+  "val-train": 0,
+  "test-val": 0
+ },
+ "sizinti_dhash_le2": {
+  "test-train": 20,
+  "val-train": 5,
+  "test-val": 3
+ },
+ "sizinti_bagimsiz": {
+  "test-train": {
+   "ncc_max": 0.855,
+   "ncc_p99": 0.823,
+   "ncc_ge090": 0,
+   "dhash_le2_cift": 34,
+   "dhash_ciftleri_ncc_max": 0.792
+  },
+  "val-train": {
+   "ncc_max": 0.888,
+   "ncc_p99": 0.857,
+   "ncc_ge090": 0,
+   "dhash_le2_cift": 8,
+   "dhash_ciftleri_ncc_max": 0.692
+  },
+  "test-val": {
+   "ncc_max": 0.833,
+   "ncc_p99": 0.793,
+   "ncc_ge090": 0,
+   "dhash_le2_cift": 3,
+   "dhash_ciftleri_ncc_max": 0.806
+  }
+ }
+}

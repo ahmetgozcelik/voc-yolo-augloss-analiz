@@ -1,0 +1,58 @@
+{
+ "run_id": "20261019-223018_ek_yolo26n_baseline_s1",
+ "model": "yolo26n",
+ "seed": "1",
+ "h07_satir": "U832",
+ "dontcare": {
+  "map50_95": 0.204888,
+  "map50": 0.365308,
+  "map75": 0.2033,
+  "map50_95_3sinif": 0.343327,
+  "map50_95_7sinif": 0.230709,
+  "ap50_95_sinif": [
+   0.613418,
+   0.156524,
+   0.107667,
+   0.276936,
+   0.024135,
+   0.139625,
+   0.315627,
+   0.005169
+  ],
+  "map_small": 0.103057,
+  "map_medium": 0.204033,
+  "map_large": 0.322485,
+  "n_goruntu": 1504,
+  "n_gt": 6212,
+  "n_tahmin": 112543,
+  "n_dontcare_bolge": 2436,
+  "dontcare_yok_sayilan_iou50": 14920,
+  "dontcare_kurali": "coco-crowd"
+ },
+ "dontcaresiz": {
+  "map50_95": 0.199988,
+  "map50": 0.353911,
+  "map75": 0.199789,
+  "map50_95_3sinif": 0.333007,
+  "map50_95_7sinif": 0.225434,
+  "ap50_95_sinif": [
+   0.602589,
+   0.15124,
+   0.107156,
+   0.260307,
+   0.021867,
+   0.136126,
+   0.315613,
+   0.005004
+  ],
+  "map_small": 0.087942,
+  "map_medium": 0.200124,
+  "map_large": 0.320982,
+  "n_goruntu": 1504,
+  "n_gt": 6212,
+  "n_tahmin": 112543,
+  "n_dontcare_bolge": 0,
+  "dontcare_yok_sayilan_iou50": 0,
+  "dontcare_kurali": null
+ }
+}

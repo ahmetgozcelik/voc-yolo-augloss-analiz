@@ -1,0 +1,24 @@
+% uretici: evidence/scripts/build_tables.py <- evidence/evidence.json (elle duzenleme bir sonraki uretimde kaybolur)
+\begin{table}[!htbp]
+\centering\small\setlength{\tabcolsep}{3pt}
+\caption{VOC mutlak mAP50-95 [puan] (ort. $\pm$ s.d., n=3) ve tohum 1--2 ortalama $\Delta$. Renk: yalnız Holm-anlamlı (kırmızı kötü).}\label{tab:ekb-mutlak}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c}
+\toprule
+Yöntem & Doğrulama mAP50-95 & Test mAP50-95 & $\Delta$ tohum 1--2 \\
+\midrule
+Taban model & 63.07 $\pm$ 0.41 & 63.49 $\pm$ 0.11 & -- \\
+\midrule
+H01 multi\_scale & 62.86 $\pm$ 0.20 & -- & $-$0.35 \\
+H02 Inner-CIoU & 62.72 $\pm$ 0.32 & -- & $-$0.41 \\
+H03 copy-paste & 63.32 $\pm$ 0.17 & 63.37 $\pm$ 0.20 & +0.19 \\
+H04 scale & 62.22 $\pm$ 0.41 & -- & $-$1.13 \\
+H05 Varifocal & \kotu{60.20 $\pm$ 0.17} & -- & $-$2.86 \\
+H06 kutu kazancı & 63.11 $\pm$ 0.55 & -- & +0.27 \\
+H08 yüksek doz & 62.99 $\pm$ 0.14 & -- & $-$0.24 \\
+\midrule
+Taban model + TTA (eğitimsiz) & -- & 64.32 $\pm$ 0.11 & -- \\
+\bottomrule
+\addlinespace[3pt]
+\multicolumn{4}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{$\Delta$ tohum 1--2: ön-eleme tohumu s0 hariç bağımsız ortalama (doğrulama). Test yalnız taban model, H03 ve TTA için açıldı. Renk ölçütü: doğrulamada Holm-7, testte Holm-12 ve sıfırı kesmeyen GA (Tablo~\ref{tab:voc-ana}).} \\
+\end{tabularx}
+\end{table}

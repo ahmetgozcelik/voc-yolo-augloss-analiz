@@ -1,0 +1,14 @@
+# Üretildi: scripts/ek_deney/kitti_hazirla.py (drive-ayrık, seed 0, alt 363). Test YOK.
+path: <WS>/data/kitti
+train: splits/train.txt
+val: splits/val.txt
+
+names:
+  0: car
+  1: van
+  2: truck
+  3: pedestrian
+  4: person_sitting
+  5: cyclist
+  6: tram
+  7: misc

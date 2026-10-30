@@ -1,0 +1,63 @@
+%% Genişletilmiş ek (GitHub deposu, paper/ek.pdf): Bölüm A (koşum dökümü), Ek B (VOC ek sonuçları), Ek C (KITTI ek sonuçları),
+%% Ek D (yöntem ayrıntıları ve hesap notları). Kendi başına derlenir ve kendi kaynakçasını basar.
+%% Ana metne yapılan \ref'ler main.aux'tan okunur (xr-hyper); ana metin de bu belgenin etiketlerini okur.
+%% Sıra: latexmk -pdf main.tex; latexmk -pdf cevrimici_ek.tex; latexmk -pdf main.tex
+%% xr-hyper, hyperref'ten önce yüklenmelidir; sn-jnl.cls hyperref'i sınıf içinde yüklediği için
+%% \documentclass'tan önce \RequirePackage ile yüklenir.
+\RequirePackage{xr-hyper}
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[protrusion=true,expansion=true]{microtype}
+\usepackage[english,turkish,shorthands=off]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\usepackage{booktabs,array,tabularx}
+\usepackage{xcolor}
+\usepackage{placeins}
+\usepackage[title]{appendix}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta,calc,positioning,shapes.geometric,fit,backgrounds}
+\usepgfplotslibrary{groupplots}
+\definecolor{iyiRenk}{RGB}{0,84,159}
+\definecolor{kotuRenk}{RGB}{178,24,43}
+\providecommand{\iyi}[1]{\textcolor{iyiRenk}{\textbf{#1}}}
+\providecommand{\kotu}[1]{\textcolor{kotuRenk}{\textit{#1}}}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\providecommand{\figroot}{figures/}
+\newcommand{\burl}[1]{\url{#1}}
+
+\raggedbottom
+\hypersetup{hypertexnames=false}
+\externaldocument{main}
+
+\begin{document}
+
+\title[Genişletilmiş Ek]{Genişletilmiş Ek --- Gerçek Zamanlı YOLO Modellerinin İnce Ayarında Artırma ve Kayıp Müdahalelerinin Çok Tohumlu Değerlendirmesi: PASCAL VOC ve KITTI Üzerine Bir İnceleme}
+
+\author*[1]{\fnm{Ahmed Gürkan} \sur{ÖZÇELİK}}\email{250801017@ostimteknik.edu.tr}
+\author[1]{\fnm{Ufuk} \sur{ASIL}}\email{ufuk.asil@ostimteknik.edu.tr}
+\affil*[1]{\orgname{Ostim Technical University},
+  \orgaddress{\street{OSTİM, 100. Yıl Bulvarı, 55/F}, \postcode{06374},
+  \city{Yenimahalle}, \state{Ankara}, \country{Türkiye}}}
+
+\abstract{Bu belge, yukarıdaki başlıklı makalenin genişletilmiş ekidir (GitHub deposu, \texttt{paper/ek.pdf}): Bölüm A koşum dökümünü, Bölüm B VOC ek sonuçlarını, Bölüm C KITTI ek sonuçlarını, Bölüm D yöntem ayrıntılarını ve hesap notlarını verir. Harfli numaralar (Bölüm B.1, Tablo B1, Şekil C1, Denklem D1 gibi) bu belgeye aittir; harfsiz bölüm, tablo, şekil ve denklem numaraları ile ``makale Ek A'' atıfları ana makaleye aittir.}
+
+\maketitle
+
+\begin{appendices}
+\input{ek_A.tex}
+\input{ek_B.tex}
+\input{ek_C.tex}
+\input{ek_D.tex}
+\end{appendices}
+\FloatBarrier
+
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,5 @@
+# train1000 tanı kümesi (eğitim görüntülerinden 1000; tani/README.md). Test YOK.
+path: <WS>/data/kitti
+train: splits/train.txt
+val: <WS>/sonuclar/ek_deney/tani/train1000.txt
+names: {0: car, 1: van, 2: truck, 3: pedestrian, 4: person_sitting, 5: cyclist, 6: tram, 7: misc}

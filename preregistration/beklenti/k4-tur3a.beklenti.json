@@ -1,0 +1,230 @@
+{
+  "_aciklama": "ON-KAYIT (K4b TUR 3, kuyruk k4-tur3a: H08 yuksek dozlu kutu-tabanli copy-paste p=1.0, max_sqrt_alan=96). Kosumdan ONCE yazildi (kart WS/hipotezler/H08.md mtime'indan sonra), sonra degismez. Ana metrik val_map50_95 (voc_dev val; test'e bakilmaz). Kontrol/baseline bu kuyrukta KOSMAZ; cipalar mevcut damgali kosumlardan: duman kontrol baseline_cm0 20260930-161437_baseline_cm0_s0 = 0.422078 (mAP50 0.602115; close_mosaic=0, mosaic acik) ve H03 duman 20260930-161628_h03_boxcp_s0 = 0.422144; on-ucus kontrol 20260930-163903_baseline_cm0_s0 = 0.603845 (mAP50 0.796047, AP_S 0.2027), H03 on-ucus 20260930-164849_h03_boxcp_s0 = 0.604515; tam baseline seed0 20260930-072103_baseline_s0 = 0.62893 (mAP50 0.81132, AP_S 0.23591). Kontrol kuyrukta olmadigi icin 'yon_vs/tavan' yerine kontrol-capasina baglanmis 'aralik' kurallari kullanilir (alt = kontrol -1.5 puan [duman -3 puan: H03 kalibi], ust = kartin kirmizi bayragi kontrol +1.0 puan). Duman/on-ucusta epochs<=close_mosaic(10) oldugundan mosaic+copy_paste ilk epoch'tan kapanir; bu yuzden duman ve on-ucus satirlari '--override close_mosaic=0' ile kosar (H03 kalibi). Seed1,2 satirlari bu kuyrukta YOK (on-eleme sonrasi sef ekler). Doz kapisi karti (e): [0.6,1.5]; kart parametre ayarlamayi yasaklar. NOT (doz olcumu): CPU 20-batch olcumleri kapinin altinda (0.53 ve 0.57; kucuk orneklem), buyuk orneklem havuzu ~0.67 (doz_olc.py, 4 olcum); kartin beklenen 0.8-1.2 araligina ulasilmadi. Kapi kuyrukta duman sayaciyla (fraction 0.1, 4800 cagri) ve on-ucus sayaciyla (tam veri) da mekanik denetlenir.",
+  "metrik": "val_map50_95",
+  "yon": "max",
+  "asama": {
+    "1": {
+      "aciklama": "DUMAN - kod yolu calisiyor mu, yama (yuksek doz) devreye giriyor mu (seed0, fraction=0.1, 3 epoch, close_mosaic=0; tek satir: h08_boxcp_doz)",
+      "kurallar": [
+        {
+          "tur": "sonlu"
+        },
+        {
+          "tur": "aralik",
+          "alt": 0.0,
+          "ust": 1.0,
+          "kaynak": "metrik tanimi geregi mAP orani [0,1]"
+        },
+        {
+          "tur": "min_kosum",
+          "n": 1
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "varyant_etki_sayaci",
+          "alt": 1,
+          "ust": 1000000000000.0,
+          "kaynak": "yamanin devreye girdigi olay sayisi >=1 (bit-bit baseline yakalayici); H08: yapistirilan nesne sayaci"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_p",
+          "alt": 0.9999,
+          "ust": 1.0001,
+          "kaynak": "H08 karti: p=1.0 (varyant_imzasi dogrulamasi; H03'un 0.5'i ile yanlislikla kosulmadigini kanitlar)"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_max_sqrt_alan",
+          "alt": 95.99,
+          "ust": 96.01,
+          "kaynak": "H08 karti: max_sqrt_alan=96 px (H03: 48); varyant_imzasi dogrulamasi"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_doz_nesne_per_mosaic",
+          "alt": 0.6,
+          "ust": 1.5,
+          "kaynak": "H08 karti (e) doz kapisi [0.6,1.5] yapistirilan nesne/mosaic (H03 referansi 0.142). CPU doz_olc.py havuzu ~0.67 (4 olcum, 32331 cagri). Duman 3 ep/%10 veri: sayac ~4800 cagri."
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_yer_bulunamadi_pay",
+          "alt": 0.0,
+          "ust": 0.25,
+          "kaynak": "H08 karti (h): yer-bulunamadi/aday > %25 ise doz dogrulanmamis (H03: %1.6; CPU testi ~%3.5)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h08_boxcp_doz",
+          "alt": 0.392078,
+          "ust": 0.472078,
+          "kaynak": "eslesmis kontrol baseline_cm0 duman 0.422078 (20260930-161437_baseline_cm0_s0; ayni ayar: seed0, fraction 0.1, 3 ep, close_mosaic=0). Alt -3 puan (H03 duman kalibi: cokme/uygulama hatasi; duman tek-seed gurultusu genis), ust +5 puan (aciklanamayan sicrama alarmi; kart kirmizi bayragi +1.0 tam kosum icindir). AP_S/mAP50 kirmizi bayraklari duman icin YOK: H03 dumaninda AP_S +6.3 puan oynadi (3 ep, %10 veri gurultusu), kriter tam-kosum icindir."
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "egitim_sure_sn",
+          "alt": 1,
+          "ust": 600,
+          "kaynak": "kontrol duman 77 sn; 600 sn cok comert ust (duman zaman siniri 12 dk)"
+        }
+      ]
+    },
+    "2": {
+      "aciklama": "ON-UCUS - dogru VE beklendigi gibi mi (tam veri, 5 epoch, close_mosaic=0, seed0; tek satir). Tek seed: 'farkli_seedler_farkli' uygulanamaz.",
+      "kurallar": [
+        {
+          "tur": "sonlu"
+        },
+        {
+          "tur": "aralik",
+          "alt": 0.0,
+          "ust": 1.0,
+          "kaynak": "metrik tanimi geregi mAP orani [0,1]"
+        },
+        {
+          "tur": "min_kosum",
+          "n": 1
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "varyant_etki_sayaci",
+          "alt": 1,
+          "ust": 1000000000000.0,
+          "kaynak": "yamanin devreye girdigi olay sayisi >=1 (bit-bit baseline yakalayici); H08: yapistirilan nesne sayaci"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_p",
+          "alt": 0.9999,
+          "ust": 1.0001,
+          "kaynak": "H08 karti: p=1.0 (varyant_imzasi dogrulamasi; H03'un 0.5'i ile yanlislikla kosulmadigini kanitlar)"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_max_sqrt_alan",
+          "alt": 95.99,
+          "ust": 96.01,
+          "kaynak": "H08 karti: max_sqrt_alan=96 px (H03: 48); varyant_imzasi dogrulamasi"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_doz_nesne_per_mosaic",
+          "alt": 0.6,
+          "ust": 1.5,
+          "kaynak": "H08 karti (e) doz kapisi [0.6,1.5] yapistirilan nesne/mosaic (H03 referansi 0.142). CPU doz_olc.py havuzu ~0.67 (4 olcum, 32331 cagri). On-ucus tam veri (77950+ cagri)."
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_yer_bulunamadi_pay",
+          "alt": 0.0,
+          "ust": 0.25,
+          "kaynak": "H08 karti (h): yer-bulunamadi/aday > %25 ise doz dogrulanmamis (H03: %1.6; CPU testi ~%3.5)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h08_boxcp_doz",
+          "alt": 0.588845,
+          "ust": 0.613845,
+          "kaynak": "eslesmis kontrol baseline_cm0 on-ucus 0.603845 (20260930-163903_baseline_cm0_s0; tam veri, 5 ep, close_mosaic=0); H03 on-ucus 0.604515 (seed gurultusu ~0.4 puan). Alt = kontrol -1.5 puan (~3.7x gurultu; altina dusus = uygulama hatasi suphesi). Ust = H08 karti kirmizi bayragi: Delta map50_95 > +1.0 puan."
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "val_map50",
+          "alt": 0.0,
+          "ust": 0.826047,
+          "kaynak": "H08 karti kirmizi bayragi: Delta mAP50 > +3.0 puan -> kontrol mAP50 0.796047 + 0.03"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "val_map_small",
+          "alt": 0.0,
+          "ust": 0.252691,
+          "kaynak": "H08 karti kirmizi bayragi: AP_S > +5.0 puan -> kontrol AP_S 0.202691 + 0.05"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "egitim_sure_sn",
+          "alt": 1,
+          "ust": 900,
+          "kaynak": "kontrol on-ucus 553.6 sn; H03 on-ucus 555.8 sn; 900 sn = 1.6x (kartin tam-kosum 1.4x maliyet esigi + sabit yukleme payi)"
+        }
+      ]
+    },
+    "3": {
+      "aciklama": "TAM - seed0, 100 epoch, baseline ayarlari (close_mosaic varsayilan 10; rep-test YOK). Tek satir (seed1,2 on-eleme sonrasi sef ekler). Oldurme kurallari (on-eleme Delta<+0.0030 vs 0.62893, TUT/OLDUR/INCELE, AP75 tetikleyici) bu kapida degil, kart/tahlilci kararidir.",
+      "kurallar": [
+        {
+          "tur": "sonlu"
+        },
+        {
+          "tur": "min_kosum",
+          "n": 1
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "varyant_etki_sayaci",
+          "alt": 1,
+          "ust": 1000000000000.0,
+          "kaynak": "yamanin devreye girdigi olay sayisi >=1 (bit-bit baseline yakalayici); H08: yapistirilan nesne sayaci"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_p",
+          "alt": 0.9999,
+          "ust": 1.0001,
+          "kaynak": "H08 karti: p=1.0 (varyant_imzasi dogrulamasi; H03'un 0.5'i ile yanlislikla kosulmadigini kanitlar)"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_max_sqrt_alan",
+          "alt": 95.99,
+          "ust": 96.01,
+          "kaynak": "H08 karti: max_sqrt_alan=96 px (H03: 48); varyant_imzasi dogrulamasi"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_doz_nesne_per_mosaic",
+          "alt": 0.6,
+          "ust": 1.5,
+          "kaynak": "H08 karti (e) doz kapisi [0.6,1.5] yapistirilan nesne/mosaic (H03 referansi 0.142). CPU doz_olc.py havuzu ~0.67 (4 olcum, 32331 cagri). Tam kosumda doz<0.6 ise sonuc 'doz yetersiz' notuyla raporlanir (kart e), karar kurali yine uygulanir; bu kapi yalniz rapor."
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_yer_bulunamadi_pay",
+          "alt": 0.0,
+          "ust": 0.25,
+          "kaynak": "H08 karti (h): yer-bulunamadi/aday > %25 ise doz dogrulanmamis (H03: %1.6; CPU testi ~%3.5)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h08_boxcp_doz",
+          "alt": 0.55,
+          "ust": 0.63893,
+          "kaynak": "Alt 0.55: baseline tam-kosum kabul araligi alt siniri (mekanik saglik). Ust = baseline seed0 0.62893 + 0.010 (H08 karti: Delta map50_95 > +1.0 puan = KIRMIZI BAYRAK, TUT verilmez, INCELE)."
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "val_map50",
+          "alt": 0.0,
+          "ust": 0.84132,
+          "kaynak": "H08 karti kirmizi bayragi: Delta mAP50 > +3.0 puan -> baseline s0 mAP50 0.81132 + 0.03"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "val_map_small",
+          "alt": 0.0,
+          "ust": 0.285913,
+          "kaynak": "H08 karti kirmizi bayragi: AP_S > +5.0 puan -> baseline s0 AP_S 0.235913 + 0.05"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "egitim_sure_sn",
+          "alt": 1,
+          "ust": 14620,
+          "kaynak": "H08 karti (d): egitim_sure_sn > 14620 (baseline 10445 sn x 1.4) -> OLDUR"
+        }
+      ]
+    }
+  }
+}

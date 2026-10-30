@@ -1,0 +1,49 @@
+% F5 -- doz-yanit: copy-paste dozu (nesne/mosaic) vs Δ mAP50-95 ve Δ mAP50 (val, n=3). Veri: figures/data/f5_doz.dat, f5_ort.dat, f5_ref.dat
+% (uretici: figures/scripts/f5_doz.py <- evidence/evidence.json). Figur ici metin Turkce. xtick konumlari f5_ref.dat'tan okunur (gomulu sabit yok).
+% Not: H08 olasiligi (0.5->1.0) ve aday havuzunu (<=48 -> <=96 px) birlikte degistirir; doz ile havuz ayrilmamistir.
+\begin{figure}[!htbp]
+\centering
+\pgfplotstableset{col sep=semicolon}
+\pgfplotstableread{\figroot data/f5_ref.dat}\ffiveref
+\pgfplotstablegetelem{0}{sd5095}\of\ffiveref \edef\fSdA{\pgfplotsretval}
+\pgfplotstablegetelem{0}{sd50}\of\ffiveref \edef\fSdB{\pgfplotsretval}
+\pgfplotstablegetelem{0}{doz_lo}\of\ffiveref \edef\fDozLo{\pgfplotsretval}
+\pgfplotstablegetelem{0}{doz_h03}\of\ffiveref \edef\fDozA{\pgfplotsretval}
+\pgfplotstablegetelem{0}{doz_h08}\of\ffiveref \edef\fDozB{\pgfplotsretval}
+\pgfplotsset{
+  ffive/.style={scale only axis, width=0.80\textwidth, height=3.6cm, xmin=-0.05, xmax=0.95, xtick={0,\fDozA,\fDozB,\fDozLo},
+    xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=3}, font=\small, tick label style={font=\small}, label style={font=\small},
+    title style={font=\small, yshift=-1pt}, ymajorgrids=true, grid style={black!10}, axis line style={black!70}, clip=false},
+}
+\begin{tikzpicture}
+% ---------------- (a) Δ mAP50-95
+\begin{axis}[name=A, ffive, ymin=-0.9, ymax=1.2, ytick={-0.5,0,0.5,1}, xticklabels={}, title={(a) $\Delta$ mAP50-95, copy-paste dozuna karşı (doğrulama, 3 tohum)},
+  ylabel={$\Delta$ mAP50-95 [puan]}]
+\fill[black!13] (axis cs:-0.05,-\fSdA) rectangle (axis cs:0.95,\fSdA);
+\fill[iyiRenk!8] (axis cs:\fDozLo,-0.9) rectangle (axis cs:0.95,1.2);
+\draw[line width=1.1pt, black] (axis cs:-0.05,0) -- (axis cs:0.95,0);
+\node[font=\scriptsize, anchor=north east, align=right, inner sep=1.5pt] at (axis cs:0.95,1.2) {önceden yazılmış H08 hedefi $D\ge0.80$\\(beklenen aralık 0.8--1.2; ulaşılamadı)};
+\addplot[mark=none, dashed, line width=1.2pt, black!65, forget plot] table[x=doz, y=d5095]{\figroot data/f5_ort.dat};
+\addplot[only marks, mark=*, mark size=2.4pt, black!65, forget plot] table[x=doz, y=d5095]{\figroot data/f5_doz.dat};
+\addplot[only marks, mark=|, mark size=6pt, line width=1.6pt, black, forget plot, point meta=explicit symbolic, nodes near coords={\pgfplotspointmeta},
+  every node near coord/.append style={font=\scriptsize, anchor=south west, xshift=3pt, yshift=1pt, inner sep=1pt, fill=white}] table[x=doz, y=d5095, meta=lab5095]{\figroot data/f5_ort.dat};
+\end{axis}
+% ---------------- (b) Δ mAP50
+\begin{axis}[name=B, ffive, at={(A.south west)}, anchor=north west, yshift=-1.4cm, ymin=-0.3, ymax=1.2, ytick={0,0.5,1},
+  title={(b) $\Delta$ mAP50, copy-paste dozuna karşı (doğrulama, 3 tohum)}, ylabel={$\Delta$ mAP50 [puan]}, xlabel={Doz [mosaic başına yapıştırılan nesne]},
+  legend style={legend cell align=left, at={(0.5,-0.55)}, anchor=north, legend columns=2, font=\footnotesize, draw=none}]
+\fill[black!13] (axis cs:-0.05,-\fSdB) rectangle (axis cs:0.95,\fSdB);
+\fill[iyiRenk!8] (axis cs:\fDozLo,-0.3) rectangle (axis cs:0.95,1.2);
+\draw[line width=1.1pt, black] (axis cs:-0.05,0) -- (axis cs:0.95,0);
+\addplot[mark=none, dashed, line width=1.2pt, black!65, forget plot] table[x=doz, y=d50]{\figroot data/f5_ort.dat};
+\addplot[only marks, mark=*, mark size=2.4pt, black!65, forget plot] table[x=doz, y=d50]{\figroot data/f5_doz.dat};
+\addplot[only marks, mark=|, mark size=6pt, line width=1.6pt, black, forget plot, point meta=explicit symbolic, nodes near coords={\pgfplotspointmeta},
+  every node near coord/.append style={font=\scriptsize, anchor=south west, xshift=3pt, yshift=1pt, inner sep=1pt, fill=white}] table[x=doz, y=d50, meta=lab50]{\figroot data/f5_ort.dat};
+\addlegendimage{only marks, mark=*, mark size=2.4pt, black!65}\addlegendentry{tohum değeri (her dozda 3 tohum)}
+\addlegendimage{only marks, mark=|, mark size=6pt, line width=1.6pt, black}\addlegendentry{ortalama}
+\addlegendimage{area legend, fill=black!13, draw=none}\addlegendentry{taban model doğrulama $\pm1$ s.d. (3 tohum)}
+\addlegendimage{dashed, line width=1.2pt, black!65}\addlegendentry{ortalamaları birleştirir (uydurulmuş eğri değil)}
+\end{axis}
+\end{tikzpicture}
+\caption{Kutu-tabanlı copy-paste dozuna (mosaic başına yapıştırılan nesne) karşı doğrulama $\Delta$ mAP50-95 (a) ve $\Delta$ mAP50 (b), 3 tohum. H08 yapıştırma olasılığını ve aday havuzunu birlikte değiştirir; doz tek başına ayrıştırılmamıştır.}\label{fig:f5-doz}
+\end{figure}

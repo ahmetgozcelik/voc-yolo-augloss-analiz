@@ -1,0 +1,7 @@
+satir;kriter;goruntu;n_gt;n_kucuk;ap_base;ap_h03;ap_tta;tp_base;fp_base;fn_base;tp_h03;fp_h03;fn_h03;tp_tta;fp_tta;fn_tta;gt_siniflar
+1;TTA kazancı 1;008287;3;0;0.522;0.922;0.971;3;1;0;3;0;0;3;0;0;bottle, person x2
+2;TTA kazancı 2;003968;2;0;0.564;0.895;0.945;2;2;0;2;0;0;2;0;0;bicycle, person
+3;TTA kaybı;008711;2;0;0.895;0.613;0.248;1;0;1;1;0;1;1;2;1;car x2
+4;H03 kazancı (küçük);009782;11;1;0.568;0.796;0.772;11;1;0;11;0;0;11;3;0;bottle x3, diningtable, person x7
+5;H03 kaybı (küçük);007164;3;1;0.696;0.234;0.696;1;0;2;1;1;2;1;0;2;aeroplane, bus, car
+6;Rastgele (tohum 0);008504;10;0;0.650;0.659;0.588;10;8;0;10;9;0;10;9;0;car x10

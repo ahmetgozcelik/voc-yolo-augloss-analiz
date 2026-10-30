@@ -1,0 +1,32 @@
+% uretici: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek.test.*, ek.val.*, ek3.test.*, ek3.b2.*; elle duzenleme bir sonraki uretimde kaybolur)
+\begin{table}[!htbp]
+\centering\small\setlength{\tabcolsep}{6pt}
+\caption{KITTI önceden belirlenmiş ikincil betimsel kıyaslar: kart $-$ taban model $\Delta$ ortalama $\pm$ s.d. [puan], $n=3$ tohum-eşli; Holm yok, renk yok.}\label{tab:kitti-ikincil}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c c}
+\toprule
+\multicolumn{1}{@{}l}{} & \multicolumn{3}{c}{Test $\Delta$} & Val $\Delta$ \\
+\cmidrule(lr){2-4}
+Kart & DontCare'siz & 3 sınıf & 7 sınıf & ep11--90 eğri \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{YOLO26n}} \\
+H01 multi-scale & +0.05 $\pm$ 2.19 & +1.22 $\pm$ 1.18 & +0.08 $\pm$ 2.52 & $-$0.31 $\pm$ 0.03 \\
+H02 Inner-CIoU & $-$1.01 $\pm$ 1.98 & +1.04 $\pm$ 1.17 & $-$1.02 $\pm$ 2.29 & +0.51 $\pm$ 0.52 \\
+H03 kutu copy-paste & +0.88 $\pm$ 0.68 & +2.81 $\pm$ 0.65 & +1.07 $\pm$ 0.87 & +0.62 $\pm$ 1.02 \\
+H04 mosaic scale & $-$1.33 $\pm$ 2.19 & $-$0.97 $\pm$ 1.38 & $-$1.53 $\pm$ 2.46 & $-$0.54 $\pm$ 0.48 \\
+H05 Varifocal & +0.47 $\pm$ 1.48 & +1.28 $\pm$ 1.16 & +0.78 $\pm$ 1.73 & +1.29 $\pm$ 0.20 \\
+H06 kutu kazancı & $-$0.24 $\pm$ 0.72 & +0.56 $\pm$ 1.68 & $-$0.26 $\pm$ 0.86 & +0.33 $\pm$ 0.71 \\
+H08 yüksek doz & +0.67 $\pm$ 0.68 & +2.68 $\pm$ 1.32 & +0.73 $\pm$ 0.89 & +1.01 $\pm$ 0.83 \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{YOLO11s}} \\
+H01 multi-scale & +1.48 $\pm$ 0.39 & +0.48 $\pm$ 1.72 & +1.72 $\pm$ 0.29 & +0.59 $\pm$ 0.57 \\
+H02 Inner-CIoU & +1.13 $\pm$ 0.48 & +0.06 $\pm$ 1.75 & +1.38 $\pm$ 0.66 & $-$0.27 $\pm$ 0.55 \\
+H03 kutu copy-paste & +1.17 $\pm$ 1.00 & +0.22 $\pm$ 2.73 & +1.50 $\pm$ 1.17 & +1.01 $\pm$ 0.55 \\
+H04 mosaic scale & +1.00 $\pm$ 0.83 & $-$0.66 $\pm$ 1.86 & +0.86 $\pm$ 1.30 & $-$0.36 $\pm$ 1.36 \\
+H05 Varifocal & +2.35 $\pm$ 0.96 & +1.41 $\pm$ 2.06 & +2.73 $\pm$ 1.60 & +0.53 $\pm$ 0.37 \\
+H06 kutu kazancı & +0.45 $\pm$ 0.65 & +0.13 $\pm$ 1.31 & +0.57 $\pm$ 0.79 & $-$0.38 $\pm$ 0.29 \\
+H08 yüksek doz & +1.63 $\pm$ 2.89 & +1.30 $\pm$ 4.20 & +1.66 $\pm$ 4.04 & +1.00 $\pm$ 0.39 \\
+\bottomrule
+\addlinespace[3pt]
+\multicolumn{5}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{Test (\texttt{best.pt}): DontCare'siz mAP50-95; DontCare kurallı alt kümeler: car, pedestrian, cyclist (3 sınıf) ve person\_sitting hariç 7 sınıf. Val: eğitim eğrisinin (Ultralytics, DontCare'siz) 11.--90. epoch ortalaması. Test nesne sayısı: person\_sitting 56, tram 126, truck 119.} \\
+\end{tabularx}
+\end{table}

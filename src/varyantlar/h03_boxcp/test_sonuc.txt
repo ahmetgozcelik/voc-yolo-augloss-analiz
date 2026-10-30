@@ -1,0 +1,9 @@
+cihaz: cuda_available = False
+A  300 mosaic goruntusu; yapistirma uygulanan goruntu=55 (p=1.0), yapistirilan nesne=67 (ort 1.22/goruntu)
+A  hatalar: uzunluk=0 sinif=0 sinir-disi=0 merkez-pencere-disi=0 cakisma=0 aday-kriteri=0 | piksel/konum hizasi: dogru=65 hatali=0
+B  workers=2 batch=20: 320 goruntu, 1558 etiket (ort 4.869/goruntu)
+B  isci sayaclari: {'cagri': 300, 'uygulanan_goruntu': 45, 'yapistirilan': 54, 'aday_toplam': 67, 'yer_bulunamadi': 0, 'surec_sayisi': 2} ; pid'ler=[12828, 17196] ; ana pid=18392
+B  KONTROL (copy_paste=0, yerlesik CopyPaste baseline gibi inert): 320 goruntu, 1507 etiket (ort 4.709/goruntu) ; BoxCP/kontrol etiket orani = 1.034
+TUM H03 CPU TESTLERI GECTI {"A": {"uyg": 55, "yap": 67, "piksel_dogru": 65}, "B_top": {"cagri": 300, "uygulanan_goruntu": 45, "yapistirilan": 54, "aday_toplam": 67, "yer_bulunamadi": 0, "surec_sayisi": 2}, "B_etiket_ort": [4.86875, 4.709375]}
+TANI (workers=0, 976 goruntu, p=0.5, tam boru hatti): uygulanan goruntu 98/950 (%10.3), yapistirilan 116 (~0.12 nesne/goruntu), yer bulunamadi 3; p=1.0'da 600 mosaic'in 171'inde (%28.5) >=1 uygun aday + yerlestirme, 235 nesne.
+UCTAN UCA (CPU, 1 ep, 62 goruntu, close_mosaic=0, BOXCP_FLUSH_N=1): metrics.json varyant_etki_sayaci=5, boxcp_cagri=62 -> kos.py + vortak + rakip_kos zinciri calisiyor. NOT: epochs<=close_mosaic(10) ise mosaic/copy_paste ilk epoch'tan kapanir (sayac 0) -> duman/on-ucus satirlari close_mosaic=0 ile.

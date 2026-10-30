@@ -1,0 +1,97 @@
+{
+  "n_img": 20,
+  "cihaz": "cuda:0",
+  "U1_tek_gorunum": {
+    "n_img": 20,
+    "n_temiz": 4,
+    "n_birlesen": 16,
+    "max_fark_px_temiz": 0.0,
+    "max_dskor_temiz": 0.0,
+    "n_kutu_girdi": 664,
+    "n_kutu_cikti": 491,
+    "max_fark_ham_px_temiz": 2.0455322265625,
+    "say_esit_temiz": true
+  },
+  "U1_iou_thr_1": {
+    "max_fark_px": 2.842170943040401e-14,
+    "max_dskor": 0.0,
+    "say_esit": true,
+    "max_fark_ham_px": 35.3148193359375
+  },
+  "U1_skip_0_01": {
+    "max_dskor_temiz": 0.0,
+    "kutu_esit": true
+  },
+  "U2_ozdes_gorunumler": {
+    "max_fark_iki": 8.58306884765625e-05,
+    "max_dskor_iki": 0.0,
+    "max_fark_uc": 0.00011444091796875,
+    "max_dskor_uc": 0.0,
+    "say_esit": true
+  },
+  "U3_normalize_denormalize": {
+    "480x640": {
+      "max_fark_px": 5.684341886080802e-14,
+      "yanlis_boyut_max_fark_px": 138.72141791228364
+    },
+    "640x480": {
+      "max_fark_px": 5.684341886080802e-14,
+      "yanlis_boyut_max_fark_px": 67.56394654421615
+    },
+    "384x640": {
+      "max_fark_px": 5.684341886080802e-14,
+      "yanlis_boyut_max_fark_px": 1000000000.0
+    },
+    "640x640": {
+      "max_fark_px": 5.684341886080802e-14,
+      "yanlis_boyut_max_fark_px": 5.684341886080802e-14
+    },
+    "192x256": {
+      "max_fark_px": 1.4210854715202004e-14,
+      "yanlis_boyut_max_fark_px": 29.520405754921057
+    }
+  },
+  "U4_H07_esdegerlik": {
+    "max_fark_H07": 3.0517578125e-05,
+    "max_dskor_H07": 1.9868214962137642e-08,
+    "say_esit": true
+  },
+  "hw_uyumlu": true,
+  "hw_ornekler": [
+    [
+      448,
+      640
+    ],
+    [
+      480,
+      640
+    ],
+    [
+      512,
+      640
+    ],
+    [
+      640,
+      480
+    ],
+    [
+      640,
+      640
+    ]
+  ],
+  "dal_ort_kutu": 35.733333333333334,
+  "dal_300_kesilen_pay": 0.0,
+  "dal_tensor_disi_kutu_pay": 0.28446798849521515,
+  "wbf_seviyesi": "dal-basina NMS (conf .001, iou .7, multi_label, max_det 300) SONRASI; T1 ise ham dal birlestirme + tek NMS",
+  "gecti": {
+    "U1_temiz_kutular_ayni": true,
+    "U1_iou1_ayni": true,
+    "U1_skip_filtre": true,
+    "U2_ozdes_gorunumler_tek_ile_ayni": true,
+    "U3_roundtrip": true,
+    "U3_negatif_kontrol_duyarli": true,
+    "U4_H07_esdegerlik": true,
+    "hw_tensorle_uyumlu": true
+  },
+  "hepsi_gecti": true
+}

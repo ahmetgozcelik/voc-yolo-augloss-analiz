@@ -1,0 +1,71 @@
+{
+  "_aciklama": "ON-KAYIT (K4b TUR 1: H01 multi_scale=0.25, H02 Inner-CIoU r=0.75, H03 kutu-tabanli copy-paste). Kosumdan ONCE yazildi (kartlar H01-H03 + SIRALAMA.md'den turetildi), sonra degismez. Ana metrik val_map50_95 (voc_dev val, 1000 goruntu; test'e bakilmaz). Baseline bu kuyrukta KOSMAZ; baseline cipalari mevcut damgali kosumlardan: duman 0.4104 (20260930-065935_baseline_s0, seed0, fraction 0.1, 3 ep), on-ucus seed0 0.5867 / seed1 0.5908 (20260930-070132 / -071120; seed gurultusu ~0.4 puan), tam seed0 0.6289 (20260930-072103). ONEMLI BULGU: baseline duman ve on-ucus kosumlarinda epochs(3,5) <= close_mosaic(10) oldugundan mosaic (ve copy_paste) ILK EPOCH'TAN KAPALI (stdout.log: 'Closing dataloader mosaic' 1 kez). H03 mosaic sonrasi calisir; bu yuzden H03 duman/on-ucus satirlari '--override close_mosaic=0' ile (mosaic+boxcp acik) kosar ve KARSILASTIRMA, ayni ayarli ama boxcp'siz kontrol 'baseline_cm0' (mosaic acik, yalniz close_mosaic=0) ile yapilir; baseline_cm0 yalniz asama 1-2 kontrol satiridir, makale tablosuna girmez. H01/H02 mosaic'ten bagimsiz oldugundan standart baseline cipasiyla (mosaic kapali) karsilastirilir. Asama 3 (100 ep) close_mosaic varsayilan (son 10 ep).",
+  "metrik": "val_map50_95",
+  "yon": "max",
+  "asama": {
+    "1": {
+      "aciklama": "DUMAN - kod yolu calisiyor mu, yama devreye giriyor mu (seed0, fraction=0.1, 3 epoch; 4 satir: h01, h02, baseline_cm0 kontrol, h03)",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "aralik", "alt": 0.0, "ust": 1.0, "kaynak": "metrik tanimi geregi mAP orani [0,1]"},
+        {"tur": "kollar_farkli"},
+        {"tur": "min_kosum", "n": 4},
+        {"tur": "ikincil_aralik", "metrik": "varyant_etki_sayaci", "alt": 1, "ust": 1000000000000,
+         "kaynak": "varyant kosucusu metrics.json'a yamanin devreye girdigi olay sayisini yazar (H01: 640 disi batch; H02: yamali BboxLoss.forward cagrisi; H03: yapistirilan nesne); 0 = degisiklik devreye girmemis (bit-bit baseline) -> IHLAL"},
+        {"tur": "aralik", "varyant": "h01_multiscale25", "alt": 0.3804, "ust": 0.4604,
+         "kaynak": "baseline duman seed0 0.4104 (20260930-065935_baseline_s0; duman ayari ayni). Alt -3 puan: duman (3 ep, %10 veri) tek-seed gurultusu olculmedi, 5 ep'te ~0.4 puan; amac cokme/uygulama hatasi yakalamak, kazanc olcmek degil. Ust +5 puan: aciklanamayan sicrama (sizinti) alarmi."},
+        {"tur": "aralik", "varyant": "h02_innerciou", "alt": 0.3804, "ust": 0.4604,
+         "kaynak": "baseline duman seed0 0.4104 (ayni ayar); H02 karti (c) erken-uyari mantigi: -3 puan alti = uygulama hatasi suphesi. Ust +5 puan: aciklanamayan sicrama alarmi."},
+        {"tur": "aralik", "varyant": "baseline_cm0", "alt": 0.10, "ust": 0.50,
+         "kaynak": "KONTROL satiri (mosaic acik). Dogrudan cipa yok: mosaic-kapali baseline duman 0.4104; 2ep/%5 veri duman 0.127 (WS/runs/20260929-230007). Cok genis: yalniz cokme/sifir-ogrenme yakalar."},
+        {"tur": "yon_vs", "varyant": "h03_boxcp", "referans": "baseline_cm0", "beklenen": "+", "en_az": -0.03,
+         "kaynak": "H03 duman: matched kontrole (ayni close_mosaic=0, boxcp yok) gore 3 puandan fazla dusus = etiket/goruntu hizasi veya yapistirma hatasi suphesi (CPU testleri dogruladi; duman uctan uca teyit)"},
+        {"tur": "tavan", "varyant": "h03_boxcp", "referans": "baseline_cm0", "en_cok": 0.05,
+         "kaynak": "H03 karti 'goruldugunden iyi' esigi +0.8 puan (tam kosum); duman gurultusu genis oldugundan +5 puan alarm esigi"},
+        {"tur": "ikincil_aralik", "metrik": "egitim_sure_sn", "alt": 1, "ust": 600,
+         "kaynak": "baseline duman 82 sn; 600 sn cok comert ust (duman zaman siniri 10 dk)"}
+      ]
+    },
+    "2": {
+      "aciklama": "ON-UCUS - dogru VE beklendigi gibi mi (tam veri, 5 epoch, seed0; 4 satir: h01, h02, baseline_cm0 kontrol, h03). Tek seed: 'farkli_seedler_farkli' uygulanamaz (kapsam: sef talimati 'her varyant seed0').",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "aralik", "alt": 0.0, "ust": 1.0, "kaynak": "metrik tanimi geregi mAP orani [0,1]"},
+        {"tur": "kollar_farkli"},
+        {"tur": "min_kosum", "n": 4},
+        {"tur": "ikincil_aralik", "metrik": "varyant_etki_sayaci", "alt": 1, "ust": 1000000000000,
+         "kaynak": "yamanin devreye girdigi olay sayisi >=1 (bit-bit baseline yakalayici)"},
+        {"tur": "aralik", "varyant": "h01_multiscale25", "alt": 0.5717, "ust": 0.5967,
+         "kaynak": "baseline on-ucus seed0 0.5867 (20260930-070132_baseline_s0), seed1 0.5908: seed gurultusu ~0.4 puan. Alt = -1.5 puan (~3.7x gurultu): altina dusus = uygulama hatasi suphesi (H01 beklentisi +0.0..+0.5 puan nihai, 5 ep'te negatif olabilir ama <-1.5 degil). Ust = H01 karti 'goruldugunden iyi' esigi +1.0 puan."},
+        {"tur": "aralik", "varyant": "h02_innerciou", "alt": 0.5717, "ust": 0.5967,
+         "kaynak": "baseline on-ucus seed0 0.5867; alt -1.5 puan (H02 karti (c): epoch-5 baseline-0.03 esigi tam kosum icindir; 5 ep on-ucusta daha siki -1.5). Ust = H02 karti 'goruldugunden iyi' esigi +1.0 puan (yayinlanmis en yuksek Inner-IoU kazanci +0.74)."},
+        {"tur": "aralik", "varyant": "baseline_cm0", "alt": 0.30, "ust": 0.75,
+         "kaynak": "KONTROL satiri (mosaic acik, 5 ep). Mosaic-kapali baseline on-ucus 0.5867; mosaic acikken erken epoch'ta dusuk beklenir, dogrudan cipa yok -> genis alt 0.30. Ust 0.75 = baseline on-ucus kuyrugunun comert ust tavani (k3-baseline-v2)."},
+        {"tur": "yon_vs", "varyant": "h03_boxcp", "referans": "baseline_cm0", "beklenen": "+", "en_az": -0.015,
+         "kaynak": "matched kontrole (close_mosaic=0, boxcp yok) gore 1.5 puandan fazla dusus = uygulama hatasi suphesi (seed gurultusu ~0.4 puan)"},
+        {"tur": "tavan", "varyant": "h03_boxcp", "referans": "baseline_cm0", "en_cok": 0.008,
+         "kaynak": "H03 karti 'goruldugunden iyi' esigi: Delta val map50_95 > +0.8 puan (kutphane CopyPaste esigi)"},
+        {"tur": "ikincil_aralik", "metrik": "egitim_sure_sn", "alt": 1, "ust": 900,
+         "kaynak": "baseline on-ucus 557/551 sn; 900 sn = 1.6x (kartlarin tam-kosum maliyet oldurme esigi 1.4x; on-ucusta sabit yukleme payi nedeniyle tolerans)"}
+      ]
+    },
+    "3": {
+      "aciklama": "TAM - seed0, 100 epoch (3 satir: h01, h02, h03). Mekanik kurallar + kartlardaki 'goruldugunden iyi' (kirmizi bayrak) tavanlari. Oldurme kurallari (Delta<+0.003 vs 0.6289) bu kapida degil, kart/tahlilci kararidir.",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "kollar_farkli"},
+        {"tur": "min_kosum", "n": 3},
+        {"tur": "ikincil_aralik", "metrik": "varyant_etki_sayaci", "alt": 1, "ust": 1000000000000,
+         "kaynak": "yamanin devreye girdigi olay sayisi >=1"},
+        {"tur": "aralik", "varyant": "h01_multiscale25", "alt": 0.55, "ust": 0.6389,
+         "kaynak": "Alt 0.55: baseline tam-kosum kabul araligi alt siniri (k3-baseline-v2 asama 3; mekanik saglik). Ust = baseline seed0 0.6289 + 0.010 (H01 karti: Delta > +1.0 puan = KIRMIZI BAYRAK, TUT verilmez, INCELE)."},
+        {"tur": "aralik", "varyant": "h02_innerciou", "alt": 0.55, "ust": 0.6389,
+         "kaynak": "Alt 0.55 mekanik saglik; ust = 0.6289 + 0.010 (H02 karti: Delta > +1.0 puan KIRMIZI BAYRAK)."},
+        {"tur": "aralik", "varyant": "h03_boxcp", "alt": 0.55, "ust": 0.6369,
+         "kaynak": "Alt 0.55 mekanik saglik; ust = 0.6289 + 0.008 (H03 karti: Delta > +0.8 puan KIRMIZI BAYRAK)."},
+        {"tur": "ikincil_aralik", "metrik": "egitim_sure_sn", "alt": 1, "ust": 14620,
+         "kaynak": "H01/H03 kartlari oldurme kurali (c): egitim_sure_sn > 14620 (baseline 10445 sn x 1.4) -> maliyet nedeniyle OLDUR; H02 icin de ayni tavan (beklenen ~baseline)"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,618 @@
+% references.bib — voc-yolo11n-augloss-analiz (makale-uret Faz 3, literatur-arastirmacisi)
+% Oluşturma: 2026-10-01. Bölüm A = çekirdek (K1.5, 2026-09-29 doğrulanmış, devralındı; yalnız li_2020_gfl yükseltildi).
+% Bölüm B = Faz 3 eklemeleri (2026-10-01). Her girdinin üstünde doğrulama kaynağı yorumu.
+% Alanlar yalnız doğrulanan kaynaktan; DOĞRULANAMADI işaretli girdi YOK (bkz. "Kısmi doğrulama" notları).
+% Faz 4.5 (atif-dogrulayici, 2026-10-01): 65 künye tek geçişte denetlendi (kapsam ve istisnalar audit'te); düzeltilen alanlar: henderson_2018_drlmatters (pages 3207--3214, ACM/AAAI sayfası + PDF ilk sayfası),
+% cawley_2010_overfitting (number 70, JMLR sayfası), zhang_2018_mixup (başlıkta {mixup} koruması). Ayrıntı: notes/citation-audit.md.
+
+% ###################################################################
+% BÖLÜM A — ÇEKİRDEK (references-cekirdek.bib'den devralındı)
+% ###################################################################
+
+% ===================================================================
+% A1. RAKİP: Ultralytics YOLO11 / paket
+% ===================================================================
+
+% Doğrulama: https://docs.ultralytics.com/models/yolo11/ (resmî BibTeX; DOI "pending"), erişim 2026-09-29
+@misc{jocher_2024_yolo11,
+  author       = {Jocher, Glenn and Qiu, Jing},
+  title        = {{Ultralytics YOLO11}},
+  year         = {2024},
+  howpublished = {\url{https://github.com/ultralytics/ultralytics}},
+  note         = {Yazılım, sürüm 11.0.0, AGPL-3.0 lisansı. Erişim: 2026-09-29}
+}
+
+% Doğrulama: https://github.com/ultralytics/ultralytics/releases/tag/v8.4.165 (tag var; commit 004db34b12f65fa5a160de2b1090f6943106bd35), erişim 2026-09-29
+@misc{ultralytics_2026_v84165,
+  author       = {{Ultralytics}},
+  title        = {{ultralytics v8.4.165} (sürüm etiketi)},
+  year         = {2026},
+  howpublished = {\url{https://github.com/ultralytics/ultralytics/releases/tag/v8.4.165}},
+  note         = {Yazılım, sürüm 8.4.165, commit 004db34b12f65fa5a160de2b1090f6943106bd35. Erişim: 2026-09-29}
+}
+
+% Doğrulama: https://docs.ultralytics.com/models/yolov8/ (resmî BibTeX; DOI "pending"), erişim 2026-09-29
+@misc{jocher_2023_yolov8,
+  author       = {Jocher, Glenn and Chaurasia, Ayush and Qiu, Jing},
+  title        = {{Ultralytics YOLOv8}},
+  year         = {2023},
+  howpublished = {\url{https://github.com/ultralytics/ultralytics}},
+  note         = {Yazılım, sürüm 8.0.0, AGPL-3.0 lisansı. Erişim: 2026-09-29}
+}
+
+% Doğrulama: https://arxiv.org/abs/2410.17725 (üçüncü taraf genel bakış; Ultralytics'in resmî teknik raporu DEĞİL), erişim 2026-09-29
+@misc{khanam_2024_yolov11overview,
+  author        = {Khanam, Rahima and Hussain, Muhammad},
+  title         = {{YOLOv11}: An Overview of the Key Architectural Enhancements},
+  year          = {2024},
+  eprint        = {2410.17725},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  doi           = {10.48550/arXiv.2410.17725}
+}
+
+% ===================================================================
+% A2. REPLİKASYON ÇIPASI kaynakları (VOC07+12 -> VOC07 test)
+% ===================================================================
+
+% Doğrulama: https://arxiv.org/abs/2608.07051 + PDF Tablo 1, 7, 18, Ek H (okundu), erişim 2026-09-29. Hakemsiz ön-baskı. arXiv özet sayfası 2026-10-24'te yeniden doğrulandı (başlık, 7 yazar, v1 7 Ağustos 2026; yayın yeri alanı yok). Not: sn-mathphys-num.bst  at misc'te eprint basmaz -> görünür arXiv numarası için note eklendi.
+@misc{lin_2026_yolopeft,
+  author        = {Lin, Xu and Nie, WenJie and Peng, Jinlong and Fu, Weifu and Ma, YueXiao and Zheng, Xiawu and Liu, Yong},
+  title         = {{YOLO-PEFT}: Parameter-Efficient Fine-Tuning on {YOLO} Family},
+  year          = {2026},
+  eprint        = {2608.07051},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:2608.07051}
+}
+
+% Doğrulama: https://arxiv.org/html/2512.23273 (Tablo 1) + https://github.com/Tencent/YOLO-Master (README "CVPR2026" diyor; bildiri künyesi bu oturumda doğrulanmadı -> arXiv olarak yazıldı), erişim 2026-09-29
+@misc{lin_2025_yolomaster,
+  author        = {Lin, Xu and Peng, Jinlong and Gan, Zhenye and Zhu, Jiawen and Liu, Jun},
+  title         = {{YOLO-Master}: {MOE}-Accelerated with Specialized Transformers for Enhanced Real-time Detection},
+  year          = {2025},
+  eprint        = {2512.23273},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:2512.23273}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.3390/pr13051556 + yayıncı PDF (Tablo 2, Tablo 10 okundu), erişim 2026-09-29
+@article{zhang_2025_adlyolo,
+  author  = {Zhang, Henghui and Chen, Jinpeng and Lu, Bing-Yuh and Hu, Shaolin},
+  title   = {A Lightweight Multi-Scale Object Detection Framework for Shrimp Meat Quality Control in Food Processing},
+  journal = {Processes},
+  volume  = {13},
+  number  = {5},
+  pages   = {1556},
+  year    = {2025},
+  doi     = {10.3390/pr13051556}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.3390/info16100871 + yayıncı PDF (Tablo 2-4, 8, 9 okundu), erişim 2026-09-29. 2026-10-24: Bölüm 4.4 metni (ayna üzerinden) YOLOv8n 83.6 mAP at 0.5 / 63.5 mAP at 0.5:0.95 ve 200 epoch'u doğruladı.
+@article{elhamdouni_2025_yolov8nvoc,
+  author  = {El Hamdouni, Sohaya and Hdioud, Boutaina and El Fkihi, Sanaa},
+  title   = {Enhanced Lightweight Object Detection Model in Complex Scenes: An Improved {YOLOv8n} Approach},
+  journal = {Information},
+  volume  = {16},
+  number  = {10},
+  pages   = {871},
+  year    = {2025},
+  doi     = {10.3390/info16100871}
+}
+
+% Doğrulama: https://raw.githubusercontent.com/ultralytics/yolov5/master/data/hyps/hyp.VOC.yaml (başlık yorumları okundu), erişim 2026-09-29
+@misc{ultralytics_2026_yolov5hypvoc,
+  author       = {{Ultralytics}},
+  title        = {{YOLOv5} {VOC} hiperparametre evrimi dosyası (\texttt{hyp.VOC.yaml})},
+  year         = {2026},
+  howpublished = {\url{https://github.com/ultralytics/yolov5/blob/master/data/hyps/hyp.VOC.yaml}},
+  note         = {Yapılandırma dosyası. Erişim: 2026-09-29}
+}
+
+% ===================================================================
+% A3. VERİ SETLERİ ve DEĞERLENDİRME
+% ===================================================================
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1007/s11263-009-0275-4, erişim 2026-09-29
+@article{everingham_2010_voc,
+  author  = {Everingham, Mark and Van Gool, Luc and Williams, Christopher K. I. and Winn, John and Zisserman, Andrew},
+  title   = {The {Pascal} Visual Object Classes ({VOC}) Challenge},
+  journal = {International Journal of Computer Vision},
+  volume  = {88},
+  number  = {2},
+  pages   = {303--338},
+  year    = {2010},
+  doi     = {10.1007/s11263-009-0275-4}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1007/s11263-014-0733-5, erişim 2026-09-29
+@misc{everingham_2007_devkit,
+  author       = {Everingham, Mark and Winn, John},
+  title        = {The {PASCAL} Visual Object Classes Challenge 2007 ({VOC2007}) Development Kit},
+  year         = {2007},
+  howpublished = {\url{https://thor.robots.ox.ac.uk/pascal/VOC/voc2007/devkit_doc_07-Jun-2007.pdf}},
+  note         = {Teknik belge. Erişim: 2026-09-29}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1007/978-3-319-10602-1_48 (LNCS cilt no Crossref kaydında yok -> yazılmadı), erişim 2026-09-29
+@inproceedings{lin_2014_coco,
+  author    = {Lin, Tsung-Yi and Maire, Michael and Belongie, Serge and Hays, James and Perona, Pietro and Ramanan, Deva and Doll{\'a}r, Piotr and Zitnick, C. Lawrence},
+  title     = {Microsoft {COCO}: Common Objects in Context},
+  booktitle = {Computer Vision -- {ECCV} 2014},
+  series    = {Lecture Notes in Computer Science},
+  pages     = {740--755},
+  year      = {2014},
+  publisher = {Springer International Publishing},
+  doi       = {10.1007/978-3-319-10602-1_48}
+}
+
+% ===================================================================
+% A4. YOLO AİLESİ ve RT-DETR (ilgili çalışmalar)
+% ===================================================================
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1109/CVPR.2016.91, erişim 2026-09-29
+@inproceedings{redmon_2016_yolo,
+  author    = {Redmon, Joseph and Divvala, Santosh and Girshick, Ross and Farhadi, Ali},
+  title     = {You Only Look Once: Unified, Real-Time Object Detection},
+  booktitle = {2016 IEEE Conference on Computer Vision and Pattern Recognition ({CVPR})},
+  pages     = {779--788},
+  year      = {2016},
+  publisher = {IEEE},
+  doi       = {10.1109/CVPR.2016.91}
+}
+
+% Doğrulama: https://arxiv.org/abs/1804.02767 + PDF s.3 ("Focal loss ... dropped our mAP about 2 points"), erişim 2026-09-29
+@misc{redmon_2018_yolov3,
+  author        = {Redmon, Joseph and Farhadi, Ali},
+  title         = {{YOLOv3}: An Incremental Improvement},
+  year          = {2018},
+  eprint        = {1804.02767},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:1804.02767}
+}
+
+% Doğrulama: https://arxiv.org/abs/2004.10934, erişim 2026-09-29
+@misc{bochkovskiy_2020_yolov4,
+  author        = {Bochkovskiy, Alexey and Wang, Chien-Yao and Liao, Hong-Yuan Mark},
+  title         = {{YOLOv4}: Optimal Speed and Accuracy of Object Detection},
+  year          = {2020},
+  eprint        = {2004.10934},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:2004.10934}
+}
+
+% Doğrulama: https://arxiv.org/abs/2107.08430 + PDF Tablo 2, Tablo 5, s.3 (okundu), erişim 2026-09-29
+@misc{ge_2021_yolox,
+  author        = {Ge, Zheng and Liu, Songtao and Wang, Feng and Li, Zeming and Sun, Jian},
+  title         = {{YOLOX}: Exceeding {YOLO} Series in 2021},
+  year          = {2021},
+  eprint        = {2107.08430},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:2107.08430}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1109/CVPR52729.2023.00721, erişim 2026-09-29
+@misc{wang_2024_yolov10,
+  author        = {Wang, Ao and Chen, Hui and Liu, Lihao and Chen, Kai and Lin, Zijia and Han, Jungong and Ding, Guiguang},
+  title         = {{YOLOv10}: Real-Time End-to-End Object Detection},
+  year          = {2024},
+  eprint        = {2405.14458},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {NeurIPS 2024; arXiv:2405.14458}
+}
+
+% Doğrulama: Crossref sorgusu "DETRs Beat YOLOs on Real-time Object Detection" (DOI 10.1109/cvpr52733.2024.01605) + https://arxiv.org/abs/2304.08069 + PDF s.3 (hız protokolü), erişim 2026-09-29
+@inproceedings{ghiasi_2021_copypaste,
+  author    = {Ghiasi, Golnaz and Cui, Yin and Srinivas, Aravind and Qian, Rui and Lin, Tsung-Yi and Cubuk, Ekin D. and Le, Quoc V. and Zoph, Barret},
+  title     = {Simple {Copy-Paste} is a Strong Data Augmentation Method for Instance Segmentation},
+  booktitle = {2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition ({CVPR})},
+  pages     = {2917--2927},
+  year      = {2021},
+  publisher = {IEEE},
+  doi       = {10.1109/CVPR46437.2021.00294}
+}
+
+% Doğrulama: https://docs.ultralytics.com/yolov5/tutorials/test_time_augmentation/ , erişim 2026-09-29
+@misc{ultralytics_2026_yolov5tta,
+  author       = {{Ultralytics}},
+  title        = {Test-Time Augmentation ({TTA}) --- {YOLOv5} dokümantasyonu},
+  year         = {2026},
+  howpublished = {\url{https://docs.ultralytics.com/yolov5/tutorials/test_time_augmentation/}},
+  note         = {Çevrimiçi belge. Erişim: 2026-09-29}
+}
+
+% ===================================================================
+% A6. SON-İŞLEM (NMS / füzyon)
+% ===================================================================
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1109/ICCV.2017.593 + https://arxiv.org/abs/1704.04503, erişim 2026-09-29
+@inproceedings{bodla_2017_softnms,
+  author    = {Bodla, Navaneeth and Singh, Bharat and Chellappa, Rama and Davis, Larry S.},
+  title     = {{Soft-NMS} -- Improving Object Detection with One Line of Code},
+  booktitle = {2017 IEEE International Conference on Computer Vision ({ICCV})},
+  pages     = {5562--5570},
+  year      = {2017},
+  publisher = {IEEE},
+  doi       = {10.1109/ICCV.2017.593}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1016/j.imavis.2021.104117 + https://arxiv.org/abs/1910.13302, erişim 2026-09-29
+@article{solovyev_2021_wbf,
+  author  = {Solovyev, Roman and Wang, Weimin and Gabruseva, Tatiana},
+  title   = {Weighted Boxes Fusion: Ensembling Boxes from Different Object Detection Models},
+  journal = {Image and Vision Computing},
+  volume  = {107},
+  pages   = {104117},
+  year    = {2021},
+  doi     = {10.1016/j.imavis.2021.104117}
+}
+
+% ===================================================================
+% A7. KAYIP FONKSİYONLARI
+% ===================================================================
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1109/CVPR.2019.00075, erişim 2026-09-29
+@article{zheng_2020_diou,
+  author  = {Zheng, Zhaohui and Wang, Ping and Liu, Wei and Li, Jinze and Ye, Rongguang and Ren, Dongwei},
+  title   = {{Distance-IoU} Loss: Faster and Better Learning for Bounding Box Regression},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume  = {34},
+  number  = {07},
+  pages   = {12993--13000},
+  year    = {2020},
+  doi     = {10.1609/aaai.v34i07.6999}
+}
+
+% Doğrulama: https://arxiv.org/abs/2311.02877 (başlık, 3 yazar, v1 6 Kas 2023; yayın yeri alanı yok), erişim 2026-10-24. (Önceki yorumdaki 2205.12740 hatalı yazılmıştı; eprint alanı zaten doğruydu.)
+@misc{zhang_2023_inneriou,
+  author        = {Zhang, Hao and Xu, Cong and Zhang, Shuaijie},
+  title         = {{Inner-IoU}: More Effective Intersection over Union Loss with Auxiliary Bounding Box},
+  year          = {2023},
+  eprint        = {2311.02877},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:2311.02877}
+}
+
+% Doğrulama: https://arxiv.org/abs/2110.13389, erişim 2026-09-29
+@inproceedings{lin_2017_focal,
+  author    = {Lin, Tsung-Yi and Goyal, Priya and Girshick, Ross and He, Kaiming and Doll{\'a}r, Piotr},
+  title     = {Focal Loss for Dense Object Detection},
+  booktitle = {2017 IEEE International Conference on Computer Vision ({ICCV})},
+  pages     = {2999--3007},
+  year      = {2017},
+  publisher = {IEEE},
+  doi       = {10.1109/ICCV.2017.324}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1109/CVPR46437.2021.00841, erişim 2026-09-29
+@inproceedings{zhang_2021_varifocalnet,
+  author    = {Zhang, Haoyang and Wang, Ying and Dayoub, Feras and S{\"u}nderhauf, Niko},
+  title     = {{VarifocalNet}: An {IoU}-aware Dense Object Detector},
+  booktitle = {2021 IEEE/CVF Conference on Computer Vision and Pattern Recognition ({CVPR})},
+  pages     = {8510--8519},
+  year      = {2021},
+  publisher = {IEEE},
+  doi       = {10.1109/CVPR46437.2021.00841}
+}
+
+% Doğrulama (Faz 3'te YÜKSELTİLDİ): arXiv https://arxiv.org/abs/2006.04388 (çekirdek) + web araması 2026-10-01: NeurIPS 33:21002--21012, 2020 (proceedings.neurips.cc/paper_files/paper/2020/file/f0bda020d2470f2e74990a07a607ebd9-Paper.pdf). DOI yok.
+@inproceedings{li_2020_gfl,
+  author        = {Li, Xiang and Wang, Wenhai and Wu, Lijun and Chen, Shuo and Hu, Xiaolin and Li, Jun and Tang, Jinhui and Yang, Jian},
+  title         = {Generalized Focal Loss: Learning Qualified and Distributed Bounding Boxes for Dense Object Detection},
+  booktitle     = {Advances in Neural Information Processing Systems 33 ({NeurIPS} 2020)},
+  pages         = {21002--21012},
+  year          = {2020},
+  publisher     = {Curran Associates, Inc.},
+  url           = {https://proceedings.neurips.cc/paper_files/paper/2020/file/f0bda020d2470f2e74990a07a607ebd9-Paper.pdf},
+  eprint        = {2006.04388},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1109/ICCV48922.2021.00349, erişim 2026-09-29
+@inproceedings{feng_2021_tood,
+  author    = {Feng, Chengjian and Zhong, Yujie and Gao, Yu and Scott, Matthew R. and Huang, Weilin},
+  title     = {{TOOD}: Task-aligned One-stage Object Detection},
+  booktitle = {2021 IEEE/CVF International Conference on Computer Vision ({ICCV})},
+  pages     = {3490--3499},
+  year      = {2021},
+  publisher = {IEEE},
+  doi       = {10.1109/ICCV48922.2021.00349}
+}
+
+% ###################################################################
+% BÖLÜM B — FAZ 3 EKLEMELERİ (2026-10-01)
+% ###################################################################
+
+% ===================================================================
+% B1. Tekrarlanabilirlik / raporlama / negatif sonuç / ön-kayıt
+% ===================================================================
+
+% Doğrulama: https://www.jmlr.org/papers/v22/20-303.html (başlık/yazar/cilt/sayfa) + web araması (sayı 164), erişim 2026-10-01
+@inproceedings{bouthillier_2021_variance,
+  author    = {Bouthillier, Xavier and Delaunay, Pierre and Bronzi, Mirko and Trofimov, Assya and Nichyporuk, Brennan and Szeto, Justin and Mohammadi Sepahvand, Nazanin and Raff, Edward and Madan, Kanika and Voleti, Vikram and Ebrahimi Kahou, Samira and Michalski, Vincent and Arbel, Tal and Pal, Chris and Varoquaux, Ga{\"e}l and Vincent, Pascal},
+  title     = {Accounting for Variance in Machine Learning Benchmarks},
+  booktitle = {Proceedings of Machine Learning and Systems ({MLSys} 2021)},
+  volume    = {3},
+  pages     = {747--769},
+  year      = {2021},
+  url       = {https://proceedings.mlsys.org/paper_files/paper/2021/hash/0184b0cd3cfb185989f858a1d9f5c1eb-Abstract.html},
+  eprint    = {2103.03098},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1609/aaai.v32i1.11694 (sayfa alanı Crossref'te yok -> yazılmadı), erişim 2026-10-01
+@article{lipton_2019_troubling,
+  author  = {Lipton, Zachary C. and Steinhardt, Jacob},
+  title   = {Troubling Trends in Machine Learning Scholarship},
+  journal = {Queue},
+  volume  = {17},
+  number  = {1},
+  pages   = {45--77},
+  year    = {2019},
+  doi     = {10.1145/3317287.3328534}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1007/978-3-030-58595-2_41 + arXiv https://arxiv.org/abs/2003.08505, erişim 2026-10-01
+@inproceedings{musgrave_2020_metriclearning,
+  author    = {Musgrave, Kevin and Belongie, Serge and Lim, Ser-Nam},
+  title     = {A Metric Learning Reality Check},
+  booktitle = {Computer Vision -- {ECCV} 2020},
+  series    = {Lecture Notes in Computer Science},
+  pages     = {681--699},
+  year      = {2020},
+  publisher = {Springer International Publishing},
+  doi       = {10.1007/978-3-030-58595-2_41}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.18653/v1/D19-1224, erişim 2026-10-01
+@article{nosek_2018_preregistration,
+  author  = {Nosek, Brian A. and Ebersole, Charles R. and DeHaven, Alexander C. and Mellor, David T.},
+  title   = {The Preregistration Revolution},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume  = {115},
+  number  = {11},
+  pages   = {2600--2606},
+  year    = {2018},
+  doi     = {10.1073/pnas.1708274114}
+}
+
+% Doğrulama: https://jmlr.org/papers/v11/cawley10a.html, erişim 2026-10-01
+@article{cawley_2010_overfitting,
+  author  = {Cawley, Gavin C. and Talbot, Nicola L. C.},
+  title   = {On Over-fitting in Model Selection and Subsequent Selection Bias in Performance Evaluation},
+  journal = {Journal of Machine Learning Research},
+  volume  = {11},
+  number  = {70},
+  pages   = {2079--2107},
+  year    = {2010},
+  url     = {https://jmlr.org/papers/v11/cawley10a.html}
+}
+
+% ===================================================================
+% B2. Seed varyansı / istatistik
+% ===================================================================
+
+% Doğrulama: https://arxiv.org/abs/2109.08203 (v2 2023), erişim 2026-10-01
+@misc{picard_2021_seed,
+  author        = {Picard, David},
+  title         = {{Torch.manual\_seed(3407)} is all you need: On the influence of random seeds in deep learning architectures for computer vision},
+  year          = {2021},
+  eprint        = {2109.08203},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:2109.08203}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.18653/v1/P18-1128, erişim 2026-10-01
+@article{holm_1979_sequential,
+  author  = {Holm, Sture},
+  title   = {A Simple Sequentially Rejective Multiple Test Procedure},
+  journal = {Scandinavian Journal of Statistics},
+  volume  = {6},
+  number  = {2},
+  pages   = {65--70},
+  year    = {1979},
+  url     = {https://www.jstor.org/stable/4615733}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1214/aos/1176344552 (sayfa alanı Crossref'te yok; Project Euclid sayfası makaleyi "26 sayfa" olarak veriyor -> 1--26, cilt 7 sayı 1 Ocak 1979), erişim 2026-10-01
+@article{efron_1979_bootstrap,
+  author  = {Efron, Bradley},
+  title   = {Bootstrap Methods: Another Look at the Jackknife},
+  journal = {The Annals of Statistics},
+  volume  = {7},
+  number  = {1},
+  pages   = {1--26},
+  year    = {1979},
+  doi     = {10.1214/aos/1176344552}
+}
+
+% Kısmi doğrulama: web araması (DOI 10.1007/978-1-4899-4541-9; seri cilt 57; ISBN 9780412042317), yayıncı sayfası okunmadı, erişim 2026-10-01
+@inproceedings{dwibedi_2017_cutpaste,
+  author    = {Dwibedi, Debidatta and Misra, Ishan and Hebert, Martial},
+  title     = {Cut, Paste and Learn: Surprisingly Easy Synthesis for Instance Detection},
+  booktitle = {2017 IEEE International Conference on Computer Vision ({ICCV})},
+  pages     = {1310--1319},
+  year      = {2017},
+  publisher = {IEEE},
+  doi       = {10.1109/ICCV.2017.146}
+}
+
+% Doğrulama: arXiv https://arxiv.org/abs/1902.07296 (başlık "Augmentation for small object detection"; hakemli venue arXiv sayfasında yok -> arXiv), erişim 2026-10-01
+@misc{kisantal_2019_smallaug,
+  author        = {Kisantal, Mate and Wojna, Zbigniew and Murawski, Jakub and Naruniec, Jacek and Cho, Kyunghyun},
+  title         = {Augmentation for Small Object Detection},
+  year          = {2019},
+  eprint        = {1902.07296},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:1902.07296}
+}
+
+% Doğrulama: Crossref (başlık sorgusu) DOI 10.1007/978-3-030-58583-9_34, sayfa 566--583, erişim 2026-10-01
+@inproceedings{singh_2018_snip,
+  author    = {Singh, Bharat and Davis, Larry S.},
+  title     = {An Analysis of Scale Invariance in Object Detection --- {SNIP}},
+  booktitle = {2018 IEEE/CVF Conference on Computer Vision and Pattern Recognition ({CVPR})},
+  pages     = {3578--3587},
+  year      = {2018},
+  publisher = {IEEE},
+  doi       = {10.1109/CVPR.2018.00377}
+}
+
+% Doğrulama: arXiv https://arxiv.org/abs/1805.09300 (venue: NIPS 2018; bildiri sayfaları doğrulanmadı -> arXiv), erişim 2026-10-01
+@misc{ultralytics_2026_augdocs,
+  author       = {{Ultralytics}},
+  title        = {Data Augmentation using {Ultralytics YOLO}},
+  year         = {2026},
+  howpublished = {\url{https://docs.ultralytics.com/guides/yolo-data-augmentation/}},
+  note         = {Çevrimiçi belge. Erişim: 2026-10-01}
+}
+
+% ===================================================================
+% B4. Post-processing / TTA
+% ===================================================================
+
+% Doğrulama: Crossref (başlık sorgusu) DOI 10.1109/ICCV48922.2021.00125, sayfa 1194--1203, erişim 2026-10-01
+@inproceedings{bolya_2020_tide,
+  author    = {Bolya, Daniel and Foley, Sean and Hays, James and Hoffman, Judy},
+  title     = {{TIDE}: A General Toolbox for Identifying Object Detection Errors},
+  booktitle = {Computer Vision -- {ECCV} 2020},
+  series    = {Lecture Notes in Computer Science},
+  pages     = {558--573},
+  year      = {2020},
+  publisher = {Springer International Publishing},
+  doi       = {10.1007/978-3-030-58580-8_33}
+}
+
+% ===================================================================
+% B5. Küçük nesne tespiti / çözünürlük / ön-eğitim
+% ===================================================================
+
+% Kısmi doğrulama: Crossref https://api.crossref.org/works/10.1109/TPAMI.2023.3290594 (yazar/başlık/dergi/DOI; cilt-sayı Crossref'te yok); cilt 45, sayı 11, s.13467--13488 web araması (Kasım 2023) ile teyit, erişim 2026-10-01
+@article{cheng_2023_smallobjectsurvey,
+  author  = {Cheng, Gong and Yuan, Xiang and Yao, Xiwen and Yan, Kebing and Zeng, Qinghua and Xie, Xingxing and Han, Junwei},
+  title   = {Towards Large-Scale Small Object Detection: Survey and Benchmarks},
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume  = {45},
+  number  = {11},
+  pages   = {13467--13488},
+  year    = {2023},
+  doi     = {10.1109/TPAMI.2023.3290594}
+}
+
+% Doğrulama: https://arxiv.org/abs/2110.00476 (başlık, 3 yazar, v1 1 Ekim 2021; yayın yeri alanı yok), erişim 2026-10-24. (Önceki yorumdaki ICCV 2019 DOI'si bu makaleye ait değildi; yorum düzeltildi.)
+@misc{wightman_2021_resnetstrikesback,
+  author        = {Wightman, Ross and Touvron, Hugo and J{\'e}gou, Herv{\'e}},
+  title         = {{ResNet} Strikes Back: An Improved Training Procedure in {timm}},
+  year          = {2021},
+  eprint        = {2110.00476},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:2110.00476}
+}
+
+% Doğrulama: https://docs.ultralytics.com/guides/hyperparameter-tuning/ (genetik algoritma ile hiperparametre evrimi, mutasyon), erişim 2026-10-01
+@misc{ultralytics_2026_tunedocs,
+  author       = {{Ultralytics}},
+  title        = {{Ultralytics YOLO} Hyperparameter Tuning Guide},
+  year         = {2026},
+  howpublished = {\url{https://docs.ultralytics.com/guides/hyperparameter-tuning/}},
+  note         = {Çevrimiçi belge. Erişim: 2026-10-01}
+}
+
+% Doğrulama: Crossref https://api.crossref.org/works/10.1109/CVPR.2017.690 (başlık, yazarlar, kitap adı, sayfa 6517--6525, yıl, yayıncı), erişim 2026-10-01
+@inproceedings{redmon_2017_yolo9000,
+  author    = {Redmon, Joseph and Farhadi, Ali},
+  title     = {{YOLO9000}: Better, Faster, Stronger},
+  booktitle = {2017 IEEE Conference on Computer Vision and Pattern Recognition ({CVPR})},
+  pages     = {6517--6525},
+  year      = {2017},
+  publisher = {IEEE},
+  doi       = {10.1109/CVPR.2017.690}
+}
+
+% ###################################################################
+% BÖLÜM C — REVİZYON DELTA (2026-10-02; hakem: YOLO26 / MuSGD kaynağı)
+% Hepsi arXiv/yayıncı/resmî doküman sayfasından doğrulandı; DOĞRULANAMADI girdi yok.
+% ###################################################################
+
+% Doğrulama: https://arxiv.org/abs/2606.03748 (başlık, 6 yazar, gönderim 2026-06-02; özet "MuSGD, a hybrid Muon-SGD optimizer adapted from large language model training" der), erişim 2026-10-02. Hakemli yayın değil, arXiv ön baskı.
+@misc{jocher_2026_yolo26,
+  author        = {Jocher, Glenn and Qiu, Jing and Liu, Mengyu and Lyu, Shuai and Akyon, Fatih Cagatay and Kalfaoglu, Muhammet Esat},
+  title         = {{Ultralytics YOLO26}: Unified Real-Time End-to-End Vision Models},
+  year          = {2026},
+  eprint        = {2606.03748},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2606.03748},
+  note          = {arXiv:2606.03748}
+}
+
+% Doğrulama: https://kellerjordan.github.io/posts/muon/ (sayfa sonundaki resmî BibTeX: 7 yazar, 2024; blog, hakemsiz), erişim 2026-10-02
+@misc{jordan_2024_muon,
+  author       = {Jordan, Keller and Jin, Yuchen and Boza, Vlado and You, Jiacheng and Cesista, Franz and Newhouse, Laker and Bernstein, Jeremy},
+  title        = {Muon: An Optimizer for Hidden Layers in Neural Networks},
+  year         = {2024},
+  howpublished = {\url{https://kellerjordan.github.io/posts/muon/}},
+  note         = {Blog yazısı. Erişim: 2026-10-02}
+}
+
+% Doğrulama: https://arxiv.org/abs/2502.16982 (başlık, 28 yazar, gönderim 2025-02-24), erişim 2026-10-02. Yazarlar arXiv sırasıyla.
+@misc{ultralytics_2026_finetuneguide,
+  author       = {{Ultralytics}},
+  title        = {Fine-Tune {YOLO26} on a Custom Dataset},
+  year         = {2026},
+  howpublished = {\url{https://docs.ultralytics.com/guides/finetuning-guide}},
+  note         = {Çevrimiçi belge. Erişim: 2026-10-02}
+}
+
+% Doğrulama: https://docs.ultralytics.com/reference/optim/muon (MuSGD sınıfı: muon=0.5, sgd=0.5 varsayılan ölçekler; use_muon grubu hem Muon hem SGD güncellemesi alır), erişim 2026-10-02
+@misc{ultralytics_2026_musgddocs,
+  author       = {{Ultralytics}},
+  title        = {{MuSGD} optimizer: \texttt{ultralytics.optim.muon} API reference},
+  year         = {2026},
+  howpublished = {\url{https://docs.ultralytics.com/reference/optim/muon}},
+  note         = {Çevrimiçi belge. Erişim: 2026-10-02}
+}
+
+% bib-ekleri-tartisma.bib — Faz 5 tur-2 (tartisma.tex, ilgili_calismalar.tex); şef references.bib'e birleştirir.
+% Doğrulama: https://arxiv.org/abs/2203.16250 (başlık, 11 yazar, 30 Mart 2022 gönderim) + ar5iv tam metni, §2.2 "Efficient Task-aligned Head (ET-head)":
+% "For the learning of classification and location tasks, we choose varifocal loss (VFL) and distribution focal loss (DFL) respectively" ve TAL ataması. Erişim 2026-10-03. Hakemsiz ön-baskı (yayıncı künyesi doğrulanmadı).
+@misc{xu_2022_ppyoloe,
+  author        = {Xu, Shangliang and Wang, Xinxin and Lv, Wenyu and Chang, Qinyao and Cui, Cheng and Deng, Kaipeng and Wang, Guanzhong and Dang, Qingqing and Wei, Shengyu and Du, Yuning and Lai, Baohua},
+  title         = {{PP-YOLOE}: An evolved version of {YOLO}},
+  year          = {2022},
+  eprint        = {2203.16250},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
+  note          = {arXiv:2203.16250}
+}
+
+% Ek deney (2026-10-19). Doğrulama: https://www.cvlibs.net/publications/Geiger2012CVPR.pdf ve
+% https://mlanthology.org/cvpr/2012/geiger2012cvpr-we/ (sayfa 3354--3361, DOI 10.1109/CVPR.2012.6248074), erişim 2026-10-19
+@inproceedings{geiger_2012_kitti,
+  author    = {Geiger, Andreas and Lenz, Philip and Urtasun, Raquel},
+  title     = {Are We Ready for Autonomous Driving? {The} {KITTI} Vision Benchmark Suite},
+  booktitle = {Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+  pages     = {3354--3361},
+  year      = {2012},
+  doi       = {10.1109/CVPR.2012.6248074}
+}
+
+@inproceedings{kumar_2022_finetuning,
+  title     = {Fine-Tuning can Distort Pretrained Features and Underperform Out-of-Distribution},
+  author    = {Kumar, Ananya and Raghunathan, Aditi and Jones, Robbie and Ma, Tengyu and Liang, Percy},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2022},
+  eprint    = {2202.10054},
+  archivePrefix = {arXiv},
+  url       = {https://arxiv.org/abs/2202.10054}
+}

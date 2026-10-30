@@ -1,0 +1,8 @@
+# h08_boxcp_doz (H08, "H03b")
+Ebeveynden fark (tek cümle): H03'ün `BoxCopyPaste`'i (kutu-içi yama, çakışmasız, yeniden ölçeklemesiz, 3 px yumuşatma) baseline'a göre yüksek dozda kullanılır — `p` 0.5→1.0 ve aday havuzu `max_sqrt_alan` 48→96 px; başka her şey baseline (ve H03 mekanizması) ile aynı.
+
+Uygulama: `boxcp_doz.py` (`BoxCopyPasteDoz(h03_boxcp.boxcp.BoxCopyPaste)`, yalnız `max_sqrt_alan=96` varsayılanı; sınıf bu modülde, Windows spawn pickle için) + `kos.py` (import zamanında `ultralytics.data.augment.CopyPaste = BoxCopyPasteDoz`, `--override copy_paste=1.0` zorunlu, yoksa çıkar; sonra `vortak.calistir` -> `scripts/rakip_kos.py`). `h03_boxcp/` ve `WS/rakip/` DEĞİŞMEZ (md5 doğrulandı).
+`metrics.json` ek: `varyant_imzasi` (p=1.0, max_sqrt_alan=96), `varyant_etki_sayaci` (yapıştırılan nesne), `boxcp_cagri`, `boxcp_uygulanan_goruntu`, `boxcp_aday_toplam`, `boxcp_yer_bulunamadi`, `boxcp_surec_sayisi`, **`boxcp_doz_nesne_per_mosaic`** (doz), `boxcp_uygulanan_pay`, `boxcp_yer_bulunamadi_pay`, `boxcp_p`, `boxcp_max_sqrt_alan`.
+DİKKAT: epochs <= close_mosaic(10) ise Ultralytics mosaic+copy_paste'i ilk epoch'tan kapatır -> duman/ön-uçuşta `--override close_mosaic=0` (kontrol: `baseline_cm0`).
+Koşum: `python WS/varyantlar/h08_boxcp_doz/kos.py --seed S --epochs E [--fraction F] --imgsz 640 --batch 16 --workers 4 --override copy_paste=1.0 [--override close_mosaic=0] --run-dir {RUN_DIR} --out {RUN_DIR}/metrics.json`
+Testler (CPU, `CUDA_VISIBLE_DEVICES=-1`): `test_boxcp_doz.py` (birim + spawn workers=2; çıktı `test_sonuc.txt`; görseller `ornek_canvas_*.jpg`, `ornek_batch_*.jpg`), `doz_olc.py --n 9600 --seed S --workers 4` (büyük örneklem doz ölçümü).

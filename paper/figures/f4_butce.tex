@@ -1,0 +1,68 @@
+% F4 -- tur/butce anlatisi: (a) tur basina ve kumulatif GPU saati (+ K5 sonrasi ek seed), (b) tur basina en iyi egitim-karti Δ (n=3 ort.; bos daire: seed-0 on-eleme) + K5 test.
+% Veri: figures/data/f4_tur.dat, f4_ref.dat (uretici: figures/scripts/f4_butce.py <- evidence/evidence.json <- WS/runs/*/.done). Figur ici metin Turkce.
+% Sayisal etiketler Python'da yuvarlanir (lab_* sutunlari; point meta=explicit symbolic).
+\begin{figure}[!htbp]
+\centering
+\pgfplotstableset{col sep=semicolon}
+\pgfplotstableread{\figroot data/f4_ref.dat}\ffourref
+\pgfplotstablegetelem{0}{target}\of\ffourref \edef\fTarget{\pgfplotsretval}
+\pgfplotstablegetelem{0}{ceiling}\of\ffourref \edef\fCeil{\pgfplotsretval}
+\pgfplotstablegetelem{0}{stop_round}\of\ffourref \edef\fStop{\pgfplotsretval}
+\pgfplotstablegetelem{0}{prescreen}\of\ffourref \edef\fPre{\pgfplotsretval}
+\pgfplotsset{
+  ffour/.style={scale only axis, width=0.80\textwidth, xmin=-0.6, xmax=5.6, xtick={0,1,2,3,4,5}, font=\small, tick label style={font=\small}, label style={font=\small},
+    title style={font=\small, yshift=-1pt}, ymajorgrids=true, grid style={black!10}, axis line style={black!70}, clip=false},
+  ffour lab/.style={point meta=explicit symbolic, nodes near coords={\pgfplotspointmeta}},
+}
+\begin{tikzpicture}
+% ---------------- (a) GPU hours
+\begin{axis}[name=A, ffour, height=4.4cm, ymin=0, ymax=95, ytick={0,25,50,75}, xticklabels={},
+  title={(a) Tura göre GPU süresi: tur başına (çubuk) ve kümülatif (çizgi)}, ylabel={GPU süresi [sa]},
+  legend style={at={(0.02,0.80)}, anchor=north west, font=\footnotesize, draw=none, fill=white}]
+\addplot[ybar, area legend, bar width=16pt, fill=black!25, draw=black!65] table[x=x, y=gpu]{\figroot data/f4_tur.dat};
+\addplot[mark=*, mark size=2pt, line width=1.6pt, black!75, ffour lab, every node near coord/.append style={font=\scriptsize, anchor=south east, inner sep=1.5pt, fill=white}]
+  table[x=x, y=kum, meta=lab_kum]{\figroot data/f4_tur.dat};
+\draw[dashed, line width=1.2pt, black] (axis cs:-0.6,\fTarget) -- (axis cs:5.6,\fTarget);
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=south west] at (axis cs:-0.55,\fTarget) {planlanan bütçe 75 sa};
+\draw[dashed, line width=1pt, black!55] (axis cs:-0.6,\fCeil) -- (axis cs:5.6,\fCeil);
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=south west, text=black!70] at (axis cs:-0.55,\fCeil) {tavan 90 sa};
+\draw[dashed, line width=1.2pt, kotuRenk] (axis cs:2.5,0) -- (axis cs:2.5,\fCeil);
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=south west, text=kotuRenk, align=left] at (axis cs:2.55,7) {durma kuralı\\tetiklendi\\(R2 sonu)};
+\draw[dotted, line width=1.2pt, black!70] (axis cs:4.5,0) -- (axis cs:4.5,\fCeil);
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=north east, text=black!70, align=right] at (axis cs:4.45,\fTarget) {K5 sonrası: ek\\tohumlar (n=3)};
+\legend{Tur başına GPU süresi, kümülatif GPU süresi}
+\end{axis}
+% ---------------- (b) best delta per round
+\begin{axis}[name=B, ffour, at={(A.south west)}, anchor=north west, yshift=-1.3cm, height=4.4cm, ymin=-0.7, ymax=1.2, ytick={-0.5,0,0.5,1},
+  yticklabel style={/pgf/number format/fixed, /pgf/number format/precision=1}, xticklabels={R0,R1,R2,R3,K5,+tohum},
+  title={(b) Tur başına en iyi eğitim-zamanı kartı (doğrulama) ve kilitli test (K5)}, ylabel={$\Delta$ mAP50-95 [puan]},
+  xlabel={Tur (R0: replikasyon; K5: kilitli test, tek açılış)},
+  legend style={legend cell align=left, at={(0.5,-0.55)}, anchor=north, legend columns=2, font=\footnotesize, draw=none}]
+\draw[line width=1.1pt, black] (axis cs:-0.6,0) -- (axis cs:5.6,0);
+\draw[dashed, line width=1pt, black!75] (axis cs:-0.6,\fPre) -- (axis cs:5.6,\fPre);
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=south east] at (axis cs:5.55,\fPre) {+0.30 ön-eleme};
+\draw[dashed, line width=1.2pt, kotuRenk] (axis cs:2.5,-0.7) -- (axis cs:2.5,1.2);
+\draw[dotted, line width=1.2pt, black!70] (axis cs:4.5,-0.7) -- (axis cs:4.5,1.2);
+% best card per round, 3-seed mean (filled circle)
+\addplot[only marks, mark=*, mark size=2.6pt, black!75, forget plot, ffour lab,
+  every node near coord/.append style={font=\scriptsize, anchor=west, xshift=3pt, inner sep=1pt, fill=white}] table[x=x, y=best, meta=lab_best]{\figroot data/f4_tur.dat};
+% seed-0 pre-screen best card per round (open circle)
+\addplot[only marks, mark=o, mark size=2.6pt, line width=0.9pt, black!75, forget plot, ffour lab,
+  every node near coord/.append style={font=\scriptsize, anchor=east, xshift=-3pt, inner sep=1pt, fill=white}] table[x=x, y=s0, meta=lab_s0]{\figroot data/f4_tur.dat};
+% training-free TTA on validation (R2): pre-registered VERIFIED rule -> blue
+\addplot[only marks, mark=diamond*, mark size=3.4pt, iyiRenk, forget plot, ffour lab,
+  every node near coord/.append style={font=\scriptsize, anchor=west, xshift=3pt, inner sep=1pt, fill=white}] table[x=x, y=egitimsiz, meta=lab_tta_val]{\figroot data/f4_tur.dat};
+\addplot[only marks, mark=square*, mark size=2.6pt, black!75, forget plot, ffour lab,
+  every node near coord/.append style={font=\scriptsize, anchor=west, xshift=3pt, inner sep=1pt, fill=white}] table[x=x, y=test_h03, meta=lab_test_h03]{\figroot data/f4_tur.dat};
+% TTA on test (K5): Holm-12 p = 0.222 -> exploratory, not significant -> gray
+\addplot[only marks, mark=diamond*, mark size=3.4pt, black!55, forget plot, ffour lab,
+  every node near coord/.append style={font=\scriptsize, anchor=west, xshift=3pt, inner sep=1pt, fill=white}] table[x=x, y=test_tta, meta=lab_test_tta]{\figroot data/f4_tur.dat};
+\addlegendimage{only marks, mark=*, mark size=2.6pt, black!75}\addlegendentry{en iyi eğitim-zamanı kartı, 3 tohum ort.}
+\addlegendimage{only marks, mark=o, mark size=2.6pt, line width=0.9pt, black!75}\addlegendentry{tohum-0 ön-elemesinde en iyi kart}
+\addlegendimage{only marks, mark=diamond*, mark size=3.4pt, iyiRenk}\addlegendentry{eğitimsiz TTA, doğrulama (DOĞRULANDI kuralı)}
+\addlegendimage{only marks, mark=diamond*, mark size=3.4pt, black!55}\addlegendentry{eğitimsiz TTA, test (keşifsel)}
+\addlegendimage{only marks, mark=square*, mark size=2.6pt, black!75}\addlegendentry{test üzerinde H03 (3 tohum ort.)}
+\end{axis}
+\end{tikzpicture}
+\caption{GPU bütçesi (a); tur başına en iyi eğitim kartının taban modele göre $\Delta$ mAP50-95'i [puan] (b): dolu daire 3 tohum ort. (R2--R3'te kilit sonrası tohumlarla), boş daire tohum-0 ön-eleme; elmas TTA, kare K5 testi. Kırmızı çizgi: durma kuralı; ``+tohum'': ek tohumlar.}\label{fig:f4-butce}
+\end{figure}

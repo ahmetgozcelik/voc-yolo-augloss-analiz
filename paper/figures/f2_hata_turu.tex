@@ -1,0 +1,31 @@
+% F2 -- hata turu kirilimi (TIDE-benzeri oracle ΔAP50): (a) val, (b) test. Veri: figures/data/f2a_val.dat, f2b_test.dat
+% (uretici: figures/scripts/f2_hata_turu.py <- evidence/evidence.json). Figur ici metin Turkce.
+\begin{figure}[!htbp]
+\centering
+\pgfplotstableset{col sep=semicolon}
+\pgfplotsset{
+  ftwo/.style={scale only axis, width=0.86\textwidth, height=4.3cm, ybar, bar width=8pt, symbolic x coords={Cls,Loc,Both,Dupe,Bkg,Miss}, xtick=data,
+    enlarge x limits=0.10, ymin=0, ymax=4.6, ytick={0,1,2,3,4}, font=\small, tick label style={font=\small}, label style={font=\small},
+    title style={font=\small, yshift=-1pt}, ymajorgrids=true, grid style={black!10}, axis line style={black!70},
+    ylabel={Oracle $\Delta$AP50 [puan]}, error bars/y dir=both, error bars/y explicit,
+    error bars/error bar style={line width=0.9pt, black}, error bars/error mark options={mark size=2pt, black}},
+  fbase/.style={fill=black!65, draw=black!65}, fhthree/.style={fill=iyiRenk, draw=iyiRenk}, fhsix/.style={fill=kotuRenk, draw=kotuRenk},
+}
+\begin{tikzpicture}
+% ---------------- (a) validation
+\begin{axis}[name=A, ftwo, title={(a) Doğrulama (1000 görüntü; taban model ve H03: 3 tohum, H06: 1 tohum)},
+  legend style={at={(0.5,1.28)}, anchor=south, legend columns=3, font=\footnotesize, draw=none}, legend image code/.code={\draw[#1] (0cm,-0.1cm) rectangle (0.3cm,0.1cm);}]
+\addplot[fbase] table[x=tur, y=baseline_mean, y error plus=baseline_ep, y error minus=baseline_em]{\figroot data/f2a_val.dat};
+\addplot[fhthree] table[x=tur, y=h03_mean, y error plus=h03_ep, y error minus=h03_em]{\figroot data/f2a_val.dat};
+\addplot[fhsix] table[x=tur, y=h06_mean, y error plus=h06_ep, y error minus=h06_em]{\figroot data/f2a_val.dat};
+\legend{Taban model, H03 kutu copy-paste, H06 kutu kazancı 10}
+\end{axis}
+% ---------------- (b) test
+\begin{axis}[name=B, ftwo, at={(A.south west)}, anchor=north west, yshift=-1.6cm, title={(b) Test (4952 görüntü; taban model ve H03: 3 tohum)},
+  xlabel={Oracle ile düzeltilen hata türü}]
+\addplot[fbase] table[x=tur, y=baseline_mean, y error plus=baseline_ep, y error minus=baseline_em]{\figroot data/f2b_test.dat};
+\addplot[fhthree] table[x=tur, y=h03_mean, y error plus=h03_ep, y error minus=h03_em]{\figroot data/f2b_test.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Hata türü oracle'ı: ilgili hata düzeltilirse $\Delta$AP50 [puan] (Cls sınıf, Loc konum, Both ikisi, Dupe yinelenen, Bkg arka plan, Miss kaçırılan). Çubuk ortalama, bıyık tohum min–maks; (a) doğrulama, (b) test.}\label{fig:f2-hata-turu}
+\end{figure}

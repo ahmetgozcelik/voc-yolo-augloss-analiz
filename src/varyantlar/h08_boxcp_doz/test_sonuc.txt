@@ -1,0 +1,36 @@
+cihaz: cuda_available = False
+
+
+
+
+A  300 mosaic; uygulanan goruntu=119 (0.397), yapistirilan nesne=159 (DOZ = 0.530 nesne/mosaic; ort 1.34/uygulanan goruntu); en buyuk kaynak sqrt(alan)=89.4
+
+A  hatalar: uzunluk=0 sinif=0 sinir-disi=0 merkez-pencere-disi=0 cakisma=0 aday-kriteri=0 | piksel/konum hizasi: dogru=158 hatali=0
+
+
+
+
+B  workers=2 batch=25: 400 goruntu, 2155 etiket (ort 5.388/goruntu)
+
+B  isci sayaclari: {'cagri': 421, 'uygulanan_goruntu': 179, 'yapistirilan': 240, 'aday_toplam': 315, 'yer_bulunamadi': 6, 'surec_sayisi': 2} ; pid'ler=[23372, 6192] ; ana pid=13028
+
+B  DOZ = 0.570 nesne/mosaic ; uygulanan pay = 0.425 ; yer-bulunamadi payi = 0.019 ; kapi (0.6, 1.5)
+
+B  20-batch (n=421) DOZ KAPISI [0.6,1.5] durumu: GECMEDI (kucuk orneklem; kesin kapi doz_olc.py buyuk orneklem)
+
+
+
+
+B  KONTROL (copy_paste=0): 400 goruntu, 1963 etiket (ort 4.907/goruntu) ; H08/kontrol etiket orani = 1.098
+
+TUM H08 CPU TESTLERI GECTI {"A": {"uyg": 119, "yap": 159, "doz": 0.53, "piksel_dogru": 158, "hata": 0}, "B": {"doz": 0.5700712589073634, "cagri": 421, "t_lbl": 5.3875, "c_lbl": 4.9075}, "B_top": {"cagri": 421, "uygulanan_goruntu": 179, "yapistirilan": 240, "aday_toplam": 315, "yer_bulunamadi": 6, "surec_sayisi": 2}}
+
+
+DOZ_OLC (doz_olc.py; trainer ile ayni build_yolo_dataset+build_dataloader, copy_paste=1.0, mosaic acik; BOXCP_FLUSH_N=1 tam sayim):
+  seed0 workers=2 n=3236 cagri : doz=0.611 (uygulanan pay 0.441, yer-bulunamadi payi 0.039, aday/mosaic 0.93)
+  seed1 workers=4 n=9660 cagri : doz=0.686 (uygulanan pay 0.488, yer-bulunamadi payi 0.034, aday/mosaic 1.06)
+  seed2 workers=4 n=9725 cagri : doz=0.662 (uygulanan pay 0.473, yer-bulunamadi payi 0.035, aday/mosaic 1.02)
+  seed3 workers=4 n=9710 cagri : doz=0.686 (uygulanan pay 0.485, yer-bulunamadi payi 0.039, aday/mosaic 1.05)
+  havuz (4 olcum, 32331 cagri): doz = 21706/32331 -> ~0.67 nesne/mosaic ; KAPI [0.6,1.5] GECTI. Kucuk orneklemler (A:300 -> 0.530, B:421 -> 0.570)
+  kapinin altinda kaldi: epoch basinda/ilk batch'lerde ve kucuk n'de dusuk (karti 20-batch olcusu harfiyen GECMEDI; buyuk orneklem GECTI).
+  Karttaki beklenen 0.8-1.2 araligina ULASILMADI (olculen ~0.67 ; uygulanan mosaic payi ~%47, kartin tahmini %65-75). H03 0.142'ye gore ~4.7x.

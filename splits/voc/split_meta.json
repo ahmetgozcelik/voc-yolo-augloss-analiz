@@ -1,0 +1,43 @@
+{
+  "seed": 0,
+  "method": "random.Random(0); rng.sample(sorted(VOC2007 trainval), n07) sonra rng.sample(sorted(VOC2012 trainval), n12); kayıt sıralaması (year,id,relpath)",
+  "val_size": 1000,
+  "val_strata": {
+    "VOC2007": 303,
+    "VOC2012": 697
+  },
+  "pool": {
+    "VOC2007_trainval": 5011,
+    "VOC2012_trainval": 11540,
+    "total": 16551
+  },
+  "ratio_pool_07": 0.3028,
+  "test": "VOC2007 test (resmî), KİLİTLİ",
+  "removed_for_leakage": [],
+  "lists": {
+    "train": {
+      "n_images": 15551,
+      "n_voc2007": 4708,
+      "n_voc2012": 10843,
+      "file": "data/splits/train.txt",
+      "sha256_file": "fdcd6dde4b8f9a08e48464d6728e19aa01fd3599743742837a2272b15d6d2fe0",
+      "sha256_canonical_ids": "640e821a5b3758478462b271b21707f754c3b010ba6d3e4d8858e437691ceb76"
+    },
+    "val": {
+      "n_images": 1000,
+      "n_voc2007": 303,
+      "n_voc2012": 697,
+      "file": "data/splits/val.txt",
+      "sha256_file": "558db2f0efb443b62702ccb8e961643227d134429118159b3cdfaf7970de111e",
+      "sha256_canonical_ids": "dda7a378f496d2a1bb79e6da003990df516cda9bd27d5c37240c2a80497fbd0e"
+    },
+    "test": {
+      "n_images": 4952,
+      "n_voc2007": 4952,
+      "n_voc2012": 0,
+      "file": "data/splits/test.txt",
+      "sha256_file": "a10ef0a3f9f1029768d918f9ef5c4093108032dca041e413e3e789851a8efeb0",
+      "sha256_canonical_ids": "467ea94646a8610a84101de35bf819924fda90ab88c5131a2ae87a2c25a19f4c"
+    }
+  }
+}

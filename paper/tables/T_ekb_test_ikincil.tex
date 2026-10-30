@@ -1,0 +1,26 @@
+% uretici: evidence/scripts/build_tables.py <- evidence/evidence.json (elle duzenleme bir sonraki uretimde kaybolur)
+\begin{table}[!htbp]
+\centering\small\setlength{\tabcolsep}{3pt}
+\caption{VOC ikincil ölçütler: taban modele göre tohum-eşli $\Delta$ [puan], n=3. $p$: çift yönlü eşli $t$; Holm-12: 12 testlik aile.}\label{tab:ekb-test-ikincil}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X l c c c}
+\toprule
+Karşılaştırma & Metrik & $\Delta$ ort.$\pm$s.d. & $p$ & Holm-12 $p$ \\
+\midrule
+H03 kutu copy-paste (test) & mAP50 & $-$0.02 $\pm$ 0.21 & 0.883 & 1.000 \\
+ & mAP75 & $-$0.11 $\pm$ 0.13 & 0.268 & 1.000 \\
+ & AP$_S$ & +0.81 $\pm$ 2.55 & 0.639 & 1.000 \\
+ & AP$_M$ & +0.48 $\pm$ 0.14 & 0.027$^\dagger$ & 0.222 \\
+ & AP$_L$ & $-$0.23 $\pm$ 0.09 & 0.048$^\dagger$ & 0.333 \\
+\midrule
+Taban model + TTA (test) & mAP50 & +0.10 $\pm$ 0.27 & 0.579 & 1.000 \\
+ & mAP75 & +1.12 $\pm$ 0.30 & 0.023$^\dagger$ & 0.222 \\
+ & AP$_S$ & $-$0.48 $\pm$ 0.82 & 0.416 & 1.000 \\
+ & AP$_M$ & $-$1.07 $\pm$ 0.18 & 0.009$^\dagger$ & 0.112 \\
+ & AP$_L$ & +1.50 $\pm$ 0.36 & 0.019$^\dagger$ & 0.210 \\
+\midrule
+H03 (doğrulama) & mAP50 & +0.74 $\pm$ 0.16 & 0.015 & -- \\
+\bottomrule
+\addlinespace[3pt]
+\multicolumn{5}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{mAP50-95 satırları: Tablo~\ref{tab:voc-ana}. Holm-12: K5 ailesi (H03, TTA $\times$ 6 metrik; H03 mAP50-95 dahil, konservatif); en küçüğü 0.112, renk yok. $^\dagger$: düzeltmesiz $p<0.05$, Holm sonrası anlamlı değil.} \\
+\end{tabularx}
+\end{table}

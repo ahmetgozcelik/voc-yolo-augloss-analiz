@@ -1,0 +1,345 @@
+{
+ "acilis": "2026-10-22T12:02:15",
+ "on_kayit_sha256": "1c0d2a228e833dd127ecc5ea7c261d7b4070cf8db83d16df3f5120e8302b9230",
+ "dondurma_sha256": "bdfbeb0d6d4aaf6c7758647d1410d9b932b5bfee97aa98deda5621488293c9e0",
+ "kosum": 48,
+ "koşulmadı": [],
+ "plan": [
+  {
+   "run_id": "20261019-124541_ek_yolo26n_baseline_s0",
+   "varyant": "ek_yolo26n_baseline",
+   "seed": "0",
+   "best_sha256": "37bfde0d2f3fda3a0be80883800f8bdc121d75b0994c4c08adc7844f20e01832",
+   "last_sha256": "e7c1331d5fc09bc2401498017865ee51cde50eb0b85ee3cde806b8f510b978c0"
+  },
+  {
+   "run_id": "20261019-135659_ek_yolo26n_h01_multiscale25_s0",
+   "varyant": "ek_yolo26n_h01_multiscale25",
+   "seed": "0",
+   "best_sha256": "b7da38d0a76c4921bf495c0033d7bb04ab804c2fa325cb9584fb9892fbee6856",
+   "last_sha256": "11820f11fe3943648238d257b6a4953446cc9e1388c245fbad73a3568fa4e951"
+  },
+  {
+   "run_id": "20261019-151600_ek_yolo26n_h02_innerciou_s0",
+   "varyant": "ek_yolo26n_h02_innerciou",
+   "seed": "0",
+   "best_sha256": "3209aea4fca23696e16695742946db3c29eb8a1eb69a6e0b64a4cf45b3c44695",
+   "last_sha256": "5b16eb92d88f293e685f6eb3eb71a2909792529546cc70f454356a35251830f0"
+  },
+  {
+   "run_id": "20261019-162906_ek_yolo26n_h03_boxcp_s0",
+   "varyant": "ek_yolo26n_h03_boxcp",
+   "seed": "0",
+   "best_sha256": "d9c224cb99c42662234be21dd93cd8a73798dc2b044949303be6d1faf18e6f62",
+   "last_sha256": "f805c168b5fabc8c1e993ecf8e79b8e425bcdbbe18bd697b36f157f43c1da25c"
+  },
+  {
+   "run_id": "20261019-174105_ek_yolo26n_h04_scale25_s0",
+   "varyant": "ek_yolo26n_h04_scale25",
+   "seed": "0",
+   "best_sha256": "9800fffc775bac5171c8214f77277cfa7e17f98d84ead73755d25d408f9c16da",
+   "last_sha256": "c6c56bea301b71bd5fbe5c7424b01bef3a8ff172dc9161a04f86a460a19f089c"
+  },
+  {
+   "run_id": "20261019-185159_ek_yolo26n_h05_vfl_s0",
+   "varyant": "ek_yolo26n_h05_vfl",
+   "seed": "0",
+   "best_sha256": "a1c19905a7cc219285e85d3dce10f0230d6843ba7307f9f17a0529e29078c7b3",
+   "last_sha256": "f38c67620b9848487c5ffec5d915a89ffb710d4e46f31dd481e8a4eba6bbfbfd"
+  },
+  {
+   "run_id": "20261019-200757_ek_yolo26n_h06_box10_s0",
+   "varyant": "ek_yolo26n_h06_box10",
+   "seed": "0",
+   "best_sha256": "88e18672715c41da3734b48adca765dc3f386a502a3d39c6791bef5680e16ad7",
+   "last_sha256": "4d0301e3a4f7dd9b999bc27459474daafebe8af6d20a7cbac7dcfac2fc229328"
+  },
+  {
+   "run_id": "20261019-211843_ek_yolo26n_h08_boxcp_doz_s0",
+   "varyant": "ek_yolo26n_h08_boxcp_doz",
+   "seed": "0",
+   "best_sha256": "b7f982cf0add618978d7b923241cc82023825e59d893d0dca821329128296b3f",
+   "last_sha256": "6232aefd23f622e681c9d9216010ceb432e60c5b1d8bbc2cd7d68b51935b5182"
+  },
+  {
+   "run_id": "20261019-223018_ek_yolo26n_baseline_s1",
+   "varyant": "ek_yolo26n_baseline",
+   "seed": "1",
+   "best_sha256": "f6ab9a9b125c2d14a77b0cc136fad0bc7617f0274e65f210ff9f1e3530461455",
+   "last_sha256": "04c366315ad9dc65cb7c2592d3629cf6a83ed6d0e31f6572c4d4ddddc693338e"
+  },
+  {
+   "run_id": "20261019-234118_ek_yolo26n_h01_multiscale25_s1",
+   "varyant": "ek_yolo26n_h01_multiscale25",
+   "seed": "1",
+   "best_sha256": "4494d62a646402eca9c2cfb300e7d2a7f71f46762c5ee8b882ccb198f738307a",
+   "last_sha256": "85c9e55c6bd9297925efeb2ed853495470e388b964457ff260f1606122048198"
+  },
+  {
+   "run_id": "20261020-005939_ek_yolo26n_h02_innerciou_s1",
+   "varyant": "ek_yolo26n_h02_innerciou",
+   "seed": "1",
+   "best_sha256": "7dab5bd5d478f65e2914c7d5ba1f671152b7fe2d42659d38c810fe3edc5c3070",
+   "last_sha256": "d30979319c899415c835f5ff6c8a4c34fb62440e9d3a9abffa778051b0897b35"
+  },
+  {
+   "run_id": "20261020-021248_ek_yolo26n_h03_boxcp_s1",
+   "varyant": "ek_yolo26n_h03_boxcp",
+   "seed": "1",
+   "best_sha256": "99c31e06711204bdee990ee596a107f683e5747166be42cfb1012a324a6c5f84",
+   "last_sha256": "691a1c0a00263c2e65809b8daaaed94ce4242c7a485196cf010b8f60aea51c58"
+  },
+  {
+   "run_id": "20261020-032440_ek_yolo26n_h04_scale25_s1",
+   "varyant": "ek_yolo26n_h04_scale25",
+   "seed": "1",
+   "best_sha256": "ea1b8b832ecf839ba840663b338d445a58f9c1d594b506dba8e6e61a0d63ae6d",
+   "last_sha256": "e0f7a1610a6c71894d01860de8dcda1f4969711f236ee9c75a05a5d03f9f0332"
+  },
+  {
+   "run_id": "20261020-043549_ek_yolo26n_h05_vfl_s1",
+   "varyant": "ek_yolo26n_h05_vfl",
+   "seed": "1",
+   "best_sha256": "53ef611c6d99f24540dbfdef49c05d1fcd780b3c3e6e6882c6becfd67fef4adc",
+   "last_sha256": "d4a6f60650067df3ce3cfbab1e430ded1db26fd18efe521a1b4a371a0c2b5d0c"
+  },
+  {
+   "run_id": "20261020-055147_ek_yolo26n_h06_box10_s1",
+   "varyant": "ek_yolo26n_h06_box10",
+   "seed": "1",
+   "best_sha256": "9ff82b3d67bd80a549af4eb95429cb2d66bcc8c7555d110ac94f71deaa1c2fef",
+   "last_sha256": "94417a431d74f477ae5eb1b003b4417f982f46e628ce81f6ecfc189d7022a89b"
+  },
+  {
+   "run_id": "20261020-070258_ek_yolo26n_h08_boxcp_doz_s1",
+   "varyant": "ek_yolo26n_h08_boxcp_doz",
+   "seed": "1",
+   "best_sha256": "b3e1c7fad3df3748bbdf33fa7ea71f7fc6106a1c8c1387efd47d660988f394d8",
+   "last_sha256": "69bdf644875f572944efccfe4730ca7d594e58689c6f38e2b2f38b013f890e4e"
+  },
+  {
+   "run_id": "20261020-081456_ek_yolo26n_baseline_s2",
+   "varyant": "ek_yolo26n_baseline",
+   "seed": "2",
+   "best_sha256": "ed8e61d3ed25b9cf76a8e0df8f8572a19fa7fa208f431c53689e0c3a6969032a",
+   "last_sha256": "3b43406a97f3719117e96e2264b7a791f76ab43b9eed1eda879e5ecad04df2aa"
+  },
+  {
+   "run_id": "20261020-092543_ek_yolo26n_h01_multiscale25_s2",
+   "varyant": "ek_yolo26n_h01_multiscale25",
+   "seed": "2",
+   "best_sha256": "b1de5e2ac91cbcc98d2d82209d35c00691c2d195be5202c69882de20d4009d3c",
+   "last_sha256": "80d0a7029c32d8c0f74a768266c23ebaa10fbe0957d03438a52357f846b28a4e"
+  },
+  {
+   "run_id": "20261020-104357_ek_yolo26n_h02_innerciou_s2",
+   "varyant": "ek_yolo26n_h02_innerciou",
+   "seed": "2",
+   "best_sha256": "13c5d1d5c7191e0c58ebada90a806a5be96da3c6232aa3c5b5c37ea0fc6b0d92",
+   "last_sha256": "2f951462a915c4e8a7d36e8067507f67399a15f36eb124bb8ba80d2aab0d7a05"
+  },
+  {
+   "run_id": "20261020-115655_ek_yolo26n_h03_boxcp_s2",
+   "varyant": "ek_yolo26n_h03_boxcp",
+   "seed": "2",
+   "best_sha256": "a6f9b7957e3fd506a627a6b99ebe360ea30e0c9c4f84f7e382519374f0c4c919",
+   "last_sha256": "e18eaa392bd0a04e1430f1b17075d191d979dacfd9715dd2d1b69a97a9ed0a43"
+  },
+  {
+   "run_id": "20261020-130849_ek_yolo26n_h04_scale25_s2",
+   "varyant": "ek_yolo26n_h04_scale25",
+   "seed": "2",
+   "best_sha256": "5f3428ff8bac0c6dd7e3f864ae7d1bbc7f372e8f6c0cb53d97e2bd7834b145c0",
+   "last_sha256": "5c8a5c0e2be9399300ce34f013f9d79b4a8bd3e112c644cabd07a8f097c5ef98"
+  },
+  {
+   "run_id": "20261020-141941_ek_yolo26n_h05_vfl_s2",
+   "varyant": "ek_yolo26n_h05_vfl",
+   "seed": "2",
+   "best_sha256": "852dd8230bc5ab372626c40ca0c43661b53359e500aae2d9f68de137488a626a",
+   "last_sha256": "5c7bb4727a808009f18cd9c7c997611306341aeb405939e776f59007f17c2adb"
+  },
+  {
+   "run_id": "20261020-153532_ek_yolo26n_h06_box10_s2",
+   "varyant": "ek_yolo26n_h06_box10",
+   "seed": "2",
+   "best_sha256": "57479b5b1950493c15abbb148f31248fcfdde9bf5ab393810333acc39e14483d",
+   "last_sha256": "16cfd65afa69d4418dfdc0961c769ae525178951939002936237eb057ca42d12"
+  },
+  {
+   "run_id": "20261020-164626_ek_yolo26n_h08_boxcp_doz_s2",
+   "varyant": "ek_yolo26n_h08_boxcp_doz",
+   "seed": "2",
+   "best_sha256": "c11aeb672d661f6d48860911d26bc66b15f37a8951acbc280946c641c2eb25ca",
+   "last_sha256": "80f34c2702bf039146516a0d5b8d3885ea4f4ec16dfd577eaf5a67ff433c3120"
+  },
+  {
+   "run_id": "20261020-175846_ek_yolo11s_baseline_s0",
+   "varyant": "ek_yolo11s_baseline",
+   "seed": "0",
+   "best_sha256": "bb6f23ec11831d25b2855be83c33ffb16b6450591045888d3f82f14a5112edeb",
+   "last_sha256": "0a3d798a2838f08c2ceeed56cbe3e351f6d946ae6171e102e840a76596494382"
+  },
+  {
+   "run_id": "20261020-194011_ek_yolo11s_h01_multiscale25_s0",
+   "varyant": "ek_yolo11s_h01_multiscale25",
+   "seed": "0",
+   "best_sha256": "951678327eb2cd3fe246b7b8668237530c415c4cb8739b92159a356933874a00",
+   "last_sha256": "ad9b76f596130d1425413cf6f874223d4e640bfb8d16e5436af7702d41693554"
+  },
+  {
+   "run_id": "20261020-213029_ek_yolo11s_h02_innerciou_s0",
+   "varyant": "ek_yolo11s_h02_innerciou",
+   "seed": "0",
+   "best_sha256": "1cf6f60f10d9dfcaee690f921e045da4f924e4b7f6fd377943192447442cf0b8",
+   "last_sha256": "17ccbf9f0642078b70b9de2dfe2a44e3e24304d47521fbd670f59e4ff67969bf"
+  },
+  {
+   "run_id": "20261020-231250_ek_yolo11s_h03_boxcp_s0",
+   "varyant": "ek_yolo11s_h03_boxcp",
+   "seed": "0",
+   "best_sha256": "b3244f02e0934be2c04bccbb71e50717be70d61807dad663a1fa29aff74be202",
+   "last_sha256": "172e36e0b2d9ffb411e124f0fc148306d0028683e2f96a65db3655ee6504ac08"
+  },
+  {
+   "run_id": "20261021-005515_ek_yolo11s_h04_scale25_s0",
+   "varyant": "ek_yolo11s_h04_scale25",
+   "seed": "0",
+   "best_sha256": "7011e1d44c1bf57833ed14489c3daf8731c6e0a620a9d5e4f8a44a69131eaedd",
+   "last_sha256": "a824a1a6e7abb0e56c6c9ebeaf70152f677f2f49b27d26b4495843231cc8090d"
+  },
+  {
+   "run_id": "20261021-023633_ek_yolo11s_h05_vfl_s0",
+   "varyant": "ek_yolo11s_h05_vfl",
+   "seed": "0",
+   "best_sha256": "48b05557bb786c8ac44081920f12fc7b4c91948ef0a4ba4021c821badfb54109",
+   "last_sha256": "db6283bade1e01f0c2ce877ef059fc82c64f4e1494a6a5f61a5ade994cbcda61"
+  },
+  {
+   "run_id": "20261021-042252_ek_yolo11s_h06_box10_s0",
+   "varyant": "ek_yolo11s_h06_box10",
+   "seed": "0",
+   "best_sha256": "db02eeed2b8f5555607f6367cb11bebbfa31207aa98305a520070c22a198964a",
+   "last_sha256": "6813324e6137bd9603d5d115288259d8d78efb47d6bdb88bec995a429415fcf7"
+  },
+  {
+   "run_id": "20261021-060412_ek_yolo11s_h08_boxcp_doz_s0",
+   "varyant": "ek_yolo11s_h08_boxcp_doz",
+   "seed": "0",
+   "best_sha256": "5fce9617070a5ac39d9f660bb5941a123c8c3b5402abe0f5b38b5bc3a2887d10",
+   "last_sha256": "a84b3fed275d4ce1f935b1d8d468e3c7d368285d88456540dc48878f10370ef3"
+  },
+  {
+   "run_id": "20261021-074616_ek_yolo11s_baseline_s1",
+   "varyant": "ek_yolo11s_baseline",
+   "seed": "1",
+   "best_sha256": "b3367801f2f70e02a252b70254731a13607b30c32ddc62b2f10c9680818b37a2",
+   "last_sha256": "022d4577efb444ec091b14af4d41b8880c1812873b518c5d38de807715864d2e"
+  },
+  {
+   "run_id": "20261021-092728_ek_yolo11s_h01_multiscale25_s1",
+   "varyant": "ek_yolo11s_h01_multiscale25",
+   "seed": "1",
+   "best_sha256": "db999c7bf8ad8dfeced41ba81bd33680bd8641919d4db4005fa07ee8ab9836b3",
+   "last_sha256": "6ad28e92b541ee8046ac9179eba4e41df4be5763cde15c3a1b5f1d8753c2878f"
+  },
+  {
+   "run_id": "20261021-111758_ek_yolo11s_h02_innerciou_s1",
+   "varyant": "ek_yolo11s_h02_innerciou",
+   "seed": "1",
+   "best_sha256": "5b393fea0a337e1294285f7798a2c45939ae4dfb6795085e6bff1a4f53a767dc",
+   "last_sha256": "ce9769599cf0e7f6777073f25c036c330c859367522f35d385065269e5944bdf"
+  },
+  {
+   "run_id": "20261021-130023_ek_yolo11s_h03_boxcp_s1",
+   "varyant": "ek_yolo11s_h03_boxcp",
+   "seed": "1",
+   "best_sha256": "c1e510565a7c865e37d6e73c8a3bfa68713c3cdb065badbd6e28cefbe6a67314",
+   "last_sha256": "553bbd6578c675dad08b90ee092b0717b38163279426558dda8c95f9ab05569f"
+  },
+  {
+   "run_id": "20261021-144211_ek_yolo11s_h04_scale25_s1",
+   "varyant": "ek_yolo11s_h04_scale25",
+   "seed": "1",
+   "best_sha256": "f6bf9a2a07becb0bded49ad84a2c7754edf669bab191393f017d319d62880cb0",
+   "last_sha256": "91dec55f820b2cd67aa6e68a58cc8da579bf1084ff74424770c3ebf8e172a567"
+  },
+  {
+   "run_id": "20261021-162330_ek_yolo11s_h05_vfl_s1",
+   "varyant": "ek_yolo11s_h05_vfl",
+   "seed": "1",
+   "best_sha256": "51c5a491b80592558647f6155673523617d09359a15cbd7b4488a4dc642c8e61",
+   "last_sha256": "a4a055b33f4c5f744d2ab6a11751f85049f7f69e85ff704d2b94c5354edaf3a8"
+  },
+  {
+   "run_id": "20261021-180933_ek_yolo11s_h06_box10_s1",
+   "varyant": "ek_yolo11s_h06_box10",
+   "seed": "1",
+   "best_sha256": "c1644f14b9c7803cf6f9de3927d6e1190c8616edb2764cd1de784d601b3439fe",
+   "last_sha256": "80708e13b196eea120a3e44e8a0326a07ea6488782c863d589483d08c42296b7"
+  },
+  {
+   "run_id": "20261021-195120_ek_yolo11s_h08_boxcp_doz_s1",
+   "varyant": "ek_yolo11s_h08_boxcp_doz",
+   "seed": "1",
+   "best_sha256": "bb7778df06003298c16a154d3ac3eebad4b094456bba8ed46dae48de62966671",
+   "last_sha256": "328e90d4c155a46e498d1542e7532d747a3846a132d875042a856db7e9a11e8e"
+  },
+  {
+   "run_id": "20261021-213336_ek_yolo11s_baseline_s2",
+   "varyant": "ek_yolo11s_baseline",
+   "seed": "2",
+   "best_sha256": "d78d714a510ca297203119abe0cad893b408c656b0749f90c4f6168f20aeeb7a",
+   "last_sha256": "1a8b899fe8161f42f4229e1215b021b276d5d47f9d7acf2ba4704e696c692342"
+  },
+  {
+   "run_id": "20261021-231507_ek_yolo11s_h01_multiscale25_s2",
+   "varyant": "ek_yolo11s_h01_multiscale25",
+   "seed": "2",
+   "best_sha256": "b8ac614bd68bdb66d7f3d1aec5e6f71532cf4eaa2258e51847634d75adaa9761",
+   "last_sha256": "dabb26890ec03779156ef43ac1c72cbb2b4b42e4ddf7928c807e7c9f158351a4"
+  },
+  {
+   "run_id": "20261022-010543_ek_yolo11s_h02_innerciou_s2",
+   "varyant": "ek_yolo11s_h02_innerciou",
+   "seed": "2",
+   "best_sha256": "375ed53918cdf993f8dda9691c285d77c92de5b04cadc541e9c2012044e6b4d8",
+   "last_sha256": "4c3e74b994ecd2586db39d2fc8a624f8be8ed472d95473a08879c5be107d4c95"
+  },
+  {
+   "run_id": "20261022-024812_ek_yolo11s_h03_boxcp_s2",
+   "varyant": "ek_yolo11s_h03_boxcp",
+   "seed": "2",
+   "best_sha256": "a674e5bfbc92a1587c37c0780cfc0c09a64a3b0ccb6a7de8c12cc5ef8cd7e1ed",
+   "last_sha256": "cbb6f8d80498b18c336b7601504a3564c9fc0a249a59f7bb933f7f25af274c24"
+  },
+  {
+   "run_id": "20261022-043038_ek_yolo11s_h04_scale25_s2",
+   "varyant": "ek_yolo11s_h04_scale25",
+   "seed": "2",
+   "best_sha256": "d27abe14876c493c209d2b43b38154a23a3dd039b9e709824b7bf5eef3290d6d",
+   "last_sha256": "54fb89e8d61edeb7cace95dc15d20ddc8aa3ee87cdd05b76f925e5d1f07f41b5"
+  },
+  {
+   "run_id": "20261022-061202_ek_yolo11s_h05_vfl_s2",
+   "varyant": "ek_yolo11s_h05_vfl",
+   "seed": "2",
+   "best_sha256": "c94b6b14a194930ce2f501ccfa6b77831ecea1a6996e0ebd34313235eda1d676",
+   "last_sha256": "2772e1934e8ee9b83aee14a376f1c93aef73131573a4822b6fc0eac68824254c"
+  },
+  {
+   "run_id": "20261022-075828_ek_yolo11s_h06_box10_s2",
+   "varyant": "ek_yolo11s_h06_box10",
+   "seed": "2",
+   "best_sha256": "5740a9b190401156d82babf1a5197bd02a247ca4c606e24a1b35093fe09eac6d",
+   "last_sha256": "d81ab8e53b9a5251670ed8f4c6e35b9ef98a37da15d5fd65f7f72b23b6ab2c94"
+  },
+  {
+   "run_id": "20261022-093952_ek_yolo11s_h08_boxcp_doz_s2",
+   "varyant": "ek_yolo11s_h08_boxcp_doz",
+   "seed": "2",
+   "best_sha256": "6244aaf76e430f4f8a7f7ce20b5d489c258c720d0951c33378355ccdd97fb0c5",
+   "last_sha256": "803383e3e404f3cd98b899fd307a2e27e267017a7f7806fb38a76a1d098f3f0d"
+  }
+ ]
+}

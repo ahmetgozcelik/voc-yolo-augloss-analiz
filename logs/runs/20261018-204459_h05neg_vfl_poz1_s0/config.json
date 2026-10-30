@@ -1,0 +1,44 @@
+{
+  "run_id": "20261018-204459_h05neg_vfl_poz1_s0",
+  "varyant": "h05neg_vfl_poz1",
+  "seed": "0",
+  "etiket": "EK H05-neg YOLO11n×VOC α=0.75 γ=2 poz=1 s0 (val-only; VOC test AÇILMAZ)",
+  "ebeveyn": null,
+  "hipotez": "H05-neg",
+  "kuyruk": "ek-h05pos",
+  "asama": 3,
+  "kural": {
+    "nan_kes": true,
+    "min_adim": 20,
+    "alt_sinir": {
+      "val_map50_95": 0.02
+    },
+    "sabit_sn": 1200
+  },
+  "komut": [
+    "<WS>/env/.venv/Scripts/python.exe",
+    "varyantlar/h05_vfl/kos.py",
+    "--vfl-poz",
+    "1",
+    "--seed",
+    "0",
+    "--epochs",
+    "100",
+    "--fraction",
+    "1.0",
+    "--imgsz",
+    "640",
+    "--batch",
+    "16",
+    "--workers",
+    "4",
+    "--run-dir",
+    "<WS>\\runs\\20261018-204459_h05neg_vfl_poz1_s0",
+    "--out",
+    "<WS>\\runs\\20261018-204459_h05neg_vfl_poz1_s0/metrics.json"
+  ],
+  "cwd": "<WS>",
+  "baslangic": "2026-10-18T20:45:03",
+  "makine": "<makine>",
+  "varyant_imzasi": "H05: cls kaybi BCE -> Varifocal agirlikli BCE (alpha=0.75, gamma=2.0, poz=1): w=alpha*sigmoid(p)^gamma*(1-y)+y, y=1[q>0], q=TAL target_scores; normalizasyon (target_scores_sum) ve cls=0.5 kazanci, TAL, kutu/DFL kayiplari ve diger her sey baseline ile ayni"
+}

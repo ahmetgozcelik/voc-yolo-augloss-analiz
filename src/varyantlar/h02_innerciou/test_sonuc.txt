@@ -1,0 +1,8 @@
+cihaz: cuda_available = False
+T1 ratio=1.0  loss_iou orijinal=0.02528009 yamali=0.02528009 |fark|=0.00e+00; dfl |fark|=0.00e+00
+T1 gradyan max|fark| (ratio=1.0) = 0.00e+00
+T2 yuksek-IoU (jit 0.05): ort IoU=0.975 | loss CIoU=0.00244 Inner-CIoU=0.00287 | ||grad|| CIoU=0.00358 Inner-CIoU=0.00417 oran=1.165 | sonlu=True
+T2 orta-IoU (jit 0.6): ort IoU=0.751 | loss CIoU=0.02665 Inner-CIoU=0.03070 | ||grad|| CIoU=0.00295 Inner-CIoU=0.00334 oran=1.131 | sonlu=True
+T4 inner_iou(ratio=1) vs iou: max|fark|=0.00e+00
+T3 v8DetectionLoss: loss=29.2613 items={'box_loss': 3.196, 'cls_loss': 8.5903, 'dfl_loss': 2.8443} ||grad||=1726.7328 SAYAC(cagri)=1 (ana surec pid uzerinde)
+TUM H02 CPU TESTLERI GECTI

@@ -1,0 +1,22 @@
+{
+  "run_id": "20261002-001505_h07_wbf_tani_s0",
+  "varyant": "h07_wbf_tani",
+  "seed": "0",
+  "etiket": "H07 WBF tanisi (hakem B4, beklenti-ihlali yordami §4): mekanizma testi + iou_thr/skip/conf_type izgarasi + dal alt-kumeleri; baseline s0 best.pt, yalniz val, egitimsiz",
+  "ebeveyn": "20260930-072103_baseline_s0",
+  "hipotez": "H07",
+  "kuyruk": "k5-ek-seed",
+  "asama": 3,
+  "kural": null,
+  "komut": [
+    "<WS>/env/.venv/Scripts/python.exe",
+    "<WS>/varyantlar/h07_post/wbf_tani.py",
+    "--run-dir",
+    "<WS>\\runs\\20261002-001505_h07_wbf_tani_s0",
+    "--out",
+    "<WS>\\runs\\20261002-001505_h07_wbf_tani_s0/metrics.json"
+  ],
+  "cwd": "<WS>",
+  "baslangic": "2026-10-02T00:15:08",
+  "makine": "<makine>"
+}

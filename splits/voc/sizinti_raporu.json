@@ -1,0 +1,251 @@
+{
+  "filename_overlap_pool_test": 0,
+  "sha1_overlap_pool_test_images": 0,
+  "sha1_overlap_detail": [],
+  "sha1_dup_groups_within_pool": 3,
+  "sha1_dup_groups_within_pool_detail": [
+    [
+      "images/val2007/000338.jpg",
+      "images/val2007/007284.jpg"
+    ],
+    [
+      "images/val2007/000949.jpg",
+      "images/val2007/005042.jpg"
+    ],
+    [
+      "images/train2007/008037.jpg",
+      "images/train2007/009623.jpg"
+    ]
+  ],
+  "sha1_dup_train_val_pairs": 0,
+  "sha1_dup_groups_within_test": 0,
+  "dhash_near_pool_test_counts": {
+    "<= 0": 0,
+    "<= 2": 3,
+    "<= 4": 20
+  },
+  "dhash_near_pool_test_detail": [
+    {
+      "pool": "images/train2007/001436.jpg",
+      "test": "images/test2007/007091.jpg",
+      "dhash_hamming": 3,
+      "mad64_gray": 120.86
+    },
+    {
+      "pool": "images/train2007/002765.jpg",
+      "test": "images/test2007/001059.jpg",
+      "dhash_hamming": 3,
+      "mad64_gray": 57.08
+    },
+    {
+      "pool": "images/train2007/002765.jpg",
+      "test": "images/test2007/002908.jpg",
+      "dhash_hamming": 3,
+      "mad64_gray": 72.62
+    },
+    {
+      "pool": "images/train2007/002765.jpg",
+      "test": "images/test2007/007091.jpg",
+      "dhash_hamming": 1,
+      "mad64_gray": 87.23
+    },
+    {
+      "pool": "images/train2007/002765.jpg",
+      "test": "images/test2007/008589.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 79.88
+    },
+    {
+      "pool": "images/train2007/003183.jpg",
+      "test": "images/test2007/001059.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 33.17
+    },
+    {
+      "pool": "images/train2007/003183.jpg",
+      "test": "images/test2007/002289.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 51.8
+    },
+    {
+      "pool": "images/train2007/003183.jpg",
+      "test": "images/test2007/002908.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 12.44
+    },
+    {
+      "pool": "images/train2007/003183.jpg",
+      "test": "images/test2007/007091.jpg",
+      "dhash_hamming": 2,
+      "mad64_gray": 47.6
+    },
+    {
+      "pool": "images/train2007/003183.jpg",
+      "test": "images/test2007/008589.jpg",
+      "dhash_hamming": 3,
+      "mad64_gray": 34.61
+    },
+    {
+      "pool": "images/val2007/009531.jpg",
+      "test": "images/test2007/008861.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 68.6
+    },
+    {
+      "pool": "images/train2012/2008_000181.jpg",
+      "test": "images/test2007/007091.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 53.88
+    },
+    {
+      "pool": "images/val2012/2010_000729.jpg",
+      "test": "images/test2007/001059.jpg",
+      "dhash_hamming": 3,
+      "mad64_gray": 48.04
+    },
+    {
+      "pool": "images/val2012/2010_000729.jpg",
+      "test": "images/test2007/002908.jpg",
+      "dhash_hamming": 3,
+      "mad64_gray": 66.58
+    },
+    {
+      "pool": "images/val2012/2010_000729.jpg",
+      "test": "images/test2007/007091.jpg",
+      "dhash_hamming": 1,
+      "mad64_gray": 77.84
+    },
+    {
+      "pool": "images/val2012/2010_000729.jpg",
+      "test": "images/test2007/008589.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 74.87
+    },
+    {
+      "pool": "images/train2012/2010_002688.jpg",
+      "test": "images/test2007/007091.jpg",
+      "dhash_hamming": 3,
+      "mad64_gray": 113.11
+    },
+    {
+      "pool": "images/train2012/2011_001872.jpg",
+      "test": "images/test2007/000243.jpg",
+      "dhash_hamming": 3,
+      "mad64_gray": 60.28
+    },
+    {
+      "pool": "images/val2012/2010_002372.jpg",
+      "test": "images/test2007/001059.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 37.42
+    },
+    {
+      "pool": "images/val2012/2010_002372.jpg",
+      "test": "images/test2007/007091.jpg",
+      "dhash_hamming": 4,
+      "mad64_gray": 54.99
+    }
+  ],
+  "removed_from_train_val": [],
+  "ncc_method": "32x32 gri, sıfır-ortalama birim-norm, kosinüs; yatay ayna dahil; her havuz görüntüsü için en yakın test",
+  "ncc_ge_0.95": 31,
+  "ncc_ge_0.98": 1,
+  "ncc_ge_0.99": 0,
+  "ncc_top15": [
+    {
+      "pool": "images/val2012/2011_000096.jpg",
+      "test": "images/test2007/006649.jpg",
+      "ncc": 0.9814,
+      "flipped": true
+    },
+    {
+      "pool": "images/val2012/2008_005261.jpg",
+      "test": "images/test2007/005106.jpg",
+      "ncc": 0.9723,
+      "flipped": true
+    },
+    {
+      "pool": "images/train2007/005016.jpg",
+      "test": "images/test2007/005106.jpg",
+      "ncc": 0.9679,
+      "flipped": false
+    },
+    {
+      "pool": "images/val2012/2008_002223.jpg",
+      "test": "images/test2007/008020.jpg",
+      "ncc": 0.9678,
+      "flipped": true
+    },
+    {
+      "pool": "images/train2007/002765.jpg",
+      "test": "images/test2007/005106.jpg",
+      "ncc": 0.9663,
+      "flipped": true
+    },
+    {
+      "pool": "images/val2012/2008_004852.jpg",
+      "test": "images/test2007/006649.jpg",
+      "ncc": 0.9646,
+      "flipped": false
+    },
+    {
+      "pool": "images/train2007/006874.jpg",
+      "test": "images/test2007/005771.jpg",
+      "ncc": 0.9636,
+      "flipped": true
+    },
+    {
+      "pool": "images/train2012/2010_002129.jpg",
+      "test": "images/test2007/005529.jpg",
+      "ncc": 0.9624,
+      "flipped": true
+    },
+    {
+      "pool": "images/train2007/009945.jpg",
+      "test": "images/test2007/008020.jpg",
+      "ncc": 0.9621,
+      "flipped": false
+    },
+    {
+      "pool": "images/train2007/008723.jpg",
+      "test": "images/test2007/005106.jpg",
+      "ncc": 0.962,
+      "flipped": false
+    },
+    {
+      "pool": "images/val2012/2008_000659.jpg",
+      "test": "images/test2007/008998.jpg",
+      "ncc": 0.9605,
+      "flipped": false
+    },
+    {
+      "pool": "images/val2012/2008_001682.jpg",
+      "test": "images/test2007/002882.jpg",
+      "ncc": 0.9603,
+      "flipped": false
+    },
+    {
+      "pool": "images/train2012/2011_001257.jpg",
+      "test": "images/test2007/008020.jpg",
+      "ncc": 0.9597,
+      "flipped": false
+    },
+    {
+      "pool": "images/train2012/2011_002867.jpg",
+      "test": "images/test2007/009262.jpg",
+      "ncc": 0.9596,
+      "flipped": true
+    },
+    {
+      "pool": "images/train2012/2008_002834.jpg",
+      "test": "images/test2007/002882.jpg",
+      "ncc": 0.9589,
+      "flipped": false
+    }
+  ],
+  "ncc_pool_best_quantiles": {
+    "0.5": 0.6451,
+    "0.99": 0.9242,
+    "0.999": 0.9576
+  }
+}

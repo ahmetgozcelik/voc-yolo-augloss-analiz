@@ -1,0 +1,1 @@
+test_kitti_degerlendir: 5/5 GEÇTİ (DontCare = coco-crowd yok-say)

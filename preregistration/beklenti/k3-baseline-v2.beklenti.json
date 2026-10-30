@@ -1,0 +1,40 @@
+{
+  "_aciklama": "ÖN-KAYIT (K3 baseline, YOLO11n / ultralytics 8.4.165 @ 004db34b12f6). Koşumdan ÖNCE yazıldı, sonra değişmez. Ana metrik val_map50_95 (WS/data/voc_dev.yaml val, 1000 görüntü, K4 seçim metriği ile aynı). rep_test_map50_95 (kilitli VOC07 test, yalnız --rep-test) literatür çıpasıyla ikincil_aralik kuralıyla ayrıca sınanıyor. Kaynak: WS/notlar/literatur-cipa.md §2-3.",
+  "metrik": "val_map50_95",
+  "yon": "max",
+  "asama": {
+    "1": {
+      "aciklama": "DUMAN — kod yolu çalışıyor mu (seed0, fraction=0.1, 3 epoch, tam kod yolu). Ayrıca şef/rakip-kurucu foreground'da seed0/fraction=0.05/2 epoch ile manuel doğrulama yaptı (rc=0, WS/runs/20260929-230007_baseline_s0): val_map50_95=0.1267, val_map50=0.1807, egitim_sure_sn=62.5, cihaz=cuda:0/RTX 5050 — kod yolu, metrics.json şeması, progress.json, val_preds.json, hız ölçümü hepsi doğrulandı.",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "aralik", "alt": 0.0, "ust": 1.0, "kaynak": "metrik tanımı gereği mAP oranı [0,1] (Ultralytics metrics/mAP50-95(B))"},
+        {"tur": "min_kosum", "n": 1}
+      ]
+    },
+    "2": {
+      "aciklama": "ÖN-UÇUŞ — doğru VE beklendiği gibi mi (tam veri, 5 epoch, seed 0 ve 1, tam kod yolu; henüz varyant yok, yalnız baseline).",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "farkli_seedler_farkli"},
+        {"tur": "kollar_farkli"},
+        {"tur": "aralik", "varyant": "baseline", "alt": 0.35, "ust": 0.75,
+         "kaynak": "Alt sınır (0.35), kısaltılmış eğitim için GEVŞETİLDİ: COCO ön-eğitimli YOLO11n, VOC'un 20 sınıfının tamamını COCO'dan zaten tanıyor (literatur-cipa.md §3 madde4: aeroplane→airplane, sofa→couch vb. örtüşme); K3 duman kanıtı (bu WS, 2026-09-29, seed0/fraction=0.05/2 epoch) val_map50_95=0.1267'ye 2 epoch/%5 veride ulaştı, 5 epoch/%100 veride bunun belirgin üstü beklenir. Üst sınır (0.75) CÖMERT ÜST TAVAN: 100-epoch tam koşumun beklenen üst ucu (~0.70, K1.5 çıpası) 5 epoch'ta aşılması/eşitlenmesi sızıntı veya val/train karışması şüphesi doğurur (görülmemiş-iyi eşiği)."},
+        {"tur": "ikincil_aralik", "metrik": "egitim_sure_sn", "alt": 1, "ust": 3600,
+         "kaynak": "5 epoch/tam veri, batch16, ~106 sn/epoch ölçümüne göre (bu WS kalibrasyon koşumları 20260929-230542/230810/231039) beklenen ~9-10 dk; 1 saat tavan çok cömert güvenlik payı"}
+      ]
+    },
+    "3": {
+      "aciklama": "TAM — istatistiksel güç (seed 0,1,2; tam veri, 100 epoch, 640px, --rep-test). Mekanik kurallar + literatür çıpası (hem kendi val'imiz hem kilitli VOC07 test) tekrar sınanıyor.",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "farkli_seedler_farkli"},
+        {"tur": "kollar_farkli"},
+        {"tur": "min_kosum", "n": 3},
+        {"tur": "aralik", "varyant": "baseline", "alt": 0.55, "ust": 0.70,
+         "kaynak": "K1.5 literatür çıpası (kabaca, notlar/literatur-cipa.md §2.2): 100 epoch, COCO ön-eğitimli YOLO11n; bizim val kendi trainval havuzumuzdan ayrılan held-out küme (VOC07 test'ten muhtemelen biraz daha kolay çünkü aynı dağılımdan), bu yüzden lit 07-test aralığının (0.598-0.659) etrafında ama biraz daha yüksek olabilir; kaba aralık 0.55-0.70 seçildi."},
+        {"tur": "ikincil_aralik", "metrik": "rep_test_map50_95", "alt": 0.598, "ust": 0.647,
+         "kaynak": "notlar/literatur-cipa.md §2.3 YEŞİL bölge: lit [0.610,0.635] ± tolerans 0.012 (tol=2×SD, SD≤0.006, Lin 2026 arXiv:2608.07051 Tab.18). Bu, orkestratörün ayrıca çalıştıracağı replikasyon_kapisi.py --metrik rep_test_map50_95 --lit 0.610 --lit-ust 0.635 --tolerans 0.012 ile AYNI eşiktir; kuyruk kendi içinde de erken uyarı versin diye tekrarlandı."}
+      ]
+    }
+  }
+}

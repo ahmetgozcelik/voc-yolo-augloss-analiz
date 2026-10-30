@@ -1,0 +1,41 @@
+{
+  "run_id": "20260930-065935_baseline_s0",
+  "varyant": "baseline",
+  "seed": "0",
+  "etiket": "YOLO11n resmi protokol - asama1 duman",
+  "ebeveyn": null,
+  "hipotez": null,
+  "kuyruk": "k3-baseline-v2",
+  "asama": 1,
+  "kural": {
+    "nan_kes": true,
+    "min_adim": 1,
+    "alt_sinir": {
+      "val_map50_95": 0.0
+    },
+    "sabit_sn": 900
+  },
+  "komut": [
+    "<WS>/env/.venv/Scripts/python.exe",
+    "<WS>/scripts/rakip_kos.py",
+    "--seed",
+    "0",
+    "--epochs",
+    "3",
+    "--fraction",
+    "0.1",
+    "--imgsz",
+    "640",
+    "--batch",
+    "16",
+    "--workers",
+    "4",
+    "--run-dir",
+    "<WS>\\runs\\20260930-065935_baseline_s0",
+    "--out",
+    "<WS>\\runs\\20260930-065935_baseline_s0/metrics.json"
+  ],
+  "cwd": "<WS>",
+  "baslangic": "2026-09-30T06:59:36",
+  "makine": "<makine>"
+}

@@ -1,0 +1,29 @@
+% uretici: evidence/scripts/build_tables.py <- evidence/evidence.json (elle duzenleme bir sonraki uretimde kaybolur)
+\begin{table*}[!htbp]
+\centering\small\setlength{\tabcolsep}{4pt}
+\caption{VOC: taban modele göre tohum-eşli $\Delta$ mAP50-95 [puan], n=3. Taban model: doğrulama 63.07 $\pm$ 0.41, test 63.49 $\pm$ 0.11. Renk: yalnız Holm-anlamlı (mavi iyi, kırmızı kötü).}\label{tab:voc-ana}
+\begin{tabularx}{\textwidth}{@{}l >{\raggedright\arraybackslash\hyphenpenalty=10000\exhyphenpenalty=10000}X c c c c@{}}
+\toprule
+\multicolumn{6}{@{}l}{\textit{(a) Doğrulama}} \\
+Kart & Değişen & $\Delta\pm$s.d. & $p$ & \%95 $t$ aralığı & Ön-eleme (s0) \\
+\midrule
+H01 & multi-scale 0.25 & $-$0.21$\pm$0.61 & 0.614 & [$-$1.72, +1.30] & +0.07 $\to$ KAPAT \\
+H02 & CIoU $\to$ Inner-CIoU & $-$0.35$\pm$0.12 & 0.041$^\dagger$ & [$-$0.66, $-$0.04] & $-$0.22 $\to$ KAPAT \\
+H03 & kutu copy-paste & +0.25$\pm$0.24 & 0.214 & [$-$0.35, +0.85] & +0.37 $\to$ geçti; KAPAT \\
+H04 & ölçek genliği 0.25 & $-$0.85$\pm$0.79 & 0.204 & [$-$2.82, +1.12] & $-$0.30 $\to$ KAPAT \\
+H05 & BCE $\to$ Varifocal & \kotu{$-$2.87$\pm$0.33} & 0.004 & [$-$3.68, $-$2.05] & $-$2.88 $\to$ KAPAT \\
+H06 & kutu kazancı 10 & +0.04$\pm$0.56 & 0.912 & [$-$1.35, +1.43] & $-$0.42 $\to$ KAPAT \\
+H08 & copy-paste, doz & $-$0.08$\pm$0.40 & 0.754 & [$-$1.07, +0.90] & +0.22 $\to$ KAPAT \\
+\midrule
+TTA & TTA (eğitimsiz) & +0.81$\pm$0.41 & 0.075 & -- & -- \\
+\midrule
+\multicolumn{6}{@{}l}{\textit{(b) Test (kilitli VOC07 test; yalnız teste giren karşılaştırmalar)}} \\
+Kart & Karşılaştırma & $\Delta\pm$s.d. & $p$ & Holm-12 $p$ & \%95 GA \\
+\midrule
+H03 & kutu copy-paste & $-$0.12$\pm$0.21 & 0.416 & 1.000 & [$-$0.40, +0.16] \\
+TTA & TTA (eğitimsiz) & +0.83$\pm$0.22 & 0.022$^\dagger$ & 0.222 & [+0.50, +1.14] \\
+\bottomrule
+\addlinespace[3pt]
+\multicolumn{6}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{$p$: çift yönlü eşli $t$. Kabul: $\bar\Delta\ge+0.40$ ve tek yönlü $p<0.10$; ön-eleme: s0 $\Delta\ge+0.30$. Renk: doğrulamada Holm-7, testte Holm-12 ve sıfırı kesmeyen GA (görüntü bootstrap'ı). $^\dagger$: düzeltmesiz $p<0.05$. Özgün karar etiketleri TUT/ÖLDÜR/İNCELE, burada SÜRDÜR/KAPAT/İNCELE.} \\
+\end{tabularx}
+\end{table*}

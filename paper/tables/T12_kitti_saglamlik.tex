@@ -1,0 +1,30 @@
+% uretici: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek5.sag.*; elle duzenleme bir sonraki uretimde kaybolur)
+\begin{table}[p]
+\centering\small\setlength{\tabcolsep}{3pt}
+\caption{KITTI test sağlamlık (kilit sonrası, keşifsel): kart $-$ taban model $\Delta$ [puan]; tohum ve 13 sahne grubunda hiyerarşik bootstrap ($B=2000$). Mavi+kalın: GA sıfırı dışlar.}\label{tab:kitti-saglamlik}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c c c c}
+\toprule
+Kart & $\Delta$ & Hiyerarşik GA95 & $P(\Delta\le0)$ & Tram'sız $\Delta$ & 6 sınıf $\Delta$ & Poz. grup \\
+\midrule
+\multicolumn{7}{@{}l}{\textbf{YOLO26n}} \\
+H01 multi-scale & +0.12 & [$-$2.26, +2.51] & 0.401 & +0.36 & +0.11 & 5/13 \\
+H02 Inner-CIoU & $-$0.93 & [$-$2.82, +0.85] & 0.778 & $-$0.28 & $-$1.21 & 5/13 \\
+H03 kutu copy-paste & +1.01 & [$-$0.81, +3.36] & 0.093 & +1.78 & +1.20 & 7/13 \\
+H04 mosaic scale & $-$1.24 & [$-$3.05, +1.65] & 0.758 & $-$0.38 & $-$1.81 & 9/13 \\
+H05 Varifocal & +0.61 & [$-$1.53, +2.32] & 0.278 & +0.25 & +0.77 & 7/13 \\
+H06 kutu kazancı & $-$0.25 & [$-$2.06, +1.54] & 0.600 & +0.09 & $-$0.31 & 5/13 \\
+H08 yüksek doz & +0.71 & [$-$0.93, +2.73] & 0.147 & +1.24 & +0.87 & 7/13 \\
+\midrule
+\multicolumn{7}{@{}l}{\textbf{YOLO11s}} \\
+H01 multi-scale & +1.49 & [$-$0.67, +2.61] & 0.077 & +0.53 & +2.03 & 9/13 \\
+H02 Inner-CIoU & +1.14 & [$-$0.76, +2.37] & 0.120 & +0.19 & +1.53 & 10/13 \\
+H03 kutu copy-paste & +1.41 & [$-$0.36, +3.50] & 0.050 & +1.20 & +1.70 & 11/13 \\
+H04 mosaic scale & +1.07 & [$-$1.00, +3.01] & 0.116 & +0.72 & +0.96 & 11/13 \\
+H05 Varifocal & \iyi{+2.28} & \iyi{[+0.20, +4.10]} & \iyi{0.018} & +1.42 & +3.15 & 9/13 \\
+H06 kutu kazancı & +0.57 & [$-$0.81, +2.68] & 0.150 & +0.82 & +0.68 & 10/13 \\
+H08 yüksek doz & +1.68 & [$-$0.45, +4.62] & 0.084 & +1.54 & +1.78 & 11/13 \\
+\bottomrule
+\addlinespace[3pt]
+\multicolumn{7}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{$P(\Delta\le0)$: bootstrap'ta $\Delta\le0$ oranı. Tram'sız: 7 sınıf; 6 sınıf: person\_sitting ve misc hariç; bu iki sütunda renk yoktur (GA gösterilmez). Poz. grup: tohum-ortalama $\Delta>0$ olan sahne grubu. \texttt{best.pt}. H02, H05: yönlü kartlar (beklenen $\Delta<0$).} \\
+\end{tabularx}
+\end{table}

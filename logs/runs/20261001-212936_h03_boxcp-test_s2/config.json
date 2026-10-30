@@ -1,0 +1,30 @@
+{
+  "run_id": "20261001-212936_h03_boxcp-test_s2",
+  "varyant": "h03_boxcp-test",
+  "seed": "2",
+  "etiket": "K5 test: H03 kutu-copy-paste best.pt s2 (en guclu esik-alti aday)",
+  "ebeveyn": "20261001-050625_h03_boxcp_s2",
+  "hipotez": "H03",
+  "kuyruk": "k5-test",
+  "asama": 3,
+  "kural": null,
+  "komut": [
+    "<WS>/env/.venv/Scripts/python.exe",
+    "<WS>/scripts/k5_test_degerlendir.py",
+    "--weights",
+    "<WS>/runs/20261001-050625_h03_boxcp_s2/train/weights/best.pt",
+    "--varyant-adi",
+    "h03_boxcp-test",
+    "--data",
+    "<WS>/data/voc_test.yaml",
+    "--onek",
+    "test",
+    "--seed",
+    "2",
+    "--out",
+    "<WS>\\runs\\20261001-212936_h03_boxcp-test_s2/metrics.json"
+  ],
+  "cwd": "<WS>",
+  "baslangic": "2026-10-01T21:29:38",
+  "makine": "<makine>"
+}

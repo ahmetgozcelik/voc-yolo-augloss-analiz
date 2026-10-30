@@ -1,0 +1,4552 @@
+{
+ "yontem": {
+  "B": 2000,
+  "rng_grup": 20261024,
+  "rng_tohum": 20261025,
+  "grup_sayisi": 13,
+  "yeniden_uretim_max_fark_map": 4.97009696176498e-07,
+  "etiket": "kilit_sonrasi_kesifsel",
+  "alt_kumeler": {
+   "s8": [
+    "car",
+    "van",
+    "truck",
+    "pedestrian",
+    "person_sitting",
+    "cyclist",
+    "tram",
+    "misc"
+   ],
+   "tramsiz7": [
+    "car",
+    "van",
+    "truck",
+    "pedestrian",
+    "person_sitting",
+    "cyclist",
+    "misc"
+   ],
+   "ps_misc_siz6": [
+    "car",
+    "van",
+    "truck",
+    "pedestrian",
+    "cyclist",
+    "tram"
+   ]
+  }
+ },
+ "gruplar": {
+  "2011_09_26_drive_0002_sync": {
+   "goruntu": 6,
+   "sinif_sayilari": {
+    "car": 6,
+    "van": 0,
+    "truck": 0,
+    "pedestrian": 0,
+    "person_sitting": 0,
+    "cyclist": 0,
+    "tram": 0,
+    "misc": 0
+   }
+  },
+  "2011_09_26_drive_0032_sync": {
+   "goruntu": 187,
+   "sinif_sayilari": {
+    "car": 501,
+    "van": 123,
+    "truck": 25,
+    "pedestrian": 0,
+    "person_sitting": 0,
+    "cyclist": 0,
+    "tram": 0,
+    "misc": 0
+   }
+  },
+  "2011_09_26_drive_0035_sync": {
+   "goruntu": 57,
+   "sinif_sayilari": {
+    "car": 405,
+    "van": 172,
+    "truck": 38,
+    "pedestrian": 1,
+    "person_sitting": 0,
+    "cyclist": 4,
+    "tram": 0,
+    "misc": 86
+   }
+  },
+  "2011_09_26_drive_0046_sync": {
+   "goruntu": 28,
+   "sinif_sayilari": {
+    "car": 55,
+    "van": 4,
+    "truck": 0,
+    "pedestrian": 0,
+    "person_sitting": 0,
+    "cyclist": 0,
+    "tram": 0,
+    "misc": 0
+   }
+  },
+  "2011_09_26_drive_0056_sync": {
+   "goruntu": 197,
+   "sinif_sayilari": {
+    "car": 496,
+    "van": 69,
+    "truck": 25,
+    "pedestrian": 30,
+    "person_sitting": 0,
+    "cyclist": 14,
+    "tram": 126,
+    "misc": 57
+   }
+  },
+  "2011_09_26_drive_0061_sync": {
+   "goruntu": 275,
+   "sinif_sayilari": {
+    "car": 932,
+    "van": 0,
+    "truck": 27,
+    "pedestrian": 0,
+    "person_sitting": 0,
+    "cyclist": 0,
+    "tram": 0,
+    "misc": 24
+   }
+  },
+  "2011_09_26_drive_0070_sync": {
+   "goruntu": 72,
+   "sinif_sayilari": {
+    "car": 48,
+    "van": 26,
+    "truck": 0,
+    "pedestrian": 24,
+    "person_sitting": 0,
+    "cyclist": 3,
+    "tram": 0,
+    "misc": 0
+   }
+  },
+  "2011_09_26_drive_0079_sync": {
+   "goruntu": 5,
+   "sinif_sayilari": {
+    "car": 10,
+    "van": 0,
+    "truck": 0,
+    "pedestrian": 0,
+    "person_sitting": 0,
+    "cyclist": 0,
+    "tram": 0,
+    "misc": 0
+   }
+  },
+  "2011_09_26_drive_0091_sync": {
+   "goruntu": 128,
+   "sinif_sayilari": {
+    "car": 24,
+    "van": 33,
+    "truck": 0,
+    "pedestrian": 464,
+    "person_sitting": 56,
+    "cyclist": 95,
+    "tram": 0,
+    "misc": 9
+   }
+  },
+  "2011_09_26_drive_0096_sync": {
+   "goruntu": 243,
+   "sinif_sayilari": {
+    "car": 722,
+    "van": 0,
+    "truck": 4,
+    "pedestrian": 18,
+    "person_sitting": 0,
+    "cyclist": 86,
+    "tram": 0,
+    "misc": 8
+   }
+  },
+  "2011_09_26_drive_0117_sync": {
+   "goruntu": 198,
+   "sinif_sayilari": {
+    "car": 833,
+    "van": 13,
+    "truck": 0,
+    "pedestrian": 29,
+    "person_sitting": 0,
+    "cyclist": 25,
+    "tram": 0,
+    "misc": 0
+   }
+  },
+  "2011_09_28_drive_0035_sync": {
+   "goruntu": 5,
+   "sinif_sayilari": {
+    "car": 0,
+    "van": 0,
+    "truck": 0,
+    "pedestrian": 8,
+    "person_sitting": 0,
+    "cyclist": 5,
+    "tram": 0,
+    "misc": 0
+   }
+  },
+  "2011_09_29_drive_0004_sync": {
+   "goruntu": 103,
+   "sinif_sayilari": {
+    "car": 425,
+    "van": 24,
+    "truck": 0,
+    "pedestrian": 0,
+    "person_sitting": 0,
+    "cyclist": 0,
+    "tram": 0,
+    "misc": 0
+   }
+  }
+ },
+ "sonuc": {
+  "yolo11s/best/H01": {
+   "s8": {
+    "delta_ort": 1.489,
+    "delta_seed": [
+     1.286,
+     1.881,
+     1.299
+    ],
+    "hier_ga95": [
+     -0.666,
+     2.611
+    ],
+    "hier_p_le0": 0.077,
+    "hier_ort": 1.232,
+    "grup_ga95": [
+     -0.313,
+     2.295
+    ],
+    "grup_p_le0": 0.0465,
+    "tohum_ga95": [
+     1.286,
+     1.881
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -2.218,
+      "delta_bir_grup_disarida": 1.493,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 4.462,
+      "delta_bir_grup_disarida": 1.719,
+      "katki_puan": -0.23
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 2.102,
+      "delta_bir_grup_disarida": 1.173,
+      "katki_puan": 0.316
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 2.658,
+      "delta_bir_grup_disarida": 1.479,
+      "katki_puan": 0.01
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 2.122,
+      "delta_bir_grup_disarida": 0.445,
+      "katki_puan": 1.043
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 1.736,
+      "delta_bir_grup_disarida": 1.725,
+      "katki_puan": -0.236
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 4.326,
+      "delta_bir_grup_disarida": 1.448,
+      "katki_puan": 0.041
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 10.694,
+      "delta_bir_grup_disarida": 1.483,
+      "katki_puan": 0.006
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.559,
+      "delta_bir_grup_disarida": 1.84,
+      "katki_puan": -0.352
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 1.961,
+      "delta_bir_grup_disarida": 1.199,
+      "katki_puan": 0.29
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.901,
+      "delta_bir_grup_disarida": 1.448,
+      "katki_puan": 0.041
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": -0.245,
+      "delta_bir_grup_disarida": 1.502,
+      "katki_puan": -0.013
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -1.037,
+      "delta_bir_grup_disarida": 1.528,
+      "katki_puan": -0.04
+     }
+    },
+    "pozitif_grup": 9,
+    "negatif_grup": 4,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 7,
+    "sinif_delta": {
+     "car": 2.165,
+     "van": 2.405,
+     "truck": 0.132,
+     "pedestrian": 1.837,
+     "person_sitting": -0.112,
+     "cyclist": -2.553,
+     "tram": 8.214,
+     "misc": -0.178
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.528,
+    "delta_seed": [
+     0.455,
+     0.496,
+     0.633
+    ],
+    "hier_ga95": [
+     -1.009,
+     1.933
+    ],
+    "hier_p_le0": 0.1495,
+    "hier_ort": 0.604,
+    "grup_ga95": [
+     -0.5,
+     1.582
+    ],
+    "grup_p_le0": 0.1035,
+    "tohum_ga95": [
+     0.455,
+     0.633
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 2.033,
+    "delta_seed": [
+     1.849,
+     2.325,
+     1.926
+    ],
+    "hier_ga95": [
+     -0.409,
+     3.206
+    ],
+    "hier_p_le0": 0.056,
+    "hier_ort": 1.644,
+    "grup_ga95": [
+     -0.054,
+     2.725
+    ],
+    "grup_p_le0": 0.029,
+    "tohum_ga95": [
+     1.849,
+     2.325
+    ],
+    "tohum_p_le0": 0.0
+   }
+  },
+  "yolo11s/best/H02": {
+   "s8": {
+    "delta_ort": 1.135,
+    "delta_seed": [
+     1.441,
+     0.535,
+     1.43
+    ],
+    "hier_ga95": [
+     -0.759,
+     2.374
+    ],
+    "hier_p_le0": 0.12,
+    "hier_ort": 0.946,
+    "grup_ga95": [
+     -0.605,
+     2.041
+    ],
+    "grup_p_le0": 0.12,
+    "tohum_ga95": [
+     0.535,
+     1.441
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 1.583,
+      "delta_bir_grup_disarida": 1.154,
+      "katki_puan": -0.018
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 3.387,
+      "delta_bir_grup_disarida": 0.982,
+      "katki_puan": 0.154
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 1.888,
+      "delta_bir_grup_disarida": 1.552,
+      "katki_puan": -0.417
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 1.053,
+      "delta_bir_grup_disarida": 1.124,
+      "katki_puan": 0.012
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 0.856,
+      "delta_bir_grup_disarida": 0.117,
+      "katki_puan": 1.018
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 6.868,
+      "delta_bir_grup_disarida": 0.988,
+      "katki_puan": 0.147
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -1.693,
+      "delta_bir_grup_disarida": 1.134,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 2.883,
+      "delta_bir_grup_disarida": 1.125,
+      "katki_puan": 0.01
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 2.071,
+      "delta_bir_grup_disarida": 1.288,
+      "katki_puan": -0.153
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 1.306,
+      "delta_bir_grup_disarida": 1.059,
+      "katki_puan": 0.076
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -3.401,
+      "delta_bir_grup_disarida": 1.139,
+      "katki_puan": -0.004
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 1.35,
+      "delta_bir_grup_disarida": 1.13,
+      "katki_puan": 0.005
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -5.573,
+      "delta_bir_grup_disarida": 1.201,
+      "katki_puan": -0.066
+     }
+    },
+    "pozitif_grup": 10,
+    "negatif_grup": 3,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 8,
+    "sinif_delta": {
+     "car": 0.995,
+     "van": -0.428,
+     "truck": 1.617,
+     "pedestrian": 1.118,
+     "person_sitting": -0.562,
+     "cyclist": -1.922,
+     "tram": 7.776,
+     "misc": 0.489
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.187,
+    "delta_seed": [
+     0.597,
+     0.274,
+     -0.311
+    ],
+    "hier_ga95": [
+     -0.868,
+     1.853
+    ],
+    "hier_p_le0": 0.3075,
+    "hier_ort": 0.311,
+    "grup_ga95": [
+     -0.667,
+     1.503
+    ],
+    "grup_p_le0": 0.283,
+    "tohum_ga95": [
+     -0.311,
+     0.597
+    ],
+    "tohum_p_le0": 0.263
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 1.526,
+    "delta_seed": [
+     1.952,
+     0.685,
+     1.94
+    ],
+    "hier_ga95": [
+     -1.095,
+     2.948
+    ],
+    "hier_p_le0": 0.1445,
+    "hier_ort": 1.129,
+    "grup_ga95": [
+     -0.884,
+     2.389
+    ],
+    "grup_p_le0": 0.1305,
+    "tohum_ga95": [
+     0.685,
+     1.952
+    ],
+    "tohum_p_le0": 0.0
+   }
+  },
+  "yolo11s/best/H03": {
+   "s8": {
+    "delta_ort": 1.406,
+    "delta_seed": [
+     2.366,
+     0.258,
+     1.593
+    ],
+    "hier_ga95": [
+     -0.361,
+     3.501
+    ],
+    "hier_p_le0": 0.05,
+    "hier_ort": 1.492,
+    "grup_ga95": [
+     0.416,
+     2.573
+    ],
+    "grup_p_le0": 0.0075,
+    "tohum_ga95": [
+     0.258,
+     2.366
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -4.965,
+      "delta_bir_grup_disarida": 1.415,
+      "katki_puan": -0.01
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 7.281,
+      "delta_bir_grup_disarida": 1.243,
+      "katki_puan": 0.163
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 1.884,
+      "delta_bir_grup_disarida": 1.661,
+      "katki_puan": -0.255
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 3.018,
+      "delta_bir_grup_disarida": 1.406,
+      "katki_puan": -0.0
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 2.353,
+      "delta_bir_grup_disarida": 1.159,
+      "katki_puan": 0.247
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 1.533,
+      "delta_bir_grup_disarida": 1.49,
+      "katki_puan": -0.084
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 3.361,
+      "delta_bir_grup_disarida": 1.318,
+      "katki_puan": 0.088
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 8.056,
+      "delta_bir_grup_disarida": 1.403,
+      "katki_puan": 0.003
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 1.339,
+      "delta_bir_grup_disarida": 1.871,
+      "katki_puan": -0.466
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 5.157,
+      "delta_bir_grup_disarida": 1.093,
+      "katki_puan": 0.313
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 0.648,
+      "delta_bir_grup_disarida": 1.343,
+      "katki_puan": 0.063
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 3.877,
+      "delta_bir_grup_disarida": 1.414,
+      "katki_puan": -0.009
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -1.493,
+      "delta_bir_grup_disarida": 1.436,
+      "katki_puan": -0.03
+     }
+    },
+    "pozitif_grup": 11,
+    "negatif_grup": 2,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 6,
+    "sinif_delta": {
+     "car": 1.738,
+     "van": 2.804,
+     "truck": 3.89,
+     "pedestrian": 1.874,
+     "person_sitting": 0.748,
+     "cyclist": -2.965,
+     "tram": 2.873,
+     "misc": 0.283
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 1.196,
+    "delta_seed": [
+     2.936,
+     -0.618,
+     1.27
+    ],
+    "hier_ga95": [
+     -0.639,
+     3.742
+    ],
+    "hier_p_le0": 0.106,
+    "hier_ort": 1.39,
+    "grup_ga95": [
+     0.306,
+     2.549
+    ],
+    "grup_p_le0": 0.0075,
+    "tohum_ga95": [
+     -0.618,
+     2.936
+    ],
+    "tohum_p_le0": 0.037
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 1.702,
+    "delta_seed": [
+     2.0,
+     0.01,
+     3.098
+    ],
+    "hier_ga95": [
+     -0.627,
+     4.212
+    ],
+    "hier_p_le0": 0.0635,
+    "hier_ort": 1.784,
+    "grup_ga95": [
+     0.389,
+     3.165
+    ],
+    "grup_p_le0": 0.011,
+    "tohum_ga95": [
+     0.01,
+     3.098
+    ],
+    "tohum_p_le0": 0.0
+   }
+  },
+  "yolo11s/best/H04": {
+   "s8": {
+    "delta_ort": 1.066,
+    "delta_seed": [
+     1.903,
+     0.661,
+     0.634
+    ],
+    "hier_ga95": [
+     -0.999,
+     3.009
+    ],
+    "hier_p_le0": 0.1155,
+    "hier_ort": 0.956,
+    "grup_ga95": [
+     0.226,
+     1.856
+    ],
+    "grup_p_le0": 0.006,
+    "tohum_ga95": [
+     0.634,
+     1.903
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 3.308,
+      "delta_bir_grup_disarida": 1.065,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 6.049,
+      "delta_bir_grup_disarida": 1.07,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 2.87,
+      "delta_bir_grup_disarida": 1.087,
+      "katki_puan": -0.021
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 1.636,
+      "delta_bir_grup_disarida": 1.06,
+      "katki_puan": 0.006
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 0.933,
+      "delta_bir_grup_disarida": 0.745,
+      "katki_puan": 0.321
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 0.853,
+      "delta_bir_grup_disarida": 1.245,
+      "katki_puan": -0.179
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 3.703,
+      "delta_bir_grup_disarida": 1.031,
+      "katki_puan": 0.035
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -5.21,
+      "delta_bir_grup_disarida": 1.065,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 4.082,
+      "delta_bir_grup_disarida": 0.886,
+      "katki_puan": 0.18
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 2.468,
+      "delta_bir_grup_disarida": 0.854,
+      "katki_puan": 0.212
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -0.409,
+      "delta_bir_grup_disarida": 0.997,
+      "katki_puan": 0.069
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 1.417,
+      "delta_bir_grup_disarida": 1.054,
+      "katki_puan": 0.012
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": 0.045,
+      "delta_bir_grup_disarida": 1.086,
+      "katki_puan": -0.02
+     }
+    },
+    "pozitif_grup": 11,
+    "negatif_grup": 2,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 9,
+    "sinif_delta": {
+     "car": -0.573,
+     "van": 3.145,
+     "truck": 1.115,
+     "pedestrian": -0.287,
+     "person_sitting": 2.521,
+     "cyclist": -1.118,
+     "tram": 3.47,
+     "misc": 0.255
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.723,
+    "delta_seed": [
+     0.969,
+     2.184,
+     -0.986
+    ],
+    "hier_ga95": [
+     -1.19,
+     2.987
+    ],
+    "hier_p_le0": 0.2065,
+    "hier_ort": 0.748,
+    "grup_ga95": [
+     0.096,
+     1.834
+    ],
+    "grup_p_le0": 0.009,
+    "tohum_ga95": [
+     -0.986,
+     2.184
+    ],
+    "tohum_p_le0": 0.1565
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.959,
+    "delta_seed": [
+     2.309,
+     -0.431,
+     0.998
+    ],
+    "hier_ga95": [
+     -1.337,
+     3.268
+    ],
+    "hier_p_le0": 0.1785,
+    "hier_ort": 0.906,
+    "grup_ga95": [
+     0.092,
+     1.725
+    ],
+    "grup_p_le0": 0.014,
+    "tohum_ga95": [
+     -0.431,
+     2.309
+    ],
+    "tohum_p_le0": 0.037
+   }
+  },
+  "yolo11s/best/H05": {
+   "s8": {
+    "delta_ort": 2.282,
+    "delta_seed": [
+     1.889,
+     1.805,
+     3.153
+    ],
+    "hier_ga95": [
+     0.203,
+     4.102
+    ],
+    "hier_p_le0": 0.0175,
+    "hier_ort": 2.148,
+    "grup_ga95": [
+     0.378,
+     3.628
+    ],
+    "grup_p_le0": 0.0085,
+    "tohum_ga95": [
+     1.805,
+     3.153
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -0.071,
+      "delta_bir_grup_disarida": 2.283,
+      "katki_puan": -0.0
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 8.605,
+      "delta_bir_grup_disarida": 2.566,
+      "katki_puan": -0.283
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 0.711,
+      "delta_bir_grup_disarida": 2.719,
+      "katki_puan": -0.437
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 5.275,
+      "delta_bir_grup_disarida": 2.274,
+      "katki_puan": 0.009
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 2.305,
+      "delta_bir_grup_disarida": 1.315,
+      "katki_puan": 0.967
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 2.162,
+      "delta_bir_grup_disarida": 2.201,
+      "katki_puan": 0.082
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 2.754,
+      "delta_bir_grup_disarida": 2.247,
+      "katki_puan": 0.036
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 5.793,
+      "delta_bir_grup_disarida": 2.273,
+      "katki_puan": 0.009
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 2.028,
+      "delta_bir_grup_disarida": 2.234,
+      "katki_puan": 0.049
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -1.474,
+      "delta_bir_grup_disarida": 2.218,
+      "katki_puan": 0.064
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 1.572,
+      "delta_bir_grup_disarida": 2.195,
+      "katki_puan": 0.087
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": -4.825,
+      "delta_bir_grup_disarida": 2.323,
+      "katki_puan": -0.041
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -1.051,
+      "delta_bir_grup_disarida": 2.32,
+      "katki_puan": -0.038
+     }
+    },
+    "pozitif_grup": 9,
+    "negatif_grup": 4,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 8,
+    "sinif_delta": {
+     "car": 4.295,
+     "van": 2.191,
+     "truck": 4.136,
+     "pedestrian": 1.727,
+     "person_sitting": -0.831,
+     "cyclist": -1.794,
+     "tram": 8.34,
+     "misc": 0.196
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 1.417,
+    "delta_seed": [
+     1.802,
+     1.098,
+     1.351
+    ],
+    "hier_ga95": [
+     0.11,
+     3.319
+    ],
+    "hier_p_le0": 0.0185,
+    "hier_ort": 1.561,
+    "grup_ga95": [
+     0.354,
+     3.124
+    ],
+    "grup_p_le0": 0.009,
+    "tohum_ga95": [
+     1.098,
+     1.802
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 3.149,
+    "delta_seed": [
+     1.752,
+     2.187,
+     5.509
+    ],
+    "hier_ga95": [
+     0.188,
+     5.828
+    ],
+    "hier_p_le0": 0.019,
+    "hier_ort": 2.874,
+    "grup_ga95": [
+     0.402,
+     4.999
+    ],
+    "grup_p_le0": 0.0125,
+    "tohum_ga95": [
+     1.752,
+     5.509
+    ],
+    "tohum_p_le0": 0.0
+   }
+  },
+  "yolo11s/best/H06": {
+   "s8": {
+    "delta_ort": 0.575,
+    "delta_seed": [
+     0.322,
+     0.183,
+     1.219
+    ],
+    "hier_ga95": [
+     -0.812,
+     2.682
+    ],
+    "hier_p_le0": 0.15,
+    "hier_ort": 0.715,
+    "grup_ga95": [
+     0.098,
+     1.75
+    ],
+    "grup_p_le0": 0.0155,
+    "tohum_ga95": [
+     0.183,
+     1.219
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 6.82,
+      "delta_bir_grup_disarida": 0.574,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 4.106,
+      "delta_bir_grup_disarida": 0.852,
+      "katki_puan": -0.277
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 0.535,
+      "delta_bir_grup_disarida": 0.57,
+      "katki_puan": 0.005
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.981,
+      "delta_bir_grup_disarida": 0.568,
+      "katki_puan": 0.007
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -0.055,
+      "delta_bir_grup_disarida": 0.661,
+      "katki_puan": -0.086
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 2.751,
+      "delta_bir_grup_disarida": 0.627,
+      "katki_puan": -0.052
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 3.858,
+      "delta_bir_grup_disarida": 0.562,
+      "katki_puan": 0.013
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 4.334,
+      "delta_bir_grup_disarida": 0.564,
+      "katki_puan": 0.011
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 2.161,
+      "delta_bir_grup_disarida": 0.718,
+      "katki_puan": -0.144
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 3.689,
+      "delta_bir_grup_disarida": 0.355,
+      "katki_puan": 0.22
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.236,
+      "delta_bir_grup_disarida": 0.505,
+      "katki_puan": 0.07
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 2.743,
+      "delta_bir_grup_disarida": 0.548,
+      "katki_puan": 0.027
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -3.432,
+      "delta_bir_grup_disarida": 0.626,
+      "katki_puan": -0.051
+     }
+    },
+    "pozitif_grup": 10,
+    "negatif_grup": 3,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 8,
+    "sinif_delta": {
+     "car": -0.042,
+     "van": 1.476,
+     "truck": 3.312,
+     "pedestrian": 2.58,
+     "person_sitting": 0.616,
+     "cyclist": -2.15,
+     "tram": -1.121,
+     "misc": -0.073
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.817,
+    "delta_seed": [
+     -0.032,
+     2.122,
+     0.361
+    ],
+    "hier_ga95": [
+     -0.799,
+     3.112
+    ],
+    "hier_p_le0": 0.132,
+    "hier_ort": 0.906,
+    "grup_ga95": [
+     0.199,
+     1.907
+    ],
+    "grup_p_le0": 0.008,
+    "tohum_ga95": [
+     -0.032,
+     2.122
+    ],
+    "tohum_p_le0": 0.0375
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.676,
+    "delta_seed": [
+     0.537,
+     -0.019,
+     1.509
+    ],
+    "hier_ga95": [
+     -0.955,
+     3.618
+    ],
+    "hier_p_le0": 0.1665,
+    "hier_ort": 0.899,
+    "grup_ga95": [
+     0.069,
+     2.37
+    ],
+    "grup_p_le0": 0.018,
+    "tohum_ga95": [
+     -0.019,
+     1.509
+    ],
+    "tohum_p_le0": 0.037
+   }
+  },
+  "yolo11s/best/H08": {
+   "s8": {
+    "delta_ort": 1.684,
+    "delta_seed": [
+     0.291,
+     0.161,
+     4.601
+    ],
+    "hier_ga95": [
+     -0.448,
+     4.62
+    ],
+    "hier_p_le0": 0.0835,
+    "hier_ort": 1.693,
+    "grup_ga95": [
+     0.882,
+     2.72
+    ],
+    "grup_p_le0": 0.0005,
+    "tohum_ga95": [
+     0.161,
+     4.601
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 1.001,
+      "delta_bir_grup_disarida": 1.686,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 5.872,
+      "delta_bir_grup_disarida": 1.761,
+      "katki_puan": -0.077
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 0.577,
+      "delta_bir_grup_disarida": 1.961,
+      "katki_puan": -0.277
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.751,
+      "delta_bir_grup_disarida": 1.693,
+      "katki_puan": -0.008
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 1.945,
+      "delta_bir_grup_disarida": 1.38,
+      "katki_puan": 0.304
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -0.259,
+      "delta_bir_grup_disarida": 1.741,
+      "katki_puan": -0.056
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 11.305,
+      "delta_bir_grup_disarida": 1.558,
+      "katki_puan": 0.126
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 0.957,
+      "delta_bir_grup_disarida": 1.675,
+      "katki_puan": 0.009
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 2.037,
+      "delta_bir_grup_disarida": 1.729,
+      "katki_puan": -0.045
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 2.319,
+      "delta_bir_grup_disarida": 1.449,
+      "katki_puan": 0.236
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 0.917,
+      "delta_bir_grup_disarida": 1.569,
+      "katki_puan": 0.116
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 5.566,
+      "delta_bir_grup_disarida": 1.644,
+      "katki_puan": 0.041
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -1.849,
+      "delta_bir_grup_disarida": 1.737,
+      "katki_puan": -0.053
+     }
+    },
+    "pozitif_grup": 11,
+    "negatif_grup": 2,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 6,
+    "sinif_delta": {
+     "car": 2.106,
+     "van": 2.626,
+     "truck": 1.44,
+     "pedestrian": 3.977,
+     "person_sitting": 1.876,
+     "cyclist": -2.174,
+     "tram": 2.691,
+     "misc": 0.932
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 1.54,
+    "delta_seed": [
+     1.812,
+     1.497,
+     1.312
+    ],
+    "hier_ga95": [
+     0.073,
+     3.343
+    ],
+    "hier_p_le0": 0.022,
+    "hier_ort": 1.595,
+    "grup_ga95": [
+     0.849,
+     2.724
+    ],
+    "grup_p_le0": 0.0005,
+    "tohum_ga95": [
+     1.312,
+     1.812
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 1.778,
+    "delta_seed": [
+     -0.482,
+     -1.362,
+     7.178
+    ],
+    "hier_ga95": [
+     -1.601,
+     5.817
+    ],
+    "hier_p_le0": 0.1655,
+    "hier_ort": 1.766,
+    "grup_ga95": [
+     0.749,
+     2.921
+    ],
+    "grup_p_le0": 0.001,
+    "tohum_ga95": [
+     -1.362,
+     7.178
+    ],
+    "tohum_p_le0": 0.3015
+   }
+  },
+  "yolo11s/last/H01": {
+   "s8": {
+    "delta_ort": -0.662,
+    "delta_seed": [
+     -1.196,
+     -0.047,
+     -0.743
+    ],
+    "hier_ga95": [
+     -1.363,
+     0.738
+    ],
+    "hier_p_le0": 0.8335,
+    "hier_ort": -0.465,
+    "grup_ga95": [
+     -0.968,
+     0.304
+    ],
+    "grup_p_le0": 0.9005,
+    "tohum_ga95": [
+     -1.196,
+     -0.047
+    ],
+    "tohum_p_le0": 1.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -12.082,
+      "delta_bir_grup_disarida": -0.66,
+      "katki_puan": -0.003
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 0.177,
+      "delta_bir_grup_disarida": -0.254,
+      "katki_puan": -0.409
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 1.009,
+      "delta_bir_grup_disarida": -0.774,
+      "katki_puan": 0.112
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.606,
+      "delta_bir_grup_disarida": -0.664,
+      "katki_puan": 0.002
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -0.395,
+      "delta_bir_grup_disarida": -0.444,
+      "katki_puan": -0.218
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -1.011,
+      "delta_bir_grup_disarida": -0.713,
+      "katki_puan": 0.051
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -3.19,
+      "delta_bir_grup_disarida": -0.621,
+      "katki_puan": -0.041
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 3.339,
+      "delta_bir_grup_disarida": -0.666,
+      "katki_puan": 0.004
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": -1.205,
+      "delta_bir_grup_disarida": -0.655,
+      "katki_puan": -0.008
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -0.879,
+      "delta_bir_grup_disarida": -0.711,
+      "katki_puan": 0.049
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -0.822,
+      "delta_bir_grup_disarida": -0.652,
+      "katki_puan": -0.011
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 5.036,
+      "delta_bir_grup_disarida": -0.69,
+      "katki_puan": 0.027
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": 0.118,
+      "delta_bir_grup_disarida": -0.649,
+      "katki_puan": -0.013
+     }
+    },
+    "pozitif_grup": 6,
+    "negatif_grup": 7,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 6,
+    "sinif_delta": {
+     "car": -0.62,
+     "van": -0.177,
+     "truck": 1.463,
+     "pedestrian": -0.12,
+     "person_sitting": -0.006,
+     "cyclist": -3.221,
+     "tram": -2.359,
+     "misc": -0.257
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": -0.42,
+    "delta_seed": [
+     -0.879,
+     0.086,
+     -0.467
+    ],
+    "hier_ga95": [
+     -1.196,
+     0.852
+    ],
+    "hier_p_le0": 0.7475,
+    "hier_ort": -0.289,
+    "grup_ga95": [
+     -0.794,
+     0.441
+    ],
+    "grup_p_le0": 0.761,
+    "tohum_ga95": [
+     -0.879,
+     0.086
+    ],
+    "tohum_p_le0": 0.963
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -0.839,
+    "delta_seed": [
+     -1.571,
+     0.024,
+     -0.971
+    ],
+    "hier_ga95": [
+     -1.711,
+     1.178
+    ],
+    "hier_p_le0": 0.8125,
+    "hier_ort": -0.54,
+    "grup_ga95": [
+     -1.265,
+     0.51
+    ],
+    "grup_p_le0": 0.874,
+    "tohum_ga95": [
+     -1.571,
+     0.024
+    ],
+    "tohum_p_le0": 0.963
+   }
+  },
+  "yolo11s/last/H02": {
+   "s8": {
+    "delta_ort": 0.003,
+    "delta_seed": [
+     -0.685,
+     0.849,
+     -0.156
+    ],
+    "hier_ga95": [
+     -1.012,
+     1.567
+    ],
+    "hier_p_le0": 0.5235,
+    "hier_ort": 0.048,
+    "grup_ga95": [
+     -0.702,
+     0.921
+    ],
+    "grup_p_le0": 0.4785,
+    "tohum_ga95": [
+     -0.685,
+     0.849
+    ],
+    "tohum_p_le0": 0.4235,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -2.131,
+      "delta_bir_grup_disarida": 0.006,
+      "katki_puan": -0.003
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 1.555,
+      "delta_bir_grup_disarida": 0.122,
+      "katki_puan": -0.119
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 2.186,
+      "delta_bir_grup_disarida": 0.126,
+      "katki_puan": -0.123
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.811,
+      "delta_bir_grup_disarida": -0.002,
+      "katki_puan": 0.005
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -1.38,
+      "delta_bir_grup_disarida": 0.216,
+      "katki_puan": -0.213
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -0.483,
+      "delta_bir_grup_disarida": -0.183,
+      "katki_puan": 0.185
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -1.651,
+      "delta_bir_grup_disarida": 0.029,
+      "katki_puan": -0.026
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -1.429,
+      "delta_bir_grup_disarida": 0.002,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.578,
+      "delta_bir_grup_disarida": -0.117,
+      "katki_puan": 0.12
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -0.412,
+      "delta_bir_grup_disarida": -0.065,
+      "katki_puan": 0.068
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.21,
+      "delta_bir_grup_disarida": 0.048,
+      "katki_puan": -0.045
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": -2.687,
+      "delta_bir_grup_disarida": 0.007,
+      "katki_puan": -0.004
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -2.802,
+      "delta_bir_grup_disarida": 0.032,
+      "katki_puan": -0.029
+     }
+    },
+    "pozitif_grup": 4,
+    "negatif_grup": 9,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 5,
+    "sinif_delta": {
+     "car": -0.684,
+     "van": -0.505,
+     "truck": 3.185,
+     "pedestrian": 0.013,
+     "person_sitting": 0.265,
+     "cyclist": -2.093,
+     "tram": -0.428,
+     "misc": 0.268
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.064,
+    "delta_seed": [
+     -0.15,
+     1.106,
+     -0.764
+    ],
+    "hier_ga95": [
+     -0.997,
+     1.62
+    ],
+    "hier_p_le0": 0.518,
+    "hier_ort": 0.078,
+    "grup_ga95": [
+     -0.756,
+     0.94
+    ],
+    "grup_p_le0": 0.4165,
+    "tohum_ga95": [
+     -0.764,
+     1.106
+    ],
+    "tohum_p_le0": 0.414
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -0.085,
+    "delta_seed": [
+     -0.974,
+     0.979,
+     -0.261
+    ],
+    "hier_ga95": [
+     -1.407,
+     1.917
+    ],
+    "hier_p_le0": 0.581,
+    "hier_ort": -0.039,
+    "grup_ga95": [
+     -0.879,
+     0.974
+    ],
+    "grup_p_le0": 0.5965,
+    "tohum_ga95": [
+     -0.974,
+     0.979
+    ],
+    "tohum_p_le0": 0.6335
+   }
+  },
+  "yolo11s/last/H03": {
+   "s8": {
+    "delta_ort": -0.121,
+    "delta_seed": [
+     -0.226,
+     0.206,
+     -0.344
+    ],
+    "hier_ga95": [
+     -0.817,
+     1.773
+    ],
+    "hier_p_le0": 0.4455,
+    "hier_ort": 0.23,
+    "grup_ga95": [
+     -0.596,
+     1.404
+    ],
+    "grup_p_le0": 0.4305,
+    "tohum_ga95": [
+     -0.344,
+     0.206
+    ],
+    "tohum_p_le0": 0.74,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 3.621,
+      "delta_bir_grup_disarida": -0.118,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 3.267,
+      "delta_bir_grup_disarida": -0.108,
+      "katki_puan": -0.014
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 0.561,
+      "delta_bir_grup_disarida": -0.091,
+      "katki_puan": -0.031
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.689,
+      "delta_bir_grup_disarida": -0.124,
+      "katki_puan": 0.002
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 0.237,
+      "delta_bir_grup_disarida": 0.828,
+      "katki_puan": -0.949
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 0.288,
+      "delta_bir_grup_disarida": -0.106,
+      "katki_puan": -0.016
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 6.313,
+      "delta_bir_grup_disarida": -0.164,
+      "katki_puan": 0.043
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -11.483,
+      "delta_bir_grup_disarida": -0.121,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 2.102,
+      "delta_bir_grup_disarida": -0.393,
+      "katki_puan": 0.271
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -0.531,
+      "delta_bir_grup_disarida": 0.022,
+      "katki_puan": -0.143
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 0.095,
+      "delta_bir_grup_disarida": -0.049,
+      "katki_puan": -0.072
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 8.072,
+      "delta_bir_grup_disarida": -0.185,
+      "katki_puan": 0.064
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -3.703,
+      "delta_bir_grup_disarida": -0.087,
+      "katki_puan": -0.035
+     }
+    },
+    "pozitif_grup": 10,
+    "negatif_grup": 3,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 4,
+    "sinif_delta": {
+     "car": 0.585,
+     "van": 1.807,
+     "truck": 1.514,
+     "pedestrian": 1.837,
+     "person_sitting": 0.049,
+     "cyclist": -0.171,
+     "tram": -6.292,
+     "misc": -0.301
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.76,
+    "delta_seed": [
+     0.488,
+     1.292,
+     0.5
+    ],
+    "hier_ga95": [
+     -0.141,
+     2.067
+    ],
+    "hier_p_le0": 0.048,
+    "hier_ort": 0.811,
+    "grup_ga95": [
+     0.167,
+     1.567
+    ],
+    "grup_p_le0": 0.009,
+    "tohum_ga95": [
+     0.488,
+     1.292
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -0.12,
+    "delta_seed": [
+     -0.294,
+     0.392,
+     -0.458
+    ],
+    "hier_ga95": [
+     -0.909,
+     2.612
+    ],
+    "hier_p_le0": 0.416,
+    "hier_ort": 0.376,
+    "grup_ga95": [
+     -0.64,
+     1.986
+    ],
+    "grup_p_le0": 0.393,
+    "tohum_ga95": [
+     -0.458,
+     0.392
+    ],
+    "tohum_p_le0": 0.74
+   }
+  },
+  "yolo11s/last/H04": {
+   "s8": {
+    "delta_ort": -1.207,
+    "delta_seed": [
+     -1.167,
+     -1.29,
+     -1.164
+    ],
+    "hier_ga95": [
+     -1.826,
+     0.863
+    ],
+    "hier_p_le0": 0.8875,
+    "hier_ort": -0.874,
+    "grup_ga95": [
+     -1.731,
+     0.433
+    ],
+    "grup_p_le0": 0.906,
+    "tohum_ga95": [
+     -1.29,
+     -1.164
+    ],
+    "tohum_p_le0": 1.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -10.642,
+      "delta_bir_grup_disarida": -1.207,
+      "katki_puan": -0.0
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": -0.054,
+      "delta_bir_grup_disarida": -1.213,
+      "katki_puan": 0.006
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 3.581,
+      "delta_bir_grup_disarida": -0.956,
+      "katki_puan": -0.252
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.127,
+      "delta_bir_grup_disarida": -1.213,
+      "katki_puan": 0.006
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -1.108,
+      "delta_bir_grup_disarida": -0.325,
+      "katki_puan": -0.882
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 0.101,
+      "delta_bir_grup_disarida": -1.331,
+      "katki_puan": 0.124
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -1.804,
+      "delta_bir_grup_disarida": -1.203,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -7.461,
+      "delta_bir_grup_disarida": -1.209,
+      "katki_puan": 0.002
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.705,
+      "delta_bir_grup_disarida": -1.291,
+      "katki_puan": 0.084
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -2.051,
+      "delta_bir_grup_disarida": -1.266,
+      "katki_puan": 0.059
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.968,
+      "delta_bir_grup_disarida": -1.188,
+      "katki_puan": -0.02
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": -1.735,
+      "delta_bir_grup_disarida": -1.208,
+      "katki_puan": 0.001
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -4.141,
+      "delta_bir_grup_disarida": -1.185,
+      "katki_puan": -0.022
+     }
+    },
+    "pozitif_grup": 4,
+    "negatif_grup": 9,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 7,
+    "sinif_delta": {
+     "car": -1.874,
+     "van": -2.3,
+     "truck": 1.141,
+     "pedestrian": -0.449,
+     "person_sitting": 0.251,
+     "cyclist": -0.076,
+     "tram": -7.122,
+     "misc": 0.773
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": -0.362,
+    "delta_seed": [
+     -0.505,
+     0.097,
+     -0.679
+    ],
+    "hier_ga95": [
+     -1.17,
+     0.872
+    ],
+    "hier_p_le0": 0.765,
+    "hier_ort": -0.289,
+    "grup_ga95": [
+     -0.911,
+     0.493
+    ],
+    "grup_p_le0": 0.843,
+    "tohum_ga95": [
+     -0.679,
+     0.097
+    ],
+    "tohum_p_le0": 0.963
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -1.78,
+    "delta_seed": [
+     -1.829,
+     -1.864,
+     -1.647
+    ],
+    "hier_ga95": [
+     -2.402,
+     0.421
+    ],
+    "hier_p_le0": 0.9395,
+    "hier_ort": -1.315,
+    "grup_ga95": [
+     -2.099,
+     -0.059
+    ],
+    "grup_p_le0": 0.981,
+    "tohum_ga95": [
+     -1.864,
+     -1.647
+    ],
+    "tohum_p_le0": 1.0
+   }
+  },
+  "yolo11s/last/H05": {
+   "s8": {
+    "delta_ort": 0.029,
+    "delta_seed": [
+     -0.672,
+     0.801,
+     -0.042
+    ],
+    "hier_ga95": [
+     -1.403,
+     2.351
+    ],
+    "hier_p_le0": 0.3615,
+    "hier_ort": 0.371,
+    "grup_ga95": [
+     -1.297,
+     1.702
+    ],
+    "grup_p_le0": 0.2905,
+    "tohum_ga95": [
+     -0.672,
+     0.801
+    ],
+    "tohum_p_le0": 0.4235,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 7.099,
+      "delta_bir_grup_disarida": 0.031,
+      "katki_puan": -0.002
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 2.58,
+      "delta_bir_grup_disarida": 0.661,
+      "katki_puan": -0.632
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -0.539,
+      "delta_bir_grup_disarida": 0.101,
+      "katki_puan": -0.072
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 2.309,
+      "delta_bir_grup_disarida": 0.028,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -0.125,
+      "delta_bir_grup_disarida": 0.981,
+      "katki_puan": -0.952
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -2.544,
+      "delta_bir_grup_disarida": 0.157,
+      "katki_puan": -0.128
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 4.041,
+      "delta_bir_grup_disarida": 0.058,
+      "katki_puan": -0.029
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -1.926,
+      "delta_bir_grup_disarida": 0.027,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 1.766,
+      "delta_bir_grup_disarida": -0.521,
+      "katki_puan": 0.55
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 1.109,
+      "delta_bir_grup_disarida": -0.087,
+      "katki_puan": 0.116
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 2.339,
+      "delta_bir_grup_disarida": 0.02,
+      "katki_puan": 0.009
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 9.108,
+      "delta_bir_grup_disarida": 0.004,
+      "katki_puan": 0.024
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": 2.184,
+      "delta_bir_grup_disarida": 0.004,
+      "katki_puan": 0.025
+     }
+    },
+    "pozitif_grup": 9,
+    "negatif_grup": 4,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 7,
+    "sinif_delta": {
+     "car": 0.924,
+     "van": 0.39,
+     "truck": 1.385,
+     "pedestrian": 2.118,
+     "person_sitting": 1.024,
+     "cyclist": -0.275,
+     "tram": -5.925,
+     "misc": 0.591
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.879,
+    "delta_seed": [
+     -0.255,
+     1.536,
+     1.357
+    ],
+    "hier_ga95": [
+     -0.95,
+     2.4
+    ],
+    "hier_p_le0": 0.153,
+    "hier_ort": 0.82,
+    "grup_ga95": [
+     -0.632,
+     1.702
+    ],
+    "grup_p_le0": 0.071,
+    "tohum_ga95": [
+     -0.255,
+     1.536
+    ],
+    "tohum_p_le0": 0.0375
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -0.231,
+    "delta_seed": [
+     -1.259,
+     0.978,
+     -0.41
+    ],
+    "hier_ga95": [
+     -1.753,
+     2.668
+    ],
+    "hier_p_le0": 0.431,
+    "hier_ort": 0.266,
+    "grup_ga95": [
+     -1.447,
+     1.716
+    ],
+    "grup_p_le0": 0.378,
+    "tohum_ga95": [
+     -1.259,
+     0.978
+    ],
+    "tohum_p_le0": 0.6335
+   }
+  },
+  "yolo11s/last/H06": {
+   "s8": {
+    "delta_ort": -0.47,
+    "delta_seed": [
+     -0.866,
+     0.066,
+     -0.609
+    ],
+    "hier_ga95": [
+     -1.614,
+     0.746
+    ],
+    "hier_p_le0": 0.786,
+    "hier_ort": -0.401,
+    "grup_ga95": [
+     -1.156,
+     0.243
+    ],
+    "grup_p_le0": 0.9035,
+    "tohum_ga95": [
+     -0.866,
+     0.066
+    ],
+    "tohum_p_le0": 0.963,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 2.139,
+      "delta_bir_grup_disarida": -0.469,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 0.886,
+      "delta_bir_grup_disarida": -0.36,
+      "katki_puan": -0.109
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -1.046,
+      "delta_bir_grup_disarida": -0.414,
+      "katki_puan": -0.056
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 1.488,
+      "delta_bir_grup_disarida": -0.468,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -1.041,
+      "delta_bir_grup_disarida": -0.221,
+      "katki_puan": -0.248
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -3.981,
+      "delta_bir_grup_disarida": -0.311,
+      "katki_puan": -0.159
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 0.034,
+      "delta_bir_grup_disarida": -0.463,
+      "katki_puan": -0.007
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 1.648,
+      "delta_bir_grup_disarida": -0.472,
+      "katki_puan": 0.003
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": -0.5,
+      "delta_bir_grup_disarida": -0.693,
+      "katki_puan": 0.223
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -1.163,
+      "delta_bir_grup_disarida": -0.497,
+      "katki_puan": 0.027
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 0.903,
+      "delta_bir_grup_disarida": -0.47,
+      "katki_puan": 0.0
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 3.706,
+      "delta_bir_grup_disarida": -0.481,
+      "katki_puan": 0.012
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": 0.07,
+      "delta_bir_grup_disarida": -0.473,
+      "katki_puan": 0.004
+     }
+    },
+    "pozitif_grup": 8,
+    "negatif_grup": 5,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 6,
+    "sinif_delta": {
+     "car": 0.537,
+     "van": -0.784,
+     "truck": -0.893,
+     "pedestrian": 0.918,
+     "person_sitting": 0.054,
+     "cyclist": -1.206,
+     "tram": -2.486,
+     "misc": 0.104
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": -0.181,
+    "delta_seed": [
+     -0.516,
+     0.461,
+     -0.489
+    ],
+    "hier_ga95": [
+     -1.509,
+     0.915
+    ],
+    "hier_p_le0": 0.664,
+    "hier_ort": -0.219,
+    "grup_ga95": [
+     -1.016,
+     0.266
+    ],
+    "grup_p_le0": 0.7735,
+    "tohum_ga95": [
+     -0.516,
+     0.461
+    ],
+    "tohum_p_le0": 0.74
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -0.652,
+    "delta_seed": [
+     -1.332,
+     0.199,
+     -0.824
+    ],
+    "hier_ga95": [
+     -1.936,
+     1.044
+    ],
+    "hier_p_le0": 0.788,
+    "hier_ort": -0.505,
+    "grup_ga95": [
+     -1.202,
+     0.173
+    ],
+    "grup_p_le0": 0.932,
+    "tohum_ga95": [
+     -1.332,
+     0.199
+    ],
+    "tohum_p_le0": 0.963
+   }
+  },
+  "yolo11s/last/H08": {
+   "s8": {
+    "delta_ort": 0.508,
+    "delta_seed": [
+     0.148,
+     0.627,
+     0.75
+    ],
+    "hier_ga95": [
+     -0.788,
+     2.556
+    ],
+    "hier_p_le0": 0.137,
+    "hier_ort": 0.745,
+    "grup_ga95": [
+     -0.374,
+     2.321
+    ],
+    "grup_p_le0": 0.071,
+    "tohum_ga95": [
+     0.148,
+     0.75
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -1.043,
+      "delta_bir_grup_disarida": 0.514,
+      "katki_puan": -0.006
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 2.764,
+      "delta_bir_grup_disarida": 0.716,
+      "katki_puan": -0.208
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 4.108,
+      "delta_bir_grup_disarida": 0.68,
+      "katki_puan": -0.172
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 1.669,
+      "delta_bir_grup_disarida": 0.503,
+      "katki_puan": 0.005
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -0.119,
+      "delta_bir_grup_disarida": 0.931,
+      "katki_puan": -0.423
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -4.074,
+      "delta_bir_grup_disarida": 0.681,
+      "katki_puan": -0.173
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 6.856,
+      "delta_bir_grup_disarida": 0.46,
+      "katki_puan": 0.048
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -2.836,
+      "delta_bir_grup_disarida": 0.507,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.926,
+      "delta_bir_grup_disarida": 0.234,
+      "katki_puan": 0.274
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 2.612,
+      "delta_bir_grup_disarida": 0.415,
+      "katki_puan": 0.093
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 3.384,
+      "delta_bir_grup_disarida": 0.456,
+      "katki_puan": 0.052
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 3.18,
+      "delta_bir_grup_disarida": 0.472,
+      "katki_puan": 0.036
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -3.35,
+      "delta_bir_grup_disarida": 0.55,
+      "katki_puan": -0.042
+     }
+    },
+    "pozitif_grup": 8,
+    "negatif_grup": 5,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 7,
+    "sinif_delta": {
+     "car": 0.739,
+     "van": 3.191,
+     "truck": 0.417,
+     "pedestrian": 2.092,
+     "person_sitting": 0.101,
+     "cyclist": -0.878,
+     "tram": -1.951,
+     "misc": 0.357
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.86,
+    "delta_seed": [
+     1.097,
+     0.737,
+     0.745
+    ],
+    "hier_ga95": [
+     -0.595,
+     2.655
+    ],
+    "hier_p_le0": 0.0815,
+    "hier_ort": 0.963,
+    "grup_ga95": [
+     -0.172,
+     2.343
+    ],
+    "grup_p_le0": 0.041,
+    "tohum_ga95": [
+     0.737,
+     1.097
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.601,
+    "delta_seed": [
+     0.085,
+     0.81,
+     0.91
+    ],
+    "hier_ga95": [
+     -0.752,
+     2.997
+    ],
+    "hier_p_le0": 0.129,
+    "hier_ort": 0.934,
+    "grup_ga95": [
+     -0.326,
+     2.469
+    ],
+    "grup_p_le0": 0.057,
+    "tohum_ga95": [
+     0.085,
+     0.91
+    ],
+    "tohum_p_le0": 0.0
+   }
+  },
+  "yolo26n/best/H01": {
+   "s8": {
+    "delta_ort": 0.125,
+    "delta_seed": [
+     1.756,
+     -2.422,
+     1.043
+    ],
+    "hier_ga95": [
+     -2.264,
+     2.509
+    ],
+    "hier_p_le0": 0.401,
+    "hier_ort": 0.234,
+    "grup_ga95": [
+     -0.861,
+     1.503
+    ],
+    "grup_p_le0": 0.334,
+    "tohum_ga95": [
+     -2.422,
+     1.756
+    ],
+    "tohum_p_le0": 0.3665,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -10.619,
+      "delta_bir_grup_disarida": 0.122,
+      "katki_puan": 0.004
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 0.328,
+      "delta_bir_grup_disarida": 0.571,
+      "katki_puan": -0.445
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -0.706,
+      "delta_bir_grup_disarida": 0.201,
+      "katki_puan": -0.075
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": -1.101,
+      "delta_bir_grup_disarida": 0.126,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -0.463,
+      "delta_bir_grup_disarida": 0.296,
+      "katki_puan": -0.171
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 2.581,
+      "delta_bir_grup_disarida": 0.033,
+      "katki_puan": 0.092
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -1.987,
+      "delta_bir_grup_disarida": 0.147,
+      "katki_puan": -0.022
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -0.21,
+      "delta_bir_grup_disarida": 0.126,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 2.535,
+      "delta_bir_grup_disarida": -0.525,
+      "katki_puan": 0.65
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 0.054,
+      "delta_bir_grup_disarida": 0.326,
+      "katki_puan": -0.2
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.344,
+      "delta_bir_grup_disarida": 0.173,
+      "katki_puan": -0.047
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 0.75,
+      "delta_bir_grup_disarida": 0.142,
+      "katki_puan": -0.017
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -5.068,
+      "delta_bir_grup_disarida": 0.225,
+      "katki_puan": -0.1
+     }
+    },
+    "pozitif_grup": 5,
+    "negatif_grup": 8,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 3,
+    "sinif_delta": {
+     "car": -0.626,
+     "van": 0.167,
+     "truck": -1.638,
+     "pedestrian": 1.759,
+     "person_sitting": 0.456,
+     "cyclist": 2.525,
+     "tram": -1.538,
+     "misc": -0.101
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.363,
+    "delta_seed": [
+     0.829,
+     -0.857,
+     1.117
+    ],
+    "hier_ga95": [
+     -1.472,
+     2.357
+    ],
+    "hier_p_le0": 0.3085,
+    "hier_ort": 0.389,
+    "grup_ga95": [
+     -0.754,
+     1.567
+    ],
+    "grup_p_le0": 0.2535,
+    "tohum_ga95": [
+     -0.857,
+     1.117
+    ],
+    "tohum_p_le0": 0.26
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.108,
+    "delta_seed": [
+     2.117,
+     -3.247,
+     1.454
+    ],
+    "hier_ga95": [
+     -2.629,
+     3.316
+    ],
+    "hier_p_le0": 0.402,
+    "hier_ort": 0.309,
+    "grup_ga95": [
+     -1.006,
+     1.982
+    ],
+    "grup_p_le0": 0.3375,
+    "tohum_ga95": [
+     -3.247,
+     2.117
+    ],
+    "tohum_p_le0": 0.3665
+   }
+  },
+  "yolo26n/best/H02": {
+   "s8": {
+    "delta_ort": -0.928,
+    "delta_seed": [
+     0.734,
+     -3.152,
+     -0.364
+    ],
+    "hier_ga95": [
+     -2.821,
+     0.85
+    ],
+    "hier_p_le0": 0.778,
+    "hier_ort": -0.749,
+    "grup_ga95": [
+     -1.572,
+     0.186
+    ],
+    "grup_p_le0": 0.9365,
+    "tohum_ga95": [
+     -3.152,
+     0.734
+    ],
+    "tohum_p_le0": 0.7285,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -8.082,
+      "delta_bir_grup_disarida": -0.931,
+      "katki_puan": 0.004
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": -1.109,
+      "delta_bir_grup_disarida": -0.658,
+      "katki_puan": -0.269
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -3.389,
+      "delta_bir_grup_disarida": -1.2,
+      "katki_puan": 0.272
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.105,
+      "delta_bir_grup_disarida": -0.935,
+      "katki_puan": 0.007
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -0.54,
+      "delta_bir_grup_disarida": -0.425,
+      "katki_puan": -0.503
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 1.796,
+      "delta_bir_grup_disarida": -0.838,
+      "katki_puan": -0.09
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -5.891,
+      "delta_bir_grup_disarida": -0.911,
+      "katki_puan": -0.017
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 1.065,
+      "delta_bir_grup_disarida": -0.923,
+      "katki_puan": -0.005
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.509,
+      "delta_bir_grup_disarida": -1.304,
+      "katki_puan": 0.376
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -2.288,
+      "delta_bir_grup_disarida": -0.776,
+      "katki_puan": -0.152
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.915,
+      "delta_bir_grup_disarida": -0.803,
+      "katki_puan": -0.125
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 5.241,
+      "delta_bir_grup_disarida": -0.922,
+      "katki_puan": -0.006
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -0.558,
+      "delta_bir_grup_disarida": -0.915,
+      "katki_puan": -0.012
+     }
+    },
+    "pozitif_grup": 5,
+    "negatif_grup": 8,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 4,
+    "sinif_delta": {
+     "car": 0.316,
+     "van": -1.642,
+     "truck": -3.277,
+     "pedestrian": 0.412,
+     "person_sitting": -0.29,
+     "cyclist": 2.383,
+     "tram": -5.47,
+     "misc": 0.147
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": -0.279,
+    "delta_seed": [
+     -0.18,
+     -1.105,
+     0.449
+    ],
+    "hier_ga95": [
+     -1.673,
+     0.828
+    ],
+    "hier_p_le0": 0.6495,
+    "hier_ort": -0.283,
+    "grup_ga95": [
+     -1.219,
+     0.327
+    ],
+    "grup_p_le0": 0.7445,
+    "tohum_ga95": [
+     -1.105,
+     0.449
+    ],
+    "tohum_p_le0": 0.73
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -1.213,
+    "delta_seed": [
+     0.923,
+     -4.194,
+     -0.368
+    ],
+    "hier_ga95": [
+     -3.336,
+     1.149
+    ],
+    "hier_p_le0": 0.7605,
+    "hier_ort": -0.906,
+    "grup_ga95": [
+     -1.792,
+     0.288
+    ],
+    "grup_p_le0": 0.923,
+    "tohum_ga95": [
+     -4.194,
+     0.923
+    ],
+    "tohum_p_le0": 0.7285
+   }
+  },
+  "yolo26n/best/H03": {
+   "s8": {
+    "delta_ort": 1.014,
+    "delta_seed": [
+     0.297,
+     1.582,
+     1.163
+    ],
+    "hier_ga95": [
+     -0.815,
+     3.362
+    ],
+    "hier_p_le0": 0.093,
+    "hier_ort": 1.249,
+    "grup_ga95": [
+     -0.103,
+     3.118
+    ],
+    "grup_p_le0": 0.038,
+    "tohum_ga95": [
+     0.297,
+     1.582
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -4.279,
+      "delta_bir_grup_disarida": 1.01,
+      "katki_puan": 0.004
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 4.678,
+      "delta_bir_grup_disarida": 0.616,
+      "katki_puan": 0.398
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -0.17,
+      "delta_bir_grup_disarida": 0.954,
+      "katki_puan": 0.061
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.621,
+      "delta_bir_grup_disarida": 1.017,
+      "katki_puan": -0.003
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -0.016,
+      "delta_bir_grup_disarida": 1.998,
+      "katki_puan": -0.984
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 2.186,
+      "delta_bir_grup_disarida": 1.198,
+      "katki_puan": -0.184
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 7.774,
+      "delta_bir_grup_disarida": 0.954,
+      "katki_puan": 0.06
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -3.849,
+      "delta_bir_grup_disarida": 1.031,
+      "katki_puan": -0.016
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 1.116,
+      "delta_bir_grup_disarida": 0.452,
+      "katki_puan": 0.562
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 3.457,
+      "delta_bir_grup_disarida": 1.154,
+      "katki_puan": -0.139
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 0.476,
+      "delta_bir_grup_disarida": 1.223,
+      "katki_puan": -0.208
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": -1.096,
+      "delta_bir_grup_disarida": 1.042,
+      "katki_puan": -0.028
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -2.148,
+      "delta_bir_grup_disarida": 1.09,
+      "katki_puan": -0.076
+     }
+    },
+    "pozitif_grup": 7,
+    "negatif_grup": 6,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 5,
+    "sinif_delta": {
+     "car": 0.501,
+     "van": 1.782,
+     "truck": 1.351,
+     "pedestrian": 1.793,
+     "person_sitting": 0.592,
+     "cyclist": 6.129,
+     "tram": -4.332,
+     "misc": 0.299
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 1.778,
+    "delta_seed": [
+     1.439,
+     1.572,
+     2.324
+    ],
+    "hier_ga95": [
+     -0.013,
+     3.39
+    ],
+    "hier_p_le0": 0.0265,
+    "hier_ort": 1.786,
+    "grup_ga95": [
+     0.646,
+     3.124
+    ],
+    "grup_p_le0": 0.005,
+    "tohum_ga95": [
+     1.439,
+     2.324
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 1.204,
+    "delta_seed": [
+     0.011,
+     2.068,
+     1.533
+    ],
+    "hier_ga95": [
+     -1.048,
+     4.253
+    ],
+    "hier_p_le0": 0.115,
+    "hier_ort": 1.498,
+    "grup_ga95": [
+     -0.176,
+     3.919
+    ],
+    "grup_p_le0": 0.0405,
+    "tohum_ga95": [
+     0.011,
+     2.068
+    ],
+    "tohum_p_le0": 0.0
+   }
+  },
+  "yolo26n/best/H04": {
+   "s8": {
+    "delta_ort": -1.237,
+    "delta_seed": [
+     0.869,
+     -3.485,
+     -1.093
+    ],
+    "hier_ga95": [
+     -3.046,
+     1.646
+    ],
+    "hier_p_le0": 0.7585,
+    "hier_ort": -0.841,
+    "grup_ga95": [
+     -2.042,
+     1.045
+    ],
+    "grup_p_le0": 0.848,
+    "tohum_ga95": [
+     -3.485,
+     0.869
+    ],
+    "tohum_p_le0": 0.849,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 1.459,
+      "delta_bir_grup_disarida": -1.241,
+      "katki_puan": 0.005
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 0.415,
+      "delta_bir_grup_disarida": -1.611,
+      "katki_puan": 0.374
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 0.972,
+      "delta_bir_grup_disarida": -1.319,
+      "katki_puan": 0.083
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.243,
+      "delta_bir_grup_disarida": -1.245,
+      "katki_puan": 0.008
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -1.39,
+      "delta_bir_grup_disarida": -0.167,
+      "katki_puan": -1.07
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 0.122,
+      "delta_bir_grup_disarida": -1.258,
+      "katki_puan": 0.021
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -3.262,
+      "delta_bir_grup_disarida": -1.234,
+      "katki_puan": -0.003
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 2.361,
+      "delta_bir_grup_disarida": -1.237,
+      "katki_puan": 0.0
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": -1.637,
+      "delta_bir_grup_disarida": -1.117,
+      "katki_puan": -0.12
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 1.629,
+      "delta_bir_grup_disarida": -1.194,
+      "katki_puan": -0.043
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -2.61,
+      "delta_bir_grup_disarida": -1.05,
+      "katki_puan": -0.186
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 4.503,
+      "delta_bir_grup_disarida": -1.291,
+      "katki_puan": 0.055
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": 2.111,
+      "delta_bir_grup_disarida": -1.243,
+      "katki_puan": 0.006
+     }
+    },
+    "pozitif_grup": 9,
+    "negatif_grup": 4,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 8,
+    "sinif_delta": {
+     "car": -1.286,
+     "van": -0.496,
+     "truck": -0.259,
+     "pedestrian": -2.362,
+     "person_sitting": 0.806,
+     "cyclist": 0.728,
+     "tram": -7.211,
+     "misc": 0.188
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": -0.383,
+    "delta_seed": [
+     0.457,
+     -1.457,
+     -0.149
+    ],
+    "hier_ga95": [
+     -1.906,
+     1.723
+    ],
+    "hier_p_le0": 0.655,
+    "hier_ort": -0.234,
+    "grup_ga95": [
+     -1.303,
+     1.213
+    ],
+    "grup_p_le0": 0.7335,
+    "tohum_ga95": [
+     -1.457,
+     0.457
+    ],
+    "tohum_p_le0": 0.7285
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -1.814,
+    "delta_seed": [
+     1.0,
+     -4.698,
+     -1.745
+    ],
+    "hier_ga95": [
+     -4.162,
+     1.884
+    ],
+    "hier_p_le0": 0.8045,
+    "hier_ort": -1.269,
+    "grup_ga95": [
+     -2.863,
+     0.984
+    ],
+    "grup_p_le0": 0.9,
+    "tohum_ga95": [
+     -4.698,
+     1.0
+    ],
+    "tohum_p_le0": 0.849
+   }
+  },
+  "yolo26n/best/H05": {
+   "s8": {
+    "delta_ort": 0.613,
+    "delta_seed": [
+     1.596,
+     -1.143,
+     1.385
+    ],
+    "hier_ga95": [
+     -1.527,
+     2.32
+    ],
+    "hier_p_le0": 0.278,
+    "hier_ort": 0.535,
+    "grup_ga95": [
+     -0.858,
+     1.425
+    ],
+    "grup_p_le0": 0.142,
+    "tohum_ga95": [
+     -1.143,
+     1.596
+    ],
+    "tohum_p_le0": 0.26,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -5.507,
+      "delta_bir_grup_disarida": 0.611,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 2.606,
+      "delta_bir_grup_disarida": 0.765,
+      "katki_puan": -0.152
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -0.523,
+      "delta_bir_grup_disarida": 0.476,
+      "katki_puan": 0.137
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.689,
+      "delta_bir_grup_disarida": 0.616,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 2.086,
+      "delta_bir_grup_disarida": 0.137,
+      "katki_puan": 0.476
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 2.869,
+      "delta_bir_grup_disarida": 0.96,
+      "katki_puan": -0.348
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 6.63,
+      "delta_bir_grup_disarida": 0.558,
+      "katki_puan": 0.054
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -0.597,
+      "delta_bir_grup_disarida": 0.616,
+      "katki_puan": -0.003
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.836,
+      "delta_bir_grup_disarida": 0.32,
+      "katki_puan": 0.292
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -0.352,
+      "delta_bir_grup_disarida": 0.61,
+      "katki_puan": 0.002
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.176,
+      "delta_bir_grup_disarida": 0.678,
+      "katki_puan": -0.065
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": -2.759,
+      "delta_bir_grup_disarida": 0.658,
+      "katki_puan": -0.046
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": 1.468,
+      "delta_bir_grup_disarida": 0.673,
+      "katki_puan": -0.061
+     }
+    },
+    "pozitif_grup": 7,
+    "negatif_grup": 6,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 6,
+    "sinif_delta": {
+     "car": 1.347,
+     "van": 0.846,
+     "truck": -3.195,
+     "pedestrian": 0.881,
+     "person_sitting": -0.527,
+     "cyclist": 1.613,
+     "tram": 3.124,
+     "misc": 0.811
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.254,
+    "delta_seed": [
+     0.484,
+     -0.985,
+     1.263
+    ],
+    "hier_ga95": [
+     -1.614,
+     2.011
+    ],
+    "hier_p_le0": 0.3615,
+    "hier_ort": 0.297,
+    "grup_ga95": [
+     -0.969,
+     1.205
+    ],
+    "grup_p_le0": 0.2525,
+    "tohum_ga95": [
+     -0.985,
+     1.263
+    ],
+    "tohum_p_le0": 0.376
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.769,
+    "delta_seed": [
+     1.955,
+     -1.43,
+     1.783
+    ],
+    "hier_ga95": [
+     -2.174,
+     3.026
+    ],
+    "hier_p_le0": 0.299,
+    "hier_ort": 0.594,
+    "grup_ga95": [
+     -1.484,
+     1.911
+    ],
+    "grup_p_le0": 0.2075,
+    "tohum_ga95": [
+     -1.43,
+     1.955
+    ],
+    "tohum_p_le0": 0.26
+   }
+  },
+  "yolo26n/best/H06": {
+   "s8": {
+    "delta_ort": -0.249,
+    "delta_seed": [
+     0.211,
+     -1.029,
+     0.071
+    ],
+    "hier_ga95": [
+     -2.064,
+     1.538
+    ],
+    "hier_p_le0": 0.5995,
+    "hier_ort": -0.204,
+    "grup_ga95": [
+     -1.4,
+     0.822
+    ],
+    "grup_p_le0": 0.6555,
+    "tohum_ga95": [
+     -1.029,
+     0.211
+    ],
+    "tohum_p_le0": 0.6925,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -9.509,
+      "delta_bir_grup_disarida": -0.254,
+      "katki_puan": 0.004
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 1.586,
+      "delta_bir_grup_disarida": -0.495,
+      "katki_puan": 0.246
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -2.681,
+      "delta_bir_grup_disarida": -0.284,
+      "katki_puan": 0.035
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": -0.594,
+      "delta_bir_grup_disarida": -0.25,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": -0.712,
+      "delta_bir_grup_disarida": 0.243,
+      "katki_puan": -0.493
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 0.733,
+      "delta_bir_grup_disarida": -0.118,
+      "katki_puan": -0.132
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -3.776,
+      "delta_bir_grup_disarida": -0.254,
+      "katki_puan": 0.004
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": 2.787,
+      "delta_bir_grup_disarida": -0.246,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.711,
+      "delta_bir_grup_disarida": -0.703,
+      "katki_puan": 0.454
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -1.127,
+      "delta_bir_grup_disarida": -0.099,
+      "katki_puan": -0.151
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -0.834,
+      "delta_bir_grup_disarida": -0.244,
+      "katki_puan": -0.005
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 0.561,
+      "delta_bir_grup_disarida": -0.224,
+      "katki_puan": -0.025
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -4.708,
+      "delta_bir_grup_disarida": -0.126,
+      "katki_puan": -0.124
+     }
+    },
+    "pozitif_grup": 5,
+    "negatif_grup": 8,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 6,
+    "sinif_delta": {
+     "car": -0.334,
+     "van": -0.554,
+     "truck": -0.36,
+     "pedestrian": -0.072,
+     "person_sitting": -0.198,
+     "cyclist": 2.096,
+     "tram": -2.632,
+     "misc": 0.058
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.091,
+    "delta_seed": [
+     0.016,
+     0.606,
+     -0.349
+    ],
+    "hier_ga95": [
+     -1.767,
+     1.696
+    ],
+    "hier_p_le0": 0.4545,
+    "hier_ort": 0.028,
+    "grup_ga95": [
+     -1.168,
+     0.862
+    ],
+    "grup_p_le0": 0.4295,
+    "tohum_ga95": [
+     -0.349,
+     0.606
+    ],
+    "tohum_p_le0": 0.3765
+   },
+   "ps_misc_siz6": {
+    "delta_ort": -0.309,
+    "delta_seed": [
+     0.29,
+     -1.525,
+     0.307
+    ],
+    "hier_ga95": [
+     -2.492,
+     2.133
+    ],
+    "hier_p_le0": 0.5855,
+    "hier_ort": -0.209,
+    "grup_ga95": [
+     -1.639,
+     1.187
+    ],
+    "grup_p_le0": 0.6425,
+    "tohum_ga95": [
+     -1.525,
+     0.307
+    ],
+    "tohum_p_le0": 0.6925
+   }
+  },
+  "yolo26n/best/H08": {
+   "s8": {
+    "delta_ort": 0.711,
+    "delta_seed": [
+     1.009,
+     -0.092,
+     1.216
+    ],
+    "hier_ga95": [
+     -0.93,
+     2.735
+    ],
+    "hier_p_le0": 0.147,
+    "hier_ort": 0.799,
+    "grup_ga95": [
+     -0.418,
+     2.75
+    ],
+    "grup_p_le0": 0.091,
+    "tohum_ga95": [
+     -0.092,
+     1.216
+    ],
+    "tohum_p_le0": 0.037,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -4.927,
+      "delta_bir_grup_disarida": 0.71,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 3.499,
+      "delta_bir_grup_disarida": 0.233,
+      "katki_puan": 0.478
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -1.819,
+      "delta_bir_grup_disarida": 0.986,
+      "katki_puan": -0.275
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.729,
+      "delta_bir_grup_disarida": 0.715,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 1.743,
+      "delta_bir_grup_disarida": 1.211,
+      "katki_puan": -0.5
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -1.29,
+      "delta_bir_grup_disarida": 0.902,
+      "katki_puan": -0.191
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 0.444,
+      "delta_bir_grup_disarida": 0.685,
+      "katki_puan": 0.026
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -0.935,
+      "delta_bir_grup_disarida": 0.712,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.784,
+      "delta_bir_grup_disarida": 0.128,
+      "katki_puan": 0.583
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 3.181,
+      "delta_bir_grup_disarida": 0.891,
+      "katki_puan": -0.18
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 0.957,
+      "delta_bir_grup_disarida": 0.793,
+      "katki_puan": -0.082
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": -0.221,
+      "delta_bir_grup_disarida": 0.706,
+      "katki_puan": 0.005
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -1.745,
+      "delta_bir_grup_disarida": 0.801,
+      "katki_puan": -0.089
+     }
+    },
+    "pozitif_grup": 7,
+    "negatif_grup": 6,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 5,
+    "sinif_delta": {
+     "car": 0.663,
+     "van": -0.807,
+     "truck": 0.959,
+     "pedestrian": 2.166,
+     "person_sitting": 0.56,
+     "cyclist": 5.222,
+     "tram": -3.002,
+     "misc": -0.073
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 1.242,
+    "delta_seed": [
+     0.776,
+     1.203,
+     1.746
+    ],
+    "hier_ga95": [
+     -0.735,
+     2.837
+    ],
+    "hier_p_le0": 0.079,
+    "hier_ort": 1.165,
+    "grup_ga95": [
+     -0.227,
+     2.768
+    ],
+    "grup_p_le0": 0.0435,
+    "tohum_ga95": [
+     0.776,
+     1.746
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.867,
+    "delta_seed": [
+     1.305,
+     -0.377,
+     1.673
+    ],
+    "hier_ga95": [
+     -1.147,
+     3.297
+    ],
+    "hier_p_le0": 0.16,
+    "hier_ort": 1.004,
+    "grup_ga95": [
+     -0.445,
+     3.219
+    ],
+    "grup_p_le0": 0.0875,
+    "tohum_ga95": [
+     -0.377,
+     1.673
+    ],
+    "tohum_p_le0": 0.037
+   }
+  },
+  "yolo26n/last/H01": {
+   "s8": {
+    "delta_ort": 0.322,
+    "delta_seed": [
+     0.9,
+     0.648,
+     -0.581
+    ],
+    "hier_ga95": [
+     -1.196,
+     1.66
+    ],
+    "hier_p_le0": 0.349,
+    "hier_ort": 0.248,
+    "grup_ga95": [
+     -0.814,
+     1.091
+    ],
+    "grup_p_le0": 0.2945,
+    "tohum_ga95": [
+     -0.581,
+     0.9
+    ],
+    "tohum_p_le0": 0.263,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 4.183,
+      "delta_bir_grup_disarida": 0.322,
+      "katki_puan": 0.0
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": -0.85,
+      "delta_bir_grup_disarida": 0.82,
+      "katki_puan": -0.497
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -0.299,
+      "delta_bir_grup_disarida": 0.117,
+      "katki_puan": 0.205
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.455,
+      "delta_bir_grup_disarida": 0.318,
+      "katki_puan": 0.004
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 0.795,
+      "delta_bir_grup_disarida": -0.138,
+      "katki_puan": 0.461
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -1.978,
+      "delta_bir_grup_disarida": 0.379,
+      "katki_puan": -0.056
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -0.215,
+      "delta_bir_grup_disarida": 0.316,
+      "katki_puan": 0.006
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -6.172,
+      "delta_bir_grup_disarida": 0.324,
+      "katki_puan": -0.002
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.84,
+      "delta_bir_grup_disarida": 0.205,
+      "katki_puan": 0.117
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 3.804,
+      "delta_bir_grup_disarida": 0.273,
+      "katki_puan": 0.05
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.849,
+      "delta_bir_grup_disarida": 0.322,
+      "katki_puan": 0.001
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 9.012,
+      "delta_bir_grup_disarida": 0.316,
+      "katki_puan": 0.006
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -2.861,
+      "delta_bir_grup_disarida": 0.364,
+      "katki_puan": -0.042
+     }
+    },
+    "pozitif_grup": 6,
+    "negatif_grup": 7,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 9,
+    "sinif_delta": {
+     "car": 0.204,
+     "van": -0.742,
+     "truck": -0.822,
+     "pedestrian": -0.168,
+     "person_sitting": -0.351,
+     "cyclist": 0.043,
+     "tram": 3.455,
+     "misc": 0.959
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": -0.125,
+    "delta_seed": [
+     0.223,
+     -0.389,
+     -0.21
+    ],
+    "hier_ga95": [
+     -1.333,
+     1.251
+    ],
+    "hier_p_le0": 0.5845,
+    "hier_ort": -0.07,
+    "grup_ga95": [
+     -0.875,
+     0.834
+    ],
+    "grup_p_le0": 0.623,
+    "tohum_ga95": [
+     -0.389,
+     0.223
+    ],
+    "tohum_p_le0": 0.733
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.328,
+    "delta_seed": [
+     1.187,
+     0.965,
+     -1.167
+    ],
+    "hier_ga95": [
+     -1.752,
+     2.171
+    ],
+    "hier_p_le0": 0.4245,
+    "hier_ort": 0.182,
+    "grup_ga95": [
+     -1.213,
+     1.246
+    ],
+    "grup_p_le0": 0.364,
+    "tohum_ga95": [
+     -1.167,
+     1.187
+    ],
+    "tohum_p_le0": 0.263
+   }
+  },
+  "yolo26n/last/H02": {
+   "s8": {
+    "delta_ort": 0.056,
+    "delta_seed": [
+     1.121,
+     -0.005,
+     -0.948
+    ],
+    "hier_ga95": [
+     -1.355,
+     1.2
+    ],
+    "hier_p_le0": 0.5055,
+    "hier_ort": -0.019,
+    "grup_ga95": [
+     -0.832,
+     0.553
+    ],
+    "grup_p_le0": 0.472,
+    "tohum_ga95": [
+     -0.948,
+     1.121
+    ],
+    "tohum_p_le0": 0.412,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -3.888,
+      "delta_bir_grup_disarida": 0.057,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": -1.053,
+      "delta_bir_grup_disarida": 0.304,
+      "katki_puan": -0.248
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -2.027,
+      "delta_bir_grup_disarida": -0.22,
+      "katki_puan": 0.276
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": -0.086,
+      "delta_bir_grup_disarida": 0.058,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 0.189,
+      "delta_bir_grup_disarida": -0.145,
+      "katki_puan": 0.201
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -3.448,
+      "delta_bir_grup_disarida": 0.075,
+      "katki_puan": -0.018
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -0.633,
+      "delta_bir_grup_disarida": 0.066,
+      "katki_puan": -0.009
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -2.452,
+      "delta_bir_grup_disarida": 0.059,
+      "katki_puan": -0.003
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.209,
+      "delta_bir_grup_disarida": 0.085,
+      "katki_puan": -0.029
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -0.226,
+      "delta_bir_grup_disarida": 0.108,
+      "katki_puan": -0.052
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -1.233,
+      "delta_bir_grup_disarida": 0.091,
+      "katki_puan": -0.035
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 11.424,
+      "delta_bir_grup_disarida": 0.02,
+      "katki_puan": 0.036
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": 0.32,
+      "delta_bir_grup_disarida": 0.045,
+      "katki_puan": 0.011
+     }
+    },
+    "pozitif_grup": 4,
+    "negatif_grup": 9,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 4,
+    "sinif_delta": {
+     "car": 0.129,
+     "van": 0.821,
+     "truck": -1.274,
+     "pedestrian": -0.011,
+     "person_sitting": -0.355,
+     "cyclist": -0.747,
+     "tram": 1.716,
+     "misc": 0.17
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": -0.181,
+    "delta_seed": [
+     0.652,
+     -0.735,
+     -0.46
+    ],
+    "hier_ga95": [
+     -1.355,
+     0.944
+    ],
+    "hier_p_le0": 0.663,
+    "hier_ort": -0.2,
+    "grup_ga95": [
+     -0.848,
+     0.37
+    ],
+    "grup_p_le0": 0.7765,
+    "tohum_ga95": [
+     -0.735,
+     0.652
+    ],
+    "tohum_p_le0": 0.733
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.106,
+    "delta_seed": [
+     1.707,
+     0.186,
+     -1.577
+    ],
+    "hier_ga95": [
+     -1.806,
+     1.718
+    ],
+    "hier_p_le0": 0.495,
+    "hier_ort": -0.001,
+    "grup_ga95": [
+     -0.968,
+     0.649
+    ],
+    "grup_p_le0": 0.4495,
+    "tohum_ga95": [
+     -1.577,
+     1.707
+    ],
+    "tohum_p_le0": 0.375
+   }
+  },
+  "yolo26n/last/H03": {
+   "s8": {
+    "delta_ort": 1.283,
+    "delta_seed": [
+     1.657,
+     1.808,
+     0.384
+    ],
+    "hier_ga95": [
+     -0.048,
+     2.871
+    ],
+    "hier_p_le0": 0.027,
+    "hier_ort": 1.335,
+    "grup_ga95": [
+     0.696,
+     2.155
+    ],
+    "grup_p_le0": 0.0045,
+    "tohum_ga95": [
+     0.384,
+     1.808
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 4.554,
+      "delta_bir_grup_disarida": 1.287,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 3.443,
+      "delta_bir_grup_disarida": 1.266,
+      "katki_puan": 0.017
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -0.406,
+      "delta_bir_grup_disarida": 1.419,
+      "katki_puan": -0.136
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.013,
+      "delta_bir_grup_disarida": 1.289,
+      "katki_puan": -0.006
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 0.452,
+      "delta_bir_grup_disarida": 1.275,
+      "katki_puan": 0.008
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -2.157,
+      "delta_bir_grup_disarida": 1.273,
+      "katki_puan": 0.01
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 6.422,
+      "delta_bir_grup_disarida": 1.262,
+      "katki_puan": 0.021
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -7.642,
+      "delta_bir_grup_disarida": 1.288,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 2.441,
+      "delta_bir_grup_disarida": 1.29,
+      "katki_puan": -0.007
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 3.717,
+      "delta_bir_grup_disarida": 1.263,
+      "katki_puan": 0.02
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 1.286,
+      "delta_bir_grup_disarida": 1.247,
+      "katki_puan": 0.036
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 12.636,
+      "delta_bir_grup_disarida": 1.255,
+      "katki_puan": 0.029
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -3.872,
+      "delta_bir_grup_disarida": 1.361,
+      "katki_puan": -0.077
+     }
+    },
+    "pozitif_grup": 9,
+    "negatif_grup": 4,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 7,
+    "sinif_delta": {
+     "car": 0.826,
+     "van": 1.993,
+     "truck": 1.529,
+     "pedestrian": 1.414,
+     "person_sitting": -0.348,
+     "cyclist": 2.553,
+     "tram": 2.281,
+     "misc": 0.018
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 1.141,
+    "delta_seed": [
+     1.514,
+     0.692,
+     1.216
+    ],
+    "hier_ga95": [
+     -0.111,
+     2.743
+    ],
+    "hier_p_le0": 0.0295,
+    "hier_ort": 1.217,
+    "grup_ga95": [
+     0.467,
+     2.151
+    ],
+    "grup_p_le0": 0.0045,
+    "tohum_ga95": [
+     0.692,
+     1.514
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 1.766,
+    "delta_seed": [
+     2.285,
+     2.587,
+     0.426
+    ],
+    "hier_ga95": [
+     -0.199,
+     3.847
+    ],
+    "hier_p_le0": 0.0295,
+    "hier_ort": 1.742,
+    "grup_ga95": [
+     0.913,
+     2.649
+    ],
+    "grup_p_le0": 0.004,
+    "tohum_ga95": [
+     0.426,
+     2.587
+    ],
+    "tohum_p_le0": 0.0
+   }
+  },
+  "yolo26n/last/H04": {
+   "s8": {
+    "delta_ort": 0.353,
+    "delta_seed": [
+     2.078,
+     -0.463,
+     -0.555
+    ],
+    "hier_ga95": [
+     -0.931,
+     2.336
+    ],
+    "hier_p_le0": 0.258,
+    "hier_ort": 0.481,
+    "grup_ga95": [
+     -0.035,
+     1.347
+    ],
+    "grup_p_le0": 0.035,
+    "tohum_ga95": [
+     -0.555,
+     2.078
+    ],
+    "tohum_p_le0": 0.2915,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -3.383,
+      "delta_bir_grup_disarida": 0.352,
+      "katki_puan": 0.002
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 0.784,
+      "delta_bir_grup_disarida": 0.669,
+      "katki_puan": -0.316
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 1.072,
+      "delta_bir_grup_disarida": 0.314,
+      "katki_puan": 0.039
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": 0.741,
+      "delta_bir_grup_disarida": 0.362,
+      "katki_puan": -0.008
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 1.331,
+      "delta_bir_grup_disarida": 0.346,
+      "katki_puan": 0.007
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 0.626,
+      "delta_bir_grup_disarida": 0.256,
+      "katki_puan": 0.098
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -1.052,
+      "delta_bir_grup_disarida": 0.368,
+      "katki_puan": -0.015
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -3.57,
+      "delta_bir_grup_disarida": 0.356,
+      "katki_puan": -0.003
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.322,
+      "delta_bir_grup_disarida": 0.467,
+      "katki_puan": -0.114
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 0.026,
+      "delta_bir_grup_disarida": 0.274,
+      "katki_puan": 0.079
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -0.84,
+      "delta_bir_grup_disarida": 0.325,
+      "katki_puan": 0.028
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 11.688,
+      "delta_bir_grup_disarida": 0.316,
+      "katki_puan": 0.038
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -1.359,
+      "delta_bir_grup_disarida": 0.361,
+      "katki_puan": -0.007
+     }
+    },
+    "pozitif_grup": 8,
+    "negatif_grup": 5,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 7,
+    "sinif_delta": {
+     "car": -0.227,
+     "van": 1.392,
+     "truck": 1.797,
+     "pedestrian": -0.972,
+     "person_sitting": 0.379,
+     "cyclist": -1.2,
+     "tram": 0.831,
+     "misc": 0.827
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.285,
+    "delta_seed": [
+     0.956,
+     0.163,
+     -0.264
+    ],
+    "hier_ga95": [
+     -0.747,
+     2.0
+    ],
+    "hier_p_le0": 0.206,
+    "hier_ort": 0.443,
+    "grup_ga95": [
+     -0.076,
+     1.353
+    ],
+    "grup_p_le0": 0.0555,
+    "tohum_ga95": [
+     -0.264,
+     0.956
+    ],
+    "tohum_p_le0": 0.1425
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.27,
+    "delta_seed": [
+     2.971,
+     -0.978,
+     -1.183
+    ],
+    "hier_ga95": [
+     -1.627,
+     3.216
+    ],
+    "hier_p_le0": 0.3665,
+    "hier_ort": 0.396,
+    "grup_ga95": [
+     -0.304,
+     1.441
+    ],
+    "grup_p_le0": 0.161,
+    "tohum_ga95": [
+     -1.183,
+     2.971
+    ],
+    "tohum_p_le0": 0.2915
+   }
+  },
+  "yolo26n/last/H05": {
+   "s8": {
+    "delta_ort": 1.26,
+    "delta_seed": [
+     2.142,
+     0.372,
+     1.265
+    ],
+    "hier_ga95": [
+     0.002,
+     2.607
+    ],
+    "hier_p_le0": 0.0245,
+    "hier_ort": 1.288,
+    "grup_ga95": [
+     0.233,
+     2.058
+    ],
+    "grup_p_le0": 0.011,
+    "tohum_ga95": [
+     0.372,
+     2.142
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 1.497,
+      "delta_bir_grup_disarida": 1.263,
+      "katki_puan": -0.003
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 1.392,
+      "delta_bir_grup_disarida": 1.71,
+      "katki_puan": -0.45
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 2.526,
+      "delta_bir_grup_disarida": 1.048,
+      "katki_puan": 0.212
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": -0.021,
+      "delta_bir_grup_disarida": 1.27,
+      "katki_puan": -0.01
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 2.283,
+      "delta_bir_grup_disarida": 0.982,
+      "katki_puan": 0.278
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 3.066,
+      "delta_bir_grup_disarida": 1.358,
+      "katki_puan": -0.098
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 3.214,
+      "delta_bir_grup_disarida": 1.268,
+      "katki_puan": -0.008
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -6.107,
+      "delta_bir_grup_disarida": 1.266,
+      "katki_puan": -0.006
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 1.926,
+      "delta_bir_grup_disarida": 1.126,
+      "katki_puan": 0.134
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 4.911,
+      "delta_bir_grup_disarida": 1.191,
+      "katki_puan": 0.068
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -0.678,
+      "delta_bir_grup_disarida": 1.303,
+      "katki_puan": -0.043
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 1.422,
+      "delta_bir_grup_disarida": 1.301,
+      "katki_puan": -0.041
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -0.746,
+      "delta_bir_grup_disarida": 1.313,
+      "katki_puan": -0.053
+     }
+    },
+    "pozitif_grup": 9,
+    "negatif_grup": 4,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 4,
+    "sinif_delta": {
+     "car": 1.283,
+     "van": 3.393,
+     "truck": 0.159,
+     "pedestrian": 0.52,
+     "person_sitting": 0.044,
+     "cyclist": -0.523,
+     "tram": 3.79,
+     "misc": 1.412
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.898,
+    "delta_seed": [
+     1.318,
+     0.315,
+     1.062
+    ],
+    "hier_ga95": [
+     -0.216,
+     2.309
+    ],
+    "hier_p_le0": 0.047,
+    "hier_ort": 0.98,
+    "grup_ga95": [
+     0.019,
+     1.97
+    ],
+    "grup_p_le0": 0.0245,
+    "tohum_ga95": [
+     0.315,
+     1.318
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 1.437,
+    "delta_seed": [
+     2.6,
+     0.516,
+     1.195
+    ],
+    "hier_ga95": [
+     -0.506,
+     3.163
+    ],
+    "hier_p_le0": 0.0625,
+    "hier_ort": 1.325,
+    "grup_ga95": [
+     -0.352,
+     2.537
+    ],
+    "grup_p_le0": 0.049,
+    "tohum_ga95": [
+     0.516,
+     2.6
+    ],
+    "tohum_p_le0": 0.0
+   }
+  },
+  "yolo26n/last/H06": {
+   "s8": {
+    "delta_ort": 0.104,
+    "delta_seed": [
+     0.71,
+     -0.34,
+     -0.056
+    ],
+    "hier_ga95": [
+     -1.051,
+     1.263
+    ],
+    "hier_p_le0": 0.413,
+    "hier_ort": 0.091,
+    "grup_ga95": [
+     -0.623,
+     0.608
+    ],
+    "grup_p_le0": 0.3455,
+    "tohum_ga95": [
+     -0.34,
+     0.71
+    ],
+    "tohum_p_le0": 0.2915,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": -1.893,
+      "delta_bir_grup_disarida": 0.107,
+      "katki_puan": -0.002
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": -0.416,
+      "delta_bir_grup_disarida": 0.296,
+      "katki_puan": -0.191
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": 1.999,
+      "delta_bir_grup_disarida": -0.14,
+      "katki_puan": 0.244
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": -0.12,
+      "delta_bir_grup_disarida": 0.108,
+      "katki_puan": -0.004
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 0.33,
+      "delta_bir_grup_disarida": 0.26,
+      "katki_puan": -0.155
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": -0.082,
+      "delta_bir_grup_disarida": 0.134,
+      "katki_puan": -0.03
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": -0.617,
+      "delta_bir_grup_disarida": 0.112,
+      "katki_puan": -0.008
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -0.107,
+      "delta_bir_grup_disarida": 0.106,
+      "katki_puan": -0.002
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 0.044,
+      "delta_bir_grup_disarida": -0.079,
+      "katki_puan": 0.183
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": -0.23,
+      "delta_bir_grup_disarida": 0.159,
+      "katki_puan": -0.054
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": -0.722,
+      "delta_bir_grup_disarida": 0.113,
+      "katki_puan": -0.008
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 10.253,
+      "delta_bir_grup_disarida": 0.087,
+      "katki_puan": 0.017
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -3.066,
+      "delta_bir_grup_disarida": 0.145,
+      "katki_puan": -0.041
+     }
+    },
+    "pozitif_grup": 4,
+    "negatif_grup": 9,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 3,
+    "sinif_delta": {
+     "car": 0.372,
+     "van": 0.463,
+     "truck": -0.865,
+     "pedestrian": 0.864,
+     "person_sitting": -0.235,
+     "cyclist": 0.473,
+     "tram": -0.549,
+     "misc": 0.311
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 0.198,
+    "delta_seed": [
+     0.494,
+     -0.626,
+     0.725
+    ],
+    "hier_ga95": [
+     -1.1,
+     1.297
+    ],
+    "hier_p_le0": 0.394,
+    "hier_ort": 0.122,
+    "grup_ga95": [
+     -0.614,
+     0.611
+    ],
+    "grup_p_le0": 0.287,
+    "tohum_ga95": [
+     -0.626,
+     0.725
+    ],
+    "tohum_p_le0": 0.26
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 0.127,
+    "delta_seed": [
+     1.138,
+     -0.312,
+     -0.446
+    ],
+    "hier_ga95": [
+     -1.413,
+     1.569
+    ],
+    "hier_p_le0": 0.449,
+    "hier_ort": 0.057,
+    "grup_ga95": [
+     -0.997,
+     0.803
+    ],
+    "grup_p_le0": 0.418,
+    "tohum_ga95": [
+     -0.446,
+     1.138
+    ],
+    "tohum_p_le0": 0.2915
+   }
+  },
+  "yolo26n/last/H08": {
+   "s8": {
+    "delta_ort": 1.143,
+    "delta_seed": [
+     1.073,
+     1.419,
+     0.935
+    ],
+    "hier_ga95": [
+     0.316,
+     2.604
+    ],
+    "hier_p_le0": 0.0045,
+    "hier_ort": 1.276,
+    "grup_ga95": [
+     0.574,
+     2.338
+    ],
+    "grup_p_le0": 0.0015,
+    "tohum_ga95": [
+     0.935,
+     1.419
+    ],
+    "tohum_p_le0": 0.0,
+    "grup": {
+     "2011_09_26_drive_0002_sync": {
+      "delta_tek_grup": 3.784,
+      "delta_bir_grup_disarida": 1.142,
+      "katki_puan": 0.001
+     },
+     "2011_09_26_drive_0032_sync": {
+      "delta_tek_grup": 1.577,
+      "delta_bir_grup_disarida": 1.203,
+      "katki_puan": -0.061
+     },
+     "2011_09_26_drive_0035_sync": {
+      "delta_tek_grup": -1.388,
+      "delta_bir_grup_disarida": 1.256,
+      "katki_puan": -0.113
+     },
+     "2011_09_26_drive_0046_sync": {
+      "delta_tek_grup": -0.103,
+      "delta_bir_grup_disarida": 1.148,
+      "katki_puan": -0.006
+     },
+     "2011_09_26_drive_0056_sync": {
+      "delta_tek_grup": 1.534,
+      "delta_bir_grup_disarida": 1.312,
+      "katki_puan": -0.17
+     },
+     "2011_09_26_drive_0061_sync": {
+      "delta_tek_grup": 2.989,
+      "delta_bir_grup_disarida": 1.09,
+      "katki_puan": 0.053
+     },
+     "2011_09_26_drive_0070_sync": {
+      "delta_tek_grup": 5.603,
+      "delta_bir_grup_disarida": 1.143,
+      "katki_puan": -0.001
+     },
+     "2011_09_26_drive_0079_sync": {
+      "delta_tek_grup": -11.676,
+      "delta_bir_grup_disarida": 1.148,
+      "katki_puan": -0.006
+     },
+     "2011_09_26_drive_0091_sync": {
+      "delta_tek_grup": 3.442,
+      "delta_bir_grup_disarida": 0.695,
+      "katki_puan": 0.448
+     },
+     "2011_09_26_drive_0096_sync": {
+      "delta_tek_grup": 2.732,
+      "delta_bir_grup_disarida": 1.306,
+      "katki_puan": -0.164
+     },
+     "2011_09_26_drive_0117_sync": {
+      "delta_tek_grup": 1.224,
+      "delta_bir_grup_disarida": 1.159,
+      "katki_puan": -0.016
+     },
+     "2011_09_28_drive_0035_sync": {
+      "delta_tek_grup": 13.546,
+      "delta_bir_grup_disarida": 1.096,
+      "katki_puan": 0.047
+     },
+     "2011_09_29_drive_0004_sync": {
+      "delta_tek_grup": -3.067,
+      "delta_bir_grup_disarida": 1.21,
+      "katki_puan": -0.068
+     }
+    },
+    "pozitif_grup": 9,
+    "negatif_grup": 4,
+    "bos_veya_sifir_grup": 0,
+    "pozitif_grup_loo_katki": 4,
+    "sinif_delta": {
+     "car": 0.808,
+     "van": 1.841,
+     "truck": 1.631,
+     "pedestrian": 2.677,
+     "person_sitting": -0.154,
+     "cyclist": 1.81,
+     "tram": 0.456,
+     "misc": 0.071
+    }
+   },
+   "tramsiz7": {
+    "delta_ort": 1.241,
+    "delta_seed": [
+     1.301,
+     1.078,
+     1.343
+    ],
+    "hier_ga95": [
+     0.251,
+     2.611
+    ],
+    "hier_p_le0": 0.0055,
+    "hier_ort": 1.348,
+    "grup_ga95": [
+     0.556,
+     2.388
+    ],
+    "grup_p_le0": 0.0015,
+    "tohum_ga95": [
+     1.078,
+     1.343
+    ],
+    "tohum_p_le0": 0.0
+   },
+   "ps_misc_siz6": {
+    "delta_ort": 1.537,
+    "delta_seed": [
+     1.571,
+     1.93,
+     1.11
+    ],
+    "hier_ga95": [
+     0.292,
+     3.517
+    ],
+    "hier_p_le0": 0.006,
+    "hier_ort": 1.673,
+    "grup_ga95": [
+     0.588,
+     3.137
+    ],
+    "grup_p_le0": 0.001,
+    "tohum_ga95": [
+     1.11,
+     1.93
+    ],
+    "tohum_p_le0": 0.0
+   }
+  }
+ }
+}

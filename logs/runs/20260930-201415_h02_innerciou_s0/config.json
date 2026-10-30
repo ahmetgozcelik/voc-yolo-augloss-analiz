@@ -1,0 +1,42 @@
+{
+  "run_id": "20260930-201415_h02_innerciou_s0",
+  "varyant": "h02_innerciou",
+  "seed": "0",
+  "etiket": "H02 tam: Inner-CIoU r=0.75, seed0 100ep (kural: ep5 val < 0.2538 -> dur)",
+  "ebeveyn": "20260930-072103_baseline_s0",
+  "hipotez": "H02",
+  "kuyruk": "k4-tur1",
+  "asama": 3,
+  "kural": {
+    "nan_kes": true,
+    "min_adim": 5,
+    "alt_sinir": {
+      "val_map50_95": 0.2538
+    },
+    "sabit_sn": 1200
+  },
+  "komut": [
+    "<WS>/env/.venv/Scripts/python.exe",
+    "<WS>/varyantlar/h02_innerciou/kos.py",
+    "--seed",
+    "0",
+    "--epochs",
+    "100",
+    "--fraction",
+    "1.0",
+    "--imgsz",
+    "640",
+    "--batch",
+    "16",
+    "--workers",
+    "4",
+    "--run-dir",
+    "<WS>\\runs\\20260930-201415_h02_innerciou_s0",
+    "--out",
+    "<WS>\\runs\\20260930-201415_h02_innerciou_s0/metrics.json"
+  ],
+  "cwd": "<WS>",
+  "baslangic": "2026-09-30T20:14:17",
+  "makine": "<makine>",
+  "varyant_imzasi": "H02: BboxLoss IoU terimi CIoU -> Inner-CIoU (ratio=0.75): loss_iou=(1-CIoU)+IoU-IoU_inner; DFL/TAL/kazanclar/diger her sey baseline ile ayni"
+}

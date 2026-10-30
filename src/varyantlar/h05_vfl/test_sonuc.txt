@@ -1,0 +1,13 @@
+cihaz: cuda_available = False
+T0 elle hesap: (+0.0,0.00)->0.129965 (+0.0,0.60)->0.415888 (+2.0,0.00)->1.237559 (-3.0,0.90)->2.473729 (+1.5,0.25)->0.331603 (-1.0,0.00)->0.016994 (+4.0,1.00)->0.018150 | max|fark| (saf-python)=8.88e-16
+T1 agirlik w=[0.1875, 0.40083, 0.7, 0.3] beklenen=[0.1875, 0.40083, 0.7, 0.3] |fark|=1.11e-16
+T1 gradcheck(float64)=True | float32 gradyan sonlu=True ||g||=11.4977
+T2 p=-60,t=0: kayip=0.000e+00 grad sonlu=True | p=+60,t=0.8: kayip=9.600e+01 sonlu=True | fp16 girdi -> cikti dtype=torch.float32
+T4 alpha=1,gamma=0,y=0 => BCE: |fark| (formul)=0.00e+00; modul (t=0 girdi) |fark|=0.00e+00
+T5 grad olcumu: n=1 VFL/BCE grad norm orani=0.6910 kayip orani=0.3337
+T3 v8DetectionLoss: SAYAC(cagri)=1 ||grad||=1014.6486 sonlu_grad=True
+T3 cls_loss: VFL=3.510539 (elle sum/target_scores_sum*cls=3.510539, |fark|=0.00e+00) BCE=8.084041 (elle=8.084041, |fark|=0.00e+00) | VFL/BCE cls orani=0.4343
+T3 box_loss |VFL-BCE|=0.00e+00  dfl_loss |VFL-BCE|=0.00e+00  (kutu/DFL kayiplari degismemeli)
+T3 target_scores_sum=6.3780 cls_kazanc=0.5
+TUM H05 CPU TESTLERI GECTI
+2026-10-18 EK: poz=1 (H05-neg) ve α=1,γ=0 (H05-pos) ayrıştırma testleri 4/4 GEÇTİ

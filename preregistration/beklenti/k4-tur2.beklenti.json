@@ -1,0 +1,87 @@
+{
+  "_aciklama": "ON-KAYIT (K4b TUR 2: H04 scale=0.25, H05 Varifocal cls kaybi, H06 box=10.0, H07 egitimsiz son-islem/TTA). Kosumdan ONCE yazildi (kartlar H04-H07 + SIRALAMA.md 'Tur 2'den turetildi; kart mtime'indan sonra), sonra degismez. Ana metrik val_map50_95 (voc_dev val, 1000 goruntu; test'e bakilmaz). Baseline bu kuyrukta KOSMAZ; cipalar mevcut damgali kosumlardan: duman 0.4104 (20260930-065935_baseline_s0; seed0, fraction 0.1, 3 ep), on-ucus seed0 0.5867 / seed1 0.5908 (20260930-070132 / -071120; seed gurultusu ~0.4 puan), tam seed0 0.6289 (20260930-072103), seed1 0.6353, seed2 0.6278. close_mosaic NOTU: duman/on-ucusta epochs(3,5)<=close_mosaic(10) oldugundan mosaic ILK EPOCH'TAN KAPALI; H04/H05/H06'nin degisikligi mosaic'ten bagimsiz devrede (H04 scale RandomPerspective'te mosaic'ten bagimsiz: augment.py:2873; close_mosaic yalniz mosaic/copy_paste/mixup/cutmix'i sifirlar: dataset.py:385-389; H05 cls kaybi, H06 box kazanci kayip tarafinda) -> baseline_cm0 kontrolu GEREKMEZ, H03'un aksine standart baseline cipalari gecerli. H07 egitimsiz (tek satir, asama 3): R0 yeniden-uretim kurali (baseline metrics.json 0.62893 +-0.0008) ve R0 gecikme/GPU mesguliyeti denetimleri 3. asama kurallarinda. Kuyruk siralamasi: kademeli calisma asama-gruplu olur (1: H04,H05,H06 duman; 2: H04,H05,H06 on-ucus; 3: H07,H04,H05,H06 tam); H07 dosyada ilk satirdir ve asama-3 grubunun ilk kosumudur.",
+  "metrik": "val_map50_95",
+  "yon": "max",
+  "asama": {
+    "1": {
+      "aciklama": "DUMAN - kod yolu calisiyor mu, yama devreye giriyor mu (seed0, fraction=0.1, 3 epoch; 3 satir: h04, h05, h06)",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "aralik", "alt": 0.0, "ust": 1.0, "kaynak": "metrik tanimi geregi mAP orani [0,1]"},
+        {"tur": "kollar_farkli"},
+        {"tur": "min_kosum", "n": 3},
+        {"tur": "ikincil_aralik", "metrik": "varyant_etki_sayaci", "alt": 1, "ust": 1000000000000,
+         "kaynak": "varyant kosucusu metrics.json'a degisikligin devreye girdigi olay sayisini yazar (H04: RandomPerspective.scale==0.25 olan egitim batch'i; H05: VFL modulu egitim cagrisi; H06: hyp.box==10.0 egitim kayip cagrisi); 0 = degisiklik devreye girmemis (bit-bit baseline) -> IHLAL"},
+        {"tur": "ikincil_aralik", "metrik": "scale_args", "alt": 0.2499, "ust": 0.2501,
+         "kaynak": "H04 karti: degisen tek sey scale=0.25; trainer.args.scale gozlemi (yalniz h04 metrics.json'unda bulunur)"},
+        {"tur": "ikincil_aralik", "metrik": "box_gain", "alt": 9.999, "ust": 10.001,
+         "kaynak": "H06 karti: kart gecersizdir box_gain != 10.0 (yalniz h06 metrics.json'unda bulunur)"},
+        {"tur": "ikincil_aralik", "metrik": "vfl_alpha", "alt": 0.7499, "ust": 0.7501,
+         "kaynak": "H05 karti: alpha=0.75 (yalniz h05 metrics.json'unda bulunur)"},
+        {"tur": "ikincil_aralik", "metrik": "vfl_gamma", "alt": 1.9999, "ust": 2.0001,
+         "kaynak": "H05 karti: gamma=2 (yalniz h05 metrics.json'unda bulunur)"},
+        {"tur": "ikincil_aralik", "metrik": "vfl_bce_grad_orani", "alt": 0.05, "ust": 0.98,
+         "kaynak": "H05 karti: VFL negatif agirligi 0.75*sigma^2<<1, pozitif agirligi q<1 -> VFL logit-gradyan normu BCE'den KUCUK olmali (oran<1; kartta beklenen azalma >=%50 bilgi amacli; CPU testinde 0.69-0.76). >=0.98 = VFL devrede degil / BCE ile ayni; <0.05 = gradyan kaybolmasi"},
+        {"tur": "aralik", "varyant": "h04_scale25", "alt": 0.3804, "ust": 0.4604,
+         "kaynak": "baseline duman seed0 0.4104 (20260930-065935_baseline_s0; duman ayari ayni, scale mosaic kapaliyken de devrede). Alt -3 puan: duman (3 ep, %10 veri) tek-seed gurultusu olculmedi, 5 ep'te ~0.4 puan; amac cokme/uygulama hatasi yakalamak. Ust +5 puan: aciklanamayan sicrama (sizinti) alarmi."},
+        {"tur": "aralik", "varyant": "h06_box10", "alt": 0.3804, "ust": 0.4604,
+         "kaynak": "baseline duman seed0 0.4104 (ayni ayar); box kazanci x1.33 ile -3 puan alti = kararsizlik/uygulama hatasi suphesi (H06 karti erken-uyari mantigi). Ust +5 puan: sicrama alarmi."},
+        {"tur": "aralik", "varyant": "h05_vfl", "alt": 0.30, "ust": 0.4604,
+         "kaynak": "baseline duman seed0 0.4104; VFL cls gradyanini ~0.4-0.8x azaltir (CPU testi: grad orani 0.69-0.76, kayip orani 0.43-0.55), 3 epoch/%10 veri kisa takvimde ogrenmeyi yavaslatabilir -> alt sinir baseline-11 puan (yalniz cokme/sifir-ogrenme yakalar). Ust +5 puan sicrama alarmi (kart kirmizi bayragi tam kosumda +1.0)."},
+        {"tur": "ikincil_aralik", "metrik": "egitim_sure_sn", "alt": 1, "ust": 600,
+         "kaynak": "baseline duman 82 sn; 600 sn cok comert ust (duman zaman siniri 10 dk)"}
+      ]
+    },
+    "2": {
+      "aciklama": "ON-UCUS - dogru VE beklendigi gibi mi (tam veri, 5 epoch, seed0; 3 satir: h04, h05, h06). Tek seed: 'farkli_seedler_farkli' uygulanamaz.",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "aralik", "alt": 0.0, "ust": 1.0, "kaynak": "metrik tanimi geregi mAP orani [0,1]"},
+        {"tur": "kollar_farkli"},
+        {"tur": "min_kosum", "n": 3},
+        {"tur": "ikincil_aralik", "metrik": "varyant_etki_sayaci", "alt": 1, "ust": 1000000000000,
+         "kaynak": "yamanin/degisikligin devreye girdigi olay sayisi >=1 (bit-bit baseline yakalayici)"},
+        {"tur": "ikincil_aralik", "metrik": "scale_args", "alt": 0.2499, "ust": 0.2501, "kaynak": "H04: scale=0.25"},
+        {"tur": "ikincil_aralik", "metrik": "box_gain", "alt": 9.999, "ust": 10.001, "kaynak": "H06: box=10.0"},
+        {"tur": "ikincil_aralik", "metrik": "vfl_bce_grad_orani", "alt": 0.05, "ust": 0.98,
+         "kaynak": "H05: VFL logit-gradyan normu BCE'den kucuk (oran<1), bilgi amacli >=%50 azalma; 0.05 alti gradyan kaybi"},
+        {"tur": "aralik", "varyant": "h04_scale25", "alt": 0.5717, "ust": 0.5967,
+         "kaynak": "baseline on-ucus seed0 0.5867 (20260930-070132_baseline_s0), seed1 0.5908: seed gurultusu ~0.4 puan. Alt = -1.5 puan (~3.7x gurultu): altina dusus = uygulama hatasi suphesi (H04 beklentisi +0.0..+0.5 puan nihai; 5 ep'te scale etkisi olculmez, yalniz NaN/cokme denetimi: kart 'Uygulama notu'). Ust = H04 karti 'goruldugunden iyi' esigi +1.0 puan."},
+        {"tur": "aralik", "varyant": "h06_box10", "alt": 0.5717, "ust": 0.5967,
+         "kaynak": "baseline on-ucus seed0 0.5867 / seed1 0.5908 (seed gurultusu ~0.4 puan); alt -1.5 puan (H06 karti erken-uyari: kararsizlik). Ust = 0.5867+1.0 puan (H06 karti kirmizi bayrak +0.8 nihai; on-ucusta 1.0 puan cok comert ust)."},
+        {"tur": "aralik", "varyant": "h05_vfl", "alt": 0.52, "ust": 0.5967,
+         "kaynak": "baseline on-ucus seed0 0.5867 / seed1 0.5908; VFL etkin cls gradyanini kucultur (kart 'Kayip payi notu'; CPU testi grad orani 0.69-0.76) -> 5 ep kisa takvimde geriden baslama toleransi: alt baseline-6.7 puan (yalniz uygulama hatasi/cokme; nihai beklenti -0.5..+0.5 puan). Ust +1.0 puan (kart kirmizi bayrak esigi)."},
+        {"tur": "ikincil_aralik", "metrik": "egitim_sure_sn", "alt": 1, "ust": 900,
+         "kaynak": "baseline on-ucus 557/551 sn; 900 sn = 1.6x (kartlarin tam-kosum maliyet oldurme esigi 1.4x; on-ucusta sabit yukleme payi nedeniyle tolerans)"}
+      ]
+    },
+    "3": {
+      "aciklama": "TAM - seed0, 100 epoch (H04, H05, H06) + H07 (egitimsiz, tek satir). Mekanik kurallar + kartlardaki 'goruldugunden iyi' (kirmizi bayrak) tavanlari. Oldurme kurallari (Delta<+0.003 vs 0.6289) bu kapida degil, kart/tahlilci kararidir. H07 icin R0 yeniden-uretimi (+-0.0008) ve GPU mesguliyeti/gecikme CV denetimleri.",
+      "kurallar": [
+        {"tur": "sonlu"},
+        {"tur": "kollar_farkli"},
+        {"tur": "min_kosum", "n": 4},
+        {"tur": "ikincil_aralik", "metrik": "varyant_etki_sayaci", "alt": 1, "ust": 1000000000000,
+         "kaynak": "degisikligin devreye girdigi olay sayisi >=1 (H07: R0'dan farkli cikan satir sayisi)"},
+        {"tur": "ikincil_aralik", "metrik": "h07_r0_uyumsuz", "alt": 0, "ust": 0,
+         "kaynak": "H07 karti 'Literaturde gorulmemis kadar iyi esigi': R0 yeniden-uretimi baseline metrics.json best.pt val degerinden (0.62893) >0.0008 saparsa tum kart durur (hat uyumsuz)"},
+        {"tur": "aralik", "varyant": "h07_post", "alt": 0.6281, "ust": 0.6297,
+         "kaynak": "H07 R0 = baseline seed0 best.pt val_map50_95 0.62893 (20260930-072103_baseline_s0) +-0.0008 (kart siniri)"},
+        {"tur": "ikincil_aralik", "metrik": "h07_gecikme_gpu_mesgul", "alt": 0, "ust": 0,
+         "kaynak": "H07 karti Butce: gecikme olcumu GPU'da hicbir egitim kosmazken yapilir (H01'de paylasilan GPU %8 olcum gurultusu yaratti); olcum oncesi GPU kullanimi >%15 ise gecikme satirlari guvenilmez"},
+        {"tur": "ikincil_aralik", "metrik": "h07_r0_gecikme_cv", "alt": 0, "ust": 0.05,
+         "kaynak": "H07 karti: R0 tekrar CV>%3 ise olcum tekrarlanir (betik en cok 6 tur); %5 ustu = olcum guvenilmez"},
+        {"tur": "ikincil_aralik", "metrik": "h07_kirmizi_bayrak_sayisi", "alt": 0, "ust": 0,
+         "kaynak": "H07 karti kirmizi bayrak: tam-val Delta N/S>+1.0, W>+1.5, T/U>+2.0 puan => o satir kazanc sayilmaz, INCELE (degerlendirme hatti/sizinti/cift sayim denetimi, M6)"},
+        {"tur": "aralik", "varyant": "h04_scale25", "alt": 0.55, "ust": 0.6389,
+         "kaynak": "Alt 0.55: baseline tam-kosum kabul araligi alt siniri (k3-baseline-v2 asama 3; mekanik saglik). Ust = baseline seed0 0.6289 + 0.010 (H04 karti: Delta > +1.0 puan = KIRMIZI BAYRAK, TUT verilmez, INCELE)."},
+        {"tur": "aralik", "varyant": "h05_vfl", "alt": 0.55, "ust": 0.6389,
+         "kaynak": "Alt 0.55 mekanik saglik; ust = 0.6289 + 0.010 (H05 karti: Delta > +1.0 puan KIRMIZI BAYRAK)."},
+        {"tur": "aralik", "varyant": "h06_box10", "alt": 0.55, "ust": 0.6369,
+         "kaynak": "Alt 0.55 mekanik saglik; ust = 0.6289 + 0.008 (H06 karti: Delta > +0.8 puan KIRMIZI BAYRAK)."},
+        {"tur": "ikincil_aralik", "metrik": "egitim_sure_sn", "alt": 1, "ust": 14620,
+         "kaynak": "H04/H05/H06 kartlari oldurme kurali: egitim_sure_sn > 14620 (baseline 10445 sn x 1.4) -> maliyet nedeniyle OLDUR; H07 icin toplam sure ~1 sa << tavan"}
+      ]
+    }
+  }
+}

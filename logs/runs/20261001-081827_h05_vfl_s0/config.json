@@ -1,0 +1,42 @@
+{
+  "run_id": "20261001-081827_h05_vfl_s0",
+  "varyant": "h05_vfl",
+  "seed": "0",
+  "etiket": "H05 on-ucus: VFL, seed0 tam veri 5ep",
+  "ebeveyn": "20260930-072103_baseline_s0",
+  "hipotez": "H05",
+  "kuyruk": "k4-tur2",
+  "asama": 2,
+  "kural": {
+    "nan_kes": true,
+    "min_adim": 3,
+    "alt_sinir": {
+      "val_map50_95": 0.05
+    },
+    "sabit_sn": 1200
+  },
+  "komut": [
+    "<WS>/env/.venv/Scripts/python.exe",
+    "<WS>/varyantlar/h05_vfl/kos.py",
+    "--seed",
+    "0",
+    "--epochs",
+    "5",
+    "--fraction",
+    "1.0",
+    "--imgsz",
+    "640",
+    "--batch",
+    "16",
+    "--workers",
+    "4",
+    "--run-dir",
+    "<WS>\\runs\\20261001-081827_h05_vfl_s0",
+    "--out",
+    "<WS>\\runs\\20261001-081827_h05_vfl_s0/metrics.json"
+  ],
+  "cwd": "<WS>",
+  "baslangic": "2026-10-01T08:18:29",
+  "makine": "<makine>",
+  "varyant_imzasi": "H05: cls kaybi BCE -> Varifocal agirlikli BCE (alpha=0.75, gamma=2.0): w=alpha*sigmoid(p)^gamma*(1-y)+q*y, y=1[q>0], q=TAL target_scores; normalizasyon (target_scores_sum) ve cls=0.5 kazanci, TAL, kutu/DFL kayiplari ve diger her sey baseline ile ayni"
+}

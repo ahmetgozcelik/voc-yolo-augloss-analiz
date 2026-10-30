@@ -1,0 +1,90 @@
+% Ek B -- VOC ek sonuçları (revizyon-v2: ana metnin VOC bulguları ve mekanizma bölümlerinden taşınan ikincil içerik)
+% main.tex ve cevrimici_ek.tex \input eder.
+\setcounter{table}{0}\setcounter{figure}{0}
+\section{VOC ek sonuçları}\label{sec:ek-voc}
+
+Bu ek, diğer kartların mekanizma notlarını, iki yöntem ayrıntısını (kutu-tabanlı copy-paste adımları; H07 Soft-NMS tanımı ve doğrulama prosedürü) ve ana metindeki VOC bulgularını tamamlayan mutlak değerleri, ikincil ölçütleri, H07 satırlarını, hata türü kırılımını, copy-paste doz karşılaştırmasını ve nitel paneli verir. Buradaki ikincil ölçütlerin hepsi keşifseldir.
+
+\subsection{Diğer kartların mekanizma notları}\label{sec:ek-mekanizma}
+Bu alt bölüm ana metinde birer cümleye indirilen mekanizma notlarının tamamıdır (VOC doğrulaması; puan, tohum-eşli $\Delta$, üç tohum ort. $\pm$ s.d.).
+
+\paragraph{Ölçek ekseni: H01 ve H04.}
+H01 eğitim girdisini batch başına 480--800 px arasında değiştirdi (üç tohumda da 11 farklı boyut); H04 mosaic ölçek aralığını daralttı (her tohumda 97\,200 batch'in tümü etkilendi). Müdahale iki kartta da devredeydi, ama ikisi de mAP50-95'i yükseltmedi: H01'in tohum işaretleri karışıktır, H04'ün üçü de negatiftir ve aralığı sıfırı kapsar. H04 5 epoch'luk kısa ön denemede (tohum 0) taban modelin +0.56 önündeyken 100 epoch'ta $-$0.85'e döndü (tohum 0: $-$0.30); kısa ön deneme son sıralamayı öngörmeyen bir kod sağlığı kapısıdır (tek kartlık örnek). Genlik büyütülmediği için ``varsayılan ölçek genliği optimumdur'' denemez.
+
+\paragraph{Kutu kaybı: H02 ve H06.}
+H02'de (Inner-CIoU, $r=0.75$) kayba giren IoU $-$ Inner-IoU farkı üç tohumda ortalama 0.027'dir; terim devrededir. mAP50-95 üç tohumda da düştü (Holm-7 sonrası $p=0.244$) ve hedeflenen AP$_{75}$ yükselmedi ($-$0.42 $\pm$ 0.27). H06 (kutu kazancı 7.5 $\to$ 10) AP$_{75}$'i de değiştirmedi (+0.07 $\pm$ 0.30). Taban modelin yüzüncü epoch kayıp payları kutu \%30.1, sınıflandırma \%23.5, DFL \%46.3'tür; en büyük pay olan DFL'nin ağırlığı denenmedi. AP$_{75}$ açığı kutu-IoU teriminin ne biçimiyle ne ağırlığıyla kapandı; atama, kalite hedefi ya da DFL aday açıklamalardır. Inner-IoU'nun raporlanan kazançlarının \cite{zhang_2023_inneriou} COCO ön-eğitimli, TAL atamalı bir ince ayara taşınacağı varsayımı desteklenmedi.
+
+\paragraph{Copy-paste dozu: H03 ve H08.}
+H03 yapıştırmayı mosaic'lerin \%11.1'ine, H08 \%47.8'ine uyguladı; ölçülen doz sırasıyla 0.142 ve 0.671 nesne/mosaic'tir. H03'ün tohum-0 farkı ön-eleme eşiğini geçti, ama üç tohum ortalaması SÜRDÜR ölçütünün altında kaldı; mAP50 kazancı üç tohumda da pozitifken AP$_{75}$ farkı $-$0.32 $\pm$ 0.18'dir. Doz ve havuz birlikte genişleyince mAP50 kazancı +0.74 $\pm$ 0.16'dan (H03) +0.25 $\pm$ 0.14'e (H08) indi; artan bir etki gösterilemedi (Şekil~\ref{fig:f5-doz}). ``Doygun mekanizma'' yorumu, ayrıştırılmamış iki değişken nedeniyle zayıf bir hipotezdir. Doğrulamadaki mAP50 izi testte görülmez (Bölüm~\ref{sec:bulgu-tutarlilik}); küçük nesne örneklerini çoğaltmak, çözünürlükle ilişkili görünen açığı bu rejimde kapatmadı (Bölüm~\ref{sec:bulgu-gecikme}).
+
+\paragraph{H05 ayrıntıları.}
+H05'in doğrulama mAP50-95 kaybı $-$2.87 $\pm$ 0.33 puandır. VFL gradyan normu BCE'nin 0.34'üdür (üç tohumda 0.342, 0.341, 0.341; kayıp değeri 0.031; tanım: makale Ek~\ref{sec:ek-gradyan}). Uygulama iki birim testinden geçti: $\alpha=1$, $\gamma=0$ ve $y=0$ (yalnız negatif hücreler) iken kayıp BCE ile birebir eşleşir (pozitifler hâlâ $t$ ile ağırlıklanır; H05-pos'un tanımı); pozitif dalın $w=t$ ağırlığı ve gradyanı, elle yazılmış bir karşılaştırma uygulamasına karşı çift duyarlıkla denetlendi. İlk koşumu durduran güvenlik eşiği, taban modelin 5. epoch değerinden 0.03 çıkarılarak H02'nin BCE eğrisinden devralınmıştı.
+
+\subsection{Kutu-tabanlı copy-paste adımları}\label{sec:ek-cp}
+Dönüşüm (Bölüm~\ref{sec:mudahaleler}) mosaic'ten sonra, RandomPerspective'ten önce çalışır. Kesişimin ilk kutunun alanına oranı (intersection over area, IoA) $\mathrm{IoA}(b_j,b_l)=|b_j\cap b_l|/|b_j|$ olmak üzere, olasılık $p$ ile şu adımlar uygulanır:
+\begin{enumerate}
+\item Aday kümesi $\mathcal A=\{\,j:\sqrt{A_j}\le\tau_A,\ \max_{l\ne j}\mathrm{IoA}(b_j,b_l)\le0.1\,\}$ kurulur; $A_j$ kutunun mosaic tuvalindeki piksel alanıdır ve IoA koşulu yamaya başka nesne parçası girmesini önler.
+\item $k\sim U\{1,2,3\}$ çekilir ve $\mathcal A$'dan $\min(k,|\mathcal A|)$ nesne rastgele seçilir.
+\item Her nesne yeniden ölçeklenmeden, RandomPerspective sonrasında kalan merkez $s\times s$ penceresinde, mevcut tüm kutularla (yeni yapıştırılanlar dahil) kesişimi boş bir konuma yerleştirilir; en çok 10 deneme yapılır, yer bulunamazsa aday atlanır.
+\item Piksel yaması kenarları 3 piksellik alfa harmanlamasıyla yapıştırılır (fikir: \cite{dwibedi_2017_cutpaste}; 3 piksel bu çalışmanın seçimidir); sınıf etiketi korunur ve kaynak kutunun boyutuyla yeni bir kutu eklenir.
+\end{enumerate}
+
+\subsection{H07: Soft-NMS tanımı ve doğrulama prosedürü}\label{sec:ek-h07-dogrulama}
+Soft-NMS satırlarında (S) tutulan kutu $m$ ile örtüşen $b_i$'nin skoru sınıf başına Gauss kuralıyla bozulur \cite{bodla_2017_softnms}:
+\begin{equation}\label{eq:softnms}
+s_i\leftarrow s_i\exp\!\bigl(-\mathrm{IoU}(m,b_i)^2/\sigma\bigr),\qquad\sigma\in\{0.3,\,0.5\};
+\end{equation}
+aday havuzu ön-NMS'siz, skoru $\ge0.001$ olan en yüksek 1000 tespittir.
+
+Doğrulama kümesi sıralı dosya adına göre çift ve tek indeksle iki yarıya (A ve B, 500/500) bölünür. Aile başına yarım A'da R0'dan $\Delta>0$ veren en iyi satır aday olur ve şu üç koşulu birlikte sağlarsa DOĞRULANDI sayılır: (a) yarım B'de $\Delta\ge+0.30$; (b) tam doğrulama kümesinde görüntü-düzeyi eşli bootstrap'ın ($B=200$) tek yönlü yüzde 90 alt sınırı sıfırın üstünde; (c) taban modelin tohum 1 ve 2 ağırlıklarında aynı satırın ortalama $\Delta$'sı $\ge+0.20$ ve iki değer de pozitif. Gecikme sınıflaması (KAZANÇ-A/B) için bkz. Bölüm~\ref{sec:mudahaleler}.
+
+\subsection{Mutlak değerler ve tohum 1--2 ortalamaları}
+
+\input{tables/T_ekb_mutlak.tex}
+
+Tablo~\ref{tab:ekb-mutlak} doğrulama ve test mAP50-95'in mutlak değerlerini ve ön-eleme tohumu hariç tohum 1--2 ortalamasını verir. Taban model doğrulamada 63.07 $\pm$ 0.41, testte 63.49 $\pm$ 0.11 puandır; TTA'lı test değeri 64.32 $\pm$ 0.11'dir. Elenen kartların bağımsız tohum 1--2 ortalamalarından hiçbiri $+0.30$'u aşmaz; en yakını H06'dır ($+0.27$; tohum 0'da $-$0.42). Tohum 0'da elenen H06'nın bağımsız tohumlarda eşiğe en yakın kart olması, tek tohumlu kapının yanlış-negatif riski taşıdığını hatırlatır (Bölüm~\ref{sec:bulgu-ablasyon}).
+
+\subsection{Test ikincil ölçütleri}
+
+\input{tables/T_ekb_test_ikincil.tex}
+
+Tablo~\ref{tab:ekb-test-ikincil} H03 ve TTA'nın test ikincil ölçütlerini verir. Düzeltmesiz $p<0.05$ veren farklar vardır (H03'te AP$_M$ ve AP$_L$; TTA'da mAP75, AP$_M$ ve AP$_L$), ancak on iki testlik ailede Holm sonrası en küçük $p$ 0.112'dir; bu farklar yön olarak okunur. TTA'nın test mAP50-95 farkı için tohum düzeyindeki $t$ aralığı [+0.29, +1.38]'dir.
+
+H03'ün doğrulamada üç tohumda pozitif olan mAP50 kazancı (+0.74 $\pm$ 0.16, $p=0.015$) testte $-$0.02 $\pm$ 0.21'dir. Doğrulamanın \%70'i VOC2012 olduğundan kaynak farkı sınandı: mAP50 farkı VOC07 alt kümesinde +0.73 $\pm$ 1.23, VOC12'de +0.64 $\pm$ 0.58'dir (303/697 görüntü). Hipotez desteklenmedi ve \texttt{best.pt} seçim iyimserliği sınanmadı.
+
+\subsection{H07 eğitimsiz çıkarım satırları}
+
+\input{tables/T4_h07_gecikme.tex}
+
+Tablo~\ref{tab:h07}, H07'nin on iki eğitimsiz satırını R0 referansına göre ve TTA test satırını gecikmeyle verir; Şekil~\ref{fig:f3-pareto} aynı satırları çizer (Bölüm~\ref{sec:bulgu-gecikme}). T1 tek DOĞRULANDI satırıdır ve gecikme oranı nedeniyle KAZANÇ-B sayılır. WBF tanısının iki ek ayrıntısı şudur. WBF'nin IoU eşiği NMS'inkinden gevşek olduğundan 0.6 eşiğinde tek dal bile ham NMS'ten ayrılır. Varsayılan WBF ayarı yüksek IoU'da da kaybettirdi (T1'e göre AP$_{75}$ $-$1.33, AP$_{90}$ $-$2.15; Bölüm~\ref{sec:basarisiz-wbf}).
+
+\subsection{Eğitimsiz çıkarım: WBF tanısı}\label{sec:basarisiz-wbf}
+Varsayılan WBF ayarı T1'in mAP50-95'ini $-$1.08 düşürdüğünden doğrulamada, test sonrası ve keşifsel bir tanı yapıldı (kazanç iddiası değildir). Uygulama doğruydu: 8 birim testinin 8'i geçti ve tek dallı WBF, IoU eşiği $\approx$1 iken ham NMS'ten $+0.000$ puan ayrıldı. Kayıp iki ayardan gelir. Ortalama skor füzyonunda üç görünümden azında görülen kutunun skoru küçülür; ölçek dalları her boyuttaki nesneyi göremediğinden bu ceza sıralamayı bozar ve maksimum füzyonu +0.98 puan getirdi. IoU eşiğini 0.7'ye çıkarmak ortalama füzyonda da kaybı azalttı; iki ayarın payları ayrıştırılmadı. Izgaranın en iyi ayarı (IoU 0.7, maksimum) T1'i +0.45 geçti; doğrulamada seçildiği için bu kanıt değil, etkinin ayara bağlı olduğunun göstergesidir.
+
+\subsection{Kart başına ikincil ölçütler (doğrulama)}
+Eğitim kartlarının boyut ve eşik ölçütlerindeki farklar şunlardır. H01'de AP$_S$ $-$0.30 $\pm$ 2.24, AP$_M$ +0.84; H04'te AP$_S$ $-$1.06 $\pm$ 0.68, AP$_M$ $-$0.75'tir. H02'de AP$_S$ değişimi +1.39 $\pm$ 1.09'dur. H06'da mAP50 +0.30 $\pm$ 0.55'tir. Bu AP$_S$ değişimlerinin hepsi taban modelin tohum aralığı (2.87 puan) içinde kalır. H05'in kaybı üç boyut sınıfında görülür: AP$_S$ $-$2.39, AP$_M$ $-$4.06, AP$_L$ $-$2.10.
+
+H05'in son 10 epoch'taki doğrulama kazancı +0.20, +0.27, +0.23, taban modelinki +0.04, +0.16, $-$0.03 puandır. Aradaki fark ($\approx$0.18 puan) tek bir doğrulama ölçümünün gürültüsünün (Bölüm~\ref{sec:bulgu-tutarlilik}) çok altındadır ve bu evre mosaic'in kapandığı evredir; yakınsama hipotezi bu yüzden yalnız zayıf desteklenir.
+
+H05c'nin tohum başına değerleri şunlardır: $\Delta_{\mathrm{c},s}$ +0.02, $-$1.15, $-$0.40; $D_s$ +2.90, +2.04, +2.13. Tohum başına geri kazanım 1.01, 0.64 ve 0.84'tür (ortalama 0.83). Kalan farkta iki tohum negatif, biri $\approx$0'dır. H05c koşumlarında ölçülen VFL/BCE gradyan normu oranı 0.347--0.349'dur. En iyi epoch H05c'de 96, 96 ve 95, H05'te 100, 100 ve 100'dür. Karar kuralı, geçersiz bir koşumun yeniden koşulmayıp ``koşulamadı'' olarak raporlanmasını öngörüyordu; büyüklüğün kaybı açıklamadığı durum ise biçim hipotezini güçlendirecek ama kanıtlamayacaktı.
+
+\subsection{Hata türü kırılımı}\label{sec:bulgu-hata}
+Tespitler TIDE'a benzer biçimde hata türlerine ayrılır \cite{bolya_2020_tide}; eşleştirme pycocotools ile (en çok 300 tespit) yapılır. Doğru pozitif (true positive, TP), IoU$\ge0.5$ ile eşleşen tespittir; Dupe, GT'si daha yüksek skorlu bir kutuyla alınmış IoU$\ge0.5$ tespit; Cls, başka sınıf GT ile IoU$\ge0.5$; Loc, aynı sınıf GT ile $0.1\le$IoU$<0.5$; Both, başka sınıf GT ile $0.1\le$IoU$<0.5$; Bkg, hiçbir GT ile IoU$\ge0.1$ olmayan tespit; Miss, hiçbir kutuyla IoU$\ge0.5$ eşleşmeyen GT'dir. Oracle $\Delta$AP$_{50}$, ilgili hata düzeltilip (Loc: kutu GT'ye yapıştırılır, Cls: sınıf düzeltilir, Dupe, Both ve Bkg: kutu silinir, Miss: GT silinir) yeniden değerlendirildiğinde AP$_{50}$'deki artıştır. Kırılım işletim noktasında (skor $\ge0.25$) ve eşiksiz ($\ge0.001$), boyut ve sınıf düzeyinde ayrıca raporlanır.
+
+\input{figures/f2_hata_turu.tex}
+
+Şekil~\ref{fig:f2-hata-turu} hata türlerinin oracle $\Delta$AP50 maliyetini taban model, H03 ve H06 için karşılaştırır (test kırılımı keşifsel; H06 yalnız valda, tohum 0). Arka plan yanlış pozitifi (Bkg) iki kümede de en maliyetli türdür (val 3.48, test 3.79 puan; Miss: 3.32 ve 2.03). H03 ve H06 çubukları taban modelden valda en çok 0.31, testte en çok 0.06 puan ayrılır; hata profili kaymadı ve bu, mAP'teki sıfıra yakın farkla tutarlıdır.
+
+\subsection{Copy-paste doz karşılaştırması}
+
+\input{figures/f5_doz.tex}
+
+Şekil~\ref{fig:f5-doz} doğrulama kazancını yapıştırma dozuna (mosaic başına nesne) karşı çizer: 0 (taban model), 0.142 (H03), 0.671 (H08; H03'ün 4.7 katı). H08 olasılığı ve aday havuzunu birlikte değiştirdiğinden (Bölüm~\ref{sec:mudahaleler}) doz ile boyut karışımı ayrışmaz; bu bir doz--yanıt eğrisi değil, üç noktalı bir karşılaştırmadır. $\Delta$mAP50 +0.74 $\pm$ 0.16'dan +0.25 $\pm$ 0.14'e iner; H08'de $\Delta$AP$_S$ +0.31 $\pm$ 2.84'tür. Doz ve havuz birlikte genişleyince kazanç büyümedi (``artan bir etki gösterilemedi'').
+
+\subsection{Nitel panel}\label{sec:bulgu-nitel}
+
+\input{figures/f6_nitel.tex}
+
+Şekil~\ref{fig:f6-nitel} aynı test görüntülerinde GT, taban model, H03 ve taban model+TTA tespitlerini (tohum 0, skor $\ge0.25$) iki yönün uç örnekleri ve bir rastgele kareyle gösterir; seçim ölçütü başlıktadır (1642 görüntülük havuz; taban model görüntü-AP Q1--Q3: 0.497--0.896). TTA bir sahnede görüntü-AP'sini 0.522'den 0.971'e çıkarırken bir otomobil sahnesinde 0.895'ten 0.248'e düşürür; H03 de ilk sahnede sıçrar, yani farklar TTA'ya özgü değildir. Tüm geçerli görüntülerde (tohum 0) TTA'nın ortalama görüntü-AP farkı $-$1.26'dır; görüntülerin \%31.8'i iyileşir, \%38.4'ü kötüleşir (H03: +0.36; \%35.5 ve \%34.7). Veri kümesi mAP'i ise +0.88 artar; kazanç tek tip bir görsel iyileşme değildir (keşifsel).
+
+\FloatBarrier

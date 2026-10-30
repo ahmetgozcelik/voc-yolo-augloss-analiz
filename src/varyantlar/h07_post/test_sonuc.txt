@@ -1,0 +1,15 @@
+cihaz: cuda_available = False
+T1 soft-nms: idx=[0, 2, 1] skor=[0.9, 0.5, 0.108268] beklenen=[0.9, 0.5, np.float64(0.108268)]
+T1 kismi ortusme: 0.640590 beklenen 0.640590
+T1 torch sarmali: [[0.0, 0.0, 10.0, 10.0, 0.8999999761581421, 1.0], [0.0, 0.0, 10.0, 10.0, 0.699999988079071, 2.0], [0.0, 0.0, 10.0, 10.0, 0.10826822370290756, 1.0]]
+T2 yari bolme: |liste|=1000 |A|=500 |B|=500 kesisim=0 birlesim=1000
+YOLO11n summary (fused): 100 layers, 2,586,052 parameters, 0 gradients, 6.4 GFLOPs
+T3 yama(s=std) vs orijinal: sekil (1, 24, 1845) (1, 24, 1845) max|fark|=0.00e+00; stash dal sayisi=3 hw=(192, 256)
+T3 T2(yukari) sekil=(1, 24, 3180) (std (1, 24, 1845)); ortalama |fark| (ayni sekilse)=sekil farkli
+T4 Paket.map=0.459802 dogrudan=0.459802 map50=0.844474
+T4 bootstrap: X ort Delta=+0.5289 (>0), Y ort Delta=+0.0000 (=0); tekrarlanabilir=True
+T5 WBF ayni iki dal: NMS tek dal 5 kutu, WBF 5 kutu; skor ort NMS=0.7000 WBF=0.7000
+T5 gercek model WBF: 17 kutu, max skor=0.019
+T6 soft-nms uctan uca: torch.Size([19, 6]) <=300 skor sirali=True | NMS kutu sayisi 20, soft 19
+T7 kaynak denetimi (degerlendir.py vb.): yasakli dize bulunan = []
+TUM H07 CPU TESTLERI GECTI

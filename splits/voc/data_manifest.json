@@ -1,0 +1,793 @@
+{
+  "dataset": "PASCAL VOC 2007+2012 (detection, Main)",
+  "topic": "2.1 / cv-1",
+  "archives": {
+    "VOCtrainval_06-Nov-2007.tar": {
+      "bytes": 460032000,
+      "md5": "c52e279531787c972589f7e41ab4ae64",
+      "md5_official_torchvision": "c52e279531787c972589f7e41ab4ae64",
+      "sha256": "7d8cd951101b0957ddfd7a530bdc8a94f06121cfc1e511bb5937e973020c7508"
+    },
+    "VOCtest_06-Nov-2007.tar": {
+      "bytes": 451020800,
+      "md5": "b6e924de25625d8de591ea690078ad9f",
+      "md5_official_torchvision": "b6e924de25625d8de591ea690078ad9f",
+      "sha256": "6836888e2e01dca84577a849d339fa4f73e1e4f135d312430c4856b5609b4892"
+    },
+    "VOCtrainval_11-May-2012.tar": {
+      "bytes": 1999639040,
+      "md5": "6cd6e144f989b92b3379bac3b3de84fd",
+      "md5_official_torchvision": "6cd6e144f989b92b3379bac3b3de84fd",
+      "sha256": "e14f763270cf193d0b5f74b169f44157a4b0c6efa708f4dd0ff78ee691763bcb"
+    }
+  },
+  "raw_counts": {
+    "VOC2007_JPEG": 9963,
+    "VOC2007_XML": 9963,
+    "VOC2012_JPEG": 17125,
+    "VOC2012_XML": 17125,
+    "VOC2012_not_in_Main_trainval_left_in_devkit": 5585
+  },
+  "objects_from_xml": {
+    "VOC2007_trainval": {
+      "all": 15662,
+      "difficult": 3054,
+      "non_difficult": 12608
+    },
+    "VOC2007_test": {
+      "all": 14976,
+      "difficult": 2944,
+      "non_difficult": 12032
+    },
+    "VOC2012_trainval": {
+      "all": 31561,
+      "difficult": 4111,
+      "non_difficult": 27450
+    }
+  },
+  "converted": {
+    "images_jpg": 21503,
+    "label_txt": 21503,
+    "label_lines_total": 52090,
+    "label_vs_xml_mismatch": 0
+  },
+  "disk_GB": {
+    "raw_tars": 2.911,
+    "images_dir_incl_devkit": 2.863,
+    "labels": 0.003,
+    "data_VOC_total_du_h": "5.6G"
+  },
+  "split": {
+    "seed": 0,
+    "method": "random.Random(0); rng.sample(sorted(VOC2007 trainval), n07) sonra rng.sample(sorted(VOC2012 trainval), n12); kayıt sıralaması (year,id,relpath)",
+    "val_size": 1000,
+    "val_strata": {
+      "VOC2007": 303,
+      "VOC2012": 697
+    },
+    "pool": {
+      "VOC2007_trainval": 5011,
+      "VOC2012_trainval": 11540,
+      "total": 16551
+    },
+    "ratio_pool_07": 0.3028,
+    "test": "VOC2007 test (resmî), KİLİTLİ",
+    "removed_for_leakage": [],
+    "lists": {
+      "train": {
+        "n_images": 15551,
+        "n_voc2007": 4708,
+        "n_voc2012": 10843,
+        "file": "data/splits/train.txt",
+        "sha256_file": "fdcd6dde4b8f9a08e48464d6728e19aa01fd3599743742837a2272b15d6d2fe0",
+        "sha256_canonical_ids": "640e821a5b3758478462b271b21707f754c3b010ba6d3e4d8858e437691ceb76"
+      },
+      "val": {
+        "n_images": 1000,
+        "n_voc2007": 303,
+        "n_voc2012": 697,
+        "file": "data/splits/val.txt",
+        "sha256_file": "558db2f0efb443b62702ccb8e961643227d134429118159b3cdfaf7970de111e",
+        "sha256_canonical_ids": "dda7a378f496d2a1bb79e6da003990df516cda9bd27d5c37240c2a80497fbd0e"
+      },
+      "test": {
+        "n_images": 4952,
+        "n_voc2007": 4952,
+        "n_voc2012": 0,
+        "file": "data/splits/test.txt",
+        "sha256_file": "a10ef0a3f9f1029768d918f9ef5c4093108032dca041e413e3e789851a8efeb0",
+        "sha256_canonical_ids": "467ea94646a8610a84101de35bf819924fda90ab88c5131a2ae87a2c25a19f4c"
+      }
+    }
+  },
+  "stats": {
+    "train": {
+      "images": 15551,
+      "objects_non_difficult": 37651,
+      "difficult_dropped": 6672,
+      "images_with_empty_label": 0,
+      "objects_per_image_mean": 2.421,
+      "size_orig_px": {
+        "large": 24252,
+        "medium": 11141,
+        "small": 2258
+      },
+      "size_orig_frac": {
+        "large": 0.6441,
+        "medium": 0.2959,
+        "small": 0.06
+      },
+      "size_at_imgsz640": {
+        "large": 27458,
+        "medium": 9171,
+        "small": 1022
+      },
+      "size_at_imgsz640_frac": {
+        "large": 0.7293,
+        "medium": 0.2436,
+        "small": 0.0271
+      },
+      "img_w_min_max": [
+        127,
+        500
+      ],
+      "img_h_min_max": [
+        71,
+        500
+      ],
+      "imbalance_objects_max_over_min": 16.52,
+      "most_objects": [
+        "person",
+        12471
+      ],
+      "least_objects": [
+        "sofa",
+        755
+      ]
+    },
+    "val": {
+      "images": 1000,
+      "objects_non_difficult": 2407,
+      "difficult_dropped": 493,
+      "images_with_empty_label": 0,
+      "objects_per_image_mean": 2.407,
+      "size_orig_px": {
+        "large": 1560,
+        "medium": 704,
+        "small": 143
+      },
+      "size_orig_frac": {
+        "large": 0.6481,
+        "medium": 0.2925,
+        "small": 0.0594
+      },
+      "size_at_imgsz640": {
+        "large": 1753,
+        "medium": 585,
+        "small": 69
+      },
+      "size_at_imgsz640_frac": {
+        "large": 0.7283,
+        "medium": 0.243,
+        "small": 0.0287
+      },
+      "img_w_min_max": [
+        246,
+        500
+      ],
+      "img_h_min_max": [
+        99,
+        500
+      ],
+      "imbalance_objects_max_over_min": 16.02,
+      "most_objects": [
+        "person",
+        785
+      ],
+      "least_objects": [
+        "diningtable",
+        49
+      ]
+    },
+    "test": {
+      "images": 4952,
+      "objects_non_difficult": 12032,
+      "difficult_dropped": 2944,
+      "images_with_empty_label": 0,
+      "objects_per_image_mean": 2.43,
+      "size_orig_px": {
+        "large": 7643,
+        "medium": 3823,
+        "small": 566
+      },
+      "size_orig_frac": {
+        "large": 0.6352,
+        "medium": 0.3177,
+        "small": 0.047
+      },
+      "size_at_imgsz640": {
+        "large": 8798,
+        "medium": 3011,
+        "small": 223
+      },
+      "size_at_imgsz640_frac": {
+        "large": 0.7312,
+        "medium": 0.2502,
+        "small": 0.0185
+      },
+      "img_w_min_max": [
+        148,
+        500
+      ],
+      "img_h_min_max": [
+        139,
+        500
+      ],
+      "imbalance_objects_max_over_min": 21.98,
+      "most_objects": [
+        "person",
+        4528
+      ],
+      "least_objects": [
+        "diningtable",
+        206
+      ]
+    }
+  },
+  "leakage": {
+    "filename_overlap_pool_test": 0,
+    "sha1_overlap_pool_test_images": 0,
+    "sha1_dup_groups_within_pool": 3,
+    "sha1_dup_train_val_pairs": 0,
+    "sha1_dup_groups_within_test": 0,
+    "dhash_near_pool_test_counts": {
+      "<= 0": 0,
+      "<= 2": 3,
+      "<= 4": 20
+    },
+    "removed_from_train_val": [],
+    "ncc_method": "32x32 gri, sıfır-ortalama birim-norm, kosinüs; yatay ayna dahil; her havuz görüntüsü için en yakın test",
+    "ncc_ge_0.95": 31,
+    "ncc_ge_0.98": 1,
+    "ncc_ge_0.99": 0,
+    "ncc_pool_best_quantiles": {
+      "0.5": 0.6451,
+      "0.99": 0.9242,
+      "0.999": 0.9576
+    }
+  },
+  "loader_test": {
+    "ultralytics": "8.4.165",
+    "train": {
+      "images": 15551,
+      "objects": 37651
+    },
+    "val": {
+      "images": 1000,
+      "objects": 2407
+    },
+    "nc": 20
+  },
+  "per_class": {
+    "aeroplane": {
+      "train": {
+        "images": 853,
+        "objects": 1091,
+        "difficult_dropped": 98,
+        "small": 57,
+        "medium": 247,
+        "large": 787
+      },
+      "val": {
+        "images": 55,
+        "objects": 80,
+        "difficult_dropped": 16,
+        "small": 0,
+        "medium": 21,
+        "large": 59
+      },
+      "test": {
+        "images": 204,
+        "objects": 285,
+        "difficult_dropped": 26,
+        "small": 27,
+        "medium": 78,
+        "large": 180
+      }
+    },
+    "bicycle": {
+      "train": {
+        "images": 746,
+        "objects": 1002,
+        "difficult_dropped": 137,
+        "small": 21,
+        "medium": 234,
+        "large": 747
+      },
+      "val": {
+        "images": 49,
+        "objects": 62,
+        "difficult_dropped": 7,
+        "small": 0,
+        "medium": 12,
+        "large": 50
+      },
+      "test": {
+        "images": 239,
+        "objects": 337,
+        "difficult_dropped": 52,
+        "small": 1,
+        "medium": 84,
+        "large": 252
+      }
+    },
+    "bird": {
+      "train": {
+        "images": 1038,
+        "objects": 1514,
+        "difficult_dropped": 212,
+        "small": 89,
+        "medium": 486,
+        "large": 939
+      },
+      "val": {
+        "images": 57,
+        "objects": 91,
+        "difficult_dropped": 3,
+        "small": 3,
+        "medium": 36,
+        "large": 52
+      },
+      "test": {
+        "images": 282,
+        "objects": 459,
+        "difficult_dropped": 117,
+        "small": 19,
+        "medium": 149,
+        "large": 291
+      }
+    },
+    "boat": {
+      "train": {
+        "images": 651,
+        "objects": 1076,
+        "difficult_dropped": 233,
+        "small": 81,
+        "medium": 418,
+        "large": 577
+      },
+      "val": {
+        "images": 38,
+        "objects": 64,
+        "difficult_dropped": 24,
+        "small": 4,
+        "medium": 25,
+        "large": 35
+      },
+      "test": {
+        "images": 172,
+        "objects": 263,
+        "difficult_dropped": 130,
+        "small": 16,
+        "medium": 98,
+        "large": 149
+      }
+    },
+    "bottle": {
+      "train": {
+        "images": 890,
+        "objects": 1669,
+        "difficult_dropped": 331,
+        "small": 320,
+        "medium": 919,
+        "large": 430
+      },
+      "val": {
+        "images": 60,
+        "objects": 95,
+        "difficult_dropped": 21,
+        "small": 13,
+        "medium": 52,
+        "large": 30
+      },
+      "test": {
+        "images": 212,
+        "objects": 469,
+        "difficult_dropped": 188,
+        "small": 51,
+        "medium": 298,
+        "large": 120
+      }
+    },
+    "bus": {
+      "train": {
+        "images": 568,
+        "objects": 767,
+        "difficult_dropped": 86,
+        "small": 15,
+        "medium": 141,
+        "large": 611
+      },
+      "val": {
+        "images": 39,
+        "objects": 55,
+        "difficult_dropped": 1,
+        "small": 3,
+        "medium": 13,
+        "large": 39
+      },
+      "test": {
+        "images": 174,
+        "objects": 213,
+        "difficult_dropped": 41,
+        "small": 1,
+        "medium": 38,
+        "large": 174
+      }
+    },
+    "car": {
+      "train": {
+        "images": 1750,
+        "objects": 3045,
+        "difficult_dropped": 676,
+        "small": 392,
+        "medium": 1217,
+        "large": 1436
+      },
+      "val": {
+        "images": 124,
+        "objects": 222,
+        "difficult_dropped": 65,
+        "small": 38,
+        "medium": 80,
+        "large": 104
+      },
+      "test": {
+        "images": 721,
+        "objects": 1201,
+        "difficult_dropped": 340,
+        "small": 86,
+        "medium": 459,
+        "large": 656
+      }
+    },
+    "cat": {
+      "train": {
+        "images": 1343,
+        "objects": 1505,
+        "difficult_dropped": 23,
+        "small": 5,
+        "medium": 81,
+        "large": 1419
+      },
+      "val": {
+        "images": 74,
+        "objects": 88,
+        "difficult_dropped": 0,
+        "small": 0,
+        "medium": 2,
+        "large": 86
+      },
+      "test": {
+        "images": 322,
+        "objects": 358,
+        "difficult_dropped": 12,
+        "small": 1,
+        "medium": 24,
+        "large": 333
+      }
+    },
+    "chair": {
+      "train": {
+        "images": 1478,
+        "objects": 2975,
+        "difficult_dropped": 1101,
+        "small": 70,
+        "medium": 1119,
+        "large": 1786
+      },
+      "val": {
+        "images": 86,
+        "objects": 177,
+        "difficult_dropped": 85,
+        "small": 3,
+        "medium": 79,
+        "large": 95
+      },
+      "test": {
+        "images": 417,
+        "objects": 756,
+        "difficult_dropped": 618,
+        "small": 1,
+        "medium": 312,
+        "large": 443
+      }
+    },
+    "cow": {
+      "train": {
+        "images": 413,
+        "objects": 791,
+        "difficult_dropped": 184,
+        "small": 38,
+        "medium": 257,
+        "large": 496
+      },
+      "val": {
+        "images": 31,
+        "objects": 56,
+        "difficult_dropped": 27,
+        "small": 0,
+        "medium": 25,
+        "large": 31
+      },
+      "test": {
+        "images": 127,
+        "objects": 244,
+        "difficult_dropped": 85,
+        "small": 7,
+        "medium": 102,
+        "large": 135
+      }
+    },
+    "diningtable": {
+      "train": {
+        "images": 691,
+        "objects": 775,
+        "difficult_dropped": 218,
+        "small": 6,
+        "medium": 67,
+        "large": 702
+      },
+      "val": {
+        "images": 47,
+        "objects": 49,
+        "difficult_dropped": 15,
+        "small": 0,
+        "medium": 1,
+        "large": 48
+      },
+      "test": {
+        "images": 190,
+        "objects": 206,
+        "difficult_dropped": 93,
+        "small": 0,
+        "medium": 19,
+        "large": 187
+      }
+    },
+    "dog": {
+      "train": {
+        "images": 1624,
+        "objects": 1929,
+        "difficult_dropped": 51,
+        "small": 9,
+        "medium": 199,
+        "large": 1721
+      },
+      "val": {
+        "images": 83,
+        "objects": 96,
+        "difficult_dropped": 3,
+        "small": 0,
+        "medium": 10,
+        "large": 86
+      },
+      "test": {
+        "images": 418,
+        "objects": 489,
+        "difficult_dropped": 41,
+        "small": 0,
+        "medium": 51,
+        "large": 438
+      }
+    },
+    "horse": {
+      "train": {
+        "images": 723,
+        "objects": 1006,
+        "difficult_dropped": 79,
+        "small": 11,
+        "medium": 132,
+        "large": 863
+      },
+      "val": {
+        "images": 46,
+        "objects": 66,
+        "difficult_dropped": 5,
+        "small": 3,
+        "medium": 15,
+        "large": 48
+      },
+      "test": {
+        "images": 274,
+        "objects": 348,
+        "difficult_dropped": 47,
+        "small": 3,
+        "medium": 42,
+        "large": 303
+      }
+    },
+    "motorbike": {
+      "train": {
+        "images": 722,
+        "objects": 985,
+        "difficult_dropped": 83,
+        "small": 9,
+        "medium": 203,
+        "large": 773
+      },
+      "val": {
+        "images": 49,
+        "objects": 67,
+        "difficult_dropped": 6,
+        "small": 3,
+        "medium": 10,
+        "large": 54
+      },
+      "test": {
+        "images": 222,
+        "objects": 325,
+        "difficult_dropped": 44,
+        "small": 5,
+        "medium": 80,
+        "large": 240
+      }
+    },
+    "person": {
+      "train": {
+        "images": 5711,
+        "objects": 12471,
+        "difficult_dropped": 2168,
+        "small": 833,
+        "medium": 3788,
+        "large": 7850
+      },
+      "val": {
+        "images": 384,
+        "objects": 785,
+        "difficult_dropped": 152,
+        "small": 51,
+        "medium": 215,
+        "large": 519
+      },
+      "test": {
+        "images": 2007,
+        "objects": 4528,
+        "difficult_dropped": 699,
+        "small": 294,
+        "medium": 1518,
+        "large": 2716
+      }
+    },
+    "pottedplant": {
+      "train": {
+        "images": 717,
+        "objects": 1378,
+        "difficult_dropped": 221,
+        "small": 158,
+        "medium": 644,
+        "large": 576
+      },
+      "val": {
+        "images": 55,
+        "objects": 109,
+        "difficult_dropped": 16,
+        "small": 12,
+        "medium": 57,
+        "large": 40
+      },
+      "test": {
+        "images": 224,
+        "objects": 480,
+        "difficult_dropped": 112,
+        "small": 27,
+        "medium": 218,
+        "large": 235
+      }
+    },
+    "sheep": {
+      "train": {
+        "images": 395,
+        "objects": 1013,
+        "difficult_dropped": 274,
+        "small": 116,
+        "medium": 414,
+        "large": 483
+      },
+      "val": {
+        "images": 26,
+        "objects": 57,
+        "difficult_dropped": 3,
+        "small": 8,
+        "medium": 16,
+        "large": 33
+      },
+      "test": {
+        "images": 97,
+        "objects": 242,
+        "difficult_dropped": 69,
+        "small": 17,
+        "medium": 95,
+        "large": 130
+      }
+    },
+    "sofa": {
+      "train": {
+        "images": 684,
+        "objects": 755,
+        "difficult_dropped": 369,
+        "small": 0,
+        "medium": 51,
+        "large": 704
+      },
+      "val": {
+        "images": 52,
+        "objects": 59,
+        "difficult_dropped": 28,
+        "small": 0,
+        "medium": 1,
+        "large": 58
+      },
+      "test": {
+        "images": 223,
+        "objects": 239,
+        "difficult_dropped": 157,
+        "small": 0,
+        "medium": 11,
+        "large": 228
+      }
+    },
+    "train": {
+      "train": {
+        "images": 758,
+        "objects": 868,
+        "difficult_dropped": 56,
+        "small": 5,
+        "medium": 85,
+        "large": 778
+      },
+      "val": {
+        "images": 47,
+        "objects": 57,
+        "difficult_dropped": 3,
+        "small": 0,
+        "medium": 4,
+        "large": 53
+      },
+      "test": {
+        "images": 259,
+        "objects": 282,
+        "difficult_dropped": 20,
+        "small": 0,
+        "medium": 28,
+        "large": 254
+      }
+    },
+    "tvmonitor": {
+      "train": {
+        "images": 778,
+        "objects": 1036,
+        "difficult_dropped": 72,
+        "small": 23,
+        "medium": 439,
+        "large": 574
+      },
+      "val": {
+        "images": 53,
+        "objects": 72,
+        "difficult_dropped": 13,
+        "small": 2,
+        "medium": 30,
+        "large": 40
+      },
+      "test": {
+        "images": 229,
+        "objects": 308,
+        "difficult_dropped": 53,
+        "small": 10,
+        "medium": 119,
+        "large": 179
+      }
+    }
+  }
+}

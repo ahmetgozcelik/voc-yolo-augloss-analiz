@@ -1,0 +1,176 @@
+{
+  "splits": {
+    "train": {
+      "n_images": 15551,
+      "n_voc2007": 4708,
+      "n_voc2012": 10843,
+      "file": "data/splits/train.txt",
+      "sha256_file": "fdcd6dde4b8f9a08e48464d6728e19aa01fd3599743742837a2272b15d6d2fe0",
+      "sha256_canonical_ids": "640e821a5b3758478462b271b21707f754c3b010ba6d3e4d8858e437691ceb76"
+    },
+    "val": {
+      "n_images": 1000,
+      "n_voc2007": 303,
+      "n_voc2012": 697,
+      "file": "data/splits/val.txt",
+      "sha256_file": "558db2f0efb443b62702ccb8e961643227d134429118159b3cdfaf7970de111e",
+      "sha256_canonical_ids": "dda7a378f496d2a1bb79e6da003990df516cda9bd27d5c37240c2a80497fbd0e"
+    },
+    "test": {
+      "n_images": 4952,
+      "n_voc2007": 4952,
+      "n_voc2012": 0,
+      "file": "data/splits/test.txt",
+      "sha256_file": "a10ef0a3f9f1029768d918f9ef5c4093108032dca041e413e3e789851a8efeb0",
+      "sha256_canonical_ids": "467ea94646a8610a84101de35bf819924fda90ab88c5131a2ae87a2c25a19f4c"
+    }
+  },
+  "stats": {
+    "train": {
+      "images": 15551,
+      "objects_non_difficult": 37651,
+      "difficult_dropped": 6672,
+      "images_with_empty_label": 0,
+      "objects_per_image_mean": 2.421,
+      "size_orig_px": {
+        "large": 24252,
+        "medium": 11141,
+        "small": 2258
+      },
+      "size_orig_frac": {
+        "large": 0.6441,
+        "medium": 0.2959,
+        "small": 0.06
+      },
+      "size_at_imgsz640": {
+        "large": 27458,
+        "medium": 9171,
+        "small": 1022
+      },
+      "size_at_imgsz640_frac": {
+        "large": 0.7293,
+        "medium": 0.2436,
+        "small": 0.0271
+      },
+      "img_w_min_max": [
+        127,
+        500
+      ],
+      "img_h_min_max": [
+        71,
+        500
+      ],
+      "imbalance_objects_max_over_min": 16.52,
+      "most_objects": [
+        "person",
+        12471
+      ],
+      "least_objects": [
+        "sofa",
+        755
+      ]
+    },
+    "val": {
+      "images": 1000,
+      "objects_non_difficult": 2407,
+      "difficult_dropped": 493,
+      "images_with_empty_label": 0,
+      "objects_per_image_mean": 2.407,
+      "size_orig_px": {
+        "large": 1560,
+        "medium": 704,
+        "small": 143
+      },
+      "size_orig_frac": {
+        "large": 0.6481,
+        "medium": 0.2925,
+        "small": 0.0594
+      },
+      "size_at_imgsz640": {
+        "large": 1753,
+        "medium": 585,
+        "small": 69
+      },
+      "size_at_imgsz640_frac": {
+        "large": 0.7283,
+        "medium": 0.243,
+        "small": 0.0287
+      },
+      "img_w_min_max": [
+        246,
+        500
+      ],
+      "img_h_min_max": [
+        99,
+        500
+      ],
+      "imbalance_objects_max_over_min": 16.02,
+      "most_objects": [
+        "person",
+        785
+      ],
+      "least_objects": [
+        "diningtable",
+        49
+      ]
+    },
+    "test": {
+      "images": 4952,
+      "objects_non_difficult": 12032,
+      "difficult_dropped": 2944,
+      "images_with_empty_label": 0,
+      "objects_per_image_mean": 2.43,
+      "size_orig_px": {
+        "large": 7643,
+        "medium": 3823,
+        "small": 566
+      },
+      "size_orig_frac": {
+        "large": 0.6352,
+        "medium": 0.3177,
+        "small": 0.047
+      },
+      "size_at_imgsz640": {
+        "large": 8798,
+        "medium": 3011,
+        "small": 223
+      },
+      "size_at_imgsz640_frac": {
+        "large": 0.7312,
+        "medium": 0.2502,
+        "small": 0.0185
+      },
+      "img_w_min_max": [
+        148,
+        500
+      ],
+      "img_h_min_max": [
+        139,
+        500
+      ],
+      "imbalance_objects_max_over_min": 21.98,
+      "most_objects": [
+        "person",
+        4528
+      ],
+      "least_objects": [
+        "diningtable",
+        206
+      ]
+    }
+  },
+  "label_mismatch_count": 0,
+  "leakage": {
+    "filename_overlap_pool_test": 0,
+    "sha1_overlap_pool_test_images": 0,
+    "sha1_dup_groups_within_pool": 3,
+    "sha1_dup_train_val_pairs": 0,
+    "sha1_dup_groups_within_test": 0,
+    "dhash_near_pool_test_counts": {
+      "<= 0": 0,
+      "<= 2": 3,
+      "<= 4": 20
+    },
+    "removed_from_train_val": []
+  }
+}

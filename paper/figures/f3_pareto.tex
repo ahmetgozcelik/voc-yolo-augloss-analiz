@@ -1,0 +1,71 @@
+% F3 -- dogruluk-gecikme Pareto (H07 satirlari + TTA test). Yedek kodlama (tur-2): iyi = ucgen, kotu = kare, digerleri = daire (gri tonda okunur). Yedek kodlama (tur-2): iyi = ucgen, kotu = kare, digerleri = daire (gri tonda okunur). Veri: figures/data/f3_h07.dat, f3_test.dat, f3_ref.dat
+% (uretici: figures/scripts/f3_pareto.py <- evidence/evidence.json). Figur ici metin Turkce.
+\begin{figure*}[t]
+\centering
+\pgfplotstableset{col sep=semicolon}
+\pgfplotstableread{\figroot data/f3_h07.dat}\fthreetbl
+\pgfplotstableread{\figroot data/f3_test.dat}\fthreetest
+\pgfplotstableread{\figroot data/f3_ref.dat}\fthreeref
+\pgfplotstablegetelem{0}{budget}\of\fthreeref \edef\fBud{\pgfplotsretval}
+\pgfplotstablegetelem{0}{lat}\of\fthreetest \edef\tLat{\pgfplotsretval}
+\pgfplotstablegetelem{0}{delta}\of\fthreetest \edef\tDel{\pgfplotsretval}
+\pgfplotstablegetelem{0}{ci_lo}\of\fthreetest \edef\tLo{\pgfplotsretval}
+\pgfplotstablegetelem{0}{ci_hi}\of\fthreetest \edef\tHi{\pgfplotsretval}
+\def\clsgood{good}\def\clsbad{bad}
+\pgfplotsset{
+  fthree/.style={scale only axis, width=0.78\textwidth, font=\small, tick label style={font=\small}, label style={font=\small},
+    title style={font=\small, yshift=-1pt}, grid=both, major grid style={black!12}, minor grid style={black!5}, axis line style={black!70}, clip=true},
+}
+% H07 satirlarini isaretle. #1 = sutun soneki (A: overview, Z: zoom), #2 = isaret kosulu, #3 = etiket kosulu (pgfmath)
+\newcommand{\fthreepoints}[3]{%
+  \foreach \i in {0,...,12}{%
+    \pgfplotstablegetelem{\i}{row}\of\fthreetbl \edef\rowname{\pgfplotsretval}%
+    \pgfplotstablegetelem{\i}{lat}\of\fthreetbl \edef\rlat{\pgfplotsretval}%
+    \pgfplotstablegetelem{\i}{delta}\of\fthreetbl \edef\rdel{\pgfplotsretval}%
+    \pgfplotstablegetelem{\i}{cls}\of\fthreetbl \edef\rcls{\pgfplotsretval}%
+    \pgfplotstablegetelem{\i}{anchor#1}\of\fthreetbl \edef\ranc{\pgfplotsretval}%
+    \pgfplotstablegetelem{\i}{dx#1}\of\fthreetbl \edef\rdx{\pgfplotsretval}%
+    \pgfplotstablegetelem{\i}{dy#1}\of\fthreetbl \edef\rdy{\pgfplotsretval}%
+    \ifx\rcls\clsgood \def\ccol{iyiRenk}\def\cshp{regular polygon}\def\cmin{8pt}\else\ifx\rcls\clsbad \def\ccol{kotuRenk}\def\cshp{rectangle}\def\cmin{3.8pt}\else\def\ccol{black!60}\def\cshp{circle}\def\cmin{3.8pt}\fi\fi
+    \pgfmathparse{#2}\ifnum\pgfmathresult>0
+      \pgfmathparse{#3}\ifnum\pgfmathresult>0
+        \node[anchor=\ranc, xshift=\rdx pt, yshift=\rdy pt, font=\scriptsize, fill=white, inner sep=1pt, text=\ccol] at (axis cs:\rlat,\rdel) {\rowname};
+      \fi
+      \node[\cshp, regular polygon sides=3, fill=\ccol, inner sep=0pt, minimum size=\cmin] at (axis cs:\rlat,\rdel) {};
+    \fi}}
+\begin{tikzpicture}
+% ---------------- (a) overview
+\begin{axis}[name=A, fthree, height=6.4cm, xmin=0.85, xmax=3.3, ymin=-6.4, ymax=1.5, xtick={1,1.5,2,2.5,3}, xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=1},
+  title={(a) Tüm H07 satırları (doğrulama, taban model tohum-0 \texttt{best.pt}) ve test üzerinde TTA},
+  xlabel={Gecikme oranı, aynı oturumdaki R0'a göre [$\times$]}, ylabel={$\Delta$ mAP50-95 [puan]}]
+\fill[iyiRenk!6] (axis cs:0.85,-6.4) rectangle (axis cs:\fBud,1.5);
+\draw[line width=1.1pt, black] (axis cs:0.85,0) -- (axis cs:3.3,0);
+\draw[dashed, line width=1.3pt, black] (axis cs:\fBud,-6.4) -- (axis cs:\fBud,1.5);
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=south west, align=left] at (axis cs:\fBud,-6.3) {gerçek-zaman bütçesi\\$\le 1.10\times$};
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=west, align=left] at (axis cs:1.16,-1.0) {$\leftarrow$ bütçe içindeki satırlar: bkz. (b)};
+\pgfplotsextra{\fthreepoints{A}{1}{\rlat>1.09}}
+% TTA test: seed ortalamasi + %95 bootstrap CI
+% TTA test: Holm-12 p = 0.222 (kesifsel, anlamli degil) -> gri (T5/F1 ile tutarli)
+\draw[line width=2pt, black!55] (axis cs:\tLat,\tLo) -- (axis cs:\tLat,\tHi);
+\node[diamond, fill=black!55, inner sep=2.2pt] at (axis cs:\tLat,\tDel) {};
+\node[anchor=north east, font=\scriptsize, fill=white, inner sep=1pt, text=black!70, xshift=-3pt] at (axis cs:\tLat,\tLo) {TTA, test (n=3)};
+\end{axis}
+% ---------------- (b) zoom on the real-time budget region
+\begin{axis}[name=B, fthree, at={(A.south west)}, anchor=north west, yshift=-2.3cm, height=4.0cm, xmin=0.94, xmax=1.13, ymin=-0.78, ymax=0.22,
+  title={(b) Yakınlaştırma: $\le 1.10\times$ bütçesinin içindeki ya da yakınındaki satırlar},
+  xlabel={Gecikme oranı (R0 ile aynı oturum) [$\times$]}, ylabel={$\Delta$ mAP50-95 [puan]},
+  xtick={0.95,1.0,1.05,1.10}, xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2},
+  legend style={legend cell align=left, at={(0.5,-0.45)}, anchor=north, legend columns=1, font=\footnotesize, draw=none}]
+\fill[iyiRenk!6] (axis cs:0.94,-0.78) rectangle (axis cs:\fBud,0.22);
+\draw[line width=1.1pt, black] (axis cs:0.94,0) -- (axis cs:1.13,0);
+\draw[dashed, line width=1.3pt, black] (axis cs:\fBud,-0.78) -- (axis cs:\fBud,0.22);
+\pgfplotsextra{\fthreepoints{Z}{and(\rlat<1.13,\rdel>-0.78)}{1}}
+\addplot[draw=none, forget plot] coordinates {(1,0)};
+\addlegendimage{only marks, mark=triangle*, mark size=3pt, iyiRenk}\addlegendentry{önceden yazılmış DOĞRULANDI kuralı (üçgen)}
+\addlegendimage{only marks, mark=square*, mark size=2.4pt, kotuRenk}\addlegendentry{$\Delta \le -0.5$ ve iki doğrulama yarısında da negatif (kare)}
+\addlegendimage{only marks, mark=*, mark size=2.4pt, black!60}\addlegendentry{diğer satırlar (daire)}
+\addlegendimage{only marks, mark=diamond*, mark size=3.2pt, black!55}\addlegendentry{test üzerinde TTA (keşifsel): tohum ortalaması, çubuk = \%95 bootstrap GA}
+\end{axis}
+\end{tikzpicture}
+\caption{H07 satırlarında (R0 referans, N: NMS-IoU, S: Soft-NMS, U: test çözünürlüğü, T: TTA, W: WBF) doğruluk–gecikme ödünleşimi; (b) gerçek-zaman bandının yakınlaştırması. Üçgen: doğrulandı, kare: kötü, daire: diğer; eşik gövdede.}\label{fig:f3-pareto}
+\end{figure*}

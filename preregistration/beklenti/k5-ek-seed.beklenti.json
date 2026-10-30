@@ -1,0 +1,110 @@
+{
+  "_aciklama": "MINIMAL GUVENLIK ON-KAYDI (K5-sonrasi val replikasyonu, kuyruk k5-ek-seed; hakem B3 n>=3 + B4 WBF tanisi). Kuyruk KADEMESIZ (tek aşama=3): kuyruk.py kos bu dosyayi aşamalar arasi kapi olarak KULLANMAZ; kurallar sonuc damgasi sonrasi beklenti_kontrol.py --kuyruk k5-ek-seed --asama 3 ile denetlenir. Kosumdan ONCE yazildi (kartlar H01,H02,H04,H05,H06,H08 + k4 kuyruklari mtime'indan sonra), sonra degismez. Replikasyon: komutlar seed0 asama-3 satirlariyla BIREBIR ayni (yalniz --seed); ebeveyn = eslesen baseline seed run'i (s1 20260930-101624_baseline_s1, s2 20260930-131427_baseline_s2); --rep-test YOK; test verisi yok. Satir-ici erken-durdurma (kuyruk satirinda 'kural'): nan_kes her satirda; H05r icin VFL-kalibre kural (min_adim 20, alt_sinir val_map50_95 0.40; seed0 H05r ile ayni); diger altı kartta seed0'daki on-eleme esikleri (ep5<0.2538) replikasyonda KULLANILMAZ (secim yanliligi olur): yalniz mekanik saglik (min_adim 10, alt_sinir 0.05, sabit_sn 1200). Duman/on-ucus asamasi YOK: bu kartlar K4'te seed0'da gecti. WBF tanisi (ilk satir): egitimsiz, val-only.",
+  "metrik": "val_map50_95",
+  "yon": "max",
+  "asama": {
+    "3": {
+      "aciklama": "TAM replikasyon (seed1,2; 100 ep) + WBF tanisi",
+      "kurallar": [
+        {
+          "tur": "sonlu"
+        },
+        {
+          "tur": "min_kosum",
+          "n": 1
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "varyant_etki_sayaci",
+          "alt": 1,
+          "ust": 1000000000000.0,
+          "kaynak": "degisikligin devreye girdigi olay sayisi >=1 (bit-bit baseline yakalayici; WBF tanisi icin R0'dan farkli cikan konfigurasyon sayisi)"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_p",
+          "alt": 0.9999,
+          "ust": 1.0001,
+          "kaynak": "H08 varyant_imzasi: p=1.0 (yalniz H08 satirlarinda metrik var; metrigi olmayan koşumlar bu kuralda atlanir)"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "boxcp_max_sqrt_alan",
+          "alt": 95.99,
+          "ust": 96.01,
+          "kaynak": "H08 varyant_imzasi: max_sqrt_alan=96"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "wbf_birim_hepsi_gecti",
+          "alt": 1,
+          "ust": 1,
+          "kaynak": "H07 WBF tanisi: birim testleri (tek gorunum, ozdes gorunum, normalize/denormalize, H07 esdegerligi) gecmeli"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "wbf_r0_uyumsuz",
+          "alt": 0,
+          "ust": 0,
+          "kaynak": "H07 WBF tanisi: R0 yeniden-uretimi baseline s0 metrics.json val_map50_95'inden (0.62893) <=0.0008 sapmali (hat dogrulugu)"
+        },
+        {
+          "tur": "ikincil_aralik",
+          "metrik": "egitim_sure_sn",
+          "alt": 1,
+          "ust": 14620,
+          "kaynak": "kart oldurme kurali: egitim_sure_sn > 14620 (baseline 10445 sn x 1.4) -> maliyet nedeniyle OLDUR; WBF tanisi icin zaman siniri 40 dk kuyrukta"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h05_vfl",
+          "alt": 0.55,
+          "ust": 0.67,
+          "kaynak": "MEKANIK SAGLIK araligi (seçim kurali DEGIL): alt 0.55 = baseline tam-kosum kabul alt siniri (k3-baseline-v2 asama 3); ust 0.67 = baseline seed1 0.6353 + ~3.5 puan (seed1/2 baseline'lari 0.6353/0.6278; kart kirmizi bayragi seed0 baseline'ina baglidir ve replikasyonda tahlilci karari)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h08_boxcp_doz",
+          "alt": 0.55,
+          "ust": 0.67,
+          "kaynak": "MEKANIK SAGLIK araligi (seçim kurali DEGIL): alt 0.55 = baseline tam-kosum kabul alt siniri (k3-baseline-v2 asama 3); ust 0.67 = baseline seed1 0.6353 + ~3.5 puan (seed1/2 baseline'lari 0.6353/0.6278; kart kirmizi bayragi seed0 baseline'ina baglidir ve replikasyonda tahlilci karari)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h06_box10",
+          "alt": 0.55,
+          "ust": 0.67,
+          "kaynak": "MEKANIK SAGLIK araligi (seçim kurali DEGIL): alt 0.55 = baseline tam-kosum kabul alt siniri (k3-baseline-v2 asama 3); ust 0.67 = baseline seed1 0.6353 + ~3.5 puan (seed1/2 baseline'lari 0.6353/0.6278; kart kirmizi bayragi seed0 baseline'ina baglidir ve replikasyonda tahlilci karari)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h02_innerciou",
+          "alt": 0.55,
+          "ust": 0.67,
+          "kaynak": "MEKANIK SAGLIK araligi (seçim kurali DEGIL): alt 0.55 = baseline tam-kosum kabul alt siniri (k3-baseline-v2 asama 3); ust 0.67 = baseline seed1 0.6353 + ~3.5 puan (seed1/2 baseline'lari 0.6353/0.6278; kart kirmizi bayragi seed0 baseline'ina baglidir ve replikasyonda tahlilci karari)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h04_scale25",
+          "alt": 0.55,
+          "ust": 0.67,
+          "kaynak": "MEKANIK SAGLIK araligi (seçim kurali DEGIL): alt 0.55 = baseline tam-kosum kabul alt siniri (k3-baseline-v2 asama 3); ust 0.67 = baseline seed1 0.6353 + ~3.5 puan (seed1/2 baseline'lari 0.6353/0.6278; kart kirmizi bayragi seed0 baseline'ina baglidir ve replikasyonda tahlilci karari)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h01_multiscale25",
+          "alt": 0.55,
+          "ust": 0.67,
+          "kaynak": "MEKANIK SAGLIK araligi (seçim kurali DEGIL): alt 0.55 = baseline tam-kosum kabul alt siniri (k3-baseline-v2 asama 3); ust 0.67 = baseline seed1 0.6353 + ~3.5 puan (seed1/2 baseline'lari 0.6353/0.6278; kart kirmizi bayragi seed0 baseline'ina baglidir ve replikasyonda tahlilci karari)"
+        },
+        {
+          "tur": "aralik",
+          "varyant": "h07_wbf_tani",
+          "alt": 0.6281,
+          "ust": 0.6297,
+          "kaynak": "WBF tanisi R0 = baseline seed0 best.pt val_map50_95 0.62893 +-0.0008 (H07 kart siniri)"
+        }
+      ]
+    }
+  }
+}
