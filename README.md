@@ -1,12 +1,14 @@
 # Gerçek zamanlı YOLO ince ayarında artırma ve kayıp müdahalelerinin çok tohumlu değerlendirmesi
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23797460.svg)](https://doi.org/10.5281/zenodo.23797460)
+
 Bu depo, aşağıdaki makalenin kodunu, ön-kayıt belgelerini, tohum düzeyi sonuçlarını, bölme listelerini, koşum kayıtlarını
 ve genişletilmiş ekini içerir.
 
 > Ahmed Gürkan Özçelik, Ufuk Asıl. *Gerçek Zamanlı YOLO Modellerinin İnce Ayarında Artırma ve Kayıp Müdahalelerinin Çok
 > Tohumlu Değerlendirmesi: PASCAL VOC ve KITTI Üzerine Bir İnceleme* (İngilizce başlık: *A Multi-Seed Evaluation of
 > Augmentation and Loss Interventions in Fine-Tuning Real-Time YOLO Detectors: A Study on PASCAL VOC and KITTI*).
-> Ostim Teknik Üniversitesi. DOI: TODO (Zenodo arşivi: TODO).
+> Ostim Teknik Üniversitesi. Zenodo arşivi (tüm sürümler): https://doi.org/10.5281/zenodo.23797460
 
 ## Özet
 

@@ -10,7 +10,7 @@ authors:
     affiliation: "Ostim Technical University"
 repository-code: "https://github.com/ahmetgozcelik/voc-yolo-augloss-analiz"
 license: AGPL-3.0
-# doi: TODO (Zenodo arşivi)
+doi: 10.5281/zenodo.23797460
 preferred-citation:
   type: article
   title: "A Multi-Seed Evaluation of Augmentation and Loss Interventions in Fine-Tuning Real-Time YOLO Detectors: A Study on PASCAL VOC and KITTI"
@@ -19,4 +19,3 @@ preferred-citation:
       given-names: "Ahmed Gürkan"
     - family-names: "Asıl"
       given-names: "Ufuk"
-  # journal, year, doi: TODO (yayımlandıktan sonra)
