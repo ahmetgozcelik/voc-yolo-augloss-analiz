@@ -1,12 +1,12 @@
-% uretici: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek4.test.*, ek4.val.*, ek.val.*; elle duzenleme bir sonraki uretimde kaybolur)
+% generator: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek4.test.*, ek4.val.*, ek.val.*; manual edits are lost at the next regeneration)
 \begin{table}[!htbp]
 \centering\small\setlength{\tabcolsep}{3pt}
-\caption{KITTI ikincil ölçütler (\texttt{best.pt}): kart $-$ taban model $\Delta$ ortalama $\pm$ s.d. [puan], $n=3$ tohum-eşli; test DontCare kurallı. Betimsel, renk yok.}\label{tab:kitti-test-ek}
+\caption{KITTI secondary metrics (\texttt{best.pt}): card $-$ baseline $\Delta$, mean $\pm$ s.d. [points], $n=3$ seed-paired. Test uses the DontCare rule. Descriptive, no color.}\label{tab:kitti-test-ek}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c c c c}
 \toprule
-\multicolumn{1}{@{}l}{} & \multicolumn{4}{c}{Test $\Delta$} & \multicolumn{2}{c}{Val [puan]} \\
+\multicolumn{1}{@{}l}{} & \multicolumn{4}{c}{Test $\Delta$} & \multicolumn{2}{c}{Val [points]} \\
 \cmidrule(lr){2-5}\cmidrule(lr){6-7}
-Kart & mAP50 & AP$_S$ & AP$_M$ & AP$_L$ & $\Delta$ mAP50-95 & İç$-$yeniden \\
+Card & mAP50 & AP$_S$ & AP$_M$ & AP$_L$ & $\Delta$ mAP50-95 & In-train$-$re-eval. \\
 \midrule
 \multicolumn{7}{@{}l}{\textbf{YOLO26n}} \\
 B & 33.59$\pm$0.89 & 7.92$\pm$2.61 & 15.94$\pm$1.05 & 32.71$\pm$0.94 & -- & +0.35$\pm$1.20 \\
@@ -29,6 +29,6 @@ H06 & +0.80$\pm$1.62 & +5.69$\pm$1.31 & +0.62$\pm$0.40 & +2.10$\pm$1.00 & +1.24$
 H08 & +2.04$\pm$1.65 & +1.99$\pm$1.28 & +0.58$\pm$0.85 & +4.31$\pm$1.98 & +2.21$\pm$3.24 & $-$0.06$\pm$0.61 \\
 \bottomrule
 \addlinespace[3pt]
-\multicolumn{7}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{Kartlar Tablo~\ref{tab:kitti-test}'dedir. Val $\Delta$: DontCare kurallı mAP50-95. İç$-$yeniden: eğitim-içi en iyi val (Ultralytics) $-$ aynı ağırlığın COCO-tarzı DontCare'siz yeniden değerlendirmesi. B satırı (taban model) mutlak değerdir; AP$_S$/AP$_M$/AP$_L$ COCO alan sınıflarıdır.} \\
+\multicolumn{7}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{Cards as in Table~\ref{tab:kitti-test}. Val $\Delta$: mAP50-95 with the DontCare rule. In-train$-$re-eval.: in-training best val (Ultralytics) $-$ COCO-style re-evaluation of the same weights without DontCare. Row B (baseline) gives absolute values. AP$_S$/AP$_M$/AP$_L$ are the COCO area classes.} \\
 \end{tabularx}
 \end{table}

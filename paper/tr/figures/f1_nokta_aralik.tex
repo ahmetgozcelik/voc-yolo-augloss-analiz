@@ -1,0 +1,79 @@
+% F1 -- nokta-aralik: kart basina Δ mAP50-95 (a: val, 3 seed; b: test). Veri: figures/data/f1a_val.dat, f1b_test.dat, f1_ref.dat
+% (uretici: figures/scripts/f1_nokta_aralik.py <- evidence/evidence.json). Figur ici metin Turkce. P1 (n=3): tum kartlar 3 seed; bos isaretci yok.
+% Renk disi kanal: anlamli kotu = ters ucgen, anlamli iyi = ucgen, anlamli degil = daire.
+\begin{figure*}[t]
+\centering
+\pgfplotstableset{col sep=semicolon}
+\pgfplotstableread{\figroot data/f1_ref.dat}\foneref
+\pgfplotstablegetelem{0}{noise_sd}\of\foneref \edef\fOneSd{\pgfplotsretval}
+\pgfplotstablegetelem{0}{threshold}\of\foneref \edef\fOneThr{\pgfplotsretval}
+\pgfplotstablegetelem{0}{accept}\of\foneref \edef\fOneAcc{\pgfplotsretval}
+\pgfplotsset{
+  fone/.style={scale only axis, width=0.50\textwidth, xmin=-3.5, xmax=1.95, font=\small,
+    tick label style={font=\small}, label style={font=\small}, title style={font=\small, yshift=-1pt},
+    xmajorgrids=true, grid style={black!10}, axis line style={black!70}, clip=false},
+  fone seeds/.style={scatter, only marks, scatter src=explicit symbolic,
+    scatter/classes={
+      ns3={mark=*,draw=black!65,fill=black!65,mark size=2.4pt},
+      good3={mark=triangle*,draw=iyiRenk,fill=iyiRenk,mark size=2.9pt},
+      bad3={mark=triangle*,mark options={rotate=180},draw=kotuRenk,fill=kotuRenk,mark size=2.9pt}}},
+  fone mean/.style={scatter, only marks, scatter src=explicit symbolic,
+    scatter/classes={
+      ns3={mark=|,draw=black!65,mark size=5pt,line width=1.6pt},
+      good3={mark=|,draw=iyiRenk,mark size=5pt,line width=1.6pt},
+      bad3={mark=|,draw=kotuRenk,mark size=5pt,line width=1.6pt}}},
+  fone val/.style={mark=none, only marks, point meta=explicit symbolic,
+    nodes near coords={\pgfplotspointmeta},
+    nodes near coords style={anchor=west, font=\scriptsize, inner sep=1pt}},
+}
+\begin{tikzpicture}
+% ---------------- panel (a): validation
+\begin{axis}[name=A, fone, every axis plot/.append style={forget plot}, height=6.6cm, ymin=0.4, ymax=9.1, ytick=data,
+  yticklabels from table={\figroot data/f1a_val.dat}{label},
+  title={(a) Doğrulama (1000 görüntü), satır başına 3 tohum}, xticklabels={}]
+\fill[black!13] (axis cs:-\fOneSd,0.4) rectangle (axis cs:\fOneSd,9.1);
+\draw[line width=1.1pt, black] (axis cs:0,0.4) -- (axis cs:0,9.1);
+\draw[dashed, line width=1pt, black!75] (axis cs:\fOneThr,0.4) -- (axis cs:\fOneThr,9.1);
+\draw[dotted, line width=1.3pt, black!75] (axis cs:\fOneAcc,0.4) -- (axis cs:\fOneAcc,9.1);
+\addplot[fone mean] table[x=mean, y=ypos, meta=cls]{\figroot data/f1a_val.dat};
+\addplot[fone seeds] table[x=s0, y=ypos, meta=cls]{\figroot data/f1a_val.dat};
+\addplot[fone seeds] table[x=s1, y=ypos, meta=cls]{\figroot data/f1a_val.dat};
+\addplot[fone seeds] table[x=s2, y=ypos, meta=cls]{\figroot data/f1a_val.dat};
+\addplot[fone val] table[x expr=1.98, y=ypos, meta=lab]{\figroot data/f1a_val.dat};
+\end{axis}
+% ---------------- panel (b): test
+\begin{axis}[name=B, fone, every axis plot/.append style={forget plot}, at={(A.south west)}, anchor=north west, yshift=-1.4cm, height=3.0cm,
+  ymin=0.35, ymax=2.75, ytick=data, yticklabels from table={\figroot data/f1b_test.dat}{label},
+  title={(b) Test (VOC07 test, 4952 görüntü)}, xlabel={$\Delta$ mAP50-95, aynı tohumlu taban modele göre [puan]},
+  legend style={at={(0.5,-0.62)}, anchor=north, legend columns=2, font=\footnotesize, draw=none, /tikz/every even column/.append style={column sep=8pt}}]
+\fill[black!13] (axis cs:-\fOneSd,0.35) rectangle (axis cs:\fOneSd,2.75);
+\draw[line width=1.1pt, black] (axis cs:0,0.35) -- (axis cs:0,2.75);
+\draw[dashed, line width=1pt, black!75] (axis cs:\fOneThr,0.35) -- (axis cs:\fOneThr,2.75);
+\draw[dotted, line width=1.3pt, black!75] (axis cs:\fOneAcc,0.35) -- (axis cs:\fOneAcc,2.75);
+\addplot[fone mean] table[x=mean, y=ypos, meta=cls]{\figroot data/f1b_test.dat};
+\addplot[fone seeds] table[x=s0, y=ypos, meta=cls]{\figroot data/f1b_test.dat};
+\addplot[fone seeds] table[x=s1, y=ypos, meta=cls]{\figroot data/f1b_test.dat};
+\addplot[fone seeds] table[x=s2, y=ypos, meta=cls]{\figroot data/f1b_test.dat};
+% %95 bootstrap CI (sinif bazli renk: isns/isgood/isbad sutunlari)
+\addplot[mark=*, mark size=1.6pt, black!65, only marks, y filter/.expression={\thisrow{isns}==1 ? y : nan}, error bars/.cd, x dir=both, x explicit,
+  error bar style={line width=2.2pt, black!65}, error mark options={rotate=90, mark size=3pt, black!65}]
+  table[x=boot_ort, y=ci_ypos, x error plus expr=\thisrow{ci_hi}-\thisrow{boot_ort}, x error minus expr=\thisrow{boot_ort}-\thisrow{ci_lo}]{\figroot data/f1b_test.dat};
+\addplot[mark=*, mark size=1.6pt, iyiRenk, only marks, y filter/.expression={\thisrow{isgood}==1 ? y : nan}, error bars/.cd, x dir=both, x explicit,
+  error bar style={line width=2.2pt, iyiRenk}, error mark options={rotate=90, mark size=3pt, iyiRenk}]
+  table[x=boot_ort, y=ci_ypos, x error plus expr=\thisrow{ci_hi}-\thisrow{boot_ort}, x error minus expr=\thisrow{boot_ort}-\thisrow{ci_lo}]{\figroot data/f1b_test.dat};
+% val -> test gecis oku (ayni kartin val ortalamasindan test ortalamasina)
+\addplot[-{Stealth[length=2.2mm]}, thick, black!55, quiver={u=\thisrow{arrow_u}, v=0}] table[x=val_mean, y expr=\thisrow{ypos}+0.30]{\figroot data/f1b_test.dat};
+\addplot[only marks, mark=diamond*, mark size=3pt, black!55] table[x=val_mean, y expr=\thisrow{ypos}+0.30]{\figroot data/f1b_test.dat};
+\addplot[fone val] table[x expr=1.98, y=ypos, meta=lab]{\figroot data/f1b_test.dat};
+\addlegendimage{only marks, mark=*, mark size=2.4pt, black!65}\addlegendentry{tohum değeri, Holm anlamlı değil}
+\addlegendimage{only marks, mark=|, mark size=5pt, line width=1.6pt, black!65}\addlegendentry{3 tohum ortalaması}
+\addlegendimage{only marks, mark=triangle*, mark options={rotate=180}, mark size=2.9pt, kotuRenk}\addlegendentry{kötü, Holm düzeltmeli $p<0.05$}
+\addlegendimage{area legend, fill=black!13, draw=none}\addlegendentry{taban model doğrulama $\pm1$ s.d. (3 tohum)}
+\addlegendimage{dashed, line width=1pt, black!75}\addlegendentry{+0.30 ön-eleme (tohum 0)}
+\addlegendimage{dotted, line width=1.3pt, black!75}\addlegendentry{+0.40 kabul (3 tohum ortalaması)}
+\addlegendimage{-{Stealth[length=2.2mm]}, thick, black!55, mark=diamond*, mark size=3pt}\addlegendentry{doğrulama ort. $\rightarrow$ test ort.}
+\addlegendimage{line width=2.2pt, black!65}\addlegendentry{\%95 bootstrap GA (test)}
+\end{axis}
+\end{tikzpicture}
+\caption{Kart başına taban modele göre $\Delta$ mAP50-95 [puan], üç tohum: (a) doğrulama, (b) test (GA yalnız görüntü örneklemesini içerir). Gölge ±1 taban model tohum s.d.; çizgiler +0.30 ön-eleme ve +0.40 kabul eşiği; kırmızı üçgen Holm-anlamlı kötü, gri değil.}\label{fig:f1-nokta-aralik}
+\end{figure*}

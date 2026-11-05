@@ -1,0 +1,26 @@
+% uretici: evidence/scripts/build_tables.py <- evidence/evidence.json (elle duzenleme bir sonraki uretimde kaybolur)
+\begin{table*}[!htbp]
+\centering\small
+\caption{Taban model makullük denetimi: VOC07 test mAP50-95 ve mAP50 [puan]. Literatür satırları aynı koşulda üretilmemiştir; kaynakları ayrı olarak anılır. Renk kodlaması uygulanmaz (referans değerler).}\label{tab:replikasyon}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c}
+\toprule
+Satır & mAP50-95 [puan] & mAP50 [puan] \\
+\midrule
+Bu çalışma, YOLO11n (COCO ön-eğitimli, 100 ep), tohum 0 & 63.45 & 83.54 \\
+Bu çalışma, YOLO11n (COCO ön-eğitimli, 100 ep), tohum 1 & 63.61 & 83.67 \\
+Bu çalışma, YOLO11n (COCO ön-eğitimli, 100 ep), tohum 2 & 63.41 & 83.33 \\
+\textbf{Bu çalışma, ort. $\pm$ s.d. (n=3)} & 63.49 $\pm$ 0.11 & 83.51 $\pm$ 0.17 \\
+\midrule
+Literatür: YOLO11n sıfırdan, 500 ep~\cite{zhang_2025_adlyolo} & 61.3 & 81.5 \\
+Literatür: YOLO11-N, 600 ep (genel ayar)~\cite{lin_2025_yolomaster} & 61.0 & 81.2 \\
+Literatür: YOLOv8n sıfırdan, 500 ep~\cite{zhang_2025_adlyolo} & 60.2 & 80.9 \\
+Literatür: YOLOv8n, 200 ep$^\dagger$~\cite{elhamdouni_2025_yolov8nvoc} & 63.5 & 83.6 \\
+Literatür: YOLO11s tam ince ayar (kontrol noktası testte seçilmiş)~\cite{lin_2026_yolopeft} & 64.28 & 83.44 \\
+\midrule
+Kabul aralığı (literatür aralığı $\pm$ tolerans)$^\dagger$ & 59.8--64.7 & 80.0--84.8 \\
+Makullük kapısı kararı & \multicolumn{2}{c}{YEŞİL} \\
+\bottomrule
+\addlinespace[3pt]
+\multicolumn{3}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{$^\dagger$ Üst çıpa 63.5 (kabul üst ucu 64.7) YOLOv8n'e aittir ve muhtemelen VOC07 testinde seçilmiş kontrol noktasındandır; değer kaynağın 4.4. bölümünde metin olarak doğrulandı, tablo hücresi okunamadı. Diğer literatür satırları da başlatma, epoch ve kontrol noktası seçiminde farklıdır; yalnız bağlamdır. Bu çalışmanın değerleri 101 noktalı COCO AP'sidir ve \texttt{difficult} nesneler hariç tutulmuştur; VOC07 11 noktalı devkit değerleriyle~\cite{everingham_2010_voc} doğrudan kıyaslanamaz.} \\
+\end{tabularx}
+\end{table*}

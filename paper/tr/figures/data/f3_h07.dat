@@ -1,0 +1,14 @@
+row;lat;delta;cls;anchorA;dxA;dyA;anchorZ;dxZ;dyZ;ids
+R0;1;0;ns;south west;3;2;south west;3;2;E0968
+N50;0.977;-0.5361;bad;west;3;0;west;3;0;E0982
+N60;0.983;-0.2126;ns;west;3;0;west;3;0;E0996
+N80;0.986;-0.0956;ns;west;3;0;west;3;0;E1010
+S03;1.078;-0.1234;ns;east;-3;0;east;-3;0;E1024
+S05;1.083;-0.585;bad;east;-3;0;east;-3;0;E1038
+U704;1.056;-0.312;ns;west;3;0;west;3;0;E1052
+U768;1.116;-2.0599;bad;east;-3;0;north;0;-2;E1066
+U832;1.138;-5.1916;bad;east;-3;0;north;0;-2;E1080
+T1;2.566;0.7968;good;south east;-3;2;north;0;-2;E1094
+T2;2.55;-4.1165;bad;east;-3;0;north;0;-2;E1108
+W1;2.992;-0.2824;ns;south west;3;2;north;0;-2;E1122
+W2;3.095;-5.7435;bad;west;3;0;north;0;-2;E1136

@@ -1,106 +1,111 @@
-# Gerçek zamanlı YOLO ince ayarında artırma ve kayıp müdahalelerinin çok tohumlu değerlendirmesi
+# A multi-seed evaluation of augmentation and loss interventions in real-time YOLO fine-tuning
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23797460.svg)](https://doi.org/10.5281/zenodo.23797460)
 
-Bu depo, aşağıdaki makalenin kodunu, ön-kayıt belgelerini, tohum düzeyi sonuçlarını, bölme listelerini, koşum kayıtlarını
-ve genişletilmiş ekini içerir.
+This repository contains the code, pre-registration documents, seed-level results, split lists, run logs and Online
+Resource 1 (Electronic Supplementary Material) of the following article.
 
-> Ahmed Gürkan Özçelik, Ufuk Asıl. *Gerçek Zamanlı YOLO Modellerinin İnce Ayarında Artırma ve Kayıp Müdahalelerinin Çok
-> Tohumlu Değerlendirmesi: PASCAL VOC ve KITTI Üzerine Bir İnceleme* (İngilizce başlık: *A Multi-Seed Evaluation of
-> Augmentation and Loss Interventions in Fine-Tuning Real-Time YOLO Detectors: A Study on PASCAL VOC and KITTI*).
-> Ostim Teknik Üniversitesi. Zenodo arşivi (tüm sürümler): https://doi.org/10.5281/zenodo.23797460
+> Ahmed Gürkan Özçelik, Ufuk Asıl. *A Multi-Seed Evaluation of Augmentation and Loss Interventions in Fine-Tuning
+> Real-Time YOLO Detectors: A Study on PASCAL VOC and KITTI* (Turkish title: *Gerçek Zamanlı YOLO Modellerinin İnce
+> Ayarında Artırma ve Kayıp Müdahalelerinin Çok Tohumlu Değerlendirmesi: PASCAL VOC ve KITTI Üzerine Bir İnceleme*).
+> Ostim Technical University. Zenodo archive (all versions): https://doi.org/10.5281/zenodo.23797460
 
-## Özet
+## Summary
 
-COCO ön-eğitimli YOLO11n'in PASCAL VOC 07+12 ince ayarında yedi eğitim-zamanı müdahalesi (çok ölçekli eğitim, ölçek
-genliği, Inner-CIoU, kutu kazancı, Varifocal sınıflandırma kaybı, kutu-tabanlı copy-paste ve dozu) ile eğitimsiz çıkarım
-seçenekleri (NMS eşiği, Soft-NMS, test çözünürlüğü, TTA, WBF), aynı kartlar KITTI'de YOLO11s ve YOLO26n ile, önceden
-yazılmış karar kurallarına bağlı, üç tohumlu ve kilitli test kümeli bir protokolle değerlendirildi. VOC'ta yedi
-müdahalenin hiçbiri doğrulamada kabul eşiğini geçmedi (0/7); KITTI'de on iyileşme sınamasından biri geçti (1/10) ve bu
-kabul kontrol noktası seçimine duyarlıydı. Makale, küçük kazanç iddialarının tipik bir üç tohumlu ince ayar bütçesinde
-gürültüden ayrılamadığını gösterir ve dört gürültü kaynağını belgeler: tohum varyansı, doğrulama örneklemesi, tek
-tohumlu ön-eleme ve kontrol noktası seçimi. Sonuçlar, ayarlanmamış varsayılan reçeteye karşı ayarsız tek noktalı
-müdahaleler için geçerlidir. Ayrıntı ve tüm çekinceler makaledir (`paper/main.pdf`).
+Seven training-time interventions in the PASCAL VOC 07+12 fine-tuning of COCO-pretrained YOLO11n (multi-scale training,
+scale amplitude, Inner-CIoU, box gain, Varifocal classification loss, box-based copy-paste and its dose) and training-free
+inference options (NMS threshold, Soft-NMS, test resolution, TTA, WBF), and the same cards on KITTI with YOLO11s and
+YOLO26n, were evaluated with a three-seed protocol with locked test sets, tied to decision rules written in advance. On
+VOC, none of the seven interventions passed the acceptance threshold on validation (0/7); on KITTI, one of ten
+improvement tests passed (1/10), and this acceptance was sensitive to checkpoint selection. The article shows that
+small-gain claims could not be separated from noise under a typical three-seed fine-tuning budget and documents four
+noise sources: seed variance, validation sampling, single-seed screening and checkpoint selection. The results hold for
+untuned single-point interventions against an untuned default recipe. Details and all caveats are in the article
+(`paper/main.pdf`).
 
-## Klasörler
+## Folders
 
-| Klasör | İçerik |
+| Folder | Contents |
 |---|---|
-| `paper/` | Makale kaynağı (`main.tex`, makale içi ek `ek_ana.tex`), genişletilmiş ek (`ek.tex`, `ek_A.tex`–`ek_D.tex`), `tables/`, `figures/` (+ `figures/data/`), `references.bib`, derlenmiş `main.pdf` ve `ek.pdf` |
-| `preregistration/` | Hipotez kartları ve VOC karar kuralları (`voc/`), K5 test planı, makullük çıpası; KITTI ve H05 kural belgeleri (`kitti_ve_h05/`), kuyruk beklenti dosyaları (`beklenti/`), SHA256 kaydı |
-| `src/` | Müdahale yamaları ve birim testleri (`varyantlar/`), eğitim/değerlendirme/analiz betikleri (`deney_betikleri/`), tablo üreticileri ve sayı denetimleri (`tablo_ureticileri/`), şekil üreticileri (`sekil_ureticileri/`) |
-| `results/` | Koşum başına metrik dosyaları (`runs/<koşum>/metrics.json`), analiz çıktıları (`sonuclar/`), tablo ve şekil girdileri (`evidence.json`) |
-| `splits/` | VOC eğitim/doğrulama/test listeleri (`voc/`), KITTI sahne-grubu bölmesi, test grupları, `DontCare` bölgeleri ve SHA256 özeti (`kitti/`) |
-| `logs/` | Deney günlüğü (`deney-gunlugu.md`), koşum yapılandırmaları (`runs/<koşum>/config.json`), koşum kuyrukları (`kuyruk/`) |
-| `env/` | `requirements.txt`, kurulum ve ortam bilgisi, Ultralytics sürüm sabitlemesi |
+| `paper/` | Article source (`main.tex`, in-article appendix `appendix.tex`), Online Resource 1 (`esm.tex`, `esm_A.tex`–`esm_D.tex`), `tables/`, `figures/` (+ `figures/data/`), `references.bib`, compiled `main.pdf` and `esm.pdf`; Turkish version archived in `paper/tr/` |
+| `preregistration/` | Hypothesis cards and VOC decision rules (`voc/`), K5 test plan, plausibility anchor; KITTI and H05 rule documents (`kitti_ve_h05/`), queue expectation files (`beklenti/`), SHA256 record |
+| `src/` | Intervention patches and unit tests (`varyantlar/`), training/evaluation/analysis scripts (`deney_betikleri/`), table generators and number checks (`tablo_ureticileri/`), figure generators (`sekil_ureticileri/`) |
+| `results/` | Per-run metric files (`runs/<run>/metrics.json`), analysis outputs (`sonuclar/`), table and figure inputs (`evidence.json`) |
+| `splits/` | VOC train/validation/test lists (`voc/`), KITTI scene-group split, test groups, `DontCare` regions and SHA256 digest (`kitti/`) |
+| `logs/` | Experiment log (`deney-gunlugu.md`), run configurations (`runs/<run>/config.json`), run queues (`kuyruk/`) |
+| `env/` | `requirements.txt`, installation and environment information, Ultralytics version pin |
 
-## Tablo ve şekil → dosya eşlemesi
+Folder and file names inside the repository are in Turkish, as in the original working environment.
 
-Makale (`paper/main.pdf`):
+## Table and figure → file mapping
 
-| Öğe | Kaynak dosya | Üretici / girdi |
+Article (`paper/main.pdf`):
+
+| Item | Source file | Generator / input |
 |---|---|---|
-| Tablo 1 (hipotez kartları) | `paper/main.tex` | `preregistration/voc/H01.md`–`H08.md` |
-| Tablo 2 (kanıt düzeyi) | `paper/main.tex` | makale metni (iddia denetimi kodları) |
-| Tablo 3 (taban model makullüğü) | `paper/tables/T1_replikasyon.tex` | `src/tablo_ureticileri/build_tables.py` ← `results/evidence.json` |
-| Tablo 4 (VOC ana tablo) | `paper/tables/T_voc_ana.tex` | `src/tablo_ureticileri/build_tables.py` |
-| Tablo 5 (KITTI test) | `paper/tables/T7_kitti_test.tex` | `src/tablo_ureticileri/build_ek_tables.py` |
-| Şekil 1 (protokol) | `paper/figures/f0_protokol.tex` | elle yazılmış TikZ |
-| Şekil 2 (Δ ve aralıklar) | `paper/figures/f1_nokta_aralik.tex` | `src/sekil_ureticileri/f1_nokta_aralik.py` |
-| Şekil 3 (doğruluk–gecikme) | `paper/figures/f3_pareto.tex` | `src/sekil_ureticileri/f3_pareto.py` |
+| Table 1 (hypothesis cards) | `paper/main.tex` | `preregistration/voc/H01.md`–`H08.md` |
+| Table 2 (level of evidence) | `paper/main.tex` | article text (claim audit codes) |
+| Table 3 (baseline plausibility) | `paper/tables/T1_replikasyon.tex` | `src/tablo_ureticileri/build_tables.py` ← `results/evidence.json` |
+| Table 4 (main VOC table) | `paper/tables/T_voc_ana.tex` | `src/tablo_ureticileri/build_tables.py` |
+| Table 5 (KITTI test) | `paper/tables/T7_kitti_test.tex` | `src/tablo_ureticileri/build_ek_tables.py` |
+| Figure 1 (protocol) | `paper/figures/f0_protokol.tex` | hand-written TikZ |
+| Figure 2 (Δ and intervals) | `paper/figures/f1_nokta_aralik.tex` | `src/sekil_ureticileri/f1_nokta_aralik.py` |
+| Figure 3 (accuracy–latency) | `paper/figures/f3_pareto.tex` | `src/sekil_ureticileri/f3_pareto.py` |
 
-Genişletilmiş ek (`paper/ek.pdf`): Tablo A1 `T6_deney_kaydi.tex`; Şekil A1 `f4_butce.tex`; Tablo B1 `T_ekb_mutlak.tex`;
-Tablo B2 `T_ekb_test_ikincil.tex`; Tablo B3 `T4_h07_gecikme.tex`; Şekil B1 `f2_hata_turu.tex`; Şekil B2 `f5_doz.tex`;
-Şekil B3 `f6_nitel.tex`; Tablo C1–C5 `T8_kitti_ikincil.tex`, `T9_kitti_epoch.tex`, `T10_kitti_test_ek.tex`,
-`T11_kitti_sinif.tex`, `T12_kitti_saglamlik.tex`; Şekil C1 `f7_best_last.tex`.
+Online Resource 1 (`paper/esm.pdf`): Table A1 `T6_deney_kaydi.tex`; Figure A1 `f4_butce.tex`; Table B1 `T_ekb_mutlak.tex`;
+Table B2 `T_ekb_test_ikincil.tex`; Table B3 `T4_h07_gecikme.tex`; Figure B1 `f2_hata_turu.tex`; Figure B2 `f5_doz.tex`;
+Figure B3 `f6_nitel.tex`; Tables C1–C5 `T8_kitti_ikincil.tex`, `T9_kitti_epoch.tex`, `T10_kitti_test_ek.tex`,
+`T11_kitti_sinif.tex`, `T12_kitti_saglamlik.tex`; Figure C1 `f7_best_last.tex`.
 
-## Yeniden üretim
+## Reproduction
 
-1. Ortam: Python 3.11, `pip install -r env/requirements.txt` (Ultralytics 8.4.165, commit `004db34`; ayrıntı
-   `env/ultralytics-kurulum.md`). Koşumlar tek NVIDIA RTX 5050 (8 GB) ve Windows 10'da yapıldı.
-2. Veri: PASCAL VOC 2007/2012 ve KITTI 2D nesne tespiti resmî sitelerinden indirilmelidir (bu depoda görüntü yoktur).
-   Bölmeler `splits/` altındadır; VOC dönüşümü `src/deney_betikleri/veri/`, KITTI hazırlığı
-   `src/deney_betikleri/ek_deney/kitti_hazirla.py` iledir.
-3. Eğitim ve değerlendirme: her koşumun tam komutu ve parametreleri `logs/runs/<koşum>/config.json` ve
-   `logs/kuyruk/*.jsonl` dosyalarındadır; müdahaleler `src/varyantlar/<kart>/kos.py` üzerinden çalışır. Bir VOC koşumu
-   ≈3 GPU saati sürer.
-4. Tablolar ve şekiller: `src/tablo_ureticileri/build_tables.py` ve `build_ek_tables.py`, `results/evidence.json`
-   dosyasından `paper/tables/` altındaki tabloları; `src/sekil_ureticileri/*.py` şekil verilerini üretir. Makale
-   `paper/` içinde `latexmk -pdf main.tex; latexmk -pdf ek.tex; latexmk -pdf main.tex` ile derlenir.
+1. Environment: Python 3.11, `pip install -r env/requirements.txt` (Ultralytics 8.4.165, commit `004db34`; details in
+   `env/ultralytics-kurulum.md`). Runs were done on a single NVIDIA RTX 5050 (8 GB) under Windows 10.
+2. Data: PASCAL VOC 2007/2012 and KITTI 2D object detection must be downloaded from their official sites (this
+   repository contains no images). Splits are in `splits/`; VOC conversion is done with `src/deney_betikleri/veri/`, KITTI
+   preparation with `src/deney_betikleri/ek_deney/kitti_hazirla.py`.
+3. Training and evaluation: the full command and parameters of each run are in `logs/runs/<run>/config.json` and
+   `logs/kuyruk/*.jsonl`; interventions run through `src/varyantlar/<card>/kos.py`. One VOC run takes ≈3 GPU hours.
+4. Tables and figures: `src/tablo_ureticileri/build_tables.py` and `build_ek_tables.py` generate the tables under
+   `paper/tables/` from `results/evidence.json`; `src/sekil_ureticileri/*.py` generate the figure data. The article is
+   compiled in `paper/` with `latexmk -pdf main.tex; latexmk -pdf esm.tex; latexmk -pdf main.tex`.
 
-Bilinen sınırlar: Betikler özgün çalışma alanı düzenine göre yazılmıştır; yerel mutlak yollar bu depoda `<WS>` (deney
-çalışma alanı), `<MW>` (makale çalışma alanı), `<REPO>` ve `<YEREL_YOL>` yer tutucularıyla değiştirilmiştir ve yeniden
-çalıştırmadan önce yerel yollarla doldurulmalıdır. Nitel panelin (Şekil B3) görüntü karoları VOC test görüntülerinden
-türediği için depoda yoktur; `ek.tex` bu şekil olmadan derlenmez, şekil `paper/ek.pdf` içinde yer alır.
+Known limitations: the scripts were written for the original workspace layout; local absolute paths are replaced in this
+repository by the placeholders `<WS>` (experiment workspace), `<MW>` (manuscript workspace), `<REPO>` and `<YEREL_YOL>`
+(local path) and must be filled with local paths before re-running. The image tiles of the qualitative panel (Figure B3)
+derive from VOC test images and are not in the repository; `esm.tex` does not compile without this figure, which is
+included in `paper/esm.pdf`.
 
-## Depoda olmayanlar
+## Not included
 
-Veri kümesi görüntüleri (VOC, KITTI), model ağırlıkları (`.pt`), ham tahmin dökümleri (`*preds*.json`, `.npz`), büyük ham
-koşum klasörleri ve önbellekler. Bunlar makaledeki sayıların yeniden hesaplanması için gerekmez: sayılar
-`results/runs/*/metrics.json`, `results/sonuclar/` ve `results/evidence.json` dosyalarından türetilmiştir.
+Dataset images (VOC, KITTI), model weights (`.pt`), raw prediction dumps (`*preds*.json`, `.npz`), large raw run folders
+and caches. These are not needed to recompute the numbers in the article: the numbers are derived from
+`results/runs/*/metrics.json`, `results/sonuclar/` and `results/evidence.json`.
 
-## Ön-kayıt ve zaman damgaları
+## Pre-registration and timestamps
 
-Hipotez kartları ve karar kuralları koşumdan önce yazılmıştır; tek istisna, SÜRDÜR (özgün kayıtta TUT) kuralının tur 2'de,
-H01–H03 sonuçlarından sonra donmasıdır. Bu bağımsız olarak doğrulanamaz: dosya damgaları kriptografik değildir, kartlar
-herkese açık bir ön-kayıt deposuna (OSF, Zenodo) yüklenmedi, sürüm denetimi 2026-10-16'da tek toplu kayıtla başladı ve
-KITTI kural belgesi yalnız SHA256 ile deney günlüğünde kayıtlıdır (`preregistration/SHA256-KAYDI.md`). Altı VOC kart
-dosyası (H01, H02, H04, H05, H06, H08) 2026-10-03'te, ön-eleme koşumlarından ve kilitli test açılışından sonra toplu
-olarak yeniden yazıldı; koşum öncesi varlıkları yalnız dolaylı kayıtlarla (kuyruk beklenti ve sıralama dosyaları, deney
-günlüğü, kod ve sayaç dosyalarının zamanları) desteklenir. Önceden yazılmış kurallardan dokuz sapmanın tamamı makalenin
-Sınırlılıklar bölümünde listelenmiştir.
+Hypothesis cards and decision rules were written before the runs; the only exception is that the KEEP rule (TUT in the
+original records) froze in round 2, after the H01–H03 results. This cannot be verified independently: file timestamps are
+not cryptographic, the cards were not uploaded to a public pre-registration repository (OSF, Zenodo), version control
+started on 2026-10-16 with a single bulk commit, and the KITTI rule document is recorded only by its SHA256 digest in the
+experiment log (`preregistration/SHA256-KAYDI.md`). Six VOC card files (H01, H02, H04, H05, H06, H08) were rewritten in
+bulk on 2026-10-03, after the screening runs and the opening of the locked test; their existence before the runs is
+supported only by indirect records (queue expectation and ranking files, the experiment log, and the timestamps of code
+and counter files). All nine deviations from the rules written in advance are listed in the Limitations section of the
+article.
 
-## Alıntı
+## Citation
 
-`CITATION.cff` dosyasına bakın.
+See `CITATION.cff`.
 
-## Lisans
+## License
 
-Kod (`src/` ve betikler): GNU AGPL-3.0 (`LICENSE`); müdahale yamaları AGPL-3.0 lisanslı Ultralytics koduna dayanır.
-Metin, tablolar, şekiller, hipotez kartları ve diğer belgeler: CC BY 4.0 (`LICENSE-docs`). Veri kümeleri kendi
-lisanslarına tabidir (KITTI: CC BY-NC-SA 3.0).
+Code (`src/` and scripts): GNU AGPL-3.0 (`LICENSE`); the intervention patches build on AGPL-3.0-licensed Ultralytics code.
+Text, tables, figures, hypothesis cards and other documents: CC BY 4.0 (`LICENSE-docs`). The datasets are subject to their
+own licenses (KITTI: CC BY-NC-SA 3.0).
 
-## Yapay zekâ kullanımı
+## Use of AI tools
 
-Yapay zekâ kullanımı: Deney tasarımı ve kodu, analiz, literatür taraması ve metin hazırlığında yazarların denetiminde
-büyük dil modeli tabanlı araçlar kullanılmış; tüm sonuçlar yazarlarca doğrulanmıştır ve sorumluluk yazarlara aittir.
+Use of AI tools: The authors used AI-based tools at various stages of this work (e.g., code development, analysis and
+language editing). All outputs were reviewed and verified by the authors, who take full responsibility for the content
+of the article.

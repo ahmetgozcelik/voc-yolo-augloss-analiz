@@ -1,0 +1,104 @@
+% Appendix B -- additional VOC results (revision-v2: secondary content moved from the VOC findings and mechanism sections of the main text)
+% Included via \input from esm.tex.
+\setcounter{table}{0}\setcounter{figure}{0}
+\section{Additional VOC results}\label{sec:ek-voc}
+
+This appendix gives the mechanism notes for the other cards. It also gives two method details: the box-based copy-paste steps, and the H07 Soft-NMS definition and confirmation procedure. Finally, it complements the VOC findings of the main text. It reports absolute values, secondary metrics, the H07 rows, the error-type breakdown, the copy-paste dose comparison and the qualitative panel. All secondary metrics here are exploratory.
+
+\subsection{Mechanism notes for the other cards}\label{sec:ek-mekanizma}
+The main text reduces each of these mechanism notes to one sentence; this subsection gives them in full. All values are on VOC validation, in points, as seed-paired $\Delta$ with the three-seed mean $\pm$ s.d.
+
+\paragraph{Scale axis: H01 and H04.}
+H01 varied the training input between 480 and 800 px per batch. All three seeds used 11 distinct sizes. H04 narrowed the mosaic scale range, and all 97\,200 batches were affected in every seed. The intervention was thus active in both cards, but neither raised mAP50-95. H01's seed signs are mixed. All three of H04's seeds are negative, and its interval includes zero. In the 5-epoch short pilot (seed 0), H04 was +0.56 ahead of the baseline. At 100 epochs it turned to $-$0.85 (seed 0: $-$0.30). The short pilot is therefore a code health gate that does not predict the final ranking, although this is a single-card example. The amplitude was not increased. Hence one cannot claim that ``the default scale amplitude is optimal''.
+
+\paragraph{Box loss: H02 and H06.}
+H02 used Inner-CIoU with $r=0.75$. The IoU $-$ Inner-IoU difference that enters the loss averages 0.027 over the three seeds, so the term is active. Even so, mAP50-95 dropped in all three seeds ($p=0.244$ after Holm-7). The targeted AP$_{75}$ did not rise either ($-$0.42 $\pm$ 0.27). H06 raised the box loss gain from 7.5 to 10. It did not change AP$_{75}$ (+0.07 $\pm$ 0.30). At epoch 100, the baseline's loss shares are 30.1\% for box, 23.5\% for classification and 46.3\% for DFL. DFL has the largest share, but its weight was not tested. Thus neither the form nor the weight of the box-IoU term closed the AP$_{75}$ gap. Assignment, the quality target or DFL are candidate explanations. Inner-IoU has reported gains \cite{zhang_2023_inneriou}. The assumption that these gains would transfer to a COCO-pretrained, TAL-assigned fine-tuning was not supported.
+
+\paragraph{Copy-paste dose: H03 and H08.}
+H03 applied pasting to 11.1\% of mosaics, and H08 to 47.8\%. The measured doses are 0.142 and 0.671 objects/mosaic, respectively. H03's seed-0 difference passed the screening threshold. However, its three-seed mean stayed below the KEEP criterion. Its mAP50 gain was positive in all three seeds, while its AP$_{75}$ difference is $-$0.32 $\pm$ 0.18. H08 widened the dose and the pool together. With this change, the mAP50 gain fell from +0.74 $\pm$ 0.16 (H03) to +0.25 $\pm$ 0.14 (H08). No increasing effect could be shown (Fig.~\ref{fig:f5-doz}). The two variables were not disentangled. The ``saturated mechanism'' interpretation is therefore only a weak hypothesis. The mAP50 trace seen on validation does not appear on test (Section~\ref{sec:bulgu-tutarlilik}). In this regime, multiplying small-object instances did not close the gap that appears to be related to resolution (Section~\ref{sec:bulgu-gecikme}).
+
+\paragraph{H05 details.}
+H05's validation mAP50-95 loss is $-$2.87 $\pm$ 0.33 points. The VFL gradient norm is 0.34 of that of BCE. The per-seed values are 0.342, 0.341 and 0.341, and the loss value is 0.031. Appendix~\ref{sec:ek-gradyan} of the main article gives the definition. The implementation passed two unit tests. First, with $\alpha=1$, $\gamma=0$ and $y=0$, the loss matches BCE exactly. This setting covers negative cells only, since positives are still weighted by $t$; it is the definition of H05-pos. Second, the $w=t$ weight and the gradient of the positive branch were checked in double precision. The check used a hand-written reference implementation. A safety threshold stopped the first run. This threshold had been inherited from H02's BCE curve: it was the baseline's epoch-5 value minus 0.03.
+
+\subsection{Box-based copy-paste steps}\label{sec:ek-cp}
+The transform (Section~\ref{sec:mudahaleler}) runs after mosaic and before RandomPerspective. It uses the intersection over area (IoA), the ratio of the intersection to the area of the first box: $\mathrm{IoA}(b_j,b_l)=|b_j\cap b_l|/|b_j|$. With probability $p$, the following steps are applied:
+\begin{enumerate}
+\item The candidate set $\mathcal A=\{\,j:\sqrt{A_j}\le\tau_A,\ \max_{l\ne j}\mathrm{IoA}(b_j,b_l)\le0.1\,\}$ is built. Here $A_j$ is the pixel area of the box on the mosaic canvas. The IoA condition prevents parts of other objects from entering the patch.
+\item $k\sim U\{1,2,3\}$ is drawn, and $\min(k,|\mathcal A|)$ objects are selected at random from $\mathcal A$.
+\item Each object is placed without rescaling inside the central $s\times s$ window that remains after RandomPerspective. The location must not intersect any existing box, including newly pasted ones. At most 10 attempts are made. If no location is found, the candidate is skipped.
+\item The pixel patch is pasted with 3-pixel alpha blending at its edges. The idea comes from \cite{dwibedi_2017_cutpaste}; the 3-pixel width is this study's choice. The class label is kept, and a new box with the size of the source box is added.
+\end{enumerate}
+
+\subsection{H07: Soft-NMS definition and confirmation procedure}\label{sec:ek-h07-dogrulama}
+The Soft-NMS rows (S) use the Gaussian rule per class \cite{bodla_2017_softnms}. When a box $b_i$ overlaps the kept box $m$, its score is decayed as
+\begin{equation}\label{eq:softnms}
+s_i\leftarrow s_i\exp\!\bigl(-\mathrm{IoU}(m,b_i)^2/\sigma\bigr),\qquad\sigma\in\{0.3,\,0.5\}.
+\end{equation}
+The candidate pool consists of the top 1000 detections with score $\ge0.001$, without pre-NMS.
+
+The validation set is sorted by file name and split into two halves by even and odd index (A and B, 500/500). For each family, the candidate is the best row that gives $\Delta>0$ relative to R0 on half A. The candidate counts as CONFIRMED if it meets all three of the following conditions:
+(a) $\Delta\ge+0.30$ on half B.
+(b) On the full validation set, an image-level paired bootstrap ($B=200$) gives a one-sided 90 percent lower bound above zero.
+(c) On the baseline's seed 1 and seed 2 weights, the same row has a mean $\Delta\ge+0.20$, and both values are positive.
+Section~\ref{sec:mudahaleler} defines the latency classification (GAIN-A/B).
+
+\subsection{Absolute values and seed 1--2 means}
+
+\input{tables/T_ekb_mutlak.tex}
+
+Table~\ref{tab:ekb-mutlak} gives the absolute validation and test mAP50-95 values. It also gives the seed 1--2 mean, which excludes the screening seed. The baseline scores 63.07 $\pm$ 0.41 points on validation and 63.49 $\pm$ 0.11 on test. With TTA, the test value is 64.32 $\pm$ 0.11. Among the screened-out cards, no independent seed 1--2 mean exceeds $+0.30$. The closest is H06 at $+0.27$, although it gave $-$0.42 on seed 0. H06 was eliminated on seed 0, yet it is the card closest to the threshold on the independent seeds. This is a reminder that the single-seed gate carries a false-negative risk (Section~\ref{sec:bulgu-ablasyon}).
+
+\subsection{Test secondary metrics}
+
+\input{tables/T_ekb_test_ikincil.tex}
+
+Table~\ref{tab:ekb-test-ikincil} gives the test secondary metrics of H03 and TTA. Some differences give an uncorrected $p<0.05$. These are AP$_M$ and AP$_L$ for H03, and mAP75, AP$_M$ and AP$_L$ for TTA. However, in the twelve-test family the smallest $p$ after Holm is 0.112. These differences are therefore read as directional only. For TTA's test mAP50-95 difference, the seed-level $t$ interval is [+0.29, +1.38].
+
+On validation, H03's mAP50 gain is positive in all three seeds (+0.74 $\pm$ 0.16, $p=0.015$). On test, it is $-$0.02 $\pm$ 0.21. Since 70\% of the validation set comes from VOC2012, a source difference was tested. The mAP50 difference is +0.73 $\pm$ 1.23 on the VOC07 subset and +0.64 $\pm$ 0.58 on VOC12 (303/697 images). This hypothesis was not supported. \texttt{best.pt} selection optimism was not tested.
+
+\subsection{H07 training-free inference rows}
+
+\input{tables/T4_h07_gecikme.tex}
+
+Table~\ref{tab:h07} gives H07's twelve training-free rows relative to the R0 reference, together with their latency. It also gives the TTA test row. Fig.~\ref{fig:f3-pareto} plots the same rows (Section~\ref{sec:bulgu-gecikme}). T1 is the only CONFIRMED row. Because of its latency ratio, it counts as GAIN-B. Two additional details of the WBF diagnosis follow. First, WBF's IoU threshold is looser than that of NMS. As a result, even a single branch departs from raw NMS at a threshold of 0.6. Second, the default WBF setting also lost at high IoU. Relative to T1, AP$_{75}$ changed by $-$1.33 and AP$_{90}$ by $-$2.15 (Section~\ref{sec:basarisiz-wbf}).
+
+\subsection{Training-free inference: WBF diagnosis}\label{sec:basarisiz-wbf}
+The default WBF setting lowered T1's mAP50-95 by $-$1.08. An exploratory diagnosis was therefore carried out on validation, after the test evaluation. It is not a gain claim. The implementation was correct. All 8 unit tests passed. With an IoU threshold of $\approx$1, single-branch WBF deviated from raw NMS by $+0.000$ points. The loss comes from two settings. The first is mean score fusion. With it, a box seen in fewer than three views gets a smaller score. The scale branches cannot see objects of every size, so this penalty disrupts the ranking. Max fusion brought +0.98 points. The second setting is the IoU threshold. Raising it to 0.7 reduced the loss under mean fusion as well. The contributions of the two settings were not separated. The best grid setting (IoU 0.7, max fusion) exceeded T1 by +0.45. It was selected on validation, so it is not evidence. It only indicates that the effect depends on the setting.
+
+\subsection{Per-card secondary metrics (validation)}
+The training cards show the following differences in the size and threshold metrics. For H01, AP$_S$ is $-$0.30 $\pm$ 2.24 and AP$_M$ is +0.84. For H04, AP$_S$ is $-$1.06 $\pm$ 0.68 and AP$_M$ is $-$0.75. For H02, the AP$_S$ change is +1.39 $\pm$ 1.09. For H06, mAP50 is +0.30 $\pm$ 0.55. All these AP$_S$ changes lie within the baseline's seed range of 2.87 points. H05's loss appears in all three size classes: AP$_S$ $-$2.39, AP$_M$ $-$4.06 and AP$_L$ $-$2.10.
+
+Over the last 10 epochs, H05's validation gain is +0.20, +0.27 and +0.23 points. The baseline's gain is +0.04, +0.16 and $-$0.03. The difference is $\approx$0.18 points. This is far below the noise of a single validation measurement (Section~\ref{sec:bulgu-tutarlilik}). This is also the phase in which mosaic is turned off. The convergence hypothesis therefore receives only weak support.
+
+The per-seed values of H05c are as follows. $\Delta_{\mathrm{c},s}$ is +0.02, $-$1.15 and $-$0.40. $D_s$ is +2.90, +2.04 and +2.13. The per-seed recovery is 1.01, 0.64 and 0.84, with a mean of 0.83. In the remaining difference, two seeds are negative and one is $\approx$0. The VFL/BCE gradient norm ratio measured in the H05c runs is 0.347--0.349. The best epoch is 96, 96 and 95 for H05c, and 100, 100 and 100 for H05. The decision rule fixed two cases in advance. An invalid run would not be rerun; it would be reported as ``could not be run''. If magnitude did not explain the loss, this would strengthen the form hypothesis but not prove it.
+
+\subsection{Error-type breakdown}\label{sec:bulgu-hata}
+Detections are divided into error types in a manner similar to TIDE \cite{bolya_2020_tide}. Matching uses pycocotools with at most 300 detections. The types are defined as follows:
+\begin{itemize}
+\item A true positive (TP) is a detection matched with IoU$\ge0.5$.
+\item Dupe: a detection with IoU$\ge0.5$ whose GT has already been taken by a higher-scoring box.
+\item Cls: IoU$\ge0.5$ with a GT of another class.
+\item Loc: $0.1\le$IoU$<0.5$ with a GT of the same class.
+\item Both: $0.1\le$IoU$<0.5$ with a GT of another class.
+\item Bkg: a detection with IoU$\ge0.1$ to no GT.
+\item Miss: a GT that no box matches with IoU$\ge0.5$.
+\end{itemize}
+Oracle $\Delta$AP$_{50}$ is the increase in AP$_{50}$ when the given error is fixed and the detections are re-evaluated. The fixes are: Loc, the box is snapped to the GT; Cls, the class is corrected; Dupe, Both and Bkg, the box is deleted; Miss, the GT is deleted. The breakdown is reported at the operating point (score $\ge0.25$) and without a threshold ($\ge0.001$). It is also reported at the size and class level.
+
+\input{figures/f2_hata_turu.tex}
+
+Fig.~\ref{fig:f2-hata-turu} compares the oracle $\Delta$AP50 cost of each error type for the baseline, H03 and H06. The test breakdown is exploratory. H06 is shown on val only, for seed 0. Background false positives (Bkg) are the costliest type on both sets, at 3.48 points on val and 3.79 on test. Miss costs 3.32 and 2.03, respectively. The H03 and H06 bars deviate from the baseline by at most 0.31 points on val and at most 0.06 on test. The error profile thus did not shift. This is consistent with the near-zero difference in mAP.
+
+\subsection{Copy-paste dose comparison}
+
+\input{figures/f5_doz.tex}
+
+Fig.~\ref{fig:f5-doz} plots the validation gain against the paste dose in objects per mosaic. The doses are 0 for the baseline, 0.142 for H03 and 0.671 for H08, which is 4.7 times that of H03. H08 changes the probability and the candidate pool together (Section~\ref{sec:mudahaleler}). Dose and size mix are therefore not disentangled. The figure is a three-point comparison, not a dose--response curve. $\Delta$mAP50 falls from +0.74 $\pm$ 0.16 to +0.25 $\pm$ 0.14. For H08, $\Delta$AP$_S$ is +0.31 $\pm$ 2.84. When dose and pool were widened together, the gain did not grow (``no increasing effect could be shown'').
+
+\subsection{Qualitative panel}\label{sec:bulgu-nitel}
+
+\input{figures/f6_nitel.tex}
+
+Fig.~\ref{fig:f6-nitel} shows GT, baseline, H03 and baseline+TTA detections on the same test images (seed 0, score $\ge0.25$). It uses extreme examples in both directions and one random frame. The caption gives the selection criterion. The pool has 1642 images, and the baseline image-AP Q1--Q3 range is 0.497--0.896. In one scene, TTA raises image-AP from 0.522 to 0.971. In a car scene, it lowers image-AP from 0.895 to 0.248. H03 also jumps in the first scene, so the differences are not specific to TTA. Over all valid images (seed 0), TTA's mean image-AP difference is $-$1.26. Of the images, 31.8\% improve and 38.4\% worsen. For H03, the mean difference is +0.36, with 35.5\% improving and 34.7\% worsening. Dataset mAP, however, increases by +0.88. The gain is thus not a uniform visual improvement (exploratory).
+
+\FloatBarrier

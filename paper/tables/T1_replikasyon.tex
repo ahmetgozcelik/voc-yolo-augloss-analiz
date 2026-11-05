@@ -1,26 +1,26 @@
-% uretici: evidence/scripts/build_tables.py <- evidence/evidence.json (elle duzenleme bir sonraki uretimde kaybolur)
+% generator: evidence/scripts/build_tables.py <- evidence/evidence.json (manual edits are lost at the next regeneration)
 \begin{table*}[!htbp]
 \centering\small
-\caption{Taban model makullük denetimi: VOC07 test mAP50-95 ve mAP50 [puan]. Literatür satırları aynı koşulda üretilmemiştir; kaynakları ayrı olarak anılır. Renk kodlaması uygulanmaz (referans değerler).}\label{tab:replikasyon}
+\caption{Baseline plausibility check: VOC07 test mAP50-95 and mAP50 [points]. The literature rows were not produced under the same conditions. Their sources are cited separately. No color coding is applied (reference values).}\label{tab:replikasyon}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c}
 \toprule
-Satır & mAP50-95 [puan] & mAP50 [puan] \\
+Row & mAP50-95 [points] & mAP50 [points] \\
 \midrule
-Bu çalışma, YOLO11n (COCO ön-eğitimli, 100 ep), tohum 0 & 63.45 & 83.54 \\
-Bu çalışma, YOLO11n (COCO ön-eğitimli, 100 ep), tohum 1 & 63.61 & 83.67 \\
-Bu çalışma, YOLO11n (COCO ön-eğitimli, 100 ep), tohum 2 & 63.41 & 83.33 \\
-\textbf{Bu çalışma, ort. $\pm$ s.d. (n=3)} & 63.49 $\pm$ 0.11 & 83.51 $\pm$ 0.17 \\
+This work, YOLO11n (COCO-pretrained, 100 ep), seed 0 & 63.45 & 83.54 \\
+This work, YOLO11n (COCO-pretrained, 100 ep), seed 1 & 63.61 & 83.67 \\
+This work, YOLO11n (COCO-pretrained, 100 ep), seed 2 & 63.41 & 83.33 \\
+\textbf{This work, mean $\pm$ s.d. (n=3)} & 63.49 $\pm$ 0.11 & 83.51 $\pm$ 0.17 \\
 \midrule
-Literatür: YOLO11n sıfırdan, 500 ep~\cite{zhang_2025_adlyolo} & 61.3 & 81.5 \\
-Literatür: YOLO11-N, 600 ep (genel ayar)~\cite{lin_2025_yolomaster} & 61.0 & 81.2 \\
-Literatür: YOLOv8n sıfırdan, 500 ep~\cite{zhang_2025_adlyolo} & 60.2 & 80.9 \\
-Literatür: YOLOv8n, 200 ep$^\dagger$~\cite{elhamdouni_2025_yolov8nvoc} & 63.5 & 83.6 \\
-Literatür: YOLO11s tam ince ayar (kontrol noktası testte seçilmiş)~\cite{lin_2026_yolopeft} & 64.28 & 83.44 \\
+Literature: YOLO11n from scratch, 500 ep~\cite{zhang_2025_adlyolo} & 61.3 & 81.5 \\
+Literature: YOLO11-N, 600 ep (general setting)~\cite{lin_2025_yolomaster} & 61.0 & 81.2 \\
+Literature: YOLOv8n from scratch, 500 ep~\cite{zhang_2025_adlyolo} & 60.2 & 80.9 \\
+Literature: YOLOv8n, 200 ep$^\dagger$~\cite{elhamdouni_2025_yolov8nvoc} & 63.5 & 83.6 \\
+Literature: YOLO11s full fine-tuning (checkpoint selected on test)~\cite{lin_2026_yolopeft} & 64.28 & 83.44 \\
 \midrule
-Kabul aralığı (literatür aralığı $\pm$ tolerans)$^\dagger$ & 59.8--64.7 & 80.0--84.8 \\
-Makullük kapısı kararı & \multicolumn{2}{c}{YEŞİL} \\
+Acceptance range (literature range $\pm$ tolerance)$^\dagger$ & 59.8--64.7 & 80.0--84.8 \\
+Plausibility gate decision & \multicolumn{2}{c}{GREEN} \\
 \bottomrule
 \addlinespace[3pt]
-\multicolumn{3}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{$^\dagger$ Üst çıpa 63.5 (kabul üst ucu 64.7) YOLOv8n'e aittir ve muhtemelen VOC07 testinde seçilmiş kontrol noktasındandır; değer kaynağın 4.4. bölümünde metin olarak doğrulandı, tablo hücresi okunamadı. Diğer literatür satırları da başlatma, epoch ve kontrol noktası seçiminde farklıdır; yalnız bağlamdır. Bu çalışmanın değerleri 101 noktalı COCO AP'sidir ve \texttt{difficult} nesneler hariç tutulmuştur; VOC07 11 noktalı devkit değerleriyle~\cite{everingham_2010_voc} doğrudan kıyaslanamaz.} \\
+\multicolumn{3}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{$^\dagger$ The upper anchor 63.5 (upper end of acceptance 64.7) belongs to YOLOv8n. It probably comes from a checkpoint selected on VOC07 test. The value was verified in the text of Section 4.4 of the source, because the table cell was unreadable. The other literature rows also differ in initialization, epochs and checkpoint selection. They serve as context only. Our values are 101-point COCO AP, with \texttt{difficult} objects excluded. They are not directly comparable to VOC07 11-point devkit values~\cite{everingham_2010_voc}.} \\
 \end{tabularx}
 \end{table*}

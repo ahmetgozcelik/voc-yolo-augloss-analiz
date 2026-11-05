@@ -1,0 +1,70 @@
+{
+ "n_goruntu": 4952,
+ "n_havuz": 1642,
+ "q1_baseline_goruntu_ap": 0.49749999999999994,
+ "q3_baseline_goruntu_ap": 0.8955,
+ "n_kucuk_iceren_aday": 195,
+ "op_conf": 0.25,
+ "runs": {
+  "base": "20261001-212345_baseline-test_s0",
+  "h03": "20261001-212720_h03_boxcp-test_s0",
+  "tta": "20261001-213042_baseline-tta-test_s0"
+ },
+ "ortalama_goruntu_ap": {
+  "base": 0.6878041292796551,
+  "h03": 0.6913888620950077,
+  "tta": 0.6751761087511805
+ },
+ "ort_delta_tta_havuz": -0.027386743290877206,
+ "ort_delta_h03_havuz": -0.01204426976113124,
+ "ort_delta_tta_tum": -0.012628020528474525,
+ "ort_delta_h03_tum": 0.003584732815352572,
+ "kazanc_orani_tta_tum": 0.3178513731825525,
+ "kayip_orani_tta_tum": 0.3842891760904685,
+ "kazanc_orani_h03_tum": 0.3548061389337641,
+ "kayip_orani_h03_tum": 0.3467285945072698,
+ "secilenler": [
+  {
+   "satir": 1,
+   "kriter": "TTA gain 1",
+   "goruntu": "008287.jpg",
+   "d_tta": 0.4482127192982456,
+   "d_h03": 0.3999166666666666
+  },
+  {
+   "satir": 2,
+   "kriter": "TTA gain 2",
+   "goruntu": "003968.jpg",
+   "d_tta": 0.3814166666666666,
+   "d_h03": 0.33166666666666667
+  },
+  {
+   "satir": 3,
+   "kriter": "TTA loss",
+   "goruntu": "008711.jpg",
+   "d_tta": -0.6472812499999999,
+   "d_h03": -0.2824821428571429
+  },
+  {
+   "satir": 4,
+   "kriter": "H03 gain (small obj.)",
+   "goruntu": "009782.jpg",
+   "d_tta": 0.2037602649270439,
+   "d_h03": 0.2271016609299633
+  },
+  {
+   "satir": 5,
+   "kriter": "H03 loss (small obj.)",
+   "goruntu": "007164.jpg",
+   "d_tta": 0.0,
+   "d_h03": -0.4626749999999999
+  },
+  {
+   "satir": 6,
+   "kriter": "Random (seed 0)",
+   "goruntu": "008504.jpg",
+   "d_tta": -0.062339848724101476,
+   "d_h03": 0.008579598639306463
+  }
+ ]
+}

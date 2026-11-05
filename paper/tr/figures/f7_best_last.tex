@@ -1,0 +1,43 @@
+% F7 -- KITTI test: kart basina best.pt ve last.pt Δ mAP50-95 (3 seed ort. ± 1 s.d.), model basina bir panel (alt alta).
+% Veri: figures/data/f7a_yolo26n.dat, f7b_yolo11s.dat (uretici: figures/scripts/f7_best_last.py <- evidence/evidence.json ek.test.*). Figur ici metin Turkce.
+% Renk disi kanal: best.pt = dolu daire (Holm-anlamli iyilesme = dolu ucgen, mavi), last.pt = bos kare.
+\begin{figure}[!htbp]
+\centering
+\pgfplotstableset{col sep=semicolon}
+\pgfplotsset{
+  fseven/.style={scale only axis, width=0.52\textwidth, xmin=-4.6, xmax=5.0, ymin=0.4, ymax=7.6, ytick=data, font=\small,
+    tick label style={font=\small}, label style={font=\small}, title style={font=\small, yshift=-1pt},
+    xmajorgrids=true, grid style={black!10}, axis line style={black!70}, clip=false, every axis plot/.append style={forget plot}},
+  fseven best/.style={only marks, mark=*, mark size=2.4pt, draw=black, fill=black,
+    /pgfplots/error bars/x dir=both, /pgfplots/error bars/x explicit, /pgfplots/error bars/error bar style={line width=1.4pt, black}, /pgfplots/error bars/error mark options={rotate=90, mark size=2.6pt, black}},
+  fseven good/.style={only marks, mark=triangle*, mark size=3.2pt, draw=iyiRenk, fill=iyiRenk,
+    /pgfplots/error bars/x dir=both, /pgfplots/error bars/x explicit, /pgfplots/error bars/error bar style={line width=1.4pt, iyiRenk}, /pgfplots/error bars/error mark options={rotate=90, mark size=2.6pt, iyiRenk}},
+  fseven last/.style={only marks, mark=square, mark size=2.3pt, draw=black!60, fill=white, line width=0.9pt,
+    /pgfplots/error bars/x dir=both, /pgfplots/error bars/x explicit, /pgfplots/error bars/error bar style={line width=1.0pt, black!60, dashed}, /pgfplots/error bars/error mark options={rotate=90, mark size=2.6pt, black!60}},
+}
+\begin{tikzpicture}
+% ---------------- panel (a): YOLO26n
+\begin{axis}[name=A, fseven, height=6.4cm, yticklabels from table={\figroot data/f7a_yolo26n.dat}{label},
+  title={(a) YOLO26n, KITTI test (13 sahne grubu)}, xticklabels={}]
+\draw[line width=1.1pt, black] (axis cs:0,0.4) -- (axis cs:0,7.6);
+\addplot[draw=none, mark=none] table[x expr=0, y=ypos]{\figroot data/f7a_yolo26n.dat};% ytick=data icin sirali tam y listesi
+\addplot[fseven best, y filter/.expression={\thisrow{isgood}==0 ? y : nan}] table[x=best_m, y expr=\thisrow{ypos}+0.17, x error=best_sd]{\figroot data/f7a_yolo26n.dat};
+\addplot[fseven good, y filter/.expression={\thisrow{isgood}==1 ? y : nan}] table[x=best_m, y expr=\thisrow{ypos}+0.17, x error=best_sd]{\figroot data/f7a_yolo26n.dat};
+\addplot[fseven last] table[x=last_m, y expr=\thisrow{ypos}-0.17, x error=last_sd]{\figroot data/f7a_yolo26n.dat};
+\end{axis}
+% ---------------- panel (b): YOLO11s
+\begin{axis}[name=B, fseven, at={(A.south west)}, anchor=north west, yshift=-1.4cm, height=6.4cm, yticklabels from table={\figroot data/f7b_yolo11s.dat}{label},
+  title={(b) YOLO11s, KITTI test (13 sahne grubu)}, xlabel={$\Delta$ test mAP50-95, aynı tohumlu taban modele göre [puan]},
+  legend style={at={(0.5,-0.24)}, anchor=north, legend columns=2, font=\footnotesize, draw=none, /tikz/every even column/.append style={column sep=8pt}}]
+\draw[line width=1.1pt, black] (axis cs:0,0.4) -- (axis cs:0,7.6);
+\addplot[draw=none, mark=none] table[x expr=0, y=ypos]{\figroot data/f7b_yolo11s.dat};% ytick=data icin sirali tam y listesi
+\addplot[fseven best, y filter/.expression={\thisrow{isgood}==0 ? y : nan}] table[x=best_m, y expr=\thisrow{ypos}+0.17, x error=best_sd]{\figroot data/f7b_yolo11s.dat};
+\addplot[fseven good, y filter/.expression={\thisrow{isgood}==1 ? y : nan}] table[x=best_m, y expr=\thisrow{ypos}+0.17, x error=best_sd]{\figroot data/f7b_yolo11s.dat};
+\addplot[fseven last] table[x=last_m, y expr=\thisrow{ypos}-0.17, x error=last_sd]{\figroot data/f7b_yolo11s.dat};
+\addlegendimage{only marks, mark=*, mark size=2.4pt, black}\addlegendentry{\texttt{best.pt}, ortalama $\pm$1 s.d. (3 tohum)}
+\addlegendimage{only marks, mark=square, mark size=2.3pt, black!60, fill=white, line width=0.9pt}\addlegendentry{\texttt{last.pt}, ortalama $\pm$1 s.d. (3 tohum)}
+\addlegendimage{only marks, mark=triangle*, mark size=3.2pt, iyiRenk}\addlegendentry{iyi, Holm düzeltmeli $p<0.10$, $\Delta\ge+0.40$}
+\end{axis}
+\end{tikzpicture}
+\caption{KITTI test: kart başına taban modele göre $\Delta$ mAP50-95 [puan], \texttt{best.pt} ve \texttt{last.pt} için üç tohum ortalaması $\pm$1 s.d.; (a) YOLO26n, (b) YOLO11s. Mavi üçgen Holm-5 kabulüdür.}\label{fig:best-last}
+\end{figure}

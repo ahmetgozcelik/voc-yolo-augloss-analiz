@@ -1,0 +1,59 @@
+% F6 -- NITEL PANEL (figure-style A2): VOC07 test, 6 goruntu x {GT, baseline s0, H03 s0, baseline+TTA s0}. Karolar: figures/tiles/f6/r<k>_{gt,base,h03,tta}.jpg
+% (gercek cikti karolari; uretici figures/scripts/f6_nitel.py, secim olcutu orada ve caption'da). Etiket/not/lejant TikZ'te (Turkce).
+\begin{figure}[!htbp]
+\centering
+\pgfplotstableset{col sep=semicolon}
+\pgfplotstableread{\figroot data/f6_panel.dat}\fsixtbl
+\pgfmathsetmacro{\fsixlab}{3.0}% satir etiketi sutunu [cm] (yerlesim)
+\pgfmathsetmacro{\fsixw}{(\textwidth/1cm-\fsixlab-0.2)/4-0.10}% karo genisligi [cm], \textwidth'e kilitli
+\pgfmathsetmacro{\fsixh}{0.75*\fsixw}% karo yuksekligi [cm] (4:3)
+\pgfmathsetmacro{\fsixrow}{\fsixh+0.93}% satir yuksekligi (karo + not)
+\begin{tikzpicture}[x=1cm,y=1cm]
+% sutun basliklari
+\foreach \cn/\t in {0/{GT (gerçek)},1/{Taban model (s0)},2/{H03 (s0)},3/{Taban model + TTA (s0)}}{
+  \node[font=\footnotesize\bfseries, anchor=south, text width=\fsixw cm, align=center, inner sep=1pt] at (\fsixlab+\cn*\fsixw+\cn*0.10+0.5*\fsixw, 0.04) {\t};}
+\foreach \r in {0,...,5}{
+  \pgfmathtruncatemacro{\rn}{\r+1}
+  \pgfplotstablegetelem{\r}{kriter}\of\fsixtbl \edef\kr{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{goruntu}\of\fsixtbl \edef\gimg{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{n_gt}\of\fsixtbl \edef\ngt{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{n_kucuk}\of\fsixtbl \edef\nks{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{gt_siniflar}\of\fsixtbl \edef\gcls{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{ap_base}\of\fsixtbl \edef\apb{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{ap_h03}\of\fsixtbl \edef\aph{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{ap_tta}\of\fsixtbl \edef\apt{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{tp_base}\of\fsixtbl \edef\tpb{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{fp_base}\of\fsixtbl \edef\fpb{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{fn_base}\of\fsixtbl \edef\fnb{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{tp_h03}\of\fsixtbl \edef\tph{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{fp_h03}\of\fsixtbl \edef\fph{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{fn_h03}\of\fsixtbl \edef\fnh{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{tp_tta}\of\fsixtbl \edef\tpt{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{fp_tta}\of\fsixtbl \edef\fpt{\pgfplotsretval}
+  \pgfplotstablegetelem{\r}{fn_tta}\of\fsixtbl \edef\fnt{\pgfplotsretval}
+  \pgfmathsetmacro{\yt}{-\r*\fsixrow}
+  % renk: baseline'a gore goruntu-AP'si (iyi mavi kalin / kotu kirmizi egik; esit ise duz)
+  \pgfmathparse{\aph>\apb+0.0005}\ifnum\pgfmathresult>0 \def\sth{\iyi}\else\pgfmathparse{\aph<\apb-0.0005}\ifnum\pgfmathresult>0 \def\sth{\kotu}\else\def\sth{\relax}\fi\fi
+  \pgfmathparse{\apt>\apb+0.0005}\ifnum\pgfmathresult>0 \def\stt{\iyi}\else\pgfmathparse{\apt<\apb-0.0005}\ifnum\pgfmathresult>0 \def\stt{\kotu}\else\def\stt{\relax}\fi\fi
+  % satir etiketi: olcut, goruntu, GT siniflari
+  \node[font=\scriptsize, text width=\fsixlab cm-0.2cm, align=left, anchor=north west, inner sep=1pt] at (0,\yt) {\textbf{\kr}\\ görüntü \gimg\\ GT: \gcls\\ (\ngt\ nesne, \nks\ küçük)};
+  % karolar
+  \node[inner sep=0, anchor=north west] at (\fsixlab,\yt) {\includegraphics[width=\fsixw cm]{\figroot tiles/f6/r\rn_gt.jpg}};
+  \node[inner sep=0, anchor=north west] at (\fsixlab+\fsixw+0.10,\yt) {\includegraphics[width=\fsixw cm]{\figroot tiles/f6/r\rn_base.jpg}};
+  \node[inner sep=0, anchor=north west] at (\fsixlab+2*\fsixw+0.20,\yt) {\includegraphics[width=\fsixw cm]{\figroot tiles/f6/r\rn_h03.jpg}};
+  \node[inner sep=0, anchor=north west] at (\fsixlab+3*\fsixw+0.30,\yt) {\includegraphics[width=\fsixw cm]{\figroot tiles/f6/r\rn_tta.jpg}};
+  % notlar (AP = goruntu-duzeyi AP50-95; TP/FP/FN skor>=0.25)
+  \node[font=\scriptsize, text width=\fsixw cm, align=center, inner sep=1pt, anchor=north] at (\fsixlab+1.5*\fsixw+0.10,\yt-\fsixh) {AP \apb\\ \tpb/\fpb/\fnb};
+  \node[font=\scriptsize, text width=\fsixw cm, align=center, inner sep=1pt, anchor=north] at (\fsixlab+2.5*\fsixw+0.20,\yt-\fsixh) {\sth{AP \aph}\\ \tph/\fph/\fnh};
+  \node[font=\scriptsize, text width=\fsixw cm, align=center, inner sep=1pt, anchor=north] at (\fsixlab+3.5*\fsixw+0.30,\yt-\fsixh) {\stt{AP \apt}\\ \tpt/\fpt/\fnt};
+}
+% lejant
+\pgfmathsetmacro{\yleg}{-6*\fsixrow-0.02}
+\node[font=\scriptsize, anchor=north west, inner sep=1pt] at (0,\yleg) {Skor $\ge 0.25$ tespitler. Karo altı: görüntü AP50-95; TP/FP/FN sayıları.};
+\draw[line width=1.8pt, iyiRenk] (0.1,\yleg-0.62) -- (0.6,\yleg-0.62); \node[font=\scriptsize, anchor=west] at (0.65,\yleg-0.62) {TP (doğru)};
+\draw[line width=1.8pt, kotuRenk] (2.65,\yleg-0.62) -- (3.15,\yleg-0.62); \node[font=\scriptsize, anchor=west] at (3.2,\yleg-0.62) {FP (yanlış pozitif)};
+\draw[line width=1.8pt, orange] (6.6,\yleg-0.62) -- (7.1,\yleg-0.62); \node[font=\scriptsize, anchor=west] at (7.15,\yleg-0.62) {FN (kaçırılan)};
+\draw[line width=2.4pt, white] (9.7,\yleg-0.62) -- (10.2,\yleg-0.62); \draw[line width=0.5pt, black] (9.7,\yleg-0.58) -- (10.2,\yleg-0.58); \draw[line width=0.5pt, black] (9.7,\yleg-0.66) -- (10.2,\yleg-0.66); \node[font=\scriptsize, anchor=west] at (10.25,\yleg-0.62) {gerçek etiket};
+\end{tikzpicture}
+\caption{VOC07 testinde altı görüntüde GT, taban model, H03 ve TTA tespitleri (tohum 0). Mavi kalın/kırmızı eğik: taban modele göre iyi/kötü. Seçim: $\ge$2 GT'li, üç yöntemde tespitli, taban model AP'si Q1--Q3 içindeki adaylardan TTA kazancı/kaybı, küçük nesneli H03 kazancı/kaybı, rastgele 1.}\label{fig:f6-nitel}
+\end{figure}

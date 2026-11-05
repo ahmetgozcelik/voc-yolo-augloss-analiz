@@ -1,0 +1,30 @@
+% uretici: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek.test.*; elle duzenleme bir sonraki uretimde kaybolur)
+\begin{table*}[!htbp]
+\centering\small\setlength{\tabcolsep}{2pt}
+\caption{KITTI test (13 sahne grubu, DontCare kurallı mAP50-95): kart $-$ taban model $\Delta$ [puan], $n=3$ tohum-eşli. Mavi+kalın: önceden belirlenmiş kabul ölçütünü sağlayan kart.}\label{tab:kitti-test}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c l c c}
+\toprule
+Kart & $\Delta$ test $\pm$ s.d. & Kümeli GA & $p_{\mathrm{Holm}}$ & Karar & $\Delta$ \texttt{last} & Sağlamlık \\
+\midrule
+\multicolumn{7}{@{}l}{\textbf{YOLO26n} (kritik etki $\approx$ 3.61 puan)} \\
+H01 multi-scale & +0.12 $\pm$ 2.23 & [$-$0.88, +1.49] & 1.000 & ölçüt sağlanmadı & +0.32 & bağımsız \\
+H02 Inner-CIoU & $-$0.93 $\pm$ 2.00 & [$-$1.56, +0.18] & 0.507 & replike olmadı & +0.06 & duyarlı \\
+H03 kutu copy-paste & +1.01 $\pm$ 0.66 & [$-$0.12, +2.92] & 0.289 & ölçüt sağlanmadı & +1.28 & bağımsız \\
+H04 mosaic scale & $-$1.24 $\pm$ 2.18 & [$-$2.02, +1.04] & 1.000 & ölçüt sağlanmadı & +0.35 & duyarlı \\
+H05 Varifocal & +0.61 $\pm$ 1.52 & [$-$0.84, +1.41] & 0.721 & replike olmadı & +1.26 & bağımsız \\
+H06 kutu kazancı & $-$0.25 $\pm$ 0.68 & [$-$1.38, +0.71] & 1.000 & ölçüt sağlanmadı & +0.10 & duyarlı \\
+H08 yüksek doz & +0.71 $\pm$ 0.70 & [$-$0.45, +2.20] & 0.444 & ölçüt sağlanmadı & +1.14 & bağımsız \\
+\midrule
+\multicolumn{7}{@{}l}{\textbf{YOLO11s} (kritik etki $\approx$ 2.92 puan)} \\
+H01 multi-scale & \iyi{+1.49 $\pm$ 0.34} & [$-$0.34, +2.28] & \iyi{0.042} & \iyi{KABUL} & $-$0.66 & duyarlı \\
+H02 Inner-CIoU & +1.14 $\pm$ 0.52 & [$-$0.53, +1.99] & 1.000 & replike olmadı & +0.00 & bağımsız \\
+H03 kutu copy-paste & +1.41 $\pm$ 1.07 & [+0.35, +2.58] & 0.252 & ölçüt sağlanmadı & $-$0.12 & duyarlı \\
+H04 mosaic scale & +1.07 $\pm$ 0.72 & [+0.18, +1.77] & 0.252 & ölçüt sağlanmadı & $-$1.21 & duyarlı \\
+H05 Varifocal & +2.28 $\pm$ 0.76 & [+0.52, +3.61] & 1.000 & replike olmadı & +0.03 & bağımsız \\
+H06 kutu kazancı & +0.57 $\pm$ 0.56 & [+0.10, +1.83] & 0.252 & ölçüt sağlanmadı & $-$0.47 & duyarlı \\
+H08 yüksek doz & +1.68 $\pm$ 2.53 & [+0.89, +2.76] & 0.252 & ölçüt sağlanmadı & +0.51 & bağımsız \\
+\bottomrule
+\addlinespace[3pt]
+\multicolumn{7}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{Kabul: $\Delta\ge+0.40$, $p_{\mathrm{Holm}}<0.10$ (Holm-5; H02, H05 yönlü Holm-2; model başına). Kümeli GA: 13 grupta bootstrap ($B=2000$), tohum varyansını içermez. Tohum $t$-GA $=\bar\Delta\pm2.48\,s$. $\Delta$ last betimsel; sağlamlık: best/last işareti aynıysa bağımsız.} \\
+\end{tabularx}
+\end{table*}

@@ -1,5 +1,5 @@
-% F3 -- dogruluk-gecikme Pareto (H07 satirlari + TTA test). Yedek kodlama (tur-2): iyi = ucgen, kotu = kare, digerleri = daire (gri tonda okunur). Yedek kodlama (tur-2): iyi = ucgen, kotu = kare, digerleri = daire (gri tonda okunur). Veri: figures/data/f3_h07.dat, f3_test.dat, f3_ref.dat
-% (uretici: figures/scripts/f3_pareto.py <- evidence/evidence.json). Figur ici metin Turkce.
+% F3 -- accuracy-latency Pareto (H07 rows + TTA test). Redundant coding (round 2): better = triangle, worse = square, others = circle (readable in grayscale). Data: figures/data/f3_h07.dat, f3_test.dat, f3_ref.dat
+% (generator: figures/scripts/f3_pareto.py <- evidence/evidence.json).
 \begin{figure*}[t]
 \centering
 \pgfplotstableset{col sep=semicolon}
@@ -16,7 +16,7 @@
   fthree/.style={scale only axis, width=0.78\textwidth, font=\small, tick label style={font=\small}, label style={font=\small},
     title style={font=\small, yshift=-1pt}, grid=both, major grid style={black!12}, minor grid style={black!5}, axis line style={black!70}, clip=true},
 }
-% H07 satirlarini isaretle. #1 = sutun soneki (A: overview, Z: zoom), #2 = isaret kosulu, #3 = etiket kosulu (pgfmath)
+% Mark H07 rows. #1 = column suffix (A: overview, Z: zoom), #2 = marker condition, #3 = label condition (pgfmath)
 \newcommand{\fthreepoints}[3]{%
   \foreach \i in {0,...,12}{%
     \pgfplotstablegetelem{\i}{row}\of\fthreetbl \edef\rowname{\pgfplotsretval}%
@@ -36,24 +36,24 @@
 \begin{tikzpicture}
 % ---------------- (a) overview
 \begin{axis}[name=A, fthree, height=6.4cm, xmin=0.85, xmax=3.3, ymin=-6.4, ymax=1.5, xtick={1,1.5,2,2.5,3}, xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=1},
-  title={(a) Tüm H07 satırları (doğrulama, taban model tohum-0 \texttt{best.pt}) ve test üzerinde TTA},
-  xlabel={Gecikme oranı, aynı oturumdaki R0'a göre [$\times$]}, ylabel={$\Delta$ mAP50-95 [puan]}]
+  title={(a) All H07 rows (validation, baseline seed-0 \texttt{best.pt}) and TTA on test},
+  xlabel={Latency ratio vs.\ R0 in the same session [$\times$]}, ylabel={$\Delta$ mAP50-95 [points]}]
 \fill[iyiRenk!6] (axis cs:0.85,-6.4) rectangle (axis cs:\fBud,1.5);
 \draw[line width=1.1pt, black] (axis cs:0.85,0) -- (axis cs:3.3,0);
 \draw[dashed, line width=1.3pt, black] (axis cs:\fBud,-6.4) -- (axis cs:\fBud,1.5);
-\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=south west, align=left] at (axis cs:\fBud,-6.3) {gerçek-zaman bütçesi\\$\le 1.10\times$};
-\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=west, align=left] at (axis cs:1.16,-1.0) {$\leftarrow$ bütçe içindeki satırlar: bkz. (b)};
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=south west, align=left] at (axis cs:\fBud,-6.3) {real-time budget\\$\le 1.10\times$};
+\node[font=\scriptsize, fill=white, inner sep=1pt, anchor=west, align=left] at (axis cs:1.16,-1.0) {$\leftarrow$ rows within the budget: see (b)};
 \pgfplotsextra{\fthreepoints{A}{1}{\rlat>1.09}}
-% TTA test: seed ortalamasi + %95 bootstrap CI
-% TTA test: Holm-12 p = 0.222 (kesifsel, anlamli degil) -> gri (T5/F1 ile tutarli)
+% TTA test: seed mean + 95% bootstrap CI
+% TTA test: Holm-12 p = 0.222 (exploratory, not significant) -> gray (consistent with T5/F1)
 \draw[line width=2pt, black!55] (axis cs:\tLat,\tLo) -- (axis cs:\tLat,\tHi);
 \node[diamond, fill=black!55, inner sep=2.2pt] at (axis cs:\tLat,\tDel) {};
 \node[anchor=north east, font=\scriptsize, fill=white, inner sep=1pt, text=black!70, xshift=-3pt] at (axis cs:\tLat,\tLo) {TTA, test (n=3)};
 \end{axis}
 % ---------------- (b) zoom on the real-time budget region
 \begin{axis}[name=B, fthree, at={(A.south west)}, anchor=north west, yshift=-2.3cm, height=4.0cm, xmin=0.94, xmax=1.13, ymin=-0.78, ymax=0.22,
-  title={(b) Yakınlaştırma: $\le 1.10\times$ bütçesinin içindeki ya da yakınındaki satırlar},
-  xlabel={Gecikme oranı (R0 ile aynı oturum) [$\times$]}, ylabel={$\Delta$ mAP50-95 [puan]},
+  title={(b) Zoom: rows within or near the $\le 1.10\times$ budget},
+  xlabel={Latency ratio (same session as R0) [$\times$]}, ylabel={$\Delta$ mAP50-95 [points]},
   xtick={0.95,1.0,1.05,1.10}, xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=2},
   legend style={legend cell align=left, at={(0.5,-0.45)}, anchor=north, legend columns=1, font=\footnotesize, draw=none}]
 \fill[iyiRenk!6] (axis cs:0.94,-0.78) rectangle (axis cs:\fBud,0.22);
@@ -61,11 +61,11 @@
 \draw[dashed, line width=1.3pt, black] (axis cs:\fBud,-0.78) -- (axis cs:\fBud,0.22);
 \pgfplotsextra{\fthreepoints{Z}{and(\rlat<1.13,\rdel>-0.78)}{1}}
 \addplot[draw=none, forget plot] coordinates {(1,0)};
-\addlegendimage{only marks, mark=triangle*, mark size=3pt, iyiRenk}\addlegendentry{önceden yazılmış DOĞRULANDI kuralı (üçgen)}
-\addlegendimage{only marks, mark=square*, mark size=2.4pt, kotuRenk}\addlegendentry{$\Delta \le -0.5$ ve iki doğrulama yarısında da negatif (kare)}
-\addlegendimage{only marks, mark=*, mark size=2.4pt, black!60}\addlegendentry{diğer satırlar (daire)}
-\addlegendimage{only marks, mark=diamond*, mark size=3.2pt, black!55}\addlegendentry{test üzerinde TTA (keşifsel): tohum ortalaması, çubuk = \%95 bootstrap GA}
+\addlegendimage{only marks, mark=triangle*, mark size=3pt, iyiRenk}\addlegendentry{pre-specified CONFIRMED rule (triangle)}
+\addlegendimage{only marks, mark=square*, mark size=2.4pt, kotuRenk}\addlegendentry{$\Delta \le -0.5$ and negative in both validation halves (square)}
+\addlegendimage{only marks, mark=*, mark size=2.4pt, black!60}\addlegendentry{other rows (circle)}
+\addlegendimage{only marks, mark=diamond*, mark size=3.2pt, black!55}\addlegendentry{TTA on test (exploratory): seed mean, bar = 95\% bootstrap CI}
 \end{axis}
 \end{tikzpicture}
-\caption{H07 satırlarında (R0 referans, N: NMS-IoU, S: Soft-NMS, U: test çözünürlüğü, T: TTA, W: WBF) doğruluk–gecikme ödünleşimi; (b) gerçek-zaman bandının yakınlaştırması. Üçgen: doğrulandı, kare: kötü, daire: diğer; eşik gövdede.}\label{fig:f3-pareto}
+\caption{Accuracy--latency trade-off for the H07 rows (R0 reference, N: NMS-IoU, S: Soft-NMS, U: test resolution, T: TTA, W: WBF). Panel (b) zooms in on the real-time band. Triangle: confirmed; square: worse; circle: other. The thresholds are given in the main text.}\label{fig:f3-pareto}
 \end{figure*}

@@ -1,30 +1,30 @@
-% uretici: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek.test.*; elle duzenleme bir sonraki uretimde kaybolur)
+% generator: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek.test.*; manual edits are lost at the next regeneration)
 \begin{table*}[!htbp]
 \centering\small\setlength{\tabcolsep}{2pt}
-\caption{KITTI test (13 sahne grubu, DontCare kurallı mAP50-95): kart $-$ taban model $\Delta$ [puan], $n=3$ tohum-eşli. Mavi+kalın: önceden belirlenmiş kabul ölçütünü sağlayan kart.}\label{tab:kitti-test}
+\caption{KITTI test (13 scene groups, mAP50-95 with the DontCare rule): card $-$ baseline $\Delta$ [points], $n=3$ seed-paired. Blue+bold: card that meets the pre-specified acceptance criterion.}\label{tab:kitti-test}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c l c c}
 \toprule
-Kart & $\Delta$ test $\pm$ s.d. & Kümeli GA & $p_{\mathrm{Holm}}$ & Karar & $\Delta$ \texttt{last} & Sağlamlık \\
+Card & $\Delta$ test $\pm$ s.d. & Clustered CI & $p_{\mathrm{Holm}}$ & Decision & $\Delta$ \texttt{last} & Robustness \\
 \midrule
-\multicolumn{7}{@{}l}{\textbf{YOLO26n} (kritik etki $\approx$ 3.61 puan)} \\
-H01 multi-scale & +0.12 $\pm$ 2.23 & [$-$0.88, +1.49] & 1.000 & ölçüt sağlanmadı & +0.32 & bağımsız \\
-H02 Inner-CIoU & $-$0.93 $\pm$ 2.00 & [$-$1.56, +0.18] & 0.507 & replike olmadı & +0.06 & duyarlı \\
-H03 kutu copy-paste & +1.01 $\pm$ 0.66 & [$-$0.12, +2.92] & 0.289 & ölçüt sağlanmadı & +1.28 & bağımsız \\
-H04 mosaic scale & $-$1.24 $\pm$ 2.18 & [$-$2.02, +1.04] & 1.000 & ölçüt sağlanmadı & +0.35 & duyarlı \\
-H05 Varifocal & +0.61 $\pm$ 1.52 & [$-$0.84, +1.41] & 0.721 & replike olmadı & +1.26 & bağımsız \\
-H06 kutu kazancı & $-$0.25 $\pm$ 0.68 & [$-$1.38, +0.71] & 1.000 & ölçüt sağlanmadı & +0.10 & duyarlı \\
-H08 yüksek doz & +0.71 $\pm$ 0.70 & [$-$0.45, +2.20] & 0.444 & ölçüt sağlanmadı & +1.14 & bağımsız \\
+\multicolumn{7}{@{}l}{\textbf{YOLO26n} (critical effect $\approx$ 3.61 points)} \\
+H01 multi-scale & +0.12 $\pm$ 2.23 & [$-$0.88, +1.49] & 1.000 & criterion not met & +0.32 & independent \\
+H02 Inner-CIoU & $-$0.93 $\pm$ 2.00 & [$-$1.56, +0.18] & 0.507 & not replicated & +0.06 & sensitive \\
+H03 box copy-paste & +1.01 $\pm$ 0.66 & [$-$0.12, +2.92] & 0.289 & criterion not met & +1.28 & independent \\
+H04 mosaic scale & $-$1.24 $\pm$ 2.18 & [$-$2.02, +1.04] & 1.000 & criterion not met & +0.35 & sensitive \\
+H05 Varifocal & +0.61 $\pm$ 1.52 & [$-$0.84, +1.41] & 0.721 & not replicated & +1.26 & independent \\
+H06 box loss gain & $-$0.25 $\pm$ 0.68 & [$-$1.38, +0.71] & 1.000 & criterion not met & +0.10 & sensitive \\
+H08 high dose & +0.71 $\pm$ 0.70 & [$-$0.45, +2.20] & 0.444 & criterion not met & +1.14 & independent \\
 \midrule
-\multicolumn{7}{@{}l}{\textbf{YOLO11s} (kritik etki $\approx$ 2.92 puan)} \\
-H01 multi-scale & \iyi{+1.49 $\pm$ 0.34} & [$-$0.34, +2.28] & \iyi{0.042} & \iyi{KABUL} & $-$0.66 & duyarlı \\
-H02 Inner-CIoU & +1.14 $\pm$ 0.52 & [$-$0.53, +1.99] & 1.000 & replike olmadı & +0.00 & bağımsız \\
-H03 kutu copy-paste & +1.41 $\pm$ 1.07 & [+0.35, +2.58] & 0.252 & ölçüt sağlanmadı & $-$0.12 & duyarlı \\
-H04 mosaic scale & +1.07 $\pm$ 0.72 & [+0.18, +1.77] & 0.252 & ölçüt sağlanmadı & $-$1.21 & duyarlı \\
-H05 Varifocal & +2.28 $\pm$ 0.76 & [+0.52, +3.61] & 1.000 & replike olmadı & +0.03 & bağımsız \\
-H06 kutu kazancı & +0.57 $\pm$ 0.56 & [+0.10, +1.83] & 0.252 & ölçüt sağlanmadı & $-$0.47 & duyarlı \\
-H08 yüksek doz & +1.68 $\pm$ 2.53 & [+0.89, +2.76] & 0.252 & ölçüt sağlanmadı & +0.51 & bağımsız \\
+\multicolumn{7}{@{}l}{\textbf{YOLO11s} (critical effect $\approx$ 2.92 points)} \\
+H01 multi-scale & \iyi{+1.49 $\pm$ 0.34} & [$-$0.34, +2.28] & \iyi{0.042} & \iyi{ACCEPTED} & $-$0.66 & sensitive \\
+H02 Inner-CIoU & +1.14 $\pm$ 0.52 & [$-$0.53, +1.99] & 1.000 & not replicated & +0.00 & independent \\
+H03 box copy-paste & +1.41 $\pm$ 1.07 & [+0.35, +2.58] & 0.252 & criterion not met & $-$0.12 & sensitive \\
+H04 mosaic scale & +1.07 $\pm$ 0.72 & [+0.18, +1.77] & 0.252 & criterion not met & $-$1.21 & sensitive \\
+H05 Varifocal & +2.28 $\pm$ 0.76 & [+0.52, +3.61] & 1.000 & not replicated & +0.03 & independent \\
+H06 box loss gain & +0.57 $\pm$ 0.56 & [+0.10, +1.83] & 0.252 & criterion not met & $-$0.47 & sensitive \\
+H08 high dose & +1.68 $\pm$ 2.53 & [+0.89, +2.76] & 0.252 & criterion not met & +0.51 & independent \\
 \bottomrule
 \addlinespace[3pt]
-\multicolumn{7}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{Kabul: $\Delta\ge+0.40$, $p_{\mathrm{Holm}}<0.10$ (Holm-5; H02, H05 yönlü Holm-2; model başına). Kümeli GA: 13 grupta bootstrap ($B=2000$), tohum varyansını içermez. Tohum $t$-GA $=\bar\Delta\pm2.48\,s$. $\Delta$ last betimsel; sağlamlık: best/last işareti aynıysa bağımsız.} \\
+\multicolumn{7}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{Acceptance: $\Delta\ge+0.40$ and $p_{\mathrm{Holm}}<0.10$ (Holm-5; directional Holm-2 for H02 and H05; per model). Clustered CI: bootstrap over the 13 groups ($B=2000$). It does not include seed variance. Seed $t$-CI $=\bar\Delta\pm2.48\,s$. $\Delta$ last is descriptive. Robustness: independent if best and last have the same sign.} \\
 \end{tabularx}
 \end{table*}

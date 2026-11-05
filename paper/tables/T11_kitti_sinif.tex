@@ -1,10 +1,10 @@
-% uretici: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek4.test.*.sinif.*, ek3.b2.test_nesne.*; elle duzenleme bir sonraki uretimde kaybolur)
+% generator: evidence/scripts/build_ek_tables.py <- evidence/evidence.json (ek4.test.*.sinif.*, ek3.b2.test_nesne.*; manual edits are lost at the next regeneration)
 \begin{table}[!htbp]
 \centering\small\setlength{\tabcolsep}{2pt}
-\caption{KITTI test: sınıf başı AP50-95 (DontCare kurallı, \texttt{best.pt}) kart $-$ taban model $\Delta$ ortalama $\pm$ s.d. [puan], $n=3$ tohum-eşli. Betimsel, renk yok.}\label{tab:kitti-sinif}
+\caption{KITTI test: per-class AP50-95 (DontCare rule, \texttt{best.pt}), card $-$ baseline $\Delta$, mean $\pm$ s.d. [points], $n=3$ seed-paired. Descriptive, no color.}\label{tab:kitti-sinif}
 \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X c c c c c c c c}
 \toprule
-Kart & car & van & truck & ped. & sit. & cyc. & tram & misc \\
+Card & car & van & truck & ped. & sit. & cyc. & tram & misc \\
 \midrule
 \multicolumn{9}{@{}l}{\textbf{YOLO26n}} \\
 B & 58.1 & 12.4 & 13.7 & 24.5 & 1.1 & 7.2 & 33.3 & 0.6 \\
@@ -27,6 +27,6 @@ H06 & +0.0$\pm$2.1 & +1.5$\pm$3.9 & +3.3$\pm$5.1 & +2.6$\pm$2.9 & +0.6$\pm$1.2 &
 H08 & +2.1$\pm$4.0 & +2.6$\pm$1.9 & +1.4$\pm$4.3 & +4.0$\pm$2.4 & +1.9$\pm$8.5 & $-$2.2$\pm$6.3 & +2.7$\pm$21.6 & +0.9$\pm$1.3 \\
 \bottomrule
 \addlinespace[3pt]
-\multicolumn{9}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{Kartlar Tablo~\ref{tab:kitti-test}'dedir; sit. = person\_sitting. B satırı mutlak AP. Test nesne sayısı: car 4457, van 464, truck 119, ped. 574, sit. 56, cyc. 232, tram 126, misc 184.} \\
+\multicolumn{9}{@{}p{\dimexpr\textwidth-2\tabcolsep\relax}@{}}{Cards as in Table~\ref{tab:kitti-test}. Abbreviation: sit. = person\_sitting. Row B gives absolute AP. Test object counts: car 4457, van 464, truck 119, ped. 574, sit. 56, cyc. 232, tram 126, misc 184.} \\
 \end{tabularx}
 \end{table}
