@@ -1,6 +1,14 @@
 cff-version: 1.2.0
 message: "Bu depoyu kullanırsanız lütfen makaleyi alıntılayın."
-title: "Gerçek Zamanlı YOLO Modellerinin İnce Ayarında Artırma ve Kayıp Müdahalelerinin Çok Tohumlu Değerlendirmesi: PASCAL VOC ve KITTI Üzerine Bir İnceleme"
+title: "A Multi-Seed Evaluation of Augmentation and Loss Interventions in Fine-Tuning Real-Time YOLO Detectors: A Study on PASCAL VOC and KITTI"
+abstract: "Augmentation and loss changes for fine-tuning real-time detectors are typically expected to gain a few tenths of a mAP point, the same order as seed-to-seed variation. We ask whether such small gains can be separated from noise under a typical three-seed fine-tuning budget and, if not, where the noise comes from. We evaluated seven training-time interventions and several training-free inference options, each changing one baseline setting. We used COCO-pretrained YOLO11n on PASCAL VOC 07+12 and YOLO11s and YOLO26n on KITTI. Decision rules were fixed in advance, and test sets were opened once. With three seeds, the design resolves only effects of ≳1 point on VOC validation and 2.9–3.6 points on KITTI. On VOC, none of the seven interventions met the acceptance threshold (0/7). Post hoc, the drop under untuned Varifocal loss was traced mainly to negative-sample suppression; rescaling the classification loss gain recovered ≈82% of it. On KITTI, one of ten improvement tests passed. It reversed sign with last-epoch weights, and most of its gain came from one test scene group. We therefore read it as checkpoint-selection noise, not generalization. We quantify four noise sources: seed variance, validation sampling, single-seed screening and checkpoint selection. On 1000 validation images, the per-seed sampling error (≈0.5 point) exceeds a 0.3-point screening threshold. Single-seed screening looks accurate even under null effects. Checkpoint selection shifted the mean intervention offset on YOLO11s by ≈4× the acceptance threshold. Each source comes with a practical recommendation. The results apply to untuned single-setting interventions against an untuned default recipe."
+keywords:
+  - "object detection"
+  - "YOLO"
+  - "fine-tuning"
+  - "reproducibility"
+  - "seed variance"
+  - "negative results"
 authors:
   - family-names: "Özçelik"
     given-names: "Ahmed Gürkan"
