@@ -1,6 +1,6 @@
 # A multi-seed evaluation of augmentation and loss interventions in real-time YOLO fine-tuning
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23797460.svg)](https://doi.org/10.5281/zenodo.23797460)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23797459.svg)](https://doi.org/10.5281/zenodo.23797459)
 
 This repository contains the code, pre-registration documents, seed-level results, split lists, run logs and Online
 Resource 1 (Electronic Supplementary Material) of the following article.
@@ -8,7 +8,7 @@ Resource 1 (Electronic Supplementary Material) of the following article.
 > Ahmed Gürkan Özçelik, Ufuk Asıl. *A Multi-Seed Evaluation of Augmentation and Loss Interventions in Fine-Tuning
 > Real-Time YOLO Detectors: A Study on PASCAL VOC and KITTI* (Turkish title: *Gerçek Zamanlı YOLO Modellerinin İnce
 > Ayarında Artırma ve Kayıp Müdahalelerinin Çok Tohumlu Değerlendirmesi: PASCAL VOC ve KITTI Üzerine Bir İnceleme*).
-> Ostim Technical University. Zenodo archive (all versions): https://doi.org/10.5281/zenodo.23797460
+> Ostim Technical University. Zenodo archive (all versions): https://doi.org/10.5281/zenodo.23797459
 
 ## Summary
 
